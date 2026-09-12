@@ -34,11 +34,9 @@ the iOS 26.6 boot-chain campaign (6 reports + device run kit + raw crash evidenc
 | `DirtySlide/`, `UI/`, `src/`, `Makefile` | the Xcode app and payload sources — the Part 1 harness and the Part 2 macOS LPE |
 | **[`analysis/`](#analysis--per-front-working-evidence)** | per-target working evidence: one markdown file per reverse-engineering front |
 | **[`ios26.6iboot-bugs/`](#ios266iboot-bugs--the-ios-266-iboot-campaign)** | the iOS 26.6 iBoot bug campaign: 6 numbered reports, the on-device run kit, and the raw crash evidence |
-| `extclaims/` | external-claim audit corpus (firmware extracts, SHA-256 receipts, work trees) |
 | `PocRunner/`, `poc_65346.c`, `poc_vendors/` | PoC sources and the PoC runner app |
 | `scripts/` | analysis tooling — Binary Ninja helpers, the string-ref locator, the `.ips` decoder |
 | `REPORT_*.md`, `FINDINGS.md`, `VERSIONS.md`, `AGENTS.md` | campaign reports, findings, version history, and the agent handbook |
-| `driver+binaries/` | local RE inputs — **proprietary Apple binaries; gitignored, never published** |
 
 > Compiled PoC binaries (`*.ipa`, `poc_65346_ios`), the local Python venv, and the
 > `.codegraph` index are all gitignored — see `.gitignore`.
