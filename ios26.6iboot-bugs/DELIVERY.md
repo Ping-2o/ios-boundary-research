@@ -24,6 +24,10 @@ iOS 26.6 `mBoot-18000.162.8`, 26.6.1 `mBoot-18000.162.10`, 27.0 `mBoot-20457.2.3
   NEGATIVE for swap-claim — deliberately NOT overclaimed), #3 (§4e wchf = family
   member + log-only 4cc gate), #4 (§4b traced NVRAM→'splt' chain, §4c corrected).
 - [x] Table-dispatch method lesson applied everywhere a "zero xrefs" claim exists.
+- [x] **DeviceRunKit/**: on-device execution kit (recovery-shell enumeration,
+  zero-risk real-bvx2 control, PoC send/bootx sequence with framed + raw IM4P wrap
+  families, live NVRAM demo, safe-exit + crash-collection scripts). Pending the
+  physical run — every retail-device unknown in these reports is now a script.
 - [x] Novelty screen (SearxNG, 09-12): no public CVE/writeup maps to any of the six
   defects on these builds; public iBoot research covers bootrom (checkm8/usbliter8),
   source-leak analyses, and SMMU — not decoder/record arithmetic. Apple's
