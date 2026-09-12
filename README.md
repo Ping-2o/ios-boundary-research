@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 > **NOTICE — AI-GENERATED SECURITY RESEARCH.** This document was written 100% by
 > autonomous AI agents (no human authoring or line-by-line review pass — expect slop).
 > It exists solely for authorized security research and coordinated disclosure to the
@@ -6,7 +5,6 @@
 > re-verify before trusting any of them. PoC files are minimal triage reproducers,
 > not weapons. Do not use against systems you do not own or may not test.
 
-<p align="center"><img src="dirtyslide.png" width="55%" alt="DirtySlide"></p>
 
 # DirtySlide
 
@@ -777,4 +775,3 @@ xcrun devicectl device process launch --device $CORE_DEVICE_ID --console --no-ac
 =======
 # ios-boundary-research
 iOS privileged-boundary research — VideoToolbox/AVE findings, DoS primitives, and negative results from iOS 26–27.
->>>>>>> 5c21e9e349d36dddde47c729a0d4294286dddb51
