@@ -7,6 +7,20 @@
 
 # iBoot NVRAM persisted-state integrity: bank images are guarded only by forgeable checksums (no keyed MAC in the store path) — mBoot-18000.162.8 / 18000.162.10
 
+> **Vendor disposition — Apple Product Security, OE1107324358640 (submitted 31 Aug 2026, closed 01 Sep 2026).**
+> **Closed as not actionable.** Apple did not dispute the checksum analysis; it rejected the
+> report for lacking a demonstrated user-visible consequence:
+> *"This is not an actionable security report without evidence of it reproducing a security or
+> privacy impact to a user on-device."* — and, on the bar for this class:
+> *"An actionable report is clear, concise and outlines and demonstrates a security or privacy
+> issue that causes an impact to a user. It should be demonstrated on-device, and on the latest
+> version of iOS or macOS."*
+>
+> Read this report as a **design/integrity observation with no demonstrated on-device impact**.
+> The core claim below — no keyed seal exists at any hop of the persisted bank path, proven with
+> real firmware code — stands; what is missing is a path from "a writable session can re-seal a
+> bank" to an actual security or privacy effect on a device.
+
 ## Summary
 
 iBoot's persistent NVRAM variables (`boot-command`, `auto-boot`, `one-time-boot-command`,

@@ -7,6 +7,17 @@
 
 # iBoot DEFLATE stored-block decoder writes attacker-controlled length without checking destination capacity (heap buffer overflow)
 
+> **Vendor disposition — Apple Product Security, OE11073045811 (submitted 26 Aug 2026, closed 11 Sep 2026).**
+> **Closed as not a security issue.** Apple did not dispute the decoder behavior:
+> *"The code does behave the way you describe, but this part of the startup process only handles
+> data that has already been checked as genuine, and the route you outline for getting untrusted
+> data there depends on a separate flaw that hasn't been shown to work. Without a real way for an
+> attacker to reach this code on a device we aren't treating it as a security issue."*
+>
+> Read this report as a **memory-safety primitive with unproven attacker delivery**. The root
+> cause, offsets, and fault receipts below stand; the "attacker positioning" section is the part
+> the vendor rejected.
+
 ## Summary
 
 The DEFLATE decoder inside iBoot's compression service (dispatcher algorithm ids
@@ -136,7 +147,12 @@ CRC-failure fallback arm, and the `iBootIm`/`LZFSE` record consumers) remain the
 delivery — this *narrows and hardens* the claim, and pre-answers the storage-swap
 question. Escalation on top of this bug: `Report4_SPLT/rce_run*.log` shows a
 stored-block overflow overwriting a firmware function-pointer slot and the REAL
-`blraaz` landing PC in an attacker page, 3/3 deterministic.
+`blraaz` landing PC in an attacker page, 3/3 deterministic — **read that as a
+host-harness control-transfer primitive, not a device-realized RCE**: the harness
+maps the firmware, supplies the decoder context and the algorithm id, and places
+the attacker page, exactly the substitution Apple cited when declining the
+delivery argument (see the vendor disposition at the top of this report). No
+chain from a real boot to that control transfer is demonstrated here.
 An attacker able to influence staged/upgrade-time content (malicious or
 compromised staging host, supply-chain position, or a co-resident privileged bug
 that can plant staged content) gains a large controlled-content linear overflow

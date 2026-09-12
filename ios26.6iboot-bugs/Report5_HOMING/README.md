@@ -7,6 +7,12 @@
 
 # iBoot record-homing delta copy: negative DELTA wraps the ONLY guard (`LEN >u E - DELTA`) — decoded-content bytes are written at an attacker-chosen address relative to the home-window anchor
 
+> **Vendor disposition — none recorded.** This report is not covered by the 26 Aug – 02 Sep 2026
+> Apple Product Security correspondence reproduced in the root `README.md`, so no vendor
+> assessment of it exists in this repository. It carries the same open question as the other
+> decoder reports: attacker-controlled delivery into the boot-record loader is **not**
+> demonstrated here, and the negative-`DELTA` wrap is a primitive only.
+
 ## Summary
 
 iBoot's Mach-O boot-record loader (`FUN_00199150` on 162.x; relocated + verified

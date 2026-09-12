@@ -10,6 +10,14 @@
 **Target**: `AppleM2ScalerCSCDriver` (AppleM2ScalerCSCDriverUserClient + IOSurfaceAcceleratorClient), iOS 26.6 (23G71) / 26.6.1 (23G83), t8140 (iPhone17,5).
 **Period**: 09-01 → 09-02. **Epochs**: v164–v173 (10 builds, 9 device runs). **Front status: CLOSED at both layers.**
 
+> **Vendor disposition — Apple Product Security, OE110768579232 (submitted 02 Sep 2026, closed 04 Sep 2026).**
+> **Closed — the validation gap does not produce memory corruption.**
+> *"After review, the validation gap that you observed does not result in an out-of-bounds access."*
+> This is consistent with the campaign's own run verdict in §5 ("the gate hole is real and
+> client-reachable … **but the HW contained every wild rect**"). Read §5 as a **validator hole
+> that the hardware neutralises**, not as an exploitable out-of-bounds access — the signed-wrap
+> is real as a code observation, and no kernel-write primitive follows from it.
+
 ---
 
 ## 1. Why this target

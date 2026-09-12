@@ -2,9 +2,15 @@
 
 iOS privileged-boundary research across system services, kernel-facing interfaces, and the iBoot boot chain — with reproducible harnesses, on-device validation, security findings, and negative results.
 
+> [!IMPORTANT]
+> ### Vendor disposition — the iBoot findings were closed by Apple
+> Every iBoot finding in this repository was submitted to Apple Product Security (26 Aug – 02 Sep 2026) and **every one was closed as not a security issue**. Apple's reasoning is consistent: the decoder behavior described is real, but no attacker-controlled path to that code on a device was demonstrated — and one report's headline number was shown to be a harness artifact rather than a decoder property. The verbatim triage responses are recorded in [Vendor disposition](#vendor-disposition--apple-product-security) below.
+>
+> These findings are retained as research and negative results, not as confirmed vulnerabilities.
+
 > [!NOTE]
 > ### Open Research
-> Several findings in this campaign remain unresolved. Contributions that establish a real attacker-controlled delivery path, eliminate a false positive, or demonstrate concrete security impact are welcome.
+> The single unresolved question across this campaign is **attacker-controlled delivery**: a demonstrated on-device path that feeds untrusted bytes to the affected boot-stage code. Contributions that establish such a path, eliminate a remaining false positive, or demonstrate concrete security impact are welcome.
 
 
 > **Research note**
@@ -17,6 +23,28 @@ iOS privileged-boundary research across system services, kernel-facing interface
 >
 > Findings + verdicts: `FINDINGS.md`
 > Version history: `VERSIONS.md`
+
+---
+
+## Vendor disposition — Apple Product Security
+
+The iBoot/boot-chain reports in this repository were submitted to Apple Product Security between 26 Aug and 02 Sep 2026. **All of them were closed as not a security issue.** The responses below are reproduced verbatim; they are the authoritative assessment of these findings.
+
+| Report | Apple ID | Submitted | Outcome | Apple's stated reason (verbatim) |
+| --- | --- | --- | --- | --- |
+| `Report1_DEFLATE/` | OE11073045811 | 26 Aug 2026 | Closed — not a security issue | *"The code does behave the way you describe, but this part of the startup process only handles data that has already been checked as genuine, and the route you outline for getting untrusted data there depends on a separate flaw that hasn't been shown to work. Without a real way for an attacker to reach this code on a device we aren't treating it as a security issue."* |
+| `Report2_LZVN/` | OE110730442251 | 26 Aug 2026 | Closed — no vulnerability confirmed | *"…standard boot image loads verify signatures before decompression, and no attacker path to the decoder is demonstrated here."* Plus a direct refutation of the report's headline figure: *"The 65,536 byte figure comes from the harness rather than the decoder. In `qsweep.c` the `b0w` cell seeds only the first `dcap` bytes with `0x11`, but the dirty-span loop scans `dcap + 65536`, so the `0x5A` apron always counts as dirty. That is why `capSpanOOB` is exactly 65536 at every capacity tested."* |
+| `Report3_LZFSE/` | OE110730468001 | 26 Aug 2026 | Closed — not a security issue | *"The data shown is read-only and is also not readily available to the attacker."* |
+| `Report4_SPLT/` (submitted as the delivery argument for the decoder reports) | — | 26–27 Aug 2026 | Not accepted as a delivery path | *"The splt package restates the precondition rather than removing it. Your own analysis gives the requirement as control of the staged blob during manufacturing or upgrade staging, gated by hardware policy. The evidence provided is a host harness that calls selected firmware routines directly, with the algorithm identifier and loader context supplied by the harness rather than by the container, so it does not show the boot loader reaching that code with attacker supplied input. … The attack position is stated as a precondition rather than demonstrated."* |
+| `Report5_HOMING/` | — | — | No disposition in this correspondence | — |
+| `Report6_NVRAM/` | OE1107324358640 | 31 Aug 2026 | Closed — not actionable | *"This is not an actionable security report without evidence of it reproducing a security or privacy impact to a user on-device."* |
+| `REPORT_M2SCALER.md` (`AppleM2ScalerCSCDriver`) | OE110768579232 | 02 Sep 2026 | Closed — no out-of-bounds access | *"After review, the validation gap that you observed does not result in an out-of-bounds access."* |
+
+### What this changes in the repository
+
+* **The findings are retained as research results, not vulnerabilities.** The disassembly citations, harnesses, and reproduction receipts are unchanged and still check out; what is *not* established is attacker-controlled delivery (or, for the M2Scaler validation gap, an out-of-bounds access at all).
+* **One headline number is corrected.** `Report2_LZVN`'s `capSpanOOB` / `OOBpast4K = 65536` is a **harness measurement artifact** — the sweep's dirty-span window scanned `dcap + 65536`, so the marker apron always registered as dirty regardless of decoder behavior. The fault receipts (PC/LR offsets, signal class, the copy running past the destination) are unaffected; the claim that the overflow is "≥64 KB past any tested capacity" is not supported by that evidence. See the note at the top of `Report2_LZVN/README.md`.
+* **The delivery question stays open, explicitly.** `DELIVERY_PATHS_24A435.md` remains the honest boundary document: the standard signed-image path was tested and found honest (auth-before-decode), and the staging-class paths depend on the `splt` container flaw that Apple declined to accept as reachable.
 
 ---
 
@@ -76,15 +104,15 @@ Grouped by target:
 
 The iBoot/boot-chain research is structured as six self-contained reports plus the tooling used for on-device validation.
 
-| Folder             | Research target                                                             |
-| ------------------ | --------------------------------------------------------------------------- |
-| `Report1_DEFLATE/` | DEFLATE decompressor                                                        |
-| `Report2_LZVN/`    | LZVN decompressor                                                           |
-| `Report3_LZFSE/`   | LZFSE decompressor                                                          |
-| `Report4_SPLT/`    | SPLT / staged-container handling                                            |
-| `Report5_HOMING/`  | HOMING boot-stage logic                                                     |
-| `Report6_NVRAM/`   | NVRAM persistence and validation                                            |
-| `DeviceRunKit/`    | On-device execution kit: payloads, control images, results, and run scripts |
+| Folder             | Research target                                                             | Vendor outcome                                  |
+| ------------------ | --------------------------------------------------------------------------- | ----------------------------------------------- |
+| `Report1_DEFLATE/` | DEFLATE decompressor                                                        | Closed — delivery unproven (OE11073045811)      |
+| `Report2_LZVN/`    | LZVN decompressor                                                           | Closed — delivery unproven; one figure refuted (OE110730442251) |
+| `Report3_LZFSE/`   | LZFSE decompressor                                                          | Closed — read-only, not attacker-available (OE110730468001) |
+| `Report4_SPLT/`    | SPLT / staged-container handling                                            | Not accepted as a delivery path                 |
+| `Report5_HOMING/`  | HOMING boot-stage logic                                                     | No disposition in this correspondence           |
+| `Report6_NVRAM/`   | NVRAM persistence and validation                                            | Closed — no on-device impact shown (OE1107324358640) |
+| `DeviceRunKit/`    | On-device execution kit: payloads, control images, results, and run scripts | —                                               |
 
 Supporting documents include:
 
@@ -96,7 +124,7 @@ Supporting documents include:
 
 The tree also contains raw **on-device crash evidence**, including tracked `.ips` reports and device logs used to validate the reported behavior.
 
-The evidence establishes the behavior tested by each report; attacker reachability and security impact are assessed separately and are not inferred from a crash alone.
+The evidence establishes the behavior tested by each report; attacker reachability and security impact are assessed separately and are not inferred from a crash alone. All six reports were submitted to Apple Product Security and **closed as not a security issue** — see [Vendor disposition](#vendor-disposition--apple-product-security).
 
 ---
 
@@ -119,9 +147,11 @@ The repository intentionally contains both positive and negative results.
 
 A finding appearing in the repository does **not** by itself mean that Apple, a CVE authority, or the author considers it a confirmed exploitable vulnerability.
 
-In particular, some iBoot findings demonstrate interesting memory-safety behavior while leaving attacker-controlled delivery or end-to-end security impact unresolved. Those cases are retained because the underlying reverse-engineering and negative conclusions are useful research results.
+In particular, the iBoot findings demonstrate interesting memory-safety behavior while leaving attacker-controlled delivery or end-to-end security impact unresolved. Those cases are retained because the underlying reverse-engineering and negative conclusions are useful research results — and because the vendor disposition on them is itself a result: **Apple reviewed all six and closed every one**, with the delivery path (not the decoder behavior) as the consistent blocker.
 
-See `FINDINGS.md` for the current verdicts and `VERSIONS.md` for campaign history.
+The most useful next contributions are therefore: a demonstrated on-device delivery path into the boot-stage decoders, a correction of any remaining measurement artifact of the kind Apple identified in `Report2_LZVN`, or a concrete security impact for the persisted-NVRAM integrity gap.
+
+See [Vendor disposition](#vendor-disposition--apple-product-security) for the verbatim triage responses, `FINDINGS.md` for the current verdicts, and `VERSIONS.md` for campaign history.
 
 ---
 

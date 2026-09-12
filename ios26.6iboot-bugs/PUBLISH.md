@@ -21,7 +21,7 @@ there is no persistence, exfil, or evasion tooling in this package.
 
 | Artifact | Role |
 |---|---|
-| `Report1_DEFLATE/` … `Report6_NVRAM/` | One folder per vulnerability: `README.md` (report), harness source, PoC blobs, retest logs on BOTH shipping 26.6 builds |
+| `Report1_DEFLATE/` … `Report6_NVRAM/` | One folder per finding: `README.md` (report), harness source, PoC blobs, retest logs on BOTH shipping 26.6 builds |
 | `iBoot-Reports-1-6-2026-09-12.zip` | Everything (reports + companions + DeviceRunKit scripts) |
 | `ReportN_*.zip` | Per-report single submission archives |
 | `RECHECK_24A435_mBoot-20457.2.37.md` | Status of all six bugs on the iOS 27.0 seed (still-present verdicts + relocated offsets) |
@@ -29,6 +29,17 @@ there is no persistence, exfil, or evasion tooling in this package.
 | `IBEC_IBSS_24A435.md` | iBoot ≡ iBEC ≡ iBSS proof + the recovery-shell memboot chain (incl. the retail-device verdict) |
 | `DeviceRunKit/` | On-device execution: enumeration, zero-risk control, PoC send/bootx sequences, NVRAM demo, safe-exit. `results/RUN1_finding_console_live.md` = current device state |
 | `DELIVERY.md` | Completeness checklist + known-open list |
+
+## Status — vendor response received (2026-09-12)
+
+**All of these reports have now been submitted to Apple Product Security and closed as not a
+security issue.** The verbatim triage responses are recorded in the repository root `README.md`
+(§ "Vendor disposition") and at the top of each `ReportN_*/README.md`. The consistent blocker is
+**attacker-controlled delivery**: the decoder behavior is not disputed, but no on-device path
+that feeds untrusted bytes to it has been demonstrated. One figure in `Report2_LZVN`
+(`capSpanOOB = 65536`) was shown by the vendor to be a harness measurement artifact and has been
+withdrawn there. Read the rest of this package as a record of memory-safety primitives plus the
+negative results around their reachability — not as a set of confirmed vulnerabilities.
 
 ## Submission reading order (for the vendor triager)
 

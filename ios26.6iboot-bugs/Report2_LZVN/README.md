@@ -7,6 +7,26 @@
 
 # iBoot LZVN decoder writes far beyond the caller's output capacity on attacker-crafted input (heap buffer overflow)
 
+> **Vendor disposition — Apple Product Security, OE110730442251 (submitted 26 Aug 2026, closed 26 Aug 2026 as "Completed").**
+> **Closed with no vulnerability confirmed.** No attacker path to the decoder was demonstrated:
+> *"…standard boot image loads verify signatures before decompression, and no attacker path to
+> the decoder is demonstrated here. Without that, the report does not establish an impact we can
+> evaluate."*
+>
+> **Apple also refuted this report's headline number.** The `capSpanOOB` / `OOBpast4K = 65536`
+> figure is a **harness measurement artifact, not a decoder property**:
+> *"The 65,536 byte figure comes from the harness rather than the decoder. In `qsweep.c` the
+> `b0w` cell seeds only the first `dcap` bytes with `0x11`, but the dirty-span loop scans
+> `dcap + 65536`, so the `0x5A` apron always counts as dirty. That is why `capSpanOOB` is
+> exactly 65536 at every capacity tested."*
+>
+> Consequently the claims "span is always exactly `capacity + 0x10000`" (Summary) and "writes
+> continue ≥64 KB past any tested capacity" (Exploitability) are **withdrawn as stated**. What
+> the evidence still shows is unchanged: the copy runs past the caller's destination and faults
+> inside the shared `memcpy` thunk at the cited PC/LR offsets, deterministically, on both builds.
+> A corrected span measurement needs the dirty-span window bounded by the *real* mapped region,
+> not `dcap + 65536`.
+
 ## Summary
 
 iBoot's LZVN decompressor (dispatcher algorithm ids `0x101` raw and `0x100`
@@ -14,7 +34,8 @@ iBoot's LZVN decompressor (dispatcher algorithm ids `0x101` raw and `0x100`
 that does not track the caller-provided destination capacity. A 2-byte crafted
 input (`0F 41`) decoded into a 4 KB output buffer makes firmware code dirty
 65,536 bytes past the end of every tested capacity (64 B / 256 B / 1 KB / 4 KB —
-span is always exactly `capacity + 0x10000`), continuing until an unmapped page
+span is always exactly `capacity + 0x10000`) **[withdrawn — that span figure is a harness
+artifact, see the vendor disposition above]**, continuing until an unmapped page
 stops it. The raw id-`0x101` path faults with SIGBUS (READ side of the copy
 loop); the container path (id `0x100`, 18-byte file) faults with SIGSEGV at the
 same instruction. Reproduced live against both shipping builds with identical
@@ -68,8 +89,10 @@ The wrong check, precisely: the bound threaded into the LZVN core (`arg2`,
 held in `x23`) is *not* derived from the caller's destination capacity.
 Behavioral proof: observed write span = `capacity + 0x10000` bytes for every
 capacity tested (64 B → 4 KB), i.e. the effective granted window exceeds the
-caller's buffer by at least 64 KB in all configurations; the copy never stops
-on its own — only the first unmapped page ends it.
+caller's buffer by at least 64 KB in all configurations **[withdrawn — the sweep's
+dirty-span window extended to `dcap + 65536`, so the apron always read as dirty;
+the span was never measured independently. See the vendor disposition above]**;
+the copy never stops on its own — only the first unmapped page ends it.
 
 ## Reproduction
 
@@ -116,8 +139,9 @@ is sha256-identical to the shipped artifact
 ## Exploitability analysis
 
 Primitive: a linear heap buffer overflow whose **length is effectively unbounded
-by the destination** (writes continue ≥64 KB past any tested capacity until an
-unmapped page). Contents are decompressor-derived: literal bytes come from the
+by the destination** (the copy runs past the buffer and stops only at the first
+unmapped page; the "≥64 KB past any tested capacity" quantification is withdrawn —
+see the vendor disposition above). Contents are decompressor-derived: literal bytes come from the
 input stream (attacker-chosen), match copies duplicate previously-written
 output, so an attacker controls content over large stretches while the tail of
 the runaway run repeats structure — sufficient for corrupting adjacent objects

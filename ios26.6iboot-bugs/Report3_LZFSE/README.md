@@ -7,6 +7,16 @@
 
 # iBoot LZFSE (bvx1) match copier reads below the output buffer start without a lower-bound check (out-of-bounds read / information disclosure into decoded content)
 
+> **Vendor disposition — Apple Product Security, OE110730468001 (submitted 26 Aug 2026, closed 27 Aug 2026).**
+> **Closed as not a security issue.** Apple did not dispute the missing lower bound:
+> *"After assessing this report, we do not consider this a security issue. The data shown is
+> read-only and is also not readily available to the attacker."*
+>
+> Read this report as an **out-of-bounds read primitive whose input is not attacker-reachable**.
+> The read path, the fault offsets, and the absence of the `dst_begin` comparison stand; the
+> KASLR/information-disclosure impact claimed below is not established, because nothing in this
+> package shows an attacker supplying the crafted `bvx1` stream during a real boot.
+
 ## Summary
 
 iBoot's LZFSE `bvx1` block decoder resolves LZ77 match sources as

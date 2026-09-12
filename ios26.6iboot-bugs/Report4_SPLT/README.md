@@ -7,6 +7,22 @@
 
 # Forged-integrity staged container selects arbitrary decompressor in iBoot splt loader
 
+> **Vendor disposition — Apple Product Security (submitted 26–27 Aug 2026 with OE11073045811 / OE110730442251; not accepted as a delivery path).**
+> This report was submitted as the **delivery argument** for the DEFLATE and LZVN decoder
+> findings, and Apple declined it as such:
+> *"The splt package restates the precondition rather than removing it. Your own analysis gives
+> the requirement as control of the staged blob during manufacturing or upgrade staging, gated by
+> hardware policy. The evidence provided is a host harness that calls selected firmware routines
+> directly, with the algorithm identifier and loader context supplied by the harness rather than
+> by the container, so it does not show the boot loader reaching that code with attacker supplied
+> input."* — and *"the route you outline for getting untrusted data there depends on a separate
+> flaw that hasn't been shown to work."*
+>
+> Read this report as a **staging-position precondition**, not an established attacker path. The
+> unkeyed-CRC analysis of the `'splt'` integrity gate stands as a description of the gate's
+> strength; what it does not establish is that an attacker without manufacturing/upgrade staging
+> control can put bytes through it.
+
 ## Summary
 
 The iBoot `'splt'` staged-container integrity gate validates an attacker-malleable
