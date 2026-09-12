@@ -90,6 +90,7 @@ daemon (`videocodecd` / `mediaremoted`) may crash — that is the goal; correlat
 Prior campaign history (v10–v175) is in `VERSIONS.md`. Per-front evidence is in analysis folder
 
 # ios-boundary-research
-iOS privileged-boundary research — VideoToolbox/AVE findings, DoS primitives, and negative results from iOS 26–27.
-
+iOS privileged-boundary research across system services, kernel-facing
+interfaces, and the iBoot boot chain — with reproducible harnesses,
+on-device validation, security findings, and negative results.
 
