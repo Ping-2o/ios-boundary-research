@@ -1,0 +1,232 @@
+{"roots_installed":0,"app_name":"Instagram","timestamp":"2026-09-12 15:19:57.00 +0500","app_version":"445.0.0","slice_uuid":"4C4C443A-5555-3144-A192-8F033FB73CED","adam_id":"389801252","build_version":"1053791553","bundleID":"com.burbn.instagram","duration_ms":"35419055","is_first_party":0,"share_with_app_devs":0,"bug_type":"145","os_version":"iPhone OS 27.0 (24A435)","distributor_id":"com.apple.AppStore","name":"Instagram","incident_id":"43664D62-D09F-477D-A661-B7457F65ED03"}
+Date/Time:        2026-09-12 05:29:33.579 +0500
+End time:         2026-09-12 15:19:52.634 +0500
+OS Version:       iPhone OS 27.0 (Build 24A435)
+Architecture:     arm64e
+Report Version:   73
+Incident Identifier: 43664D62-D09F-477D-A661-B7457F65ED03
+
+Data Source:      Microstackshots
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+
+Command:          Instagram
+Path:             /private/var/containers/Bundle/Application/7DC4F423-AD1E-4652-A1CF-0D4D19172B7D/Instagram.app/Instagram
+Identifier:       com.burbn.instagram
+Version:          445.0.0 (1053791553)
+Adam ID:          389801252
+Is First Party:   No
+Beta Identifier:  A466F584-7347-43FF-9659-DF35F27D694C
+Resource Coalition: "com.burbn.instagram"(1568)
+On Behalf Of:     1 sample UNKNOWN [39] (1 sample originated by UNKNOWN [39])
+Architecture:     arm64
+Parent:           UNKNOWN [1]
+PID:              4967
+
+Event:            disk writes
+Action taken:     none
+Writes:           4294.97 MB of file backed memory dirtied over 35419 seconds (121.26 KB per second average), exceeding limit of 49.71 KB per second over 86400 seconds
+Writes limit:     4294.97 MB
+Limit duration:   86400s
+Writes caused:    4294.97 MB
+Writes duration:  35419s
+Duration:         35419.06s
+Duration Sampled: 4.41s (event starts 35409.06s before samples, event ends 5.58s after samples)
+Steps:            2 (3 samples lost, 10.49 MB/step)
+
+Hardware model:   iPhone17,5
+Active cpus:      6
+Memory size:      7.54 GB
+HW page size:     16384
+VM page size:     16384
+Shared cache residency: 10.36% (708.91 MB / 6842 MB)
+
+Time Since Boot:  149285s
+Time Awake Since Boot: 66762s
+Time Since Wake:  505s
+
+Total CPU Time:   0.768s
+Advisory levels:  Battery -> 2, User -> 3, ThermalPressure -> 10, Combined -> 1
+Free disk space:  167.78 GB/237.64 GB, low space threshold 150 MB
+Vnodes Available: 67.12% (18793/28000, 14000 allocated, 14000 soft limit)
+Model:            com.apple.fm.language.instruct_300m.tokenizer
+  Loaded:         ??? - N/A, requested by UNKNOWN
+Model:            com.apple.fm.language.instruct_3b.urgency_classification
+  Loaded:         35000s - N/A, requested by token-generation-inference
+Model:            com.apple.fm.language.instruct_3b.base
+  Loaded:         35000s - N/A, requested by token-generation-inference
+Model:            com.apple.fm.language.instruct_3b.tokenizer
+  Loaded:         ??? - N/A, requested by UNKNOWN
+Model:            com.apple.fm.language.instruct_3b.urgency_classification?language=en
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyMailMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+  Executing:      35000s - 35000s, requested by [271] use case classification.classifyTextMessage
+Model:            com.apple.fm.language.instruct_3b.summarization?language=en
+  Executing:      35000s - 35000s, requested by [271] use case summarization.summarizeTextMessageThread
+  Executing:      35000s - 35000s, requested by [271] use case summarization.summarizeTextMessageThread
+  Executing:      35000s - 35000s, requested by [271] use case summarization.summarizeTextMessageThread
+  Executing:      35000s - 35000s, requested by [271] use case summarization.summarizeTextMessageThread
+  Executing:      35000s - 35000s, requested by [271] use case summarization.summarizeTextMessageThread
+  Executing:      35000s - 35000s, requested by [271] use case summarization.summarizeTextMessageThread
+  Executing:      35000s - 35000s, requested by [271] use case summarization.summarizeTextMessageThread
+  Executing:      35000s - 35000s, requested by [271] use case summarization.summarizeTextMessageThread
+
+Preferred User Language: en-GB, kk-GB
+Country Code:     GB
+Keyboards:        com.google.keyboard.KeyboardExtension, en_GB QWERTY
+OS Cryptex File Extents: 1
+
+Heaviest stack for the target process:
+  2  ??? (libsystem_pthread.dylib + 2320) [0x199406910]
+  2  ??? (libsystem_pthread.dylib + 4664) [0x199407238]
+  2  ??? (libdispatch.dylib + 87728) [0x1c79cf6b0]
+  2  ??? (libdispatch.dylib + 89228) [0x1c79cfc8c]
+  2  ??? (libdispatch.dylib + 46192) [0x1c79c5470]
+  2  ??? (libdispatch.dylib + 43132) [0x1c79c487c]
+  2  ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+  2  ??? (libdispatch.dylib + 7372) [0x1c79bbccc]
+  1  ??? (Instagram + 144437708) [0x108acf1cc]
+  1  ??? (Instagram + 59917612) [0x103a3452c]
+  1  ??? (Instagram + 59918812) [0x103a349dc]
+  1  ??? (Instagram + 57498208) [0x1037e5a60]
+  1  ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+  1  ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+  1  ??? (Instagram + 57498332) [0x1037e5adc]
+  1  ??? (Instagram + 57498980) [0x1037e5d64]
+  1  ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+  1  ??? (libsqlite3.dylib + 235416) [0x1b71a3798]
+  1  ??? (libsqlite3.dylib + 93984) [0x1b7180f20]
+  1  ??? (libsqlite3.dylib + 261960) [0x1b71a9f48]
+  1  ??? (libsqlite3.dylib + 263060) [0x1b71aa394]
+  1  ??? (libsqlite3.dylib + 331368) [0x1b71bae68]
+  1  ??? (libsqlite3.dylib + 720604) [0x1b7219edc]
+  1  ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+  1  ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+
+
+Powerstats for:   Instagram [4967]
+UUID:             4C4C443A-5555-3144-A192-8F033FB73CED
+Path:             /private/var/containers/Bundle/Application/7DC4F423-AD1E-4652-A1CF-0D4D19172B7D/Instagram.app/Instagram
+Identifier:       com.burbn.instagram
+Version:          445.0.0 (1053791553)
+Adam ID:          389801252
+Is First Party:   No
+Beta Identifier:  A466F584-7347-43FF-9659-DF35F27D694C
+Resource Coalition: 2 samples "com.burbn.instagram"(1568)
+On Behalf Of:     1 sample UNKNOWN [39] (1 sample originated by UNKNOWN [39])
+Architecture:     arm64
+Parent:           UNKNOWN [1]
+UID:              501
+Footprint:        119.41 MB -> 254.23 MB (+134.83 MB)
+Pageins:          7996 pages
+Start time:       2026-09-12 15:19:42.641 +0500
+End time:         2026-09-12 15:19:47.050 +0500
+Num samples:      2 (100%)
+Energy:           1637.14 uWh
+Num threads:      2
+Primary state:    1 samples Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS Default, Override Thread QoS Unspecified, p-core
+User Activity:    0 samples Idle, 2 samples Active
+Power Source:     2 samples on Battery, 0 samples on AC
+  2  ??? (libsystem_pthread.dylib + 2320) [0x199406910]
+    2  ??? (libsystem_pthread.dylib + 4664) [0x199407238]
+      2  ??? (libdispatch.dylib + 87728) [0x1c79cf6b0]
+        2  ??? (libdispatch.dylib + 89228) [0x1c79cfc8c]
+          2  ??? (libdispatch.dylib + 46192) [0x1c79c5470]
+            2  ??? (libdispatch.dylib + 43132) [0x1c79c487c]
+              2  ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                2  ??? (libdispatch.dylib + 7372) [0x1c79bbccc]
+                  1  ??? (Instagram + 144437708) [0x108acf1cc]
+                    1  ??? (Instagram + 59917612) [0x103a3452c]
+                      1  ??? (Instagram + 59918812) [0x103a349dc]
+                        1  ??? (Instagram + 57498208) [0x1037e5a60]
+                          1  ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+                            1  ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                              1  ??? (Instagram + 57498332) [0x1037e5adc]
+                                1  ??? (Instagram + 57498980) [0x1037e5d64]
+                                  1  ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                    1  ??? (libsqlite3.dylib + 235416) [0x1b71a3798]
+                                      1  ??? (libsqlite3.dylib + 93984) [0x1b7180f20]
+                                        1  ??? (libsqlite3.dylib + 261960) [0x1b71a9f48]
+                                          1  ??? (libsqlite3.dylib + 263060) [0x1b71aa394]
+                                            1  ??? (libsqlite3.dylib + 331368) [0x1b71bae68]
+                                              1  ??? (libsqlite3.dylib + 720604) [0x1b7219edc]
+                                                1  ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                  1  ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                    1  <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                  1  ??? (Instagram + 57788136) [0x10382c6e8]
+                    1  ??? (Instagram + 57788480) [0x10382c840]
+                      1  ??? (Instagram + 57798268) [0x10382ee7c]
+                        1  ??? (libsqlite3.dylib + 32952) [0x1b71720b8]
+                          1  ??? (libsqlite3.dylib + 34140) [0x1b717255c]
+                            1  ??? (libsqlite3.dylib + 35080) [0x1b7172908]
+                              1  ??? (libsqlite3.dylib + 37372) [0x1b71731fc]
+                                1  ??? (libsqlite3.dylib + 48028) [0x1b7175b9c]
+                                  1  ??? (libsqlite3.dylib + 53896) [0x1b7177288]
+                                    1  ??? (libsqlite3.dylib + 813316) [0x1b7230904]
+                                      1  ??? (libsqlite3.dylib + 76268) [0x1b717c9ec]
+                                        1  ??? (libsqlite3.dylib + 703272) [0x1b7215b28]
+                                          1  ??? (libsqlite3.dylib + 95940) [0x1b71816c4]
+                                            1  ??? (libsqlite3.dylib + 100172) [0x1b718274c]
+                                              1  ??? (libsqlite3.dylib + 102692) [0x1b7183124]
+                                                1  ??? (libsqlite3.dylib + 709084) [0x1b72171dc]
+                                                  1  ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                    1  <on behalf of UNKNOWN [39] (originated by UNKNOWN [39])>
+
+  Binary Images:
+           0x100110000 -                ???  com.burbn.instagram 445.0.0 (1053791553) <4C4C443A-5555-3144-A192-8F033FB73CED>  /private/var/containers/Bundle/Application/7DC4F423-AD1E-4652-A1CF-0D4D19172B7D/Instagram.app/Instagram
+           0x199406000 -        0x199412247  libsystem_pthread.dylib                  <694C772A-A9F8-3AC0-9417-7C304043A771>  /usr/lib/system/libsystem_pthread.dylib
+           0x1b716a000 -        0x1b732276f  libsqlite3.dylib                         <4246DE1C-A475-3951-AC26-C8941180588A>  /usr/lib/libsqlite3.dylib
+           0x1c79ba000 -        0x1c7a00d17  libdispatch.dylib                        <8CDF4610-F6A5-39CB-94BF-687FE349A4BE>  /usr/lib/system/libdispatch.dylib
+           0x250dc3000 -        0x250e0021b  libsystem_kernel.dylib                   <5A7DC6BE-551B-3B29-A928-A4079A90D4D2>  /usr/lib/system/libsystem_kernel.dylib

@@ -1,3 +1,10 @@
+> **NOTICE — AI-GENERATED SECURITY RESEARCH.** This document was written 100% by
+> autonomous AI agents (no human authoring or line-by-line review pass — expect slop).
+> It exists solely for authorized security research and coordinated disclosure to the
+> affected vendor. All claims cite checkable artifacts (offsets, receipts, commands);
+> re-verify before trusting any of them. PoC files are minimal triage reproducers,
+> not weapons. Do not use against systems you do not own or may not test.
+
 # DELIVERY MANIFEST — iBoot bug set (Reports 1–6) — 100% state
 
 Date: 09-12 (v175 session). Device reference: iPhone17,5 (t8140). Builds audited:
@@ -24,10 +31,12 @@ iOS 26.6 `mBoot-18000.162.8`, 26.6.1 `mBoot-18000.162.10`, 27.0 `mBoot-20457.2.3
   NEGATIVE for swap-claim — deliberately NOT overclaimed), #3 (§4e wchf = family
   member + log-only 4cc gate), #4 (§4b traced NVRAM→'splt' chain, §4c corrected).
 - [x] Table-dispatch method lesson applied everywhere a "zero xrefs" claim exists.
-- [x] **DeviceRunKit/**: on-device execution kit (recovery-shell enumeration,
-  zero-risk real-bvx2 control, PoC send/bootx sequence with framed + raw IM4P wrap
-  families, live NVRAM demo, safe-exit + crash-collection scripts). Pending the
-  physical run — every retail-device unknown in these reports is now a script.
+- [x] **DeviceRunKit/**: on-device execution kit + RUN 1 EXECUTED (09-12) on the retail
+  iPhone17,5 @ 24A435: **recovery console ALIVE** (`getenv` empty = UART-not-USB artifact;
+  `reboot` executed => commands run on retail non-checkm8 A18). §4.3 of IBEC_IBSS now
+  ANSWERED. Pending user re-entry to Recovery: step2 (zero-risk bvx2 control) + step3
+  (memboot PoC) — the last gate before upgrading Reports 1–3/5 delivery wording from
+  staging-host to USB-physical.
 - [x] Novelty screen (SearxNG, 09-12): no public CVE/writeup maps to any of the six
   defects on these builds; public iBoot research covers bootrom (checkm8/usbliter8),
   source-leak analyses, and SMMU — not decoder/record arithmetic. Apple's

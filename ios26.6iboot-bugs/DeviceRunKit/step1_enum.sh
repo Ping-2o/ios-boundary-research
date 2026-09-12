@@ -1,6 +1,8 @@
 #!/bin/bash
 # step1_enum.sh — iBEC recovery-shell reachability + whitelist enumeration (READ-ONLY)
 # Answers: IBEC_IBSS_24A435.md §4.2/§4.3 (does the shell run on this retail A18 unit?)
+#          RUN 1 VERDICT (09-12): YES - shell executes (reboot state-change); stdout
+#          goes to UART not USB, so EMPTY getenv responses are expected, not gating.
 #          DELIVERY_PATHS §4a mode-bit (via getenv/peek if allowed)
 # Safety:  only getenv/peek queries. No writes, no bootx, no state change.
 set -u
@@ -37,6 +39,10 @@ log "peek attempts (dev-surface probe; expect rejection on retail):"
 # sub_16a4 capability reg (0x3_0073_0024 - ANS window) and the global it memoizes (image-static, not runtime VA)
 irecovery -c "peek 0x300730024 8" 2>&1 | tee -a "$OUT" | sed 's/^/[step1]   /'
 
-log "done. If EVERY command returned nothing / the device never enumerated a recovery serial ->"
-log "  the shell does not run on retail A18 (documented outcome; Reports 1-3 stay staging-class)."
+log "EMPTY responses above are NOT a verdict (run 1 lesson): retail recovery routes shell"
+log "stdout to the debug UART, and libirecovery's 'Command completed successfully' is only"
+log "the USB control-transfer ACK. Console LIVENESS is judged ONLY by state-change:"
+log "  irecovery -c 'reboot'  -> device leaves Recovery within seconds  = SHELL ALIVE"
+log "  (run 1, 09-12, iOS 27.0 24A435: reboot DID execute -> shell alive on retail A18;"
+log "   see results/RUN1_finding_console_live.md)"
 log "log: $OUT"

@@ -1,0 +1,1423 @@
+{"app_name":"STExtractionService","timestamp":"2026-09-10 21:59:18.00 +0500","app_version":"1.0","slice_uuid":"096A3F7A-8DFB-379B-821A-38F8F1DA9F27","build_version":"1","bundleID":"com.apple.STExtractionService","duration_ms":"404520","share_with_app_devs":0,"is_first_party":1,"bug_type":"145","os_version":"iPhone OS 27.0 (24A435)","roots_installed":0,"name":"STExtractionService","incident_id":"718A3370-3973-49DF-A2C4-92717FB6ED62"}
+Date/Time:        2026-09-10 21:51:59.459 +0500
+End time:         2026-09-10 21:58:43.978 +0500
+OS Version:       iPhone OS 27.0 (Build 24A435)
+Architecture:     arm64e
+Report Version:   73
+Incident Identifier: 718A3370-3973-49DF-A2C4-92717FB6ED62
+
+Data Source:      Microstackshots
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x19813c000
+
+Command:          STExtractionService
+Path:             /System/Library/PrivateFrameworks/StreamingExtractor.framework/XPCServices/STExtractionService.xpc/STExtractionService
+Identifier:       com.apple.STExtractionService
+Version:          1.0 (1)
+Resource Coalition: "com.apple.nsurlsessiond"(335)
+On Behalf Of:     113 samples nsurlsessiond [204] (113 samples originated by nsurlsessiond [204])
+Architecture:     arm64
+Parent:           launchd [1]
+PID:              470
+
+Event:            disk writes
+Action taken:     none
+Writes:           1073.91 MB of file backed memory dirtied over 405 seconds (2654.79 KB per second average), exceeding limit of 12.43 KB per second over 86400 seconds
+Writes limit:     1073.74 MB
+Limit duration:   86400s
+Writes caused:    1073.91 MB
+Writes duration:  405s
+Duration:         404.52s
+Duration Sampled: 392.93s (event starts 10.70s before samples, event ends 0.88s after samples)
+Steps:            778 (10.49 MB/step)
+
+Hardware model:   iPhone17,5
+Active cpus:      6
+Memory size:      7.54 GB
+HW page size:     16384
+VM page size:     16384
+Shared cache residency: 14.23% (973.47 MB / 6842 MB)
+
+Time Since Boot:  32s
+Time Awake Since Boot: 32s
+Time Since Wake:  n/a (machine hasn't slept)
+
+Total CPU Time:   476.143s
+Advisory levels:  Battery -> 3, User -> 3, ThermalPressure -> 20, Combined -> 2
+Free disk space:  173.65 GB/237.64 GB, low space threshold 150 MB
+Vnodes Available: 66.39% (18589/28000, 14000 allocated, 14000 soft limit)
+Model:            com.apple.if.planner.nlrouter.tokenizer
+  Loaded:         400s - N/A, requested by token-generation-inference
+Model:            com.apple.if.planner.nlrouter.base
+  Loaded:         400s - 420s, requested by token-generation-inference
+
+Preferred User Language: en-GB, kk-GB
+Country Code:     GB
+Keyboards:        en_GB QWERTY, com.google.keyboard.KeyboardExtension
+OS Cryptex File Extents: 1
+
+Heaviest stack for the target process:
+  113  ??? (libsystem_pthread.dylib + 2320) [0x199406910]
+  113  ??? (libsystem_pthread.dylib + 4664) [0x199407238]
+  113  ??? (libdispatch.dylib + 87728) [0x1c79cf6b0]
+  113  ??? (libdispatch.dylib + 89228) [0x1c79cfc8c]
+  113  ??? (libdispatch.dylib + 46192) [0x1c79c5470]
+  113  ??? (libdispatch.dylib + 43132) [0x1c79c487c]
+  113  ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+  113  ??? (libdispatch.dylib + 7372) [0x1c79bbccc]
+  113  ??? (STExtractionService + 11728) [0x1026d6dd0]
+  113  ??? (<EEF45031-9879-37CC-B765-29F11739072A> + 9672) [0x1027e25c8]
+  113  ??? (Foundation + 187388) [0x1999d7bfc]
+  113  ??? (<EEF45031-9879-37CC-B765-29F11739072A> + 10400) [0x1027e28a0]
+  113  ??? (libAppleArchive.dylib + 75804) [0x2d7a7d81c]
+  113  ??? (libAppleArchive.dylib + 354112) [0x2d7ac1740]
+  113  ??? (libAppleArchive.dylib + 67000) [0x2d7a7b5b8]
+  113  ??? (libAppleArchive.dylib + 230720) [0x2d7aa3540]
+  110  ??? (libAppleArchive.dylib + 67776) [0x2d7a7b8c0]
+  110  ??? (libAppleArchive.dylib + 273452) [0x2d7aadc2c]
+  108  ??? (libAppleArchive.dylib + 12140) [0x2d7a6df6c]
+  108  ??? (libsystem_kernel.dylib + 28000) [0x250dc9d60]
+
+
+Powerstats for:   STExtractionService [470]
+UUID:             096A3F7A-8DFB-379B-821A-38F8F1DA9F27
+Path:             /System/Library/PrivateFrameworks/StreamingExtractor.framework/XPCServices/STExtractionService.xpc/STExtractionService
+Identifier:       com.apple.STExtractionService
+Version:          1.0 (1)
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Resource Coalition: 113 samples "com.apple.nsurlsessiond"(335)
+On Behalf Of:     113 samples nsurlsessiond [204] (113 samples originated by nsurlsessiond [204])
+Architecture:     arm64
+Parent:           launchd [1]
+UID:              501
+Sudden Term:      Tracked (allows idle exit)
+Footprint:        7696 KB -> 18.20 MB (+10.69 MB) (max 20.52 MB )
+Start time:       2026-09-10 21:53:32.241 +0500
+End time:         2026-09-10 21:58:43.093 +0500
+Num samples:      113 (15%)
+Energy:           1989.04 uWh
+Num threads:      4
+Primary state:    95 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS Default, Override Thread QoS Unspecified, e-core
+User Activity:    49 samples Idle, 64 samples Active
+Power Source:     0 samples on Battery, 113 samples on AC
+  113  ??? (libsystem_pthread.dylib + 2320) [0x199406910]
+    113  ??? (libsystem_pthread.dylib + 4664) [0x199407238]
+      113  ??? (libdispatch.dylib + 87728) [0x1c79cf6b0]
+        113  ??? (libdispatch.dylib + 89228) [0x1c79cfc8c]
+          113  ??? (libdispatch.dylib + 46192) [0x1c79c5470]
+            113  ??? (libdispatch.dylib + 43132) [0x1c79c487c]
+              113  ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                113  ??? (libdispatch.dylib + 7372) [0x1c79bbccc]
+                  113  ??? (STExtractionService + 11728) [0x1026d6dd0]
+                    113  ??? (<EEF45031-9879-37CC-B765-29F11739072A> + 9672) [0x1027e25c8]
+                      113  ??? (Foundation + 187388) [0x1999d7bfc]
+                        113  ??? (<EEF45031-9879-37CC-B765-29F11739072A> + 10400) [0x1027e28a0]
+                          113  ??? (libAppleArchive.dylib + 75804) [0x2d7a7d81c]
+                            113  ??? (libAppleArchive.dylib + 354112) [0x2d7ac1740]
+                              113  ??? (libAppleArchive.dylib + 67000) [0x2d7a7b5b8]
+                                113  ??? (libAppleArchive.dylib + 230720) [0x2d7aa3540]
+                                  110  ??? (libAppleArchive.dylib + 67776) [0x2d7a7b8c0]
+                                    110  ??? (libAppleArchive.dylib + 273452) [0x2d7aadc2c]
+                                      108  ??? (libAppleArchive.dylib + 12140) [0x2d7a6df6c]
+                                        108  ??? (libsystem_kernel.dylib + 28000) [0x250dc9d60]
+                                          91   <on behalf of nsurlsessiond [204] (originated by nsurlsessiond [204])>
+                                          17   <on behalf of nsurlsessiond [204] (originated by nsurlsessiond [204]), Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                                      2    ??? (libAppleArchive.dylib + 12436) [0x2d7a6e094]
+                                        2    ??? (libsystem_kernel.dylib + 28000) [0x250dc9d60]
+                                          1    <on behalf of nsurlsessiond [204] (originated by nsurlsessiond [204])>
+                                          1    <on behalf of nsurlsessiond [204] (originated by nsurlsessiond [204]), Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                                  3    ??? (libAppleArchive.dylib + 68652) [0x2d7a7bc2c]
+                                    2    ??? (libAppleArchive.dylib + 272500) [0x2d7aad874]
+                                      2    ??? (libAppleArchive.dylib + 139436) [0x2d7a8d0ac]
+                                        2    ??? (libsystem_kernel.dylib + 26516) [0x250dc9794]
+                                          2    <on behalf of nsurlsessiond [204] (originated by nsurlsessiond [204])>
+                                    1    ??? (libAppleArchive.dylib + 272572) [0x2d7aad8bc]
+                                      1    ??? (libsystem_kernel.dylib + 25664) [0x250dc9440]
+                                        1    <on behalf of nsurlsessiond [204] (originated by nsurlsessiond [204])>
+
+  Binary Images:
+           0x1026d4000 -                ???  com.apple.STExtractionService 1.0 (1) <096A3F7A-8DFB-379B-821A-38F8F1DA9F27>  /System/Library/PrivateFrameworks/StreamingExtractor.framework/XPCServices/STExtractionService.xpc/STExtractionService
+           0x1027e0000 -                ???  ???                                   <EEF45031-9879-37CC-B765-29F11739072A>
+           0x199406000 -        0x199412247  libsystem_pthread.dylib               <694C772A-A9F8-3AC0-9417-7C304043A771>  /usr/lib/system/libsystem_pthread.dylib
+           0x1999aa000 -        0x19aae0153  Foundation                            <C041F1D0-5EF1-30A3-BF96-830976173B56>  /System/Library/Frameworks/Foundation.framework/Foundation
+           0x1c79ba000 -        0x1c7a00d17  libdispatch.dylib                     <8CDF4610-F6A5-39CB-94BF-687FE349A4BE>  /usr/lib/system/libdispatch.dylib
+           0x250dc3000 -        0x250e0021b  libsystem_kernel.dylib                <5A7DC6BE-551B-3B29-A928-A4079A90D4D2>  /usr/lib/system/libsystem_kernel.dylib
+           0x2d7a6b000 -        0x2d7b03c0b  libAppleArchive.dylib                 <E943DD2A-E11B-38A4-BB86-A3C260E498C4>  /usr/lib/libAppleArchive.dylib
+
+
+Powerstats for:   BackgroundShortcutRunner
+UUID:             69B603BF-B107-3B1A-B6C3-B804DE34060E
+Path:             /System/Library/PrivateFrameworks/WorkflowKit.framework/XPCServices/BackgroundShortcutRunner.xpc/BackgroundShortcutRunner
+Identifier:       com.apple.WorkflowKit.BackgroundShortcutRunner
+Version:          10.0 (5037.109)
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Resource Coalition: 111 samples "com.apple.siriactionsd"(249)
+On Behalf Of:     111 samples UNKNOWN [161] (111 samples originated by UNKNOWN [161])
+Architecture:     arm64
+Pageins:          2211 pages
+Start time:       2026-09-10 21:54:24.380 +0500
+End time:         2026-09-10 21:55:29.514 +0500
+Num samples:      111 (14%)
+Energy:           4069.70 uWh
+Primary state:    111 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS Default, Override Thread QoS Unspecified, e-core
+User Activity:    85 samples Idle, 26 samples Active
+Power Source:     0 samples on Battery, 111 samples on AC
+  111  ??? (libswift_Concurrency.dylib + 30860) [0x19aae888c]
+    103  ??? (BackgroundShortcutRunner + 16924) [0x104fb021c]
+      56   ??? (BackgroundShortcutRunner + 383736) [0x105009af8]
+        56   ??? (BackgroundShortcutRunner + 16924) [0x104fb021c]
+          56   ??? (BackgroundShortcutRunner + 221672) [0x104fe21e8]
+            55   ??? (BackgroundShortcutRunner + 223880) [0x104fe2a88]
+              55   ??? (BackgroundShortcutRunner + 286208) [0x104ff1e00]
+                55   ??? (ToolKit + 2793560) [0x1d957a058]
+                  55   ??? (ToolKit + 2783440) [0x1d95778d0]
+                    55   ??? (ToolKit + 733524) [0x1d9383154]
+                      55   ??? (GRDBInternal + 306484) [0x1c6f7dd34]
+                        55   ??? (GRDBInternal + 306108) [0x1c6f7dbbc]
+                          55   ??? (GRDBInternal + 14272) [0x1c6f367c0]
+                            55   ??? (libswiftDispatch.dylib + 4968) [0x1a8695368]
+                              55   ??? (libswiftDispatch.dylib + 5116) [0x1a86953fc]
+                                55   ??? (libswiftDispatch.dylib + 5560) [0x1a86955b8]
+                                  55   ??? (libswiftDispatch.dylib + 5920) [0x1a8695720]
+                                    55   ??? (libswiftDispatch.dylib + 6156) [0x1a869580c]
+                                      55   ??? (libdispatch.dylib + 73704) [0x1c79cbfe8]
+                                        55   ??? (libdispatch.dylib + 75264) [0x1c79cc600]
+                                          55   ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                            55   ??? (libswiftDispatch.dylib + 6700) [0x1a8695a2c]
+                                              55   ??? (libswiftDispatch.dylib + 5956) [0x1a8695744]
+                                                55   ??? (libswiftDispatch.dylib + 6448) [0x1a8695930]
+                                                  55   ??? (libswiftDispatch.dylib + 6592) [0x1a86959c0]
+                                                    55   ??? (libswiftDispatch.dylib + 6660) [0x1a8695a04]
+                                                      55   ??? (GRDBInternal + 16356) [0x1c6f36fe4]
+                                                        55   ??? (GRDBInternal + 16152) [0x1c6f36f18]
+                                                          55   ??? (ToolKit + 733416) [0x1d93830e8]
+                                                            55   ??? (ToolKit + 89804) [0x1d92e5ecc]
+                                                              55   ??? (ToolKit + 2796228) [0x1d957aac4]
+                                                                55   ??? (ToolKit + 2793988) [0x1d957a204]
+                                                                  55   ??? (BackgroundShortcutRunner + 384324) [0x105009d44]
+                                                                    14   ??? (BackgroundShortcutRunner + 325364) [0x104ffb6f4]
+                                                                      14   ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                        14   ??? (BackgroundShortcutRunner + 384780) [0x105009f0c]
+                                                                          14   ??? (BackgroundShortcutRunner + 329816) [0x104ffc858]
+                                                                            14   ??? (ToolKit + 4903980) [0x1d977d42c]
+                                                                              14   ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                14   ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  14   ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    14   ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      11   ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        8    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          8    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            8    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              8    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                8    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        3    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          2    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                            2    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              2    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                2    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  2    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                          1    ??? (libsqlite3.dylib + 317456) [0x1b71b7810]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                      3    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                        2    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          2    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            2    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              2    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                2    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        1    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          1    ??? (libsqlite3.dylib + 317604) [0x1b71b78a4]
+                                                                                            1    ??? (libsqlite3.dylib + 356908) [0x1b71c122c]
+                                                                                              1    ??? (libsqlite3.dylib + 707728) [0x1b7216c90]
+                                                                                                1    ??? (libsqlite3.dylib + 777360) [0x1b7227c90]
+                                                                                                  1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                    1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                      1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                        1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                    8    ??? (BackgroundShortcutRunner + 324760) [0x104ffb498]
+                                                                      8    ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                        8    ??? (BackgroundShortcutRunner + 384752) [0x105009ef0]
+                                                                          8    ??? (BackgroundShortcutRunner + 329392) [0x104ffc6b0]
+                                                                            8    ??? (ToolKit + 4899860) [0x1d977c414]
+                                                                              8    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                8    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  8    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    8    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      5    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        4    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          4    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            4    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              4    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                4    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        1    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          1    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                      3    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                        3    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          2    ??? (libsqlite3.dylib + 317604) [0x1b71b78a4]
+                                                                                            1    ??? (libsqlite3.dylib + 356908) [0x1b71c122c]
+                                                                                              1    ??? (libsqlite3.dylib + 707728) [0x1b7216c90]
+                                                                                                1    ??? (libsqlite3.dylib + 777360) [0x1b7227c90]
+                                                                                                  1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                    1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                      1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                        1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                            1    ??? (libsqlite3.dylib + 354236) [0x1b71c07bc]
+                                                                                              1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                          1    ??? (libsqlite3.dylib + 317456) [0x1b71b7810]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                    7    ??? (BackgroundShortcutRunner + 325144) [0x104ffb618]
+                                                                      7    ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                        7    ??? (BackgroundShortcutRunner + 384808) [0x105009f28]
+                                                                          7    ??? (BackgroundShortcutRunner + 329696) [0x104ffc7e0]
+                                                                            7    ??? (ToolKit + 4899988) [0x1d977c494]
+                                                                              7    ??? (ToolKit + 4945772) [0x1d978776c]
+                                                                                7    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                  7    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                    7    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                      7    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                        7    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                          4    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                            4    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              4    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                4    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  4    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                          3    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                            2    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                              2    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                2    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  2    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    2    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                            1    ??? (libsqlite3.dylib + 317456) [0x1b71b7810]
+                                                                                              1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                    7    ??? (BackgroundShortcutRunner + 321624) [0x104ffa858]
+                                                                      7    ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                        7    ??? (BackgroundShortcutRunner + 384476) [0x105009ddc]
+                                                                          7    ??? (BackgroundShortcutRunner + 327560) [0x104ffbf88]
+                                                                            7    ??? (ToolKit + 4899192) [0x1d977c178]
+                                                                              7    ??? (GRDBInternal + 1070992) [0x1c7038790]
+                                                                                7    ??? (GRDBInternal + 1071624) [0x1c7038a08]
+                                                                                  7    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    7    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      6    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        4    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          4    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            4    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              4    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                4    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        2    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          2    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                            2    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              2    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                2    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  2    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                      1    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                        1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                    6    ??? (BackgroundShortcutRunner + 323236) [0x104ffaea4]
+                                                                      6    ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                        6    ??? (BackgroundShortcutRunner + 384648) [0x105009e88]
+                                                                          6    ??? (BackgroundShortcutRunner + 329016) [0x104ffc538]
+                                                                            6    ??? (ToolKit + 4899724) [0x1d977c38c]
+                                                                              6    ??? (ToolKit + 4945544) [0x1d9787688]
+                                                                                6    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                  6    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                    6    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                      6    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                        5    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                          3    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                            1    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                              1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                            1    ??? (libsqlite3.dylib + 322872) [0x1b71b8d38]
+                                                                                              1    ??? (libsqlite3.dylib + 354236) [0x1b71c07bc]
+                                                                                                1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                  1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                    1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                      1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                            1    ??? (libsqlite3.dylib + 317456) [0x1b71b7810]
+                                                                                              1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                          2    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                            2    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              2    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                2    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  2    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        1    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                          1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                    6    ??? (BackgroundShortcutRunner + 322916) [0x104ffad64]
+                                                                      6    ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                        6    ??? (BackgroundShortcutRunner + 384560) [0x105009e30]
+                                                                          6    ??? (BackgroundShortcutRunner + 328176) [0x104ffc1f0]
+                                                                            6    ??? (ToolKit + 4903432) [0x1d977d208]
+                                                                              6    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                6    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  6    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    6    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      5    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        3    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          3    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            3    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              3    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                3    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        2    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          1    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                          1    ??? (libsqlite3.dylib + 317456) [0x1b71b7810]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                      1    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                        1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                    4    ??? (BackgroundShortcutRunner + 325880) [0x104ffb8f8]
+                                                                      4    ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                        4    ??? (BackgroundShortcutRunner + 384836) [0x105009f44]
+                                                                          4    ??? (BackgroundShortcutRunner + 330036) [0x104ffc934]
+                                                                            4    ??? (ToolKit + 4899356) [0x1d977c21c]
+                                                                              4    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                4    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  4    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    4    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      4    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        3    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          3    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            3    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              3    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                3    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        1    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          1    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                    3    ??? (BackgroundShortcutRunner + 323184) [0x104ffae70]
+                                                                      3    ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                        3    ??? (BackgroundShortcutRunner + 384620) [0x105009e6c]
+                                                                          3    ??? (BackgroundShortcutRunner + 328524) [0x104ffc34c]
+                                                                            3    ??? (ToolKit + 4899572) [0x1d977c2f4]
+                                                                              3    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                3    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  3    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    3    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      3    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        3    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          3    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            3    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              3    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                3    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+            1    ??? (BackgroundShortcutRunner + 223392) [0x104fe28a0]
+              1    ??? (BackgroundShortcutRunner + 38924) [0x104fb580c]
+                1    ??? (ToolKit + 2793560) [0x1d957a058]
+                  1    ??? (ToolKit + 2783440) [0x1d95778d0]
+                    1    ??? (ToolKit + 733524) [0x1d9383154]
+                      1    ??? (GRDBInternal + 306484) [0x1c6f7dd34]
+                        1    ??? (GRDBInternal + 306108) [0x1c6f7dbbc]
+                          1    ??? (GRDBInternal + 14272) [0x1c6f367c0]
+                            1    ??? (libswiftDispatch.dylib + 4968) [0x1a8695368]
+                              1    ??? (libswiftDispatch.dylib + 5116) [0x1a86953fc]
+                                1    ??? (libswiftDispatch.dylib + 5560) [0x1a86955b8]
+                                  1    ??? (libswiftDispatch.dylib + 5920) [0x1a8695720]
+                                    1    ??? (libswiftDispatch.dylib + 6156) [0x1a869580c]
+                                      1    ??? (libdispatch.dylib + 73704) [0x1c79cbfe8]
+                                        1    ??? (libdispatch.dylib + 75264) [0x1c79cc600]
+                                          1    ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                            1    ??? (libswiftDispatch.dylib + 6700) [0x1a8695a2c]
+                                              1    ??? (libswiftDispatch.dylib + 5956) [0x1a8695744]
+                                                1    ??? (libswiftDispatch.dylib + 6448) [0x1a8695930]
+                                                  1    ??? (libswiftDispatch.dylib + 6592) [0x1a86959c0]
+                                                    1    ??? (libswiftDispatch.dylib + 6660) [0x1a8695a04]
+                                                      1    ??? (GRDBInternal + 16356) [0x1c6f36fe4]
+                                                        1    ??? (GRDBInternal + 16152) [0x1c6f36f18]
+                                                          1    ??? (ToolKit + 733416) [0x1d93830e8]
+                                                            1    ??? (ToolKit + 89804) [0x1d92e5ecc]
+                                                              1    ??? (ToolKit + 2796228) [0x1d957aac4]
+                                                                1    ??? (ToolKit + 2793988) [0x1d957a204]
+                                                                  1    ??? (BackgroundShortcutRunner + 51584) [0x104fb8980]
+                                                                    1    ??? (BackgroundShortcutRunner + 44408) [0x104fb6d78]
+                                                                      1    ??? (WorkflowKit + 3921172) [0x1ec565514]
+                                                                        1    ??? (WorkflowKit + 3921856) [0x1ec5657c0]
+                                                                          1    ??? (WorkflowKit + 3922992) [0x1ec565c30]
+                                                                            1    ??? (WorkflowKit + 3923512) [0x1ec565e38]
+                                                                              1    ??? (ToolKit + 2796944) [0x1d957ad90]
+                                                                                1    ??? (ToolKit + 2786948) [0x1d9578684]
+                                                                                  1    ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                                    1    ??? (WorkflowKit + 3949168) [0x1ec56c270]
+                                                                                      1    ??? (WorkflowKit + 3931220) [0x1ec567c54]
+                                                                                        1    ??? (ToolKit + 4905692) [0x1d977dadc]
+                                                                                          1    ??? (GRDBInternal + 1070992) [0x1c7038790]
+                                                                                            1    ??? (GRDBInternal + 1071624) [0x1c7038a08]
+                                                                                              1    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                                1    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                                  1    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                                    1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                                      1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                        1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                          1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                            1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+      47   ??? (BackgroundShortcutRunner + 389372) [0x10500b0fc]
+        47   ??? (BackgroundShortcutRunner + 16924) [0x104fb021c]
+          36   ??? (BackgroundShortcutRunner + 196868) [0x104fdc104]
+            36   ??? (BackgroundShortcutRunner + 105228) [0x104fc5b0c]
+              36   ??? (ToolKit + 2793560) [0x1d957a058]
+                36   ??? (ToolKit + 2783440) [0x1d95778d0]
+                  36   ??? (ToolKit + 733524) [0x1d9383154]
+                    36   ??? (GRDBInternal + 306484) [0x1c6f7dd34]
+                      36   ??? (GRDBInternal + 306108) [0x1c6f7dbbc]
+                        36   ??? (GRDBInternal + 14272) [0x1c6f367c0]
+                          36   ??? (libswiftDispatch.dylib + 4968) [0x1a8695368]
+                            36   ??? (libswiftDispatch.dylib + 5116) [0x1a86953fc]
+                              36   ??? (libswiftDispatch.dylib + 5560) [0x1a86955b8]
+                                36   ??? (libswiftDispatch.dylib + 5920) [0x1a8695720]
+                                  36   ??? (libswiftDispatch.dylib + 6156) [0x1a869580c]
+                                    36   ??? (libdispatch.dylib + 73704) [0x1c79cbfe8]
+                                      36   ??? (libdispatch.dylib + 75264) [0x1c79cc600]
+                                        36   ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                          36   ??? (libswiftDispatch.dylib + 6700) [0x1a8695a2c]
+                                            36   ??? (libswiftDispatch.dylib + 5956) [0x1a8695744]
+                                              36   ??? (libswiftDispatch.dylib + 6448) [0x1a8695930]
+                                                36   ??? (libswiftDispatch.dylib + 6592) [0x1a86959c0]
+                                                  36   ??? (libswiftDispatch.dylib + 6660) [0x1a8695a04]
+                                                    36   ??? (GRDBInternal + 16356) [0x1c6f36fe4]
+                                                      36   ??? (GRDBInternal + 16152) [0x1c6f36f18]
+                                                        36   ??? (ToolKit + 733416) [0x1d93830e8]
+                                                          36   ??? (ToolKit + 89804) [0x1d92e5ecc]
+                                                            36   ??? (ToolKit + 2796228) [0x1d957aac4]
+                                                              36   ??? (ToolKit + 2793988) [0x1d957a204]
+                                                                36   ??? (BackgroundShortcutRunner + 115780) [0x104fc8444]
+                                                                  36   ??? (BackgroundShortcutRunner + 105576) [0x104fc5c68]
+                                                                    36   ??? (BackgroundShortcutRunner + 103512) [0x104fc5458]
+                                                                      36   ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                        36   ??? (BackgroundShortcutRunner + 115844) [0x104fc8484]
+                                                                          12   ??? (BackgroundShortcutRunner + 112168) [0x104fc7628]
+                                                                            12   ??? (ToolKit + 4913580) [0x1d977f9ac]
+                                                                              12   ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                12   ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  12   ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    12   ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      7    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                        6    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          6    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            6    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              6    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                6    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        1    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          1    ??? (libsqlite3.dylib + 317604) [0x1b71b78a4]
+                                                                                            1    ??? (libsqlite3.dylib + 354236) [0x1b71c07bc]
+                                                                                              1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                      5    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        4    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          4    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                            4    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              4    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                4    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  4    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                          8    ??? (BackgroundShortcutRunner + 112772) [0x104fc7884]
+                                                                            8    ??? (ToolKit + 4910636) [0x1d977ee2c]
+                                                                              8    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                8    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  8    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    8    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      6    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        4    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          4    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            4    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              4    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                4    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        2    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          1    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                          1    ??? (libsqlite3.dylib + 317456) [0x1b71b7810]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                      2    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                        1    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          1    ??? (libsqlite3.dylib + 317604) [0x1b71b78a4]
+                                                                                            1    ??? (libsqlite3.dylib + 354236) [0x1b71c07bc]
+                                                                                              1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                          7    ??? (BackgroundShortcutRunner + 109316) [0x104fc6b04]
+                                                                            7    ??? (ToolKit + 4911736) [0x1d977f278]
+                                                                              7    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                7    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  7    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    7    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      4    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                        4    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          4    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            4    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              4    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                4    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                      3    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        3    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          3    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                            3    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              3    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                3    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  3    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                          3    ??? (BackgroundShortcutRunner + 113684) [0x104fc7c14]
+                                                                            3    ??? (ToolKit + 4914068) [0x1d977fb94]
+                                                                              3    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                3    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  3    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    3    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      3    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        2    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          2    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            2    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              2    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                2    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        1    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          1    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                          2    ??? (BackgroundShortcutRunner + 110576) [0x104fc6ff0]
+                                                                            2    ??? (ToolKit + 4912780) [0x1d977f68c]
+                                                                              2    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                2    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  2    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    2    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      1    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                        1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                      1    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        1    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          1    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                          2    ??? (BackgroundShortcutRunner + 110324) [0x104fc6ef4]
+                                                                            2    ??? (ToolKit + 4912400) [0x1d977f510]
+                                                                              2    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                2    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  2    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    2    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      1    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                        1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                      1    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        1    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                          1    ??? (libsqlite3.dylib + 317456) [0x1b71b7810]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                          1    ??? (BackgroundShortcutRunner + 113956) [0x104fc7d24]
+                                                                            1    ??? (ToolKit + 4914328) [0x1d977fc98]
+                                                                              1    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                1    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                  1    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                    1    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                      1    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                        1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                          1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                            1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                              1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                          1    ??? (BackgroundShortcutRunner + 109504) [0x104fc6bc0]
+                                                                            1    ??? (WorkflowKit + 3921856) [0x1ec5657c0]
+                                                                              1    ??? (WorkflowKit + 3923200) [0x1ec565d00]
+                                                                                1    ??? (WorkflowKit + 3927948) [0x1ec566f8c]
+                                                                                  1    ??? (ToolKit + 2796944) [0x1d957ad90]
+                                                                                    1    ??? (ToolKit + 2786948) [0x1d9578684]
+                                                                                      1    ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                                        1    ??? (WorkflowKit + 3948892) [0x1ec56c15c]
+                                                                                          1    ??? (WorkflowKit + 3932832) [0x1ec5682a0]
+                                                                                            1    ??? (ToolKit + 4905692) [0x1d977dadc]
+                                                                                              1    ??? (GRDBInternal + 1070992) [0x1c7038790]
+                                                                                                1    ??? (GRDBInternal + 1071624) [0x1c7038a08]
+                                                                                                  1    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                                    1    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                                      1    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                                        1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                                          1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                            1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                              1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                                1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+          11   ??? (BackgroundShortcutRunner + 203668) [0x104fddb94]
+            11   ??? (BackgroundShortcutRunner + 93732) [0x104fc2e24]
+              11   ??? (BackgroundShortcutRunner + 102024) [0x104fc4e88]
+                11   ??? (ToolKit + 2793560) [0x1d957a058]
+                  11   ??? (ToolKit + 2783440) [0x1d95778d0]
+                    11   ??? (ToolKit + 733524) [0x1d9383154]
+                      11   ??? (GRDBInternal + 306484) [0x1c6f7dd34]
+                        11   ??? (GRDBInternal + 306108) [0x1c6f7dbbc]
+                          11   ??? (GRDBInternal + 14272) [0x1c6f367c0]
+                            11   ??? (libswiftDispatch.dylib + 4968) [0x1a8695368]
+                              11   ??? (libswiftDispatch.dylib + 5116) [0x1a86953fc]
+                                11   ??? (libswiftDispatch.dylib + 5560) [0x1a86955b8]
+                                  11   ??? (libswiftDispatch.dylib + 5920) [0x1a8695720]
+                                    11   ??? (libswiftDispatch.dylib + 6156) [0x1a869580c]
+                                      11   ??? (libdispatch.dylib + 73704) [0x1c79cbfe8]
+                                        11   ??? (libdispatch.dylib + 75264) [0x1c79cc600]
+                                          11   ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                            11   ??? (libswiftDispatch.dylib + 6700) [0x1a8695a2c]
+                                              11   ??? (libswiftDispatch.dylib + 5956) [0x1a8695744]
+                                                11   ??? (libswiftDispatch.dylib + 6448) [0x1a8695930]
+                                                  11   ??? (libswiftDispatch.dylib + 6592) [0x1a86959c0]
+                                                    11   ??? (libswiftDispatch.dylib + 6660) [0x1a8695a04]
+                                                      11   ??? (GRDBInternal + 16356) [0x1c6f36fe4]
+                                                        11   ??? (GRDBInternal + 16152) [0x1c6f36f18]
+                                                          11   ??? (ToolKit + 733416) [0x1d93830e8]
+                                                            11   ??? (ToolKit + 89804) [0x1d92e5ecc]
+                                                              11   ??? (ToolKit + 2796228) [0x1d957aac4]
+                                                                11   ??? (ToolKit + 2793988) [0x1d957a204]
+                                                                  11   ??? (BackgroundShortcutRunner + 116488) [0x104fc8708]
+                                                                    11   ??? (BackgroundShortcutRunner + 102596) [0x104fc50c4]
+                                                                      11   ??? (BackgroundShortcutRunner + 103512) [0x104fc5458]
+                                                                        11   ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                          11   ??? (BackgroundShortcutRunner + 115844) [0x104fc8484]
+                                                                            4    ??? (BackgroundShortcutRunner + 109316) [0x104fc6b04]
+                                                                              4    ??? (ToolKit + 4911736) [0x1d977f278]
+                                                                                4    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                  4    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                    4    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                      4    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                        3    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                          3    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                            2    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                              2    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                2    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  2    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    2    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                            1    ??? (libsqlite3.dylib + 317456) [0x1b71b7810]
+                                                                                              1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                        1    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                          1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                            2    ??? (BackgroundShortcutRunner + 112772) [0x104fc7884]
+                                                                              2    ??? (ToolKit + 4910636) [0x1d977ee2c]
+                                                                                2    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                  2    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                    2    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                      2    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                        2    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                          1    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                            1    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                              1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                          1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                            2    ??? (BackgroundShortcutRunner + 110576) [0x104fc6ff0]
+                                                                              2    ??? (ToolKit + 4912780) [0x1d977f68c]
+                                                                                2    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                  2    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                    2    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                      2    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                        2    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                          2    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                            2    ??? (libsqlite3.dylib + 323052) [0x1b71b8dec]
+                                                                                              2    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                2    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  2    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    2    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                            2    ??? (BackgroundShortcutRunner + 110324) [0x104fc6ef4]
+                                                                              2    ??? (ToolKit + 4912400) [0x1d977f510]
+                                                                                2    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                  2    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                    2    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                      2    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                        2    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                          2    ??? (libsqlite3.dylib + 328748) [0x1b71ba42c]
+                                                                                            1    ??? (libsqlite3.dylib + 322872) [0x1b71b8d38]
+                                                                                              1    ??? (libsqlite3.dylib + 356908) [0x1b71c122c]
+                                                                                                1    ??? (libsqlite3.dylib + 707728) [0x1b7216c90]
+                                                                                                  1    ??? (libsqlite3.dylib + 777464) [0x1b7227cf8]
+                                                                                                    1    ??? (libsqlite3.dylib + 720604) [0x1b7219edc]
+                                                                                                      1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                        1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                          1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                            1    ??? (libsqlite3.dylib + 317456) [0x1b71b7810]
+                                                                                              1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                            1    ??? (BackgroundShortcutRunner + 113684) [0x104fc7c14]
+                                                                              1    ??? (ToolKit + 4914068) [0x1d977fb94]
+                                                                                1    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                  1    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                    1    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                      1    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                        1    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                          1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                            1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                              1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                  1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+    4    ??? (ToolKit + 1018108) [0x1d93c88fc]
+      4    ??? (ToolKit + 1014184) [0x1d93c79a8]
+        4    ??? (ToolKit + 1012848) [0x1d93c7470]
+          4    ??? (ToolKit + 2792824) [0x1d9579d78]
+            4    ??? (ToolKit + 1018108) [0x1d93c88fc]
+              3    ??? (ToolKit + 2788740) [0x1d9578d84]
+                3    ??? (BackgroundShortcutRunner + 17768) [0x104fb0568]
+                  2    ??? (BackgroundShortcutRunner + 146912) [0x104fcfde0]
+                    2    ??? (BackgroundShortcutRunner + 171796) [0x104fd5f14]
+                      2    ??? (ToolKit + 2793560) [0x1d957a058]
+                        2    ??? (ToolKit + 2783440) [0x1d95778d0]
+                          2    ??? (ToolKit + 733524) [0x1d9383154]
+                            2    ??? (GRDBInternal + 306484) [0x1c6f7dd34]
+                              2    ??? (GRDBInternal + 306108) [0x1c6f7dbbc]
+                                2    ??? (GRDBInternal + 14272) [0x1c6f367c0]
+                                  2    ??? (libswiftDispatch.dylib + 4968) [0x1a8695368]
+                                    2    ??? (libswiftDispatch.dylib + 5116) [0x1a86953fc]
+                                      2    ??? (libswiftDispatch.dylib + 5560) [0x1a86955b8]
+                                        2    ??? (libswiftDispatch.dylib + 5920) [0x1a8695720]
+                                          2    ??? (libswiftDispatch.dylib + 6156) [0x1a869580c]
+                                            2    ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+                                              2    ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                                2    ??? (libswiftDispatch.dylib + 6700) [0x1a8695a2c]
+                                                  2    ??? (libswiftDispatch.dylib + 5956) [0x1a8695744]
+                                                    2    ??? (libswiftDispatch.dylib + 6448) [0x1a8695930]
+                                                      2    ??? (libswiftDispatch.dylib + 6592) [0x1a86959c0]
+                                                        2    ??? (libswiftDispatch.dylib + 6660) [0x1a8695a04]
+                                                          2    ??? (GRDBInternal + 16356) [0x1c6f36fe4]
+                                                            2    ??? (GRDBInternal + 16152) [0x1c6f36f18]
+                                                              2    ??? (ToolKit + 733416) [0x1d93830e8]
+                                                                2    ??? (ToolKit + 89804) [0x1d92e5ecc]
+                                                                  2    ??? (ToolKit + 2796228) [0x1d957aac4]
+                                                                    2    ??? (ToolKit + 2793988) [0x1d957a204]
+                                                                      2    ??? (BackgroundShortcutRunner + 382480) [0x105009610]
+                                                                        2    ??? (BackgroundShortcutRunner + 306476) [0x104ff6d2c]
+                                                                          2    ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                            2    ??? (BackgroundShortcutRunner + 382508) [0x10500962c]
+                                                                              2    ??? (BackgroundShortcutRunner + 307476) [0x104ff7114]
+                                                                                2    ??? (ToolKit + 3171060) [0x1d95d62f4]
+                                                                                  1    ??? (ToolKit + 3177300) [0x1d95d7b54]
+                                                                                    1    ??? (ToolKit + 4903980) [0x1d977d42c]
+                                                                                      1    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                        1    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                          1    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                            1    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                              1    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                                1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                                  1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                    1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                      1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                        1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                                                                                  1    ??? (ToolKit + 3175092) [0x1d95d72b4]
+                                                                                    1    ??? (ToolKit + 4899988) [0x1d977c494]
+                                                                                      1    ??? (ToolKit + 4945772) [0x1d978776c]
+                                                                                        1    ??? (GRDBInternal + 338324) [0x1c6f85994]
+                                                                                          1    ??? (GRDBInternal + 338144) [0x1c6f858e0]
+                                                                                            1    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                              1    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                                1    ??? (libsqlite3.dylib + 209468) [0x1b719d23c]
+                                                                                                  1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                                    1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                      1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                        1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                          1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+                  1    ??? (BackgroundShortcutRunner + 145056) [0x104fcf6a0]
+                    1    ??? (BackgroundShortcutRunner + 164412) [0x104fd423c]
+                      1    ??? (BackgroundShortcutRunner + 208124) [0x104fdecfc]
+                        1    ??? (ToolKit + 2793560) [0x1d957a058]
+                          1    ??? (ToolKit + 2783440) [0x1d95778d0]
+                            1    ??? (ToolKit + 733524) [0x1d9383154]
+                              1    ??? (GRDBInternal + 306484) [0x1c6f7dd34]
+                                1    ??? (GRDBInternal + 306108) [0x1c6f7dbbc]
+                                  1    ??? (GRDBInternal + 14272) [0x1c6f367c0]
+                                    1    ??? (libswiftDispatch.dylib + 4968) [0x1a8695368]
+                                      1    ??? (libswiftDispatch.dylib + 5116) [0x1a86953fc]
+                                        1    ??? (libswiftDispatch.dylib + 5560) [0x1a86955b8]
+                                          1    ??? (libswiftDispatch.dylib + 5920) [0x1a8695720]
+                                            1    ??? (libswiftDispatch.dylib + 6156) [0x1a869580c]
+                                              1    ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+                                                1    ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                                  1    ??? (libswiftDispatch.dylib + 6700) [0x1a8695a2c]
+                                                    1    ??? (libswiftDispatch.dylib + 5956) [0x1a8695744]
+                                                      1    ??? (libswiftDispatch.dylib + 6448) [0x1a8695930]
+                                                        1    ??? (libswiftDispatch.dylib + 6592) [0x1a86959c0]
+                                                          1    ??? (libswiftDispatch.dylib + 6660) [0x1a8695a04]
+                                                            1    ??? (GRDBInternal + 16356) [0x1c6f36fe4]
+                                                              1    ??? (GRDBInternal + 16152) [0x1c6f36f18]
+                                                                1    ??? (ToolKit + 733416) [0x1d93830e8]
+                                                                  1    ??? (ToolKit + 89804) [0x1d92e5ecc]
+                                                                    1    ??? (ToolKit + 2796228) [0x1d957aac4]
+                                                                      1    ??? (ToolKit + 2793988) [0x1d957a204]
+                                                                        1    ??? (BackgroundShortcutRunner + 381636) [0x1050092c4]
+                                                                          1    ??? (BackgroundShortcutRunner + 337244) [0x104ffe55c]
+                                                                            1    ??? (ToolKit + 2786692) [0x1d9578584]
+                                                                              1    ??? (BackgroundShortcutRunner + 381664) [0x1050092e0]
+                                                                                1    ??? (BackgroundShortcutRunner + 339952) [0x104ffeff0]
+                                                                                  1    ??? (ToolKit + 4944780) [0x1d978738c]
+                                                                                    1    ??? (GRDBInternal + 1070992) [0x1c7038790]
+                                                                                      1    ??? (GRDBInternal + 1071624) [0x1c7038a08]
+                                                                                        1    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                                          1    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                                            1    ??? (libsqlite3.dylib + 220316) [0x1b719fc9c]
+                                                                                              1    ??? (libsqlite3.dylib + 328664) [0x1b71ba3d8]
+                                                                                                1    ??? (libsqlite3.dylib + 716472) [0x1b7218eb8]
+                                                                                                  1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                    1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                      1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+              1    ??? (ToolKit + 2789040) [0x1d9578eb0]
+                1    ??? (ToolKit + 157308) [0x1d92f667c]
+                  1    ??? (GRDBInternal + 306484) [0x1c6f7dd34]
+                    1    ??? (GRDBInternal + 306108) [0x1c6f7dbbc]
+                      1    ??? (GRDBInternal + 14272) [0x1c6f367c0]
+                        1    ??? (libswiftDispatch.dylib + 4968) [0x1a8695368]
+                          1    ??? (libswiftDispatch.dylib + 5116) [0x1a86953fc]
+                            1    ??? (libswiftDispatch.dylib + 5560) [0x1a86955b8]
+                              1    ??? (libswiftDispatch.dylib + 5920) [0x1a8695720]
+                                1    ??? (libswiftDispatch.dylib + 6156) [0x1a869580c]
+                                  1    ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+                                    1    ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                      1    ??? (libswiftDispatch.dylib + 6700) [0x1a8695a2c]
+                                        1    ??? (libswiftDispatch.dylib + 5956) [0x1a8695744]
+                                          1    ??? (libswiftDispatch.dylib + 6448) [0x1a8695930]
+                                            1    ??? (libswiftDispatch.dylib + 6592) [0x1a86959c0]
+                                              1    ??? (libswiftDispatch.dylib + 6660) [0x1a8695a04]
+                                                1    ??? (GRDBInternal + 16356) [0x1c6f36fe4]
+                                                  1    ??? (GRDBInternal + 16152) [0x1c6f36f18]
+                                                    1    ??? (ToolKit + 87772) [0x1d92e56dc]
+                                                      1    ??? (ToolKit + 89804) [0x1d92e5ecc]
+                                                        1    ??? (ToolKit + 171236) [0x1d92f9ce4]
+                                                          1    ??? (GRDBInternal + 83576) [0x1c6f47678]
+                                                            1    ??? (GRDBInternal + 17108) [0x1c6f372d4]
+                                                              1    ??? (GRDBInternal + 11748) [0x1c6f35de4]
+                                                                1    ??? (GRDBInternal + 50664) [0x1c6f3f5e8]
+                                                                  1    ??? (libsqlite3.dylib + 190468) [0x1b7198804]
+                                                                    1    ??? (libsqlite3.dylib + 235476) [0x1b71a37d4]
+                                                                      1    ??? (libsqlite3.dylib + 93984) [0x1b7180f20]
+                                                                        1    ??? (libsqlite3.dylib + 261960) [0x1b71a9f48]
+                                                                          1    ??? (libsqlite3.dylib + 263060) [0x1b71aa394]
+                                                                            1    ??? (libsqlite3.dylib + 331368) [0x1b71bae68]
+                                                                              1    ??? (libsqlite3.dylib + 720604) [0x1b7219edc]
+                                                                                1    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                  1    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                    1    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+    4    ??? (VoiceShortcutClient + 153104) [0x1cc194610]
+      4    ??? (VoiceShortcutClient + 153312) [0x1cc1946e0]
+        4    ??? (VoiceShortcutClient + 153100) [0x1cc19460c]
+          4    ??? (VoiceShortcutClient + 1158296) [0x1cc289c98]
+            4    ??? (VoiceShortcutClient + 153104) [0x1cc194610]
+              4    ??? (VoiceShortcutClient + 1162728) [0x1cc28ade8]
+                4    ??? (ToolKit + 1018108) [0x1d93c88fc]
+                  4    ??? (ToolKit + 4869628) [0x1d9774dfc]
+                    4    ??? (BackgroundShortcutRunner + 16924) [0x104fb021c]
+                      4    ??? (BackgroundShortcutRunner + 131404) [0x104fcc14c]
+                        4    ??? (ToolKit + 3628820) [0x1d9645f14]
+                          4    ??? (libswiftDispatch.dylib + 4968) [0x1a8695368]
+                            4    ??? (libswiftDispatch.dylib + 5116) [0x1a86953fc]
+                              4    ??? (libswiftDispatch.dylib + 5560) [0x1a86955b8]
+                                4    ??? (libswiftDispatch.dylib + 5920) [0x1a8695720]
+                                  4    ??? (libswiftDispatch.dylib + 6156) [0x1a869580c]
+                                    4    ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+                                      4    ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                        4    ??? (libswiftDispatch.dylib + 6700) [0x1a8695a2c]
+                                          4    ??? (libswiftDispatch.dylib + 5956) [0x1a8695744]
+                                            4    ??? (libswiftDispatch.dylib + 6448) [0x1a8695930]
+                                              4    ??? (libswiftDispatch.dylib + 6592) [0x1a86959c0]
+                                                4    ??? (libswiftDispatch.dylib + 6660) [0x1a8695a04]
+                                                  4    ??? (ToolKit + 3634436) [0x1d9647504]
+                                                    4    ??? (ToolKit + 3633508) [0x1d9647164]
+                                                      4    ??? (ToolKit + 3634732) [0x1d964762c]
+                                                        4    ??? (GRDBInternal + 306108) [0x1c6f7dbbc]
+                                                          4    ??? (GRDBInternal + 14272) [0x1c6f367c0]
+                                                            4    ??? (libswiftDispatch.dylib + 4968) [0x1a8695368]
+                                                              4    ??? (libswiftDispatch.dylib + 5116) [0x1a86953fc]
+                                                                4    ??? (libswiftDispatch.dylib + 5560) [0x1a86955b8]
+                                                                  4    ??? (libswiftDispatch.dylib + 5920) [0x1a8695720]
+                                                                    4    ??? (libswiftDispatch.dylib + 6156) [0x1a869580c]
+                                                                      4    ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+                                                                        4    ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                                                          4    ??? (libswiftDispatch.dylib + 6700) [0x1a8695a2c]
+                                                                            4    ??? (libswiftDispatch.dylib + 5956) [0x1a8695744]
+                                                                              4    ??? (libswiftDispatch.dylib + 6448) [0x1a8695930]
+                                                                                4    ??? (libswiftDispatch.dylib + 6592) [0x1a86959c0]
+                                                                                  4    ??? (libswiftDispatch.dylib + 6660) [0x1a8695a04]
+                                                                                    4    ??? (GRDBInternal + 16356) [0x1c6f36fe4]
+                                                                                      4    ??? (GRDBInternal + 16152) [0x1c6f36f18]
+                                                                                        4    ??? (ToolKit + 3637496) [0x1d96480f8]
+                                                                                          4    ??? (libsqlite3.dylib + 572232) [0x1b71f5b48]
+                                                                                            4    ??? (libsqlite3.dylib + 1233348) [0x1b72971c4]
+                                                                                              4    ??? (libsqlite3.dylib + 412596) [0x1b71cebb4]
+                                                                                                4    ??? (libsqlite3.dylib + 332272) [0x1b71bb1f0]
+                                                                                                  4    ??? (libsystem_kernel.dylib + 27740) [0x250dc9c5c]
+                                                                                                    4    <on behalf of UNKNOWN [161] (originated by UNKNOWN [161])>
+
+  Binary Images:
+           0x104fac000 -                ???  com.apple.WorkflowKit.BackgroundShortcutRunner 10.0 (5037.109) <69B603BF-B107-3B1A-B6C3-B804DE34060E>  /System/Library/PrivateFrameworks/WorkflowKit.framework/XPCServices/BackgroundShortcutRunner.xpc/BackgroundShortcutRunner
+           0x19aae1000 -        0x19ab6d3b7  libswift_Concurrency.dylib                                     <1672554C-5C48-3600-AEF8-97F330B62C02>  /usr/lib/swift/libswift_Concurrency.dylib
+           0x1a8694000 -        0x1a86a9d4f  libswiftDispatch.dylib                                         <E582289F-3AA6-3BB7-B77D-53420EFB6CD7>  /usr/lib/swift/libswiftDispatch.dylib
+           0x1b716a000 -        0x1b732276f  libsqlite3.dylib                                               <4246DE1C-A475-3951-AC26-C8941180588A>  /usr/lib/libsqlite3.dylib
+           0x1c6f33000 -        0x1c70a8867  GRDBInternal                                                   <1CA56EB6-062E-38B4-8F13-2F59F1A924CA>  /System/Library/PrivateFrameworks/GRDBInternal.framework/GRDBInternal
+           0x1c79ba000 -        0x1c7a00d17  libdispatch.dylib                                              <8CDF4610-F6A5-39CB-94BF-687FE349A4BE>  /usr/lib/system/libdispatch.dylib
+           0x1cc16f000 -        0x1cc31dd87  VoiceShortcutClient                                            <8120B27D-F746-3ED9-952A-3DABA9E808CB>  /System/Library/PrivateFrameworks/VoiceShortcutClient.framework/VoiceShortcutClient
+           0x1d92d0000 -        0x1d98dff5f  ToolKit                                                        <F74F7E14-DA11-3BC4-BB36-D0253F7B72A9>  /System/Library/PrivateFrameworks/ToolKit.framework/ToolKit
+           0x1ec1a8000 -        0x1ecc2abe3  WorkflowKit                                                    <0B494E76-370B-3BDA-B938-D183FA64C518>  /System/Library/PrivateFrameworks/WorkflowKit.framework/WorkflowKit
+           0x250dc3000 -        0x250e0021b  libsystem_kernel.dylib                                         <5A7DC6BE-551B-3B29-A928-A4079A90D4D2>  /usr/lib/system/libsystem_kernel.dylib
+
+
+Powerstats for:   com.apple.migrationpluginwrapper
+UUID:             147183D4-566A-35EF-8538-654C56817725
+Path:             /System/Library/PrivateFrameworks/DataMigration.framework/XPCServices/com.apple.migrationpluginwrapper.xpc/com.apple.migrationpluginwrapper
+Identifier:       com.apple.migrationpluginwrapper
+Version:          1.0 (1)
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Resource Coalition: 94 samples "com.apple.migrationpluginwrapper"(437)
+On Behalf Of:     94 samples UNKNOWN [136] (94 samples originated by UNKNOWN [75])
+Architecture:     arm64
+Pageins:          4699 pages
+Start time:       2026-09-10 21:52:42.973 +0500
+End time:         2026-09-10 21:53:24.920 +0500
+Num samples:      94 (12%)
+Energy:           4064.60 uWh
+Primary state:    92 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated, Override Thread QoS Unspecified, p-core
+User Activity:    0 samples Idle, 94 samples Active
+Power Source:     0 samples on Battery, 94 samples on AC
+  94  ??? (libsystem_pthread.dylib + 2320) [0x199406910]
+    94  ??? (libsystem_pthread.dylib + 4664) [0x199407238]
+      94  ??? (libdispatch.dylib + 87728) [0x1c79cf6b0]
+        94  ??? (libdispatch.dylib + 89228) [0x1c79cfc8c]
+          94  ??? (libdispatch.dylib + 46192) [0x1c79c5470]
+            92  ??? (libdispatch.dylib + 42768) [0x1c79c4710]
+              92  ??? (libdispatch.dylib + 130340) [0x1c79d9d24]
+                92  ??? (libdispatch.dylib + 42768) [0x1c79c4710]
+                  92  ??? (libdispatch.dylib + 126088) [0x1c79d8c88]
+                    92  ??? (libdispatch.dylib + 114684) [0x1c79d5ffc]
+                      92  ??? (libxpc.dylib + 118588) [0x199481f3c]
+                        92  ??? (libxpc.dylib + 109204) [0x19947fa94]
+                          92  ??? (DataMigration + 5136) [0x2784ca410]
+                            92  ??? (com.apple.migrationpluginwrapper + 13376) [0x1001a7440]
+                              92  ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+                                92  ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                  92  ??? (com.apple.migrationpluginwrapper + 14088) [0x1001a7708]
+                                    75  ??? (<422E1A41-B188-314A-ABE2-C6098B6B0A69> + 3424) [0x1002c0d60]
+                                      73  ??? (<422E1A41-B188-314A-ABE2-C6098B6B0A69> + 7504) [0x1002c1d50]
+                                        70  ??? (<422E1A41-B188-314A-ABE2-C6098B6B0A69> + 6912) [0x1002c1b00]
+                                          67  ??? (libcopyfile.dylib + 4836) [0x2dbb2b2e4]
+                                            40  ??? (libcopyfile.dylib + 10836) [0x2dbb2ca54]
+                                              39  ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                                37  <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                                2   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75]), e-core>
+                                              1   ??? (libcopyfile.dylib + 19528) [0x2dbb2ec48]
+                                                1   ??? (libsystem_kernel.dylib + 23944) [0x250dc8d88]
+                                                  1   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                            27  ??? (libsystem_kernel.dylib + 31320) [0x250dcaa58]
+                                              25  <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                              2   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75]), e-core>
+                                          2   ??? (libcopyfile.dylib + 4924) [0x2dbb2b33c]
+                                            2   ??? (libsystem_c.dylib + 186120) [0x1a0df8708]
+                                              2   ??? (libsystem_kernel.dylib + 25796) [0x250dc94c4]
+                                                2   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                          1   ??? (libcopyfile.dylib + 4748) [0x2dbb2b28c]
+                                            1   ??? (libcopyfile.dylib + 8480) [0x2dbb2c120]
+                                              1   ??? (libsystem_kernel.dylib + 21316) [0x250dc8344]
+                                                1   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                        3   ??? (<422E1A41-B188-314A-ABE2-C6098B6B0A69> + 6840) [0x1002c1ab8]
+                                          3   ??? (libcopyfile.dylib + 4748) [0x2dbb2b28c]
+                                            3   ??? (libsystem_kernel.dylib + 25664) [0x250dc9440]
+                                              3   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                      2   ??? (<422E1A41-B188-314A-ABE2-C6098B6B0A69> + 7528) [0x1002c1d68]
+                                        2   ??? (Foundation + 2162908) [0x199bba0dc]
+                                          2   ??? (Foundation + 4008816) [0x199d7cb70]
+                                            2   ??? (Foundation + 880828) [0x199a810bc]
+                                              2   ??? (Foundation + 881032) [0x199a81188]
+                                                2   ??? (libremovefile.dylib + 2744) [0x2dbca0ab8]
+                                                  2   ??? (libremovefile.dylib + 4244) [0x2dbca1094]
+                                                    2   ??? (libsystem_kernel.dylib + 23380) [0x250dc8b54]
+                                                      2   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                    17  ??? (<50133A82-9680-3B05-ACB5-B718EC80CA83> + 34228) [0x1034085b4]
+                                      17  ??? (<50133A82-9680-3B05-ACB5-B718EC80CA83> + 31324) [0x103407a5c]
+                                        17  ??? (CoreFoundation + 113340) [0x1994e2abc]
+                                          17  ??? (CoreFoundation + 69444) [0x1994d7f44]
+                                            17  ??? (<50133A82-9680-3B05-ACB5-B718EC80CA83> + 33104) [0x103408150]
+                                              16  ??? (<50133A82-9680-3B05-ACB5-B718EC80CA83> + 29508) [0x103407344]
+                                                14  ??? (<50133A82-9680-3B05-ACB5-B718EC80CA83> + 25876) [0x103406514]
+                                                  14  ??? (<50133A82-9680-3B05-ACB5-B718EC80CA83> + 23864) [0x103405d38]
+                                                    14  ??? (InstallCoordination + 236172) [0x1db670a8c]
+                                                      14  ??? (InstallCoordination + 241524) [0x1db671f74]
+                                                        14  ??? (InstallCoordination + 243200) [0x1db672600]
+                                                          13  ??? (InstallCoordination + 250120) [0x1db674108]
+                                                            13  ??? (InstallCoordination + 240008) [0x1db671988]
+                                                              13  ??? (IconFoundation + 92496) [0x24d4ad950]
+                                                                13  ??? (IconFoundation + 89976) [0x24d4acf78]
+                                                                  9   ??? (IconFoundation + 181100) [0x24d4c336c]
+                                                                    9   ??? (IconFoundation + 143780) [0x24d4ba1a4]
+                                                                      9   ??? (IconFoundation + 182808) [0x24d4c3a18]
+                                                                        9   ??? (IconFoundation + 155788) [0x24d4bd08c]
+                                                                          9   ??? (IconFoundation + 213268) [0x24d4cb114]
+                                                                            9   ??? (IconFoundation + 195468) [0x24d4c6b8c]
+                                                                              8   ??? (IconFoundation + 196460) [0x24d4c6f6c]
+                                                                                8   ??? (IconFoundation + 202396) [0x24d4c869c]
+                                                                                  8   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                                                                    8   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                                                              1   ??? (IconFoundation + 199036) [0x24d4c797c]
+                                                                                1   ??? (IconFoundation + 202396) [0x24d4c869c]
+                                                                                  1   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                                                                    1   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                                                  4   ??? (IconFoundation + 181352) [0x24d4c3468]
+                                                                    4   ??? (IconFoundation + 161396) [0x24d4be674]
+                                                                      3   ??? (IconFoundation + 199840) [0x24d4c7ca0]
+                                                                        3   ??? (IconFoundation + 195468) [0x24d4c6b8c]
+                                                                          3   ??? (IconFoundation + 196460) [0x24d4c6f6c]
+                                                                            3   ??? (IconFoundation + 202396) [0x24d4c869c]
+                                                                              3   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                                                                2   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                                                                1   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75]), e-core>
+                                                                      1   ??? (IconFoundation + 199420) [0x24d4c7afc]
+                                                                        1   ??? (IconFoundation + 185072) [0x24d4c42f0]
+                                                                          1   ??? (IconFoundation + 185440) [0x24d4c4460]
+                                                                            1   ??? (IconFoundation + 229184) [0x24d4cef40]
+                                                                              1   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                                                                1   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                                          1   ??? (InstallCoordination + 252848) [0x1db674bb0]
+                                                            1   ??? (InstallCoordination + 249288) [0x1db673dc8]
+                                                              1   ??? (InstallCoordination + 201496) [0x1db668318]
+                                                                1   ??? (InstallCoordination + 401952) [0x1db699220]
+                                                                  1   ??? (libcopyfile.dylib + 5836) [0x2dbb2b6cc]
+                                                                    1   ??? (libcopyfile.dylib + 4836) [0x2dbb2b2e4]
+                                                                      1   ??? (libsystem_kernel.dylib + 31320) [0x250dcaa58]
+                                                                        1   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                                2   ??? (<50133A82-9680-3B05-ACB5-B718EC80CA83> + 26156) [0x10340662c]
+                                                  2   ??? (InstallCoordination + 201680) [0x1db6683d0]
+                                                    2   ??? (InstallCoordination + 24856) [0x1db63d118]
+                                                      2   ??? (libsystem_kernel.dylib + 21680) [0x250dc84b0]
+                                                        2   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75])>
+                                              1   ??? (<50133A82-9680-3B05-ACB5-B718EC80CA83> + 29708) [0x10340740c]
+                                                1   ??? (InstalledContentLibrary + 710544) [0x1c3fa9790]
+                                                  1   ??? (libremovefile.dylib + 2744) [0x2dbca0ab8]
+                                                    1   ??? (libremovefile.dylib + 3760) [0x2dbca0eb0]
+                                                      1   ??? (libsystem_kernel.dylib + 25796) [0x250dc94c4]
+                                                        1   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75]), e-core>
+            2   ??? (libdispatch.dylib + 43132) [0x1c79c487c]
+              2   ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                2   ??? (libdispatch.dylib + 7372) [0x1c79bbccc]
+                  2   ??? (SplashBoard + 26836) [0x2c5ccb8d4]
+                    2   ??? (SplashBoard + 27092) [0x2c5ccb9d4]
+                      2   ??? (CoreFoundation + 20964) [0x1994cc1e4]
+                        2   ??? (CoreFoundation + 20684) [0x1994cc0cc]
+                          2   ??? (SplashBoard + 51616) [0x2c5cd19a0]
+                            2   ??? (Foundation + 2162908) [0x199bba0dc]
+                              2   ??? (Foundation + 4008816) [0x199d7cb70]
+                                2   ??? (Foundation + 880828) [0x199a810bc]
+                                  2   ??? (Foundation + 881032) [0x199a81188]
+                                    2   ??? (libremovefile.dylib + 2744) [0x2dbca0ab8]
+                                      2   ??? (libremovefile.dylib + 3760) [0x2dbca0eb0]
+                                        2   ??? (libsystem_kernel.dylib + 25796) [0x250dc94c4]
+                                          2   <on behalf of UNKNOWN [136] (originated by UNKNOWN [75]), Requested Thread QoS Utility, e-core>
+
+  Binary Images:
+           0x1001a4000 -                ???  com.apple.migrationpluginwrapper 1.0 (1) <147183D4-566A-35EF-8538-654C56817725>  /System/Library/PrivateFrameworks/DataMigration.framework/XPCServices/com.apple.migrationpluginwrapper.xpc/com.apple.migrationpluginwrapper
+           0x1002c0000 -                ???  ???                                      <422E1A41-B188-314A-ABE2-C6098B6B0A69>
+           0x103400000 -                ???  ???                                      <50133A82-9680-3B05-ACB5-B718EC80CA83>
+           0x199406000 -        0x199412247  libsystem_pthread.dylib                  <694C772A-A9F8-3AC0-9417-7C304043A771>  /usr/lib/system/libsystem_pthread.dylib
+           0x199465000 -        0x1994c64af  libxpc.dylib                             <2F319DF2-DF97-31F1-920A-AC20D14E1737>  /usr/lib/system/libxpc.dylib
+           0x1994c7000 -        0x1999a9777  CoreFoundation                           <9426FC9A-B36C-3096-B836-D17D6744A75B>  /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+           0x1999aa000 -        0x19aae0153  Foundation                               <C041F1D0-5EF1-30A3-BF96-830976173B56>  /System/Library/Frameworks/Foundation.framework/Foundation
+           0x1a0dcb000 -        0x1a0e4bfeb  libsystem_c.dylib                        <28AF3269-1C11-3E0E-A0DE-3C428D05CEE6>  /usr/lib/system/libsystem_c.dylib
+           0x1c3efc000 -        0x1c3ffb4b7  InstalledContentLibrary                  <50105519-00E2-3A80-B028-1A16E11E62AC>  /System/Library/PrivateFrameworks/InstalledContentLibrary.framework/InstalledContentLibrary
+           0x1c79ba000 -        0x1c7a00d17  libdispatch.dylib                        <8CDF4610-F6A5-39CB-94BF-687FE349A4BE>  /usr/lib/system/libdispatch.dylib
+           0x1db637000 -        0x1db6c5aa7  InstallCoordination                      <CDF88538-7B6C-3C17-A68E-35591BD53354>  /System/Library/PrivateFrameworks/InstallCoordination.framework/InstallCoordination
+           0x24d497000 -        0x24d4eabf7  IconFoundation                           <56271E39-6733-3621-93AE-D3822AF32442>  /System/Library/PrivateFrameworks/IconFoundation.framework/IconFoundation
+           0x250dc3000 -        0x250e0021b  libsystem_kernel.dylib                   <5A7DC6BE-551B-3B29-A928-A4079A90D4D2>  /usr/lib/system/libsystem_kernel.dylib
+           0x2784c9000 -        0x2784d384b  DataMigration                            <F71754ED-5787-3F18-8553-CEADF2008FA1>  /System/Library/PrivateFrameworks/DataMigration.framework/DataMigration
+           0x2c5cc5000 -        0x2c5cf7dbf  SplashBoard                              <FF8B359C-D3E9-36B0-8090-8B6666573AA5>  /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
+           0x2dbb2a000 -        0x2dbb34283  libcopyfile.dylib                        <86FA38C6-5AC5-3C01-816E-9F476235A093>  /usr/lib/system/libcopyfile.dylib
+           0x2dbca0000 -        0x2dbca28df  libremovefile.dylib                      <11E5262A-3DC7-38B8-88E5-81AFCA7F0FEA>  /usr/lib/system/libremovefile.dylib
+
+
+Powerstats for:   mobileassetd
+UUID:             DF28312C-183A-3496-BF94-3992E6C018BD
+Path:             /usr/libexec/mobileassetd
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Resource Coalition: 43 samples "com.apple.mobileassetd"(179)
+On Behalf Of:     41 samples UNKNOWN [247, 279, 782] (33 samples originated by nsurlsessiond [204], 8 samples originated by UNKNOWN [279, 782])
+Architecture:     arm64e
+Pageins:          3648 pages
+Start time:       2026-09-10 21:52:11.922 +0500
+End time:         2026-09-10 21:58:24.448 +0500
+Num samples:      43 (6%)
+Energy:           3257.38 uWh
+Primary state:    22 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS Default, Override Thread QoS Unspecified, e-core
+User Activity:    20 samples Idle, 23 samples Active
+Power Source:     0 samples on Battery, 43 samples on AC
+  43  ??? (libsystem_pthread.dylib + 2320) [0x199406910]
+    43  ??? (libsystem_pthread.dylib + 4664) [0x199407238]
+      43  ??? (libdispatch.dylib + 87728) [0x1c79cf6b0]
+        43  ??? (libdispatch.dylib + 89228) [0x1c79cfc8c]
+          43  ??? (libdispatch.dylib + 46192) [0x1c79c5470]
+            43  ??? (libdispatch.dylib + 43132) [0x1c79c487c]
+              43  ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                42  ??? (libdispatch.dylib + 7372) [0x1c79bbccc]
+                  28  ??? (MobileAssetDaemon + 1322088) [0x255e19c68]
+                    28  ??? (MobileAssetDaemon + 1349544) [0x255e207a8]
+                      28  ??? (MobileAssetDaemon + 1347536) [0x255e1ffd0]
+                        28  ??? (MobileAssetDaemon + 1346868) [0x255e1fd34]
+                          28  ??? (MobileAssetDaemon + 2505260) [0x255f3aa2c]
+                            28  ??? (MobileAssetDaemon + 2500376) [0x255f39718]
+                              28  ??? (libAppleArchive.dylib + 349156) [0x2d7ac03e4]
+                                28  ??? (MobileAssetDaemon + 2506848) [0x255f3b060]
+                                  28  ??? (libsystem_kernel.dylib + 28000) [0x250dc9d60]
+                                    18  <on behalf of UNKNOWN [247] (originated by nsurlsessiond [204]), Effective Thread QoS User Initiated>
+                                    10  <on behalf of UNKNOWN [247] (originated by nsurlsessiond [204])>
+                  10  ??? (SoftwareUpdateCoreSupport + 41496) [0x1d9a7e218]
+                    10  ??? (SoftwareUpdateCoreSupport + 45380) [0x1d9a7f144]
+                      10  ??? (SoftwareUpdateCoreSupport + 46652) [0x1d9a7f63c]
+                        4   ??? (MobileAssetDaemon + 2004448) [0x255ec05e0]
+                          4   ??? (MobileAssetDaemon + 2040428) [0x255ec926c]
+                            3   ??? (MobileAssetDaemon + 2120696) [0x255edcbf8]
+                              3   ??? (MobileAssetDaemon + 2108352) [0x255ed9bc0]
+                                3   ??? (MobileAssetDaemon + 2130176) [0x255edf100]
+                                  3   ??? (MobileAssetDaemon + 1819900) [0x255e934fc]
+                                    3   ??? (libdispatch.dylib + 73704) [0x1c79cbfe8]
+                                      3   ??? (libdispatch.dylib + 75264) [0x1c79cc600]
+                                        3   ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                          3   ??? (MobileAssetDaemon + 1820384) [0x255e936e0]
+                                            3   ??? (MobileAssetDaemon + 1825916) [0x255e94c7c]
+                                              2   ??? (MobileAssetDaemon + 1517356) [0x255e4972c]
+                                                2   ??? (MobileAssetDaemon + 204568) [0x255d08f18]
+                                                  2   ??? (MobileAssetDaemon + 206360) [0x255d09618]
+                                                    2   ??? (MobileAssetDaemon + 1011112) [0x255dcdda8]
+                                                      2   ??? (SoftwareUpdateCoreSupport + 172672) [0x1d9a9e280]
+                                                        2   ??? (SoftwareUpdateCoreSupport + 178308) [0x1d9a9f884]
+                                                          2   ??? (Foundation + 550828) [0x199a307ac]
+                                                            2   ??? (Foundation + 578184) [0x199a37288]
+                                                              2   ??? (Foundation + 565908) [0x199a34294]
+                                                                2   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                                                  2   <on behalf of UNKNOWN [247] (originated by nsurlsessiond [204])>
+                                              1   ??? (MobileAssetDaemon + 1517412) [0x255e49764]
+                                                1   ??? (SoftwareUpdateCoreSupport + 176380) [0x1d9a9f0fc]
+                                                  1   ??? (SoftwareUpdateCoreSupport + 174208) [0x1d9a9e880]
+                                                    1   ??? (SoftwareUpdateCoreSupport + 178308) [0x1d9a9f884]
+                                                      1   ??? (Foundation + 550828) [0x199a307ac]
+                                                        1   ??? (Foundation + 578184) [0x199a37288]
+                                                          1   ??? (Foundation + 565908) [0x199a34294]
+                                                            1   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                                              1   <on behalf of UNKNOWN [247] (originated by nsurlsessiond [204])>
+                            1   ??? (MobileAssetDaemon + 2120976) [0x255edcd10]
+                              1   ??? (MobileAssetDaemon + 2094184) [0x255ed6468]
+                                1   ??? (MobileAssetDaemon + 1818632) [0x255e93008]
+                                  1   ??? (libdispatch.dylib + 73704) [0x1c79cbfe8]
+                                    1   ??? (libdispatch.dylib + 75264) [0x1c79cc600]
+                                      1   ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                        1   ??? (MobileAssetDaemon + 1819296) [0x255e932a0]
+                                          1   ??? (MobileAssetDaemon + 329064) [0x255d27568]
+                                            1   ??? (MobileAssetDaemon + 1006508) [0x255dccbac]
+                                              1   ??? (MobileAssetDaemon + 1011112) [0x255dcdda8]
+                                                1   ??? (SoftwareUpdateCoreSupport + 172672) [0x1d9a9e280]
+                                                  1   ??? (SoftwareUpdateCoreSupport + 178308) [0x1d9a9f884]
+                                                    1   ??? (Foundation + 550828) [0x199a307ac]
+                                                      1   ??? (Foundation + 578184) [0x199a37288]
+                                                        1   ??? (Foundation + 565908) [0x199a34294]
+                                                          1   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                                            1   <on behalf of UNKNOWN [247] (originated by nsurlsessiond [204])>
+                        4   ??? (MobileAssetDaemon + 171596) [0x255d00e4c]
+                          4   ??? (MobileAssetDaemon + 170496) [0x255d00a00]
+                            3   ??? (MobileAssetDaemon + 181500) [0x255d034fc]
+                              2   ??? (MobileAssetDaemon + 189768) [0x255d05548]
+                                1   ??? (MobileAssetDaemon + 1608912) [0x255e5fcd0]
+                                  1   ??? (MobileAssetDaemon + 1911420) [0x255ea9a7c]
+                                    1   ??? (MobileAssetDaemon + 665980) [0x255d7997c]
+                                      1   ??? (MobileAssetDaemon + 658948) [0x255d77e04]
+                                        1   ??? (MobileAssetDaemon + 682128) [0x255d7d890]
+                                          1   ??? (MobileAssetDaemon + 1199024) [0x255dfbbb0]
+                                            1   ??? (MobileAssetDaemon + 1200656) [0x255dfc210]
+                                              1   ??? (MobileAssetDaemon + 1188956) [0x255df945c]
+                                                1   ??? (libsystem_kernel.dylib + 21680) [0x250dc84b0]
+                                                  1   <on behalf of UNKNOWN [279] (originated by UNKNOWN [279])>
+                                1   ??? (MobileAssetDaemon + 1608788) [0x255e5fc54]
+                                  1   ??? (MobileAssetDaemon + 2427712) [0x255f27b40]
+                                    1   ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+                                      1   ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                        1   ??? (MobileAssetDaemon + 2428772) [0x255f27f64]
+                                          1   ??? (MobileAssetDaemon + 2395708) [0x255f1fe3c]
+                                            1   ??? (MobileAssetDaemon + 2400112) [0x255f20f70]
+                                              1   ??? (MobileAssetDaemon + 2405296) [0x255f223b0]
+                                                1   ??? (MobileAssetDaemon + 1007888) [0x255dcd110]
+                                                  1   ??? (MobileAssetDaemon + 1011112) [0x255dcdda8]
+                                                    1   ??? (SoftwareUpdateCoreSupport + 172672) [0x1d9a9e280]
+                                                      1   ??? (SoftwareUpdateCoreSupport + 178308) [0x1d9a9f884]
+                                                        1   ??? (Foundation + 550828) [0x199a307ac]
+                                                          1   ??? (Foundation + 578184) [0x199a37288]
+                                                            1   ??? (Foundation + 565908) [0x199a34294]
+                                                              1   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                                                1   <on behalf of UNKNOWN [279] (originated by UNKNOWN [279])>
+                              1   ??? (MobileAssetDaemon + 189908) [0x255d055d4]
+                                1   ??? (MobileAssetDaemon + 1612396) [0x255e60a6c]
+                                  1   ??? (MobileAssetDaemon + 1614608) [0x255e61310]
+                                    1   ??? (MobileAssetDaemon + 1735380) [0x255e7ead4]
+                                      1   ??? (MobileAssetDaemon + 1737956) [0x255e7f4e4]
+                                        1   ??? (MobileAssetDaemon + 1730164) [0x255e7d674]
+                                          1   ??? (MobileAssetDaemon + 1536792) [0x255e4e318]
+                                            1   ??? (MobileAssetDaemon + 1709636) [0x255e78644]
+                                              1   ??? (MobileAssetDaemon + 1007980) [0x255dcd16c]
+                                                1   ??? (MobileAssetDaemon + 464372) [0x255d485f4]
+                                                  1   ??? (SoftwareUpdateCoreSupport + 175736) [0x1d9a9ee78]
+                                                    1   ??? (SoftwareUpdateCoreSupport + 178308) [0x1d9a9f884]
+                                                      1   ??? (Foundation + 550828) [0x199a307ac]
+                                                        1   ??? (Foundation + 578184) [0x199a37288]
+                                                          1   ??? (Foundation + 569436) [0x199a3505c]
+                                                            1   ??? (Foundation + 455252) [0x199a19254]
+                                                              1   ??? (libsystem_kernel.dylib + 21680) [0x250dc84b0]
+                                                                1   <on behalf of UNKNOWN [279] (originated by UNKNOWN [279])>
+                            1   ??? (MobileAssetDaemon + 181444) [0x255d034c4]
+                              1   ??? (MobileAssetDaemon + 181776) [0x255d03610]
+                                1   ??? (MobileAssetDaemon + 183256) [0x255d03bd8]
+                                  1   ??? (MobileAssetDaemon + 1665504) [0x255e6d9e0]
+                                    1   ??? (MobileAssetDaemon + 1668732) [0x255e6e67c]
+                                      1   ??? (MobileAssetDaemon + 1006508) [0x255dccbac]
+                                        1   ??? (MobileAssetDaemon + 1011112) [0x255dcdda8]
+                                          1   ??? (SoftwareUpdateCoreSupport + 172672) [0x1d9a9e280]
+                                            1   ??? (SoftwareUpdateCoreSupport + 178308) [0x1d9a9f884]
+                                              1   ??? (Foundation + 550828) [0x199a307ac]
+                                                1   ??? (Foundation + 578184) [0x199a37288]
+                                                  1   ??? (Foundation + 565908) [0x199a34294]
+                                                    1   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                                      1   <on behalf of UNKNOWN [279] (originated by UNKNOWN [279])>
+                        1   ??? (MobileAssetDaemon + 739184) [0x255d8b770]
+                          1   ??? (MobileAssetDaemon + 767876) [0x255d92784]
+                            1   ??? (MobileAssetDaemon + 919128) [0x255db7658]
+                              1   ??? (SoftwareUpdateCoreSupport + 171020) [0x1d9a9dc0c]
+                                1   ??? (SoftwareUpdateCoreSupport + 178308) [0x1d9a9f884]
+                                  1   ??? (Foundation + 550828) [0x199a307ac]
+                                    1   ??? (Foundation + 578184) [0x199a37288]
+                                      1   ??? (Foundation + 569436) [0x199a3505c]
+                                        1   ??? (Foundation + 455252) [0x199a19254]
+                                          1   ??? (libsystem_kernel.dylib + 21680) [0x250dc84b0]
+                        1   ??? (MobileAssetDaemon + 171956) [0x255d00fb4]
+                          1   ??? (MobileAssetDaemon + 1443360) [0x255e37620]
+                            1   ??? (MobileAssetDaemon + 1506956) [0x255e46e8c]
+                              1   ??? (MobileAssetDaemon + 1668732) [0x255e6e67c]
+                                1   ??? (MobileAssetDaemon + 1006508) [0x255dccbac]
+                                  1   ??? (MobileAssetDaemon + 1011112) [0x255dcdda8]
+                                    1   ??? (SoftwareUpdateCoreSupport + 172672) [0x1d9a9e280]
+                                      1   ??? (SoftwareUpdateCoreSupport + 178308) [0x1d9a9f884]
+                                        1   ??? (Foundation + 550828) [0x199a307ac]
+                                          1   ??? (Foundation + 578184) [0x199a37288]
+                                            1   ??? (Foundation + 565908) [0x199a34294]
+                                              1   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                                1   <on behalf of UNKNOWN [782] (originated by UNKNOWN [782]), Effective Thread QoS User Initiated, Requested Thread QoS User Initiated, p-core>
+                  1   ??? (MobileAssetDaemon + 701232) [0x255d82330]
+                    1   ??? (MobileAssetDaemon + 611020) [0x255d6c2cc]
+                      1   ??? (MobileAssetDaemon + 491396) [0x255d4ef84]
+                        1   ??? (MobileAssetDaemon + 492848) [0x255d4f530]
+                          1   ??? (MobileAssetDaemon + 493052) [0x255d4f5fc]
+                            1   ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+                              1   ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                1   ??? (MobileAssetDaemon + 155676) [0x255cfd01c]
+                                  1   ??? (Foundation + 550828) [0x199a307ac]
+                                    1   ??? (Foundation + 578184) [0x199a37288]
+                                      1   ??? (Foundation + 565908) [0x199a34294]
+                                        1   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                          1   <on behalf of UNKNOWN [247] (originated by nsurlsessiond [204])>
+                  1   ??? (MobileAssetDaemon + 688080) [0x255d7efd0]
+                    1   ??? (MobileAssetDaemon + 422968) [0x255d3e438]
+                      1   ??? (MobileAssetDaemon + 611020) [0x255d6c2cc]
+                        1   ??? (MobileAssetDaemon + 491396) [0x255d4ef84]
+                          1   ??? (MobileAssetDaemon + 492848) [0x255d4f530]
+                            1   ??? (MobileAssetDaemon + 493052) [0x255d4f5fc]
+                              1   ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+                                1   ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                  1   ??? (MobileAssetDaemon + 155676) [0x255cfd01c]
+                                    1   ??? (Foundation + 550828) [0x199a307ac]
+                                      1   ??? (Foundation + 578184) [0x199a37288]
+                                        1   ??? (Foundation + 569436) [0x199a3505c]
+                                          1   ??? (Foundation + 455252) [0x199a19254]
+                                            1   ??? (libsystem_kernel.dylib + 21680) [0x250dc84b0]
+                  1   ??? (MobileAssetDaemon + 433884) [0x255d40edc]
+                    1   ??? (MobileAssetDaemon + 423352) [0x255d3e5b8]
+                      1   ??? (SoftwareUpdateCoreSupport + 171020) [0x1d9a9dc0c]
+                        1   ??? (SoftwareUpdateCoreSupport + 178308) [0x1d9a9f884]
+                          1   ??? (Foundation + 550828) [0x199a307ac]
+                            1   ??? (Foundation + 578184) [0x199a37288]
+                              1   ??? (Foundation + 565908) [0x199a34294]
+                                1   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                  1   <on behalf of UNKNOWN [279] (originated by UNKNOWN [279])>
+                  1   ??? (MobileAssetDaemon + 303776) [0x255d212a0]
+                    1   ??? (MobileAssetDaemon + 285940) [0x255d1ccf4]
+                      1   ??? (Foundation + 1458692) [0x199b0e204]
+                        1   ??? (Foundation + 2245316) [0x199bce2c4]
+                          1   ??? (Foundation + 187388) [0x1999d7bfc]
+                            1   ??? (Foundation + 624932) [0x199a42924]
+                              1   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                                1   <on behalf of UNKNOWN [279] (originated by UNKNOWN [279]), Effective Thread QoS User Initiated>
+                1   ??? (libdispatch.dylib + 72912) [0x1c79cbcd0]
+                  1   ??? (CFNetwork + 237892) [0x1a5c71144]
+                    1   ??? (libsystem_kernel.dylib + 20528) [0x250dc8030]
+                      1   <on behalf of UNKNOWN [279] (originated by UNKNOWN [279]), Effective Thread QoS Utility, Requested Thread QoS Utility>
+
+  Binary Images:
+           0x100544000 -                ???  mobileassetd              <DF28312C-183A-3496-BF94-3992E6C018BD>  /usr/libexec/mobileassetd
+           0x199406000 -        0x199412247  libsystem_pthread.dylib   <694C772A-A9F8-3AC0-9417-7C304043A771>  /usr/lib/system/libsystem_pthread.dylib
+           0x1999aa000 -        0x19aae0153  Foundation                <C041F1D0-5EF1-30A3-BF96-830976173B56>  /System/Library/Frameworks/Foundation.framework/Foundation
+           0x1a5c37000 -        0x1a5fad933  CFNetwork                 <0DA1F378-7A96-3E21-8F6C-938253EA2AC5>  /System/Library/Frameworks/CFNetwork.framework/CFNetwork
+           0x1c79ba000 -        0x1c7a00d17  libdispatch.dylib         <8CDF4610-F6A5-39CB-94BF-687FE349A4BE>  /usr/lib/system/libdispatch.dylib
+           0x1d9a74000 -        0x1d9abac87  SoftwareUpdateCoreSupport <E5C4316D-809B-32B7-A0CE-73C6AB063E23>  /System/Library/PrivateFrameworks/SoftwareUpdateCoreSupport.framework/SoftwareUpdateCoreSupport
+           0x250dc3000 -        0x250e0021b  libsystem_kernel.dylib    <5A7DC6BE-551B-3B29-A928-A4079A90D4D2>  /usr/lib/system/libsystem_kernel.dylib
+           0x255cd7000 -        0x256002e93  MobileAssetDaemon         <32FB8676-6FF9-3C83-8B94-30A7688AC3FE>  /System/Library/PrivateFrameworks/MobileAssetDaemon.framework/MobileAssetDaemon
+           0x2d7a6b000 -        0x2d7b03c0b  libAppleArchive.dylib     <E943DD2A-E11B-38A4-BB86-A3C260E498C4>  /usr/lib/libAppleArchive.dylib

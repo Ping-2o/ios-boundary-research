@@ -1,3 +1,10 @@
+> **NOTICE — AI-GENERATED SECURITY RESEARCH.** This document was written 100% by
+> autonomous AI agents (no human authoring or line-by-line review pass — expect slop).
+> It exists solely for authorized security research and coordinated disclosure to the
+> affected vendor. All claims cite checkable artifacts (offsets, receipts, commands);
+> re-verify before trusting any of them. PoC files are minimal triage reproducers,
+> not weapons. Do not use against systems you do not own or may not test.
+
 # iBEC / iBSS — the delivery answer for Reports 1–3 (iPhone17,5, iOS 27.0 24A435)
 
 ## 0. Headline: iBoot ≡ iBEC ≡ iBSS — one image, three IMG4 tags
@@ -119,6 +126,12 @@ applied per command.
    and the enable bit `0x3bc892`. Static analysis can show who writes them; a device boot answers it outright.
 3. **Does the recovery command prompt actually run on a non-checkm8 A18 unit** (iBEC/iBSS are shipped, so the
    code path exists, but entry may be restricted to restore/FUD states). Device-side question.
+   **ANSWERED 09-12: YES.** Retail iPhone17,5 running shipping 27.0 (24A435), buttons-entry Recovery:
+   `irecovery -c "getenv …"` returns empty (shell stdout goes to the debug UART, not USB — libirecovery's
+   success line is only the control-transfer ACK), but `irecovery -c "reboot"` **executed** (device left
+   Recovery and booted to normal 27.0). Commands run on retail. Remaining gaps before a memboot delivery
+   claim: `send`/`bootx` acceptance (the bulk-OUT path), the §4.2 window, and locked-USB behavior —
+   see `DeviceRunKit/results/RUN1_finding_console_live.md`.
 4. Table entries carry a flags word (`0x80f00000`, `0x86200000`) whose meaning (argc? privilege class?) is
    undetermined — it may itself encode which commands are allowed in which state.
 

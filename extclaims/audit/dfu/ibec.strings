@@ -1,0 +1,3392 @@
+iBoot for v59 Copyright 2007-2026, Apple Inc.
+RELEASE
+mBoot-18000.162.8
+@9k!*
+7me@9M
+Rj&\)(
+T*)@9k
+T,ij8J
+H)Bk{x
+T))J)J
+T+)J)J
+TiB@yi
+H)BcCyC
+OJ9?!Hk
+WJ9?!Hk
+T)!D9?
+6`>@ya2@y!
+Ska*j
+KM@8i!
+k6@9LM@8
+SJa*J
+Sj3J
+Si.S(
+@9H'@9(
+QC+@9s
+J'@9A%
+*)1J*)
+1>SJi
+SkyH*k
+T-A_x.
+*)MC9?
+ThC@9(
+q")Fzi
+q")Dzi
+T*i@9_
+4"c@9_
+@9,M@8
+S)a*)
+Sl&@9)a
+@9n6@9k!
+KM@8i!
+iM@8)!*l
+(U'9h|
+5 SA9!
+7t&@yh
+2j.C)_
+TH!D9h
+6yF@yZ
+iT@yl@@y
+mX@yn\@yk
+Kik8+%
+@9kA*
+@9k!*
+RJ!B9j
+T`'@x>
+Ay(HH6
+@9nJm8
+@9k!*k
+)Id8@%
+*){Q9I
+h&C);}
+5uT9*}T9(
+zj@yt/
+Tj%@9_
+Tj%@9_
+T))@y*
+RJ1@y+
+Hih8(!
+ThB@9(
+TirB9hzB9?
+TivB9?
+@8kk(8J
+>@9(-@
+6)3@9?
+!nB80n
+ nB80nd
+!.f80nd
+QoBDnE@
+ nB80nd
+!.f80nd
+!nB80n
+QoBDnE@
+S))A)+
+-1A)k}
+kB3WzB
+Kik8+%
+TK1@9+
+T`J@y 
+(+@y)/@y(}
+T:'@xU
+SJA@QJ!
+TKih8)
+4*]By_
+T)UBy*
+T)IC9?
+Ayh&A)7
+cVE)g2@
+cVE)g2@
+uZC)wbD)yjE)
+w"B)i*C)
+yjE){2@
+y"B)zVC)
+z"B)i*C)(
+9i"O)?
+AytVA)
+Ayh&A):
+hB@yhF
+TiF@yj
+TlA@9,
+4iJ@9?
+TiB@9)
+6iF@9?
++J)Zu@
+Tik|8*
+?@9?!Hk`
+?@9?!Hk
+trap.S
+Invalid SP in exn handler
+kb"Kz
+Tc#@9d'@9h/@9
+Th/@9U
+6i+@)f+@9
+D9ir@9?
+D9p@9
+Th:@yH
+D9ir@9
+Ayi@@y
+)*(yH*
+T*!A9_
+T*!A9_
+T(?I9h
+T)1I9?
+ThsA9H
+TK!A9K
+@9h&A)
+_9H(6
+!NB( nB(`nB(
+!( .!(`.!(
++ikxk*
+7sZ .s
+NP2p.p
+Z(N!x(N
+Z(NBx(N
+Z(Ncx(N
+!n@H(N
++i`8Li`8
+Ki`8,i`8
+rU@@)^
+B)KPC)O
+D)Q E)F(F)S4G)
+J+hi8J
+hh8hi8j
+o2:an1:a.
+,A)4B)
+:a.1:anT
+RIh(8Hhw
+_h(8Hhw
+X(N!x(N
+X(NBx(N
+X(Ncx(N
+H(N!h(N
+H(NBh(N
+H(Nch(N
+= ((^v
+NA((^rB
+Nb((^rB
+= ((^v
+NA((^rB
+Nb((^rB
+= ((^v$
+NA((^rB
+Nb((^rB
+= ((^v4
+NA((^rB
+Nb((^rB
+RRRRRRRRRRRRRRRR
+oCh@LB
+nAH(N!
+oCh@L 
+nAH(N!
+oCh@L 
+nAH(N!
+x(N!x(N 
+9hb@9i
+9hb@9i
+@9ib@9)
+9hb@9i
+7hb@9i
+9hb@9i
+K?A@q"
+Thf@9h
+7hj@9h
+storage
+vr8^T:l)U
+=*\\E)
+darwinos-ramdisk
+embedded-darwinos
+trusted-darwinos
+%llx:%d
+e75-ilim-override
+diags-path
+recovery-boot-mode
+panicmedic
+Permission Denied
+tc-path
+boot-breadcrumbs
+filesize
+filesize variable invalid or not set, aborting
+Combo image too large
+boot-device
+boot-partition
+dt-path
+sepfw-path
+seppatches-path
+boot-ramdisk
+diagnostics
+repair
+device-recovery
+roothash-path
+system-volume-auth-blob
+boot-path
+ibd-path
+chosen
+isp-horizon
+Memory image not valid
+srd-prov-
+debug-uarts
+delay-recovery-image
+poweroff
+Entering recovery mode, starting command prompt
+command
+idle-off
+idleoff
+Remote
+Microkernel 
+=======================================
+:: %s%s%s
+%s boot, Board 0x%x (%s%s)/Rev 0x%x
+BUILD_TAG: %s
+UUID: %s
+BUILD_STYLE: %s
+%sSERIAL_NUMBER: %s
+=======================================
+nvram-migrate
+auto-boot-once
+upgrade-retry
+auto-boot
+recover
+bootdelay
+boot-command
+aborting autoboot due to user intervention
+one-time-boot-command
+recover-once
+usage:
+picture too large, size:%zu
+Memory image corrupt
+flipbook(1): image_offset=%d image_count=%d
+flipbook(2): image_offset=%d image_count=%d
+setpicture optmask [<addr> | *] [<size> | *] [<image_offset> <image_count>]
+setpicture optmask [image_4cc] [<image_offset> <image_count>]
+setpicture optmask <file path> [image_4cc]
+optmask: 0xVVVV00TM: VVVV=voffset override, T=operation type, M=operation mask
+VVVV = vertical offset in pixels (0=no offset=iBoot default behavior)
+T = 0x0: load image from memory: addr/size
+T = 0x1: search/load image in all block dev with 'type'
+T = 0x2: load image from 'file path', match all type without type specified
+M = 0x1: update the image on screen
+M = 0x2: don't clear previous images
+M = 0x4: restore mode image
+M = 0x8: select flipbook image with image_offset/image_count, T!=2
+fsboot
+build-style
+build-version
+config_board
+board-rev
+loadaddr
+ramdisk-size
+/usr/standalone/firmware/FUD/iBootData.img4
+/System/Library/Caches/com.apple.kernelcaches/kernelcache
+/usr/standalone/firmware/devicetree.img4
+/usr/standalone/firmware/root_hash.img4
+sptm-path
+/usr/standalone/firmware/FUD/Ap,SecurePageTableMonitor.img4
+txm-path
+/usr/standalone/firmware/FUD/Ap,TrustedExecutionMonitor.img4
+cl4-path
+/usr/standalone/firmware/FUD/Ap,cL4.img4
+ExclaveOSIntegrityCatalog-path
+/usr/standalone/firmware/FUD/Ap,ExclaveOSIntegrityCatalog.img4
+ExclaveOSTrustCache-path
+/usr/standalone/firmware/FUD/Ap,ExclaveOSTrustCache.img4
+/usr/standalone/firmware/sep-firmware.img4
+/usr/standalone/firmware/sep-patches.img4
+/usr/standalone/firmware/FUD/StaticTrustCache.img4
+upgrade
+failed to execute upgrade command from iBoot
+failed to
+mount upgrade partition
+/boot/iboot_firmware
+RestoreANS
+/boot/iBEC
+load upgrade iBEC
+upgrade-fallback-boot-command
+failed to execute upgrade command from new iBEC
+unknown
+failed to load
+verify boot manifest hash
+/boot/applelogo
+firmware
+unused firmware
+/boot/sep-firmware
+/boot/devicetree
+devicetree
+/boot/ramdisk
+ramdisk
+/boot/iBootData
+iBootData
+/boot/kernelcache
+kernelcache
+finalize memmap
+failed to boot
+ota-result
+ota-failure-reason
+ota-breadcrumbs
+/boot/apticket.der
+/boot/boot/iboot_firmware
+/boot/boot/iBEC
+/boot/boot/apticket.der
+recovery-breadcrumbs
+/boot/boot/applelogo
+/boot/boot/devicetree
+recovery
+/boot/boot/iBootData
+/boot/boot/kernelcache
+/boot/boot/sep-firmware
+/boot/boot/OS.dmg
+recovery-boot-args
+arp0=file:///boot/OS.dmg
+ANS2 afc_aiu_ans_dual tunables
+afc-aiu-ans-dual-tunables
+ANS2 command_accelerator tunables
+command-accelerator-tunables
+ANS2 storage_lane_common tunables
+storage-lane-common-tunables
+ANS2 ccu_security_interrupt tunables
+ccu-security-interrupt-tunables
+arm-io
+region-base
+region-size
+quiesced
+__TEXT
+__DATA
+DCS Init     REG(%p) <- 0x%08X  (Single-Reg-Write)
+DCS Init     REG(%p) Poll: Mask (0x%08X) == 0x%08x (Single-Reg-Poll)
+%llx:%d: spin loop timeout
+DCS Init     REG(%p) <- 0x%08X [CH_MSK: 0x %08x %08x]
+dcs_reg_write_all_chan():
+0x%010lx
+DCS Init     REG(%p) <- 0x%08X [CH_MSK: 0x %08x %08x, Spacing: 0x%010llx]
+0x%010lx
+DCS Init     REG(%p) Poll: Mask (0x%08X) == 0x%08x [CH_MSK: 0x %08x %08x] ...
+0x%010lx 
+DCS Init     REG(%p) Poll: Mask (0x%08X) == 0x%08x [CH_MSK: 0x %08x %08x, Spacing: 0x%08llx] ...
+density_to_Gb
+Unknown LPDDRx density %d
+dcs_get_memory_size
+DCS Memory Size grab has jumped the gun
+dcs_get_memory_info
+failed to read vendor-id/config-id, vid:%08x, config:%08x, rev:%08x
+sdram vendor id:0x%02x rev id:0x%02x rev id2:0x%02x
+sdram config width:%d density:0x%x type:%d
+sdram density_to_size: %dGbit
+sdram device_info:0x%02x
+Set ch_physical_mask[%0d] = 0x%08x
+dcs_set_ch_physical_mask
+Unsupported index for channel mask!!
+Set ch_sw_mask[%0d] = 0x%08x (Physical Mask: 0x%08x)
+dcs_set_ch_sw_mask
+Set ch_swz_mask[0] = 0x%08x (Physical Mask[0]: 0x%08x)
+Set ch_swz_mask[1] = 0x%08x (Physical Mask[1]: 0x%08x)
+Final ch_swizzle_mask[0] = 0x%08x ch_swizzle_mask[1]: 0x%08x)
+Final ch_unswizzle_mask[0] = 0x%08x ch_unswizzle_mask[1]: 0x%08x)
+DCS Init Lib Built for: iBoot SOC
+DCS Init [%s Build] for ChipID==0x%04x chipRev %c%c (#DCS==%d, #Rank==%d) [%s] using %s
+Coldboot
+UpgradeInit
+PanicBoot
+??BootType??
+DCS Init [%s Build] Channel Mask: 0x%08x 0x%08x
+DCS Init [%s Build] Swizzle Mask: 0x%08x 0x%08x
+DCS Init MEMORY_INIT_PHASE:%d MEMORY_INIT_VERSION=%d 
+DCS Init     dcs_opcode_set_swz_mask() called with swz_mode=0x%llx
+dcs_init_op_set_swizzle_mask
+Unsupported SWIZZLE MODE passed to dcs_opcode_set_swz_mask()!!
+DCS Init     Setting Glbtimer0 ChEn based on channel mask (0x%x)
+DCS Init     Setting Glbtimer1 ChEn based on channel mask (0x%x)
+DCS Init     Executing dcs_init_op_rfm_config ...
+DCS Init     Calibrating Command and Address...
+DCS Init     Calibrating Write Level...
+DCS Init     Calibrating DCCIO Sweep DRAMDCC...
+DCS Init     Calibrating Read DQ Via RDC (GLBTIMER BASED)...
+DCS Init     Calibrating Read DQ Via WRFIFO/RDFIFO (SW BASED)...
+DCS Init     Calibrating Read DQ Via WRFIFO/RDFIFO (GBT BASED)...
+DCS Init     Calibrating Write DQ...
+DCS Init     RDGATEF1 reading and programming amph registers related to RDGATEF1...
+DCS Init    Setting PLLA DCO CFG EFUSE with fuse value...
+DCS Init     AMPH reading and programming amph registers related to RX VREF OFFSET...
+DCS Init     dcs_init_op_set_cal_cfg() freq_bin =%llu, RL=0x%x, WL=0x%x
+DCS Init     Calibration Config params init arg1=0x%llx, arg2=0x%x, arg3=0x%x
+dcs_init_process_condnl_block() called with condn_flag=0x%x dcs_init_loop_cnt=%d
+dcs_init_op_if_density_id() called with density_id=0x%llx, condn=0x%x, arg3=0x%x
+dcs_init_op_if_density_id
+Unsupported DCS_CONDN passed to dcs_init_op_if_density_id()!!
+dcs_init_op_if_boot_type() called with boot_type=0x%llx, condn=0x%x, arg3=0x%x
+dcs_init_op_if_boot_type
+Unsupported DCS_CONDN passed to dcs_init_op_if_boot_type()!!
+dcs_init_op_if_bytemode() called with bytemode=0x%llx, condn=0x%x, arg3=0x%x
+dcs_init_op_if_bytemode
+Unsupported DCS_CONDN passed to dcs_init_op_if_bytemode()!!
+dcs_init_op_if_dram_gen() called with dramgen=0x%llx, condn=0x%x, arg3=0x%x
+dcs_init_op_if_dram_gen
+Unsupported DCS_CONDN passed to dcs_init_op_if_dram_gen()!!
+dcs_init_op_if_rev_id() called with rev_id=0x%llx, rev_id2=0x%x, condn=0x%x
+dcs_init_op_if_rev_id
+Unsupported DCS_CONDN passed to dcs_init_op_if_rev_id()!!
+dcs_init_op_if_rev_id1() called with rev_id1=0x%llx, condn=0x%x
+, arg3=0x%x
+dcs_init_op_if_rev_id1
+Unsupported DCS_CONDN passed to dcs_init_op_if_rev_id1()!!
+dcs_init_op_if_rev_id2() called with rev_id2=0x%llx, condn=0x%x
+, arg3=0x%x
+dcs_init_op_if_rev_id2
+Unsupported DCS_CONDN passed to dcs_init_op_if_rev_id2()!!
+DCS Init     dcs_init_op_if_vendor_id() called with vendor_id=0x%llx, condn=0x%x, arg3=0x%x
+dcs_init_op_if_vendor_id
+Unsupported DCS_CONDN passed to dcs_init_op_if_vendor_id()!!
+########### Step %llu. ############
+Unsupported DCS_CONDN passed to dcs_opcode_if_num_channel()!!
+DCS Init     dcs_opcode_if_soc_rev() called with soc_rev=0x%llx, condn=0x%x, arg3=0x%x
+dcs_init_op_if_soc_rev
+DCS Init     Executing dcs_init_op_dram_dfe_setup ...
+DCS Init     Executing dcs_init_op_dram_rdca_setup ...
+DCS Init     Executing dcs_init_op_dram_dfe_cal ...
+DCS Init     dcs_init_op_if_dfe_enabled() called with dfe_enabled=0x%llx, condn=0x%x, arg3=0x%x
+dcs_init_op_if_dfe_enabled
+Unsupported DCS_CONDN passed to dcs_init_op_if_dfe_enabled()!!
+DCS Init     dcs_init_op_if_rdca_enabled() called with rdca_enabled=0x%llx, condn=0x%x, arg3=0x%x
+dcs_init_op_if_rdca_enabled
+Unsupported DCS_CONDN passed to dcs_init_op_if_rdca_enabled()!!
+DCS Init     Executing  dcs_init_op_read_sw_irq_err...
+dcs_init
+DCS Init Config is NOT RIGHT
+ DCS Op Descriptor table size grater than DCS op table size
+Unsupported binning_type %u
+clock-frequencies
+clock-frequencies-regs
+clock-frequencies-nclk
+ASSERT (%llx:%d)
+%s node not found
+tunables not found for chip revision %x
+number of states (%d) less than required for %s (%d)
+Binning for %s sram mode %d not found for current %s sram revision %d
+voltage-states13
+voltage-states13-sram
+voltage-states13-extra
+voltage-states5
+voltage-states5-sram
+voltage-states5-extra
+voltage-states1
+voltage-states1-sram
+voltage-states1-extra
+voltage-states7
+voltage-states7-sram
+voltage-states8
+voltage-states10
+voltage-states11
+voltage-states12
+voltage-states9
+voltage-states9-sram
+voltage-states14
+voltage-states14-sram
+voltage-states15
+voltage-states15-sram
+voltage-states16
+voltage-states16-sram
+voltage-states17
+voltage-states17-sram
+voltage-states18
+voltage-states18-sram
+voltage-states19
+voltage-states19-sram
+voltage-states20
+voltage-states20-sram
+voltage-states21
+voltage-states22
+voltage-states22-sram
+voltage-states22-extra
+voltage-states23
+voltage-states23-sram
+voltage-states23-extra
+voltage-states29
+voltage-states30
+voltage-states31
+nominal-performance1
+boost-performance1
+total-rails-leakage
+tunablerp-is-production-mode
+vdd-cio-rail-always-on
+pmgr_disable_pmp_pmc
+perf-states-sram
+perf-states-sram1
+perf-states-sram2
+perf-states-sram3
+perf-states-sram4
+perf-states-sram5
+perf-states-sram6
+perf-states-sram7
+perf-states
+perf-states1
+perf-states2
+perf-states3
+perf-states4
+perf-states5
+perf-states6
+perf-states7
+perf-state-count
+gpu-num-perf-states
+perf-state-table-count
+afr-perf-states
+cs-perf-states
+Binning type %u not supported
+No matching bridge for base address %p
+Invalid pmgr_ps_fixup_type %u
+arm-io/pmgr
+arm-io/pmgr not found
+chiplet-count
+arm-io/pmgr-child
+arm-io/pmgr-child not found
+devices
+arm-io not found
+optional-bridge-mask
+edt-property-ver
+ps-regs
+ps-groups
+service
+bridge-reg-index
+ranges
+Node %s not found
+pmgr %s %#x use wrong ps group
+pmgr %s %#x use forbidden ps index
+pmgr %s %#x use a ps group with invalid mapping
+pmgr %s %#x use a PS address %p outside the ps mapping %#llx size %#llx
+pmgr %s %#x has one child with an ID %#x lower than itself
+pmgr_dynamic_tunables_set_bit %llu
+pmgr_dynamic_tunables_get_bit %llu
+pmgr %s %#x ps(%p) has an invalid value %#x
+pmgr %s %#x bridge %d doesn't exist
+pmgr: not enough space for tunable
+bridge-settings-%d
+pmgr %s %#x ps should be enabled
+Common configuration invalid
+StartupMute
+SystemAudioVolumeSaved
+image4_callbacks.validity_cb is NULL
+image %p: bdev %p type %c%c%c%c offset 0x%llx len 0x%x
+image4_register_property_capture_callbacks: When capturing properties, you must provide a validity callback
+target_pass_boot_manifest() used without target_init_boot_manifest()
+chosen/manifest-properties
+chosen/manifest-object-properties
+linked list item %p corrupted
+Unknown ASN1 type %llu
+%c%c%c%c
+chip-revision
+fuse-revision
+tunable-revision
+sep/iop-sep-nub/Sandcat
+seeker-found-berb
+seeker-passed-berb
+seeker-found-refk
+seeker-passed-refk
+seeker-restore
+seeker-manifest-eply
+product
+primary-calibration-matrix
+device-color-policy
+boot-ios-diagnostics
+UpdateDeviceTree: failed to find the /chosen node
+chip-config-rack
+defaults
+UpdateDeviceTree: failed to find the /defaults node
+override-platform-only-code
+sec-research-device-erm-enabled
+debug-enabled
+development-cert
+production-cert
+gid-aes-key
+uid-aes-key
+secure-boot
+certificate-production-status
+certificate-security-mode
+effective-production-status-ap
+effective-security-mode-ap
+boot-nonce
+dram-vendor
+dram-vendor-id
+l2-ecc-correctable-panic
+no_panic_on_corr_ecc_err=1
+dram-size
+dram-base
+dram-type
+system-trusted
+board-id
+chip-id
+cl4-entropy
+unique-chip-id
+unique-device-id
+die-id
+random-seed
+firmware-version
+breadcrumbs
+iboot-stage-one-tag
+boot-manifest-hash
+sidp-rom-manifest-hash
+trusted-boot-policy-measurement
+mix-n-match-prevention-status
+kernel-ctrr-to-be-enabled
+display-rotation
+display-scale
+display-boot-rotation
+bootp-response
+ipaddr
+gateway
+security-domain
+chip-epoch
+esdm-fuses
+embedded-panic-log-size
+extended-nvme-timeout
+nvmemu-device
+stress-rack
+root-matching
+<dict><key>IOProviderClass</key><string>IOMedia</string><key>IOPropertyMatch</key><dict><key>Partition ID</key><integer>%u</integer></dict></dict>
+boot-type
+remote
+platform-name
+network-type
+ethernet
+local-mac-address
+compatible
+Ethernet disabled
+arm-io/usb-complex/usb-device
+device-mac-address
+baseband
+battery-id
+arm-io/smc/iop-smc-nub/smc-charger
+boot-voltage
+boot-adapter-id
+boot-reason
+precharge-time
+precharge-battery-state
+boot-battery-state
+battery-factory-id
+iboot-auth
+arm-io/i2c3/mogul-display
+pretend_auth=2
+auth-passed
+auth-error
+pretend_auth=1
+smc-control
+iic-bus-num
+Phone Display
+device-version
+certificate
+challenge
+signature
+auth-duration
+root-snapshot-name
+chosen/iBoot
+start-time
+debug-wait-start
+load-kernel-start
+populate-registry-time
+apt-carveout-size-mb
+panic-trace-enabled
+osenvironments
+osenvironment
+%s-environment
+boot-args
+apt_carveout_mb
+node_path
+property_name
+parent
+replacement
+Kernelcache too large
+Kernelcache image not valid
+BootKC
+In load_kernelcache
+chosen/memory-map
+-entry
+RTBuddySeg
+CL4-dummypage
+charger
+force-usb-power
+TrustCache
+DeviceTree
+RAMDisk
+SEPPatches
+uStuff
+preoslog
+BootArgs
+Kernel
+Kernel-mach_header
+__PRELINK_TEXT
+__LAST
+tGraphClient=
+rd=md0
+ -progress
+ -restore
+%s backlight-level=%d
+debug=
+sepfw-loaded
+sep-boot-slot
+__PAGEZERO
+%s-%.16s
+dart-id
+bootKC
+In lay_out_opaque_kernelcache 1st source
+In lay_out_opaque_kernelcache 1st dest
+In lay_out_opaque_kernelcache 2nd source
+In lay_out_opaque_kernelcache 2nd dest
+In lay_out_opaque_kernelcache source
+In lay_out_opaque_kernelcache dest
+BootKC-ro
+BootKC-rs
+BootKC-rx
+BootKC-bx
+BootKC-rw
+BootKC-le
+BootKC-virt
+BootKC-entry
+gpu-iouat
+SPTM-uuid-offset
+exclave-memory-map
+exclave-misc
+bootargstring
+lay_out_sptm_objects
+layout_sptm_objects
+%s/%s/LocalPolicy.cryptex1.img4
+%s/active
+lp-nsih
+lp-spih
+chosen/asmb
+/boot/active
+target_oracle_update_contract_from_cookie
+unknown cookie (%u) for target
+panicmedic-telemetry
+%%%.2X
+Apple Mobile Device (Recovery Mode)
+Apple Mobile Device (DFU Mode)
+SDOM:%02X CPID:%04X CPRV:%02X CPFM:%02X SCEP:%02X BDID:%02X ECID:%016llX IBFL:%02X
+ SIKA:%02X
+ SRNM:[
+ NONC:
+ SNON:
+ DCC:%X:%X:%X
+iboot-handoff
+ioa_ctrr
+dcp-auto-boot
+builtin-battery
+spi_nand0
+ramrod-kickstart-aces
+======== Start of %s serial output. ========
+root rpc task
+com.apple.os.update-
+is-tethered
+arm-io/gpio-canary
+canary-pins
+tcon-device-id
+DISP_CPU_PS
+DISP_FE_PS
+DISPEXT0_CPU_PS
+DISPEXT0_FE_PS
+enable-auth-debug
+backlight-nits
+arm-io/aop-smbox
+-reduced-reconfig-diags
+nvme_nand0
+asio ascwrap
+asio-ascwrap-tunables
+l2-cache-size-h17p
+l2-cache-size-h17a
+l2-cache-size
+max_cpus
+e-core-count
+p-core-count
+amcc-enable-mask
+amcc-plane-enable-mask
+dcs-channel-enable-mask
+smp-disabled
+cpus/cpu0
+cpus/cpu4
+running
+clock-frequency
+memory-frequency
+bus-frequency
+peripheral-frequency
+fixed-frequency
+timebase-frequency
+usbphy-frequency
+acc-impl
+cpm-impl
+aic-iack-offset
+arm-io/sgx
+iop-pmp-nub
+audio-complex
+ncoref-frequency
+tz-disabled
+iop-aop-nub
+smc-shared-region-base
+smc-shared-region-size
+mtp-shared-region-base
+mtp-shared-region-size
+aop2-shared-region-base
+aop2-shared-region-size
+trace-buffer
+arm-io/isp
+isp-mobile-defect
+fuse_aciphy_0
+fuse_aciphy_1
+aon-ptd
+ptd_data_table
+error-handler
+dcs-odts-panic-threshold
+byte-mode
+enable-bwr-rt-thr-int
+LPDDR5
+kis-rsm
+dapf-instance-%d
+allow-dram-apf-slices-%d
+dart-jpeg0-h17p
+dart-jpeg1-h17p
+jpeg0-h17a
+jpeg1-h17a
+jpeg0-h17p
+jpeg1-h17p
+pmap-io-ranges
+pmap-io-ranges-h17a
+dart-jpeg-h17a
+pmap-io-ranges-h17p
+dart-ave
+dart-ave1
+dart-rsm
+usb-drd0
+usb-drd
+usb-device-disable
+usb-drd-port-ss
+usb-max-speed-capability
+atc-phy0
+compatible-h17a
+reg-h17a
+compatible-h17p
+reg-h17p
+CTRR-B
+arm-io/sapt
+table-address
+n-entries
+GPIO: no default value (%d:%d)
+Invalid ANE Tunable id: %d
+ispRtb
+isp-boot-path
+mtr-polynom-fuse-agx
+bluetooth-pcie
+arm-io/apcie
+arm-io/apcie/pci-bridge0
+arm-io/apcie/pci-bridge1
+#ports
+SAMSUNG
+UNKNOWN
+TMRS applied for vendor: %s, density: %s
+No TMRS applied!!
+DCS Init     dcs_config_rfm() 
+MR27: 0x%x
+RAA_MIN: 0x%x
+RAA_MAX: 0x%x
+REF_DEC: 0x%x
+RFM_DEC: 0x%x
+dfe_enable = %d
+rdca_enable = %d mr24_data = %d 
+num_planes = %d, AMCCPLANE_COMCFG_MCCDRAMSIZE = 0x%08x
+DCS Init     MRCMD(0x%08X)[CH_MSK: 0x %08x %08x]%s
+(Read then Exit)
+ SEND: 
+ POLL: 
+ [data==0x%02x] 
+DCS Init          Spin %d us %s
+Changing Frequency to Bin %d
+dcs_change_freq
+Unsupported Frequency Bin Request: %d
+dcs_channel_init
+dcs_channel_init: failed to find first active channel from mask 0x%x 0x%x
+DCS Reconfig seq_id = %s, REG(%p) <- 0x%08llX
+GP_CE0_DRAM_S2D_POST_MCU_DRAM
+PMGR_M2A_IBOOT1B
+Memory_size: %llu Mbytes
+DCS Init DONE!!
+DCS Init     REG(%p) <- 0x%08llX  (Single-Reg-Write)
+Setting way count at address 0x%lx
+Read WayOnCntSts for plane %d at address  0x%lx
+Enabled APF filter for PIO accesses to DCS
+%s %s 
+DCS H/W ZEROIZATION
+Do not try to access any DCS registers or DRAM while Zeroing is in progress! This will result in a hang!
+DCS H/W Zeroization Timeout dcs_zeroization_done_map:%x
+Complete
+Disabled APF filter for PIO accesses to DCS
+DCS Zeroization irq received for amcc %d dcs %d vector %d
+DCS ZERIOZATION FAIL Interrupt amcc %d dcs %d vector=0x%08x
+DCS ZERIOZATION FATAL Interrupt amcc %d dcs %d vector=0x%08x
+gt_calibrate_calproc_ca
+gt_calibrate_calproc_ca :: Something went wrong! current frequency = %d, which is not 1...5 
+glbtimer_calibrate_calproc_ca :: DIE %0d GlbTimer Error response : %d
+sw_calibrate_calproc_ca
+Memory CA calibration: Unable to find any Vref which did not panic for channel %d
+gt_calibrate_rdc
+gt_calibrate_rdc:: Which die is this ch = %d
+gt_calibrate_rdc:: Glbtimer recieved an error cal  resp from ch %d CalRespCh%d = %d
+gt_calibrate_wrdq
+gt_calibrate_wrdq:: Which die is this ch = %d
+gt_calibrate_wrdq:: Glbtimer recieved an error cal  resp from ch %d CalRespCh%d = %d
+gt_calibrate_rddq
+gt_calibrate_rddq:: Which die is this ch = %d
+gt_calibrate_rddq:: Glbtimer recieved an error cal  resp from ch %d CalRespCh%d = %d
+gt_calibrate_wrlvl
+glbtimer_calibrate_wrlvl ::CK digital code from CBT in F1 is less than the default value of 2. Act Value : %d
+glbtimer_calibrate_wrlvl ::CK digital code from CBT in F2 is less than the default value of 2. Act Value : %d
+glbtimer_calibrate_wrlvl ::CK digital code from CBT in F3 is less than the default value of 2. Act Value : %d
+glbtimer_calibrate_wrlvl ::CK digital code from CBT in F4 is less than the default value of 2. Act Value : %d
+glbtimer_calibrate_wrlvl ::CK digital code from CBT in F5 is less than the default value of 2. Act Value : %d
+glbtimer_calibrate_wrlvl :: DIE %0d GlbTimer Error response : %d
+glbtimer_calibrate_wrlvl:: Glbtimer recieved an error cal  resp from ch %d CalRespCh%d = %d
+glbtimer_calibrate_wrlvl :: glbtimer based WrLvl algorithm ended in error. Freq_bin : %d, ch : %d
+sw_calibrate_wrlvl
+DEBUG SWCAL WRLVL ::CK digital code from CBT in F1 is less than the default value of 2. Act Value : %d
+DEBUG SWCAL WRLVL ::CK digital code from CBT in F2 is less than the default value of 2. Act Value : %d
+DEBUG SWCAL WRLVL ::CK digital code from CBT in F3 is less than the default value of 2. Act Value : %d
+DEBUG SWCAL WRLVL ::CK digital code from CBT in F4 is less than the default value of 2. Act Value : %d
+DEBUG SWCAL WRLVL ::CK digital code from CBT in F5 is less than the default value of 2. Act Value : %d
+calibrate_wrlvl_override
+sw_calibrate_dccio_sweep_dramdcc No FLIP CASE SEEN FOR ch %0d, byt: %0d, zeroing out codes 
+sw_calibrate_dccio_sweep_dramdcc
+DEBUG DCCIO Incorrect freq bin
+prog_amph_rx_vref_off_cfg_rd_wr
+prog_amph_rx_vref_off_cfg_rd_wr :: ERROR CH %d Byte 0 AMPSDQLP5_CFGS_DQDEBUG_SEQREG29 = 0x%x 
+prog_amph_rx_vref_off_cfg_rd_wr :: ERROR CH %d Byte 0 AMPSDQLP5_CFGS_DQDEBUG_SEQREG41 = 0x%x 
+prog_amph_rx_vref_off_cfg_rd_wr :: ERROR CH %d Byte 1 AMPSDQLP5_CFGS_DQDEBUG_SEQREG29 = 0x%x 
+prog_amph_rx_vref_off_cfg_rd_wr :: ERROR CH %d Byte 1 AMPSDQLP5_CFGS_DQDEBUG_SEQREG41 = 0x%x 
+mce_program_wrdq_pbds_ovr_values
+mce_program_wrdq_pbds_ovr_values : C code execution error on bit switch chan= %d, rank=%d loop bit=%d
+amp_opt_center_add
+Error! Non-sensical (hi < lo) in calculating center [hi==%d, lo==%d]
+dcs_read_sw_irq_err
+dcs_read_sw_irq_err:: MCE_CA_MCE_LT_CONTROL_GT_IRQ_ERROR_CONTROL set for ch %d
+dcs_dram_rdca_cal
+dcs_dram_rdca_cal:: Which die is this ch = %d
+dcs_dram_rdca_cal:: Glbtimer recieved an error cal  resp from ch %d CalRespCh%d = %d
+check_all_interrupts
+MCU->amcxirerrdbg -> intsts SET 
+CBT AIC IRQ SET 
+WRLVL AIC IRQ SET 
+RDCAL AIC IRQ SET 
+WRCAL AIC IRQ SET 
+DRAMDCC AIC IRQ SET for
+M3 AIC IRQ SET 
+CA EVENT LOG AIC IRQ SET
+DQ Byte0 EVENT LOG AIC IRQ SET
+DQ Byte1 EVENT LOG AIC IRQ SET
+spllctrl -> SpllCtrl -> Interrupt SET 
+xpllctrl -> SpllCtrl -> sts_reg_valid IRQ SET 
+check_dramdcc_aic_status
+Freq=%0d DRAM DCC Calibration Reported an Error(DRAM DCC AIC Interrupt Raised) DCCIO SWEEP Error Byte0=%0d Byte1=%0d , DRAM DCC Error Byte0=%0d Byte1=%0d 
+Delay for vref update
+amp_push_ca_coarse_code
+ERROR: Digital delay CA greater than 15 and wrapping around
+amp_push_ck_coarse_code
+ERROR: Digital delay CK greater than 15 and wrapping around
+amp_push_cs_coarse_code
+ERROR: Digital delay CS greater than 3 and wrapping around
+mce_extract_rd_cal_results
+mce_extract_rd_cal_results::RDC : Freq_bin=%d ch=%02d Byte=0 Bit=%d Vref=0x%02x ERROR: DETECTED error types max_pbds_err=%03d zero_eye_err=%03d multi_eye_err=%03d
+mce_extract_rd_cal_results::RDFIFO : Freq_bin=%d ch=%02d Byte=0 Bit=%d Vref=0x%02x ERROR: DETECTED error types max_pbds_err=%03d zero_eye_err=%03d multi_eye_err=%03d
+mce_extract_rd_cal_results::RDC : Freq_bin=%d ch=%02d Byte=1 Bit=%d Vref=0x%02x ERROR: DETECTED error types max_pbds_err=%03d zero_eye_err=%03d multi_eye_err=%03d
+mce_extract_rd_cal_results::RDFIFO : Freq_bin=%d ch=%02d Byte=1 Bit=%d Vref=0x%02x ERROR: DETECTED error types max_pbds_err=%03d zero_eye_err=%03d multi_eye_err=%03d
+mce_extract_wr_cal_results
+mce_extract_wr_cal_results:: Freq_bin=%d ch=%02d Byte=0 Bit=%d Vref=0x%02x ERROR: DETECTED error types max_pbds_err=%03d zero_eye_err=%03d multi_eye_err=%03d
+cacal_find_right_failing_point
+Memory CA calibration: Unable to find right side failing point for channel %d
+cacal_find_right_passing_point
+cacal_find_right_passing_point : freq bin uninitialized %d
+Memory CA calibration: Unable to find passing point for all bits on the right side 
+cacal_find_left_failing_point
+cacal_find_left_failing_point : freq bin uninitialized %d
+Memory CS calibration: Unable to find failing point for all bits on the left side
+cacal_find_left_passing_point
+cacal_find_left_passing_point : freq bin uninitialized %d
+Memory CA calibration: Unable to find passing point for all bits on the left side 
+find_center_of_eye
+Memory calibration: find_center_of_eye: Left value (%d) is > right value (%d) 
+amp_program_ck_sdll
+ With digital push out by %d, trying to put a code of 0x%x which is more than supported 15 
+amp_program_cs_sdll
+mce_ca_program_rddq_vref
+mce_ca_program_rddq_vref : C code execution error on bit switchan loop bit=%d
+mce_program_rddq_pbds_ovr_values
+mce_program_rddq_pbds_ovr_values : C code execution error on bit switchan loop bit=%d
+rddqcal_calculate_final_values
+rddqcal_calculate_final_values:: ch-%d rank-%d ERROR: DLL calculations skipped because ZERO EYE Seen for 1 of Bits reported earlier
+wrlvlcal_push_to_0s_region
+DEBUG SWCAL WRLVL : Memory Wrlvl calibration: DQ%d sdll reached max tap value, yet all bytes not all 0s
+wrlvlcal_find_0to1_transition
+DEBUG SWCAL WRLVL : wrlvlcal_find_0to1_transition() Memory Wrlvl calibration: DQ%d sdll reached max tap value, yet all bytes not all 1s
+wrlvlcal_find_1to0_transition
+Memory Wrlvl calibration: max tap value reached, yet all bytes not back to 0s
+wrdqcal_calculate_final_values
+wrdqcal_calculate_final_values:: ch-%d rank-%d ERROR: DLL calculations skipped because ZERO EYE Seen for 1 of BYTEs reported earlier
+mce_decode_dram_rdca_error
+mce_decode_dram_rdca_error:: M3 reporting a zero optimal RDCA score error on dram_byte_0 ch %d
+mce_decode_dram_rdca_error:: M3 reporting a zero optimal RDCA score error on dram_byte_1 ch %d
+mce_decode_dram_rdca_error:: M3 reporting optimal RDCA computed is incorrect on dram_byte_0 ch %d
+mce_decode_dram_rdca_error:: M3 reporting optimal RDCA computed is incorrect error on dram_byte_1 ch %d
+mce_decode_dram_rdca_error:: M3 reporting optimal RDCA point has error on dram_byte_0 ch %d
+mce_decode_dram_rdca_error:: M3 reporting optimal RDCA point has error on dram_byte_1 ch %d
+ REG(%p) = 0x%x
+ F%d WrBWR:%x RdBWR:%x RTBWHighThrPerfIntFreq:%x RTBWWrHighThrPerfIntFreq:%x RTBWRdHighThrPerfIntFreq:%x
+ F%d WrBWR:%x RTBWHighThrPerfIntFreq:%x RTBWWrHighThrPerfIntFreq:%x
+ F%d RdBWR:%x RTBWHighThrPerfIntFreq:%x RTBWRdHighThrPerfIntFreq:%x
+AMCC Plane %d error: INTSTS0/1/2 %#x/%#x/%#x AFERRLOG0/1/2/3/4/5 %#x/%#x/%#x/%#x/%#x/%#x ADDR %#llx CMD/SIZE %#x/%#x AID/TID %#x/%#x
+AMCC interrupt: %s
+AMCC Plane %d error: INTSTS0/1/2 %#x/%#x/%#x
+Unhandled AMCC interrupt: %s
+IOA %d error: INTSTS %#x ERRLOG0/1/2/3/4 %#x/%#x/%#x/%#x/%#x ADDR %#llx CMD/SIZE %#x/%#x AID/TID/DID %#x/%#x/%#x
+Fatal error: %s
+DCS Fatal Interrupt [dcs=%d dcs_paddr=%08llx]: INTSTS 0x%08x
+ UFDI_ERR_STS: 0x%08x
+ EVT_LOG: DATA0 0x%08x, DATA1 0x%08x
+CLLT: STS 0x%08x ISP 0x%x DISP 0x%x DISPEXT0 0x%x ADMA_BASE_S 0x%x ADMA_BASE_NS 0x%x ADMA_LEAP_S 0x%x ADMA_LEAP_NS 0x%x
+%d:%d:%08x 
+Unhandled DCS interrupt: %s
+dram-channel-disable
+enable_c1ppt_tunables=1
+voltage-states0
+voltage-states2
+tunableh-board-id
+tunableh-major-rev
+tunableh-minor-rev
+pmgr-debug-restore-counter
+ %s: seq_id is invalid, seq_id = %d, op = %d
+platform_reconfig_validate_seq_for_opcode
+ %s: Can't locate reconfig_data in iBootData
+reconfig_data_init
+Storage task
+nvme_nand%d
+nvme_firmware%d
+nvme_syscfg%d
+nvme_efface%d
+paniclog
+nvme_bis
+nvme_me
+nvme_ean
+usb_drd
+======== End of %s serial output. ========
+recovery-reason
+disable-boot-wdt
+%llx:%d
+Stacktrace:
+--> 0x%016lx
+iBoot Panic: %s: 
+Board: %s%s:%#x 
+Chip: %04x:%#02x 
+Build: %s:%s
+UUID: %s
+dev-unset-debug-enabled
+security-mode-change-enable
+force-research-policy
+coverglass-serial-number-size
+coverglass-serial-number
+luminance-ratio
+vbatt-current
+first-frame-response
+first-frame-response-high
+llc-red
+llc-green
+llc-blue
+apt-version-control
+dcvrr-a
+dcvrr-b
+dcvrr-c
+dcvrr-d
+P1 and prior builds are deprecated for D9x and D4y. P0 is deprecated for V59. D4y and v59 Tahiti are deprecated.
+display-color-space
+ARGB8101010
+backglass-serial-number
+arm-io/haptics-support-interface
+coefficients-version
+raw-panel-id
+optical-dev-card-id
+aop-spmi0/hammerfest-spmi/hammerfest
+function-enable-pre-p2
+function-enable
+aop/iop-aop-nub/rose
+function-rose_coredump-pre-p2
+function-rose_coredump
+i2c2/audio-codec
+function-reset-pre-p2
+function-reset
+mogul-display
+nub-spmi-a0/spmi-hpm0/hpm-aid-controller
+mogul-display-pre-proto1
+dockchannel-mtp/mtp-transport
+hid-transport,dc
+function-aod_swdio_tahiti
+function-aod_swclk_tahiti
+function-aod_swdio
+function-aod_swclk
+fdr-classes-p2
+fdr-classes
+function-dock_parent
+display-eeprom
+usb-host-disable
+clpc-dev-intrs-timeout
+cluster-enable-timeout-ms
+dart-apr
+dart-jpeg0
+dart-jpeg1
+dart-isp
+dart-ane
+dart-avd
+scaler0
+dart-scaler
+nub-spmi1
+nub-spmi-a0
+nub-spmi-a1
+aop-spmi0
+aop-spmi1
+atc0-dpphy
+no-pmu
+grimaldi
+smc/iop-smc-nub
+smc-charger
+smc-ext-charger
+smc-aop
+audio-speaker-top
+usb-otg
+cam-connections-scheme
+aop/iop-aop-nub/compass
+compass-orientation
+aop/iop-aop-nub/dcp-control
+aop-dcp-buffer-address
+aop-dcp-buffer-size
+dispext0
+i2c0/audio-speaker
+speaker-config
+arm-io/dockchannel-mtp/mtp-transport/multi-touch
+hid-merge-personality
+pmu-btmspk-reset
+disable-juliet-unplug-detect
+aop/iop-aop-nub
+aop-scm-xbar-d9x
+scm-to-gpio-muxsel
+scm-to-gpio-muxsel-por
+gpio-to-scm-muxsel
+gpio-to-scm-muxsel-por
+scm-to-gpio-muxsel-p1
+gpio-to-scm-muxsel-p1
+d9x-alt-gpio-cfg
+aop-scm-xbar-d4y
+d4y-alt-compass-cfg
+aop-scm-xbar
+aop-spmi0-src-sel
+F1GE1,4-B
+F1GE1,4-L
+F1GE1,4
+function-coredump
+function-coredump-h17a
+function-coredump-h17p
+function-campmu_reset
+function-campmu_reset-h17a
+function-sensor_extclk
+function-sensor_extclk-h17a
+function-sensor_extclk2
+function-sensor_extclk2-h17a
+function-campmu_reset-h17p
+function-sensor_extclk-h17p
+function-sensor_extclk2-h17p
+bluetooth
+interrupts-h17p
+interrupts-h17a
+interrupts
+invalid AES key size
+AES: bad arguments
+Unsupported Core Type
+drivers/apple/silicon/tunableh/t8140/tunableh.c
+las_tunableh_init
+!las_tunableh_initialized()
+las_tunableh_apply
+las_tunableh_get_fig() == NULL
+las_tunableh_read
+las_tunableh_write
+las_tunableh_module_evaluate
+las_tunableh_fig_get_mask
+las_tunableh_fig_get_value
+las_tunableh_fig_get_expression
+%s:%d:%s: %s
+image-version
+battery voltage %d mV, delta_target=%d, no_battery_power=%d
+darkboot
+upo: upo_state=%x powersupply_changed=%d button_event=%d rtc_event=%d
+upo: ok=%d powersupply_changed=%d
+TBM Allow Mix N Match mismatch %d:%d
+cmd-results
+usb rpc task
+usb cmd task
+usb req
+vbus poll
+usb vbus
+usb-hi-current
+usb-no-current
+rsm-usb
+root-live-fs
+Update
+Recovery
+Hardware
+0123456789ABCDEF
+ambient-light-sensor-serial-num
+%02X%02X%02X%02X%02X%02X
+%02X%02X%08X%02X%02X
+%02X-%08X
+%02X%02X%02X%02X%02X
+%02X%02X%08X
+%02X%08X%02X
+%02X%02X%02x
+%02X%02X%02X%08X
+mbox-index
+firmware-type
+arm-io/aop/iop-aop-nub
+baremetal
+spu-accel-historical
+arm-io/aop/iop-aop-nub/accel
+iop-audio-controller
+lp-mic-io-buffer-device
+memcache-aperture
+arm-io/%s
+arm-io/dart-%s
+smmu-tunables-instance-%d
+dart-tunables-instance-%d
+dart,gen3
+dart,t8110
+dart,t8020
+dart,t6000
+pt-region-%u
+l%u-tt-%u
+dapf-instance-%u
+apf-bypass-%u
+inclusive-tz-range
+instance
+PS_PROT
+clock-protection-slice-index
+dart-ungang-shared-ps
+retention
+retention-force-quiesce
+dart-gapf-sr-region
+dart-clock-protection
+dart-clock-gapf-rsvd-slices
+dart-clock-gapf-ungang-count
+dart-clock-gapf-ungang-entries
+dart-ps-wr-dis-entries
+disp0-service
+dcpexpert-service
+boot-stage
+Display Exclave Regs
+audio-features
+EXCLAVES
+RGB888
+backlight
+arm-io/disp0
+oracle-tc-red
+oracle-tc-green
+oracle-tc-blue
+oracle-sf-red
+oracle-sf-green
+oracle-sf-blue
+ptuc-red
+ptuc-green
+ptuc-blue
+color-accuracy-index
+power-lut-data-x
+power-lut-data-y
+power-lut-data-xindex
+power-lut-data-yindex
+power-lut-data-lut
+power-lut-vbatt-cur-nominal
+energy-adder
+bics-param-set
+pab-scaler-index
+extended-panel-id
+use-table-div
+arm-io/aon-ptd
+wchf image too large - 0x%zx
+0123456789abcdef
+Response Queue Empty
+Header mismatch
+SPMI panic, controller name %s, queue index %d:  
+alpm-language-direction
+alpm-24h-mode
+alpm-number-system
+utc-offset
+alpm-next-dst
+alpm-dst-offset
+recover-system
+recover-fallback
+mute-next-boot
+SystemAudioVolumeExtension
+syscfg/
+syscfg-mismatch/
+macaddr/
+zeroes/
+string/
+Device Tree too large
+Device Tree image not valid
+gestalt-variant-id
+com.apple.System.
+GFX: Unsupported ASC ID (%llu) or NUM_ASCS (%llu)
+__DATA_SHARED_RO
+__DATA_SHARED_RW
+gpu-region-base
+gpu-region-size
+gptbat-ready
+ttbat-phys-addr-base
+gfx-shared-region-base
+gfx-shared-region-size
+gfx-shared-l2-region-base
+gfx-shared-l2-region-size
+gfx-handoff-base
+gfx-handoff-size
+gfx-data-base
+gfx-data-size
+gfx-data-shared-ro-base
+gfx-data-shared-ro-size
+gfx-data-shared-rw-base
+gfx-data-shared-rw-size
+rtkit-private-vm-region-base
+rtkit-private-vm-region-size
+gfx1-data-base
+gfx1-data-size
+gfx1-data-shared-ro-base
+gfx1-data-shared-ro-size
+gfx1-data-shared-rw-base
+gfx1-data-shared-rw-size
+gpu-supports-higher-mA
+chosen/carveout-memory-map
+region-id-%d
+region-name-id-%d
+iboot-data
+iboot_ifwX
+iboot_nefw
+Unknown
+object size check failed (%zu < %zu)
+rsize check failed (%zu < %zu)
+size check failed (%zu < %zu)
+<<FORMAT BUG! 
+diuoxXncs%pfFeEgGaA
+01234567
+0123456789abcdef
+0123456789
+unreachable condition
+%02X%02X%02X%02X-%02X%02X-%02X%02X-%02X%02X-%02X%02X%02X%02X%02X%02X
+object size check failed (%zu < %zu)
+rsize check failed (%zu < %zu)
+size check failed (%zu < %zu)
+__firebloom_panic
+__LINKEDIT
+boot-object-manifests
+secure-boot-hashes
+__ETEXT
+__EDATA
+nvram-bank-size
+nvram-bank-count
+nvram-current-bank
+nvram-proxy-data
+wwwwwwwwwwww
+nvram_raw
+guid-var-trans
+nvram-raw
+nvram,nor
+%s %s = "
+%%%02X
+VMiBoot 
+LZFSE   
+iBootIm
+paniclog: prepare regions result %d
+paniclog: buffer (addr %p, utilized: %#zx)
+paniclog: prepare single region result %d
+paniclog: save regions result %d
+panicmedic-engaged
+panicmedic-timestamps
+-no_panic_dialog
+panicmedic-panic-count
+panicmedic-auxkc-present
+panic_trace
+arm-io/cpu-debug-interface
+panic-trace-mode
+EFI PART
+Ramdisk image not valid
+reconfig-bp
+reconfig-breakpoints-all
+trace-seq-size
+trace-ce-ean-point
+trace-seq-mask
+%s/usr/standalone/firmware/FUD/%s
+Unsupported number of FTAB entries
+__TEXT2
+__OS_LOG
+compartments/kernel/metadata
+tunables_offset
+tunables_size
+__EDATA_S
+__SHARED
+__SHARED_DATA_RO
+__SHARED_DATA_RW
+compartments/roottask
+cL4-kernel/mmio
+uniprocessor-override
+crashlog-user-placeholder
+crashlog-user
+shdata_ro-addr-placeholder
+shdata_ro-addr
+shdata_rw-addr-placeholder
+shdata_rw-addr
+crashlog-kernel-placeholder
+crashlog-kernel
+crashlog-message-placeholder
+crashlog-message
+coredump-server-placeholder
+coredump-server
+cputrace
+pa-write
+pa-read
+streaming
+aslr-data-placeholder
+aslr-data
+compartments
+secure-compartment
+appUID
+crashlog_agent
+crashlog_size
+region-name
+alignment
+mapping-strategy
+mapped-here
+shmem_request
+data-segment-carveout-size
+boot-mem-size
+segments
+metadata
+__DATA_CONST_0
+__COMPONENTTYPE
+SYSTEM
+__MACHOHEADERSZ
+__MACHOHEADEROFF
+__text
+__MACHO%sSZ
+__MACHO%sOFF
+available
+nmi_irq_interrupt
+ascpower-static-msg-placeholder
+ascpower-static-message
+bundle/bundle-regions
+physical-addr
+bundle-size
+%s-scrt-protect
+nmi-ext-irq
+crashlog-region
+coredump-region
+cputrace-aslr-data-region
+idle-msg
+idle-ctrl-check
+TEXT+DATA
+asc-data-isolation-
+asc-data-isolation
+chosen/dynamic-object-map
+arm-io/sep
+arm-io/sep/iop-sep-nub
+%s%u-size-set
+%s%u-size
+rsepfirmware
+%s: handle create failed
+socd_init
+%s: load failed
+%s: create failed
+socd_push_init
+socd push section allocation failed
+failed to initialize socd push buffer
+arm-io/smc/iop-smc-nub/smc-socd
+push-buffer-address
+push-buffer-size
+push-section-descriptors
+arm-io/smc/iop-smc-nub
+failed to find the socd config parent node
+smc-socd
+failed to query the size of the SOCD region
+failed to get socd push buffer base address
+failed to get socd push buffer size
+socd-trace-ram
+failed to init socd kernel push section, result %u
+ @0x%016lx
+%s image too large, reserved 0x%zx bytes while need 0x%zx
+Load size 0
+%s image load failed
+syscfg-keybag-ids
+syscfg-keybag-ids-providers
+syscfg-erly-kbgs
+syscfg-late-kbgs
+iboot-syscfg
+data-class
+allow-load
+allow-unsealed
+format
+storage
+load-status
+syscfg-seal-keys-allowed
+syscfg-seal-keys-loaded
+syscfg-keybag-fallback-allowed
+syscfg-keybag-fallback-used
+manifest-entitlements
+%08X-%016llX
+Unknown block type
+interrupt
+Apple Inc.
+Samsung
+Micron
+chosen/lock-regs
+aperture-count
+aperture-size
+aperture-phys-addr
+plane-count
+plane-stride
+page-size-shift
+iop-sep-nub
+rom-panic-bytes
+reg-offset
+reg-mask
+reg-value
+FS task
+usb_serial
+%x(%x) 
+disable-boot-breadcrumbs
+COMMIT
+%s%s%s
+Default
+pre-loaded
+asc-dram-mask
+disable
+vm-base
+vm-size
+segment-names
+segment-ranges
+oslog-uuids
+oslog-slices
+routes
+%s:%i 0x%X
+dmem_regioning.c
+management
+%s: unsupported version [0x%x -> 0x%x], expected 0x%x
+syslog
+crashlog
+%s :%s
+Unknown exception
+- with nested
+UNDEF exception
+Unhandled SWI
+PREFETCH ABORT
+DATA ABORT
+SERROR
+NMI FIQ
+forced log msg
+forced crash msg
+Stack guard fault
+Mailbox error
+Recoverable PANIC
+%s(%lu)
+ INBOX UNDERFLOW
+ INBOX OVERFLOW
+ OUTBOX UNDERFLOW
+ OUTBOX OVERFLOW
+user%02u
+unknown%02u
+  pc=%#010x  fsr=%#010x (%s)  far=%#010x 
+far_physical=%#018llx 
+  pc=0x%08x 
+  pc=%#018llx  Exception class=%#04x (%s), IL=%u, iss=%#x far=%#018llx 
+  pc=%#018llx 
+ioreporting
+binlog
+[panic%c%#x] %s
+%s the refcon arg was NULL
+DERReturn _DERDecodeSysConfig3ParseAndPopulateMetadataSequence(DERDecodedInfo *__single, _Bool *__single, void *__single)
+Unable to allocate sysconfig3vX object. Likely due to an unsupported magic: 0x%X or version: 0x%X
+Unable to decode payload with error %d
+Tag was not the expected Payload tag %llX
+Decode sequence error: %d
+Unable to decode metadata with error %d
+Tag was not the expected metadata tag %llX
+Unable to decode manifest with error %d
+Tag was not the expected manifest tag %llX
+Decode manifest sequence error: %d
+%s key was invalid
+struct __SysConfig3PayloadEntry *__single_allocSysConfig3PayloadEntryInternal(uint32_t, const char *__single __terminated_by(0), const uint8_t *__single __counted_by(dataLength), uint32_t, const char *__single __terminated_by(0), _Bool)
+%s one of data, string, or deleted must be provided
+%s data, string and deleted are mutually exclusive. Caller provided parameters [%s%s%s ]
+ string
+ deleted
+%s data was 0 length
+%s invalid arguments. Either entry or data was NULL
+_Bool sysConfig3PayloadEntryGetData(struct __SysConfig3PayloadEntry *__single, SysConfigData *__single)
+%s key must be non-NULL
+struct __SysConfig3MetadataEntry *__singleallocSysConfig3MetadataEntry(const char *__single __terminated_by(0), const uint8_t *__single __counted_by(dataLength), uint32_t, const char *__single __terminated_by(0))
+%s data and string are mutually exclusive
+%s either data or string must be non-null
+%s data cannot be length zero
+%s one of the hmacs were NULL. payload ptr: %p metdata ptr: %p full ptr: %p
+struct __SysConfig3ManifestEntry *__singleallocSysConfig3Manifest(SysConfig3Version, const SysConfigData *__single, const SysConfigData *__single, const SysConfigData *__single)
+%s Unsupported sysconfig version: 0x%X
+_Bool _sysConfig3HMACsAreEqual(SysConfig3Version, const SysConfigData *__single, const SysConfigData *__single)
+%s invalid magic provided 0x%08X
+struct __SysConfig3 *__singleallocSysConfig3(SysConfig3Magic, SysConfig3Version)
+%s invalid version provided 0x%08X
+%s invalid argument. sysconfig cannot be NULL
+struct __SysConfig3PayloadEntry *__singlesysConfig3GetPayloadEntryForKey(struct __SysConfig3 *__single, uint32_t)
+_Bool _sysConfig3DeletePayloadEntryForKey(struct __SysConfig3 *__single, uint32_t)
+%s Failed to validate HMAC.
+%s invalid argument. sysconfig and key cannot be NULL
+_Bool _sysConfig3DeleteMetadataEntryForKey(struct __SysConfig3 *__single, const char *__single __terminated_by(0))
+%s invalid argument. sysconfig and etnry cannot be NULL
+_Bool _sysConfig3AddPayloadEntry(struct __SysConfig3 *__single, struct __SysConfig3PayloadEntry *__single)
+%s invalid argument. sysconfig and entry cannot be NULL
+_Bool sysConfig3AddPayloadEntry(struct __SysConfig3 *__single, struct __SysConfig3PayloadEntry *__single)
+%s Payloads with the deleted flag are only supported on version 0x%08X or higher.
+_Bool _sysConfig3AddMetadataEntry(struct __SysConfig3 *__single, struct __SysConfig3MetadataEntry *__single)
+%s sysconfig (0x%p) or manifest (0x%p) argument was null
+_Bool _sysConfig3SetManifest(struct __SysConfig3 *__single, struct __SysConfig3ManifestEntry *__single)
+%s sysconfig version (0X%08X) did not match manifest version (0X%08X
+%s source string was NULL
+char *__single __terminated_by(0)_allocAndCopyString(const char *__single __terminated_by(0), size_t)
+%s data was zero length
+uint8_t *__indexable_allocAndCopyData(const uint8_t *__single __counted_by(dataLength), uint32_t)
+%s sourceData or destData was NULL
+_Bool _copySysConfigData(const SysConfigData *__single, SysConfigData *__single)
+%s sourceData was 0 length
+%s sysconfig is NULL.
+_Bool sysConfig3IsValidHMAC(struct __SysConfig3 *__single)
+Invalid HMAC key. sysconfig->hmacKey.data = %p, sysconfig->hmacKey.length = %d. Did you register HMAC key?
+%s Payload HMAC does not match.
+%s Metadata HMAC does not match.
+%s Full HMAC does not match.
+%s Invalid HAMC key. sysconfig->hmacKey.data = %p, sysconfig->hmacKey.length = %u
+_Bool sysConfig3CreatePayloadHMAC(struct __SysConfig3 *__single, SysConfigData *__single)
+%s hmac is NULL
+%s malloc failed.
+_Bool sysConfig3CreateMetadataHMAC(struct __SysConfig3 *__single, SysConfigData *__single)
+_Bool sysConfig3CreateFullHMAC(struct __SysConfig3 *__single, SysConfigData *__single)
+%s Invalid HMAC key. sysconfig->hmacKey.data = %p, sysconfig->hmacKey.length = %u
+alloc ws
+free ws
+cebilefciladmplarmmhtreptlhptmbr
+XFQF2F
+2 *+aka
+_*RD5D
+2P@Q@@
+""`@h``L 
+rhPFIF
+oao"o@
+h@hIBO
+ @q t!
+ah hbh!
+"BBBBBBBB
+h+C3`D
+l hbhO
+`A`pG@
+"FX`)O
+`! c!`@
+$ F1`]
+haph6
+` h!F@
+!5F1`@
+5RD2@"CQ`
+function-pcie_port_control-pci0
+function-pcie_port_control
+function-pcie_port_control-pci2
+pci-bridge0
+iommu-parent-pcie0
+iommu-parent
+iommu-parent-pcie2
+dart-apcie2
+apcie2-piodma
+iommu-parent-pcie0
+iommu-parent
+iommu-parent-pcie2
+pci-bridge2
+function-pcie_port_control-pci2
+function-pcie_port_control
+function-pcie_port_control-pci0
+pci-bridge2
+iommu-parent-pcie2
+iommu-parent
+iommu-parent-pcie0
+dart-apcie0
+apcie0-piodma
+iommu-parent-pcie2
+iommu-parent
+iommu-parent-pcie0
+pci-bridge0
+function-clkreq-tahiti
+function-clkreq
+function-clkreq-tupai
+function-perst-tahiti
+function-perst
+function-perst-tupai
+function-clkreq-tupai
+function-clkreq
+function-clkreq-tahiti
+function-perst-tupai
+function-perst
+function-perst-tahiti
+!(,048<@DH
+QF^FKFEF
+MCE FW E001- built on Sat Jul 11 21:36:44 UTC 2026 by root
+__VECTORx
+__TEXT
+__DATA
+tsrtlaesgfCfgfCdvppagfCektpafpcdpcdefoicfumtMEPLHTLdCIBd1wfi2wfiwfengfCtgfC0tbplLCDAFSPdSALrCALiTSRP1rdf2rdfgfCbLACUSCIBlCDxHTLcACmHrcSdgfCLCIBTlCmHgfCjgfCcgfCm
+mBoot-18000.162.8
+double panic in 
+dddddddd
+????    
+????""""
+????&&&&
+????
+????####
+????((((
+Component Root CA1
+Apple Inc.1
+California0
+181219193154Z
+431216000000Z0F1
+Component Root CA1
+Apple Inc.1
+California0v0
+tbuarpua
+AAAAAA
+BBBBBB
+<<PTR>>
+<<WIDE CHAR>>
+%<<WIDE STRING>>
+(null)
+<<STRING BUG>>
+<<N SPECIFIER>>
+<<FLOATING POINT>>
+2nvram
+common
+2common
+system
+2system
+0ghc1ghcFtab0tab1tabPylgdqilogol0wpl1wplmcer1glr2glroglr
+BAD MAGIC!
+rkosftab
+mtpstpsrmxrtxrtrlcxelcxr
+xrtrlcxrtpsrmxrtlcxemtps
+tsrtcstrctsb
+0SxM1SxM2SxM3SxM
+0K1'0%
+Apple Secure Boot Root CA - G61
+Apple Inc.1
+190821182918Z
+440821182918Z0K1'0%
+Apple Secure Boot Root CA - G61
+Apple Inc.1
+n/wyo2
+0K1'0%
+Apple Secure Boot Root CA - G21
+Apple Inc.1
+141219201310Z
+341214201310Z0K1'0%
+Apple Secure Boot Root CA - G21
+Apple Inc.1
+I-ix_'
+_l`.q_
+0S1'0%
+Basic Attestation User Root CA1
+Apple Inc.1
+California0
+170419214156Z
+320322000000Z0S1'0%
+Basic Attestation User Root CA1
+Apple Inc.1
+California0v0
+0O1+0)
+"Apple X86 Secure Boot Root CA - G11
+Apple Inc.1
+170322214243Z
+170323214243Z0O1+0)
+"Apple X86 Secure Boot Root CA - G11
+Apple Inc.1
+C \x=>
+assert
+unaligned_ptr
+ptr_null
+memcpy_bad_type
+memcpy_bad_n
+memset_bad_type
+memset_bad_n
+allocation_size_error
+ptr_oob
+RELEASE
+77669126d4befe2a5de0edf4ad3968f8
+$ *dZC
+}+,>sS
+pbzalM
+[wl-(;?
+lXb*7k/ x
+wwn.mX\)M
+>PjUAd
+:JK>3 D
+4P9c`$X
+jX34,KCALt
+bvx$bvx2
+3jK&$j
+Nrp9qcF'X>
+cb4z(3
+1gK$dm
+RVJ{%Jt<
+S.zI^'
+YNSm '
+r"ud+/b)s
+pW,r++.
+ry#\\f
+E&"=+N|
+T{ X|)
+ c De>$
++wB Xe
+MI]L4A
+sgH1H\*(i.
+R?xKt:
+2Z+I;Z
+@#oE%!b
+u4`-ct
+-c:/4 
+3=r0<a
+|b@"ef
+"ZBcU<6
+bvx$bvx2
+$FM;/Fs
+0z5.o
+LA$tpS4
+2gw+.O
+|FkpS
+&zhXqvNu
+*hcOMC
+xzMY4N
+^@D\SekrvV
+V_'O}^
+.wXokNG
+V_mDE;
+=J%a[v;n
+Duhrpe
+s*t`6@
+D=G-4cG"
+NrF)eTl
+YYj,3PN<
+a'uQv
+_>Y*s=
+bvx$bvx2
+yzt0G;
+D6|ize
+]5&gJw
+WA6O3Yq
+Y<V^J<Pe
+AJh?;h
+QVI@VW
+)]we38z
+=:hm[4h
+0@x0O]
+ZmN;!'
+WKrV/
+3uLOEp
+G+{v']
+CBur'
+]"cEtP}iq
+$kJS$YS
+XA"u>;
+p20T*M
+)JYv(L
+{l,Ha`
+bvx$bvx2
+usrupt5
+htDUGT
+K-Aa5i
+MUkp#t
+T.V#U|qD5
+R)cy[Y
+LrypAZ
+Bt1L#GlA
+>2]Tv]dV
+a"7Gd`
+6=0yk&k
+rAc9zo
+O-N[C4
+5pY)Q^|
+Y!(t)+
+t`ebuh
++f^LbRF
+DYTyNFB
+oU1`Hb]
+Q!&@7Z!
+661VSA
+s/Hyl!
+*hv6Lh
+@85(:Ks
+16o68bz
+ ,HiLI
+bvx$bvx2
+@]iT]k
+q-'"+]Q
+F2a}7
+7I1B#u}
+YUDO2G|
+Os=b6)<V?A
+f+U|rn@-
+e.X,e#
+gR3Lj~
+EWIY3#e
+M*Ln<-uP
+:u&{Iw
+u!r#+x
+ y@xH2,
+bl,\S?
+0KjifG
+c6.*qB
+D0:bzt
+z8lWT&
+<K> W>#(31q<
+p$c\4$
+>bvx$bvx2
+jtDUUU
+0ca*x"
+c.A@Rq
+4"P :^4
+ca%7LR
+&pBnsS
+o}*8CA
+z!H94N
+=J]?"0 
+qbpf;T
+%3K<9l
+l^J_!Lyn
+][~"OL
+SW5D~$
+`ySyN
+!}P"Zd
+IUFWK
+n/"x\t
+TpUPXR@R
+@z+x=B
+y-2Q\B[wp
+bvx$bvx2
+BEu;f~T
+{K:U12
+B%B .J5n}
+leO2\^a
+Yr!8f(
+^q7x?
+&^|?zR
+?N*088,p*j
+I\|Hm=x
+>^=/PE
+\iO@Wl_ 
+5k4'=,R
+]hjJx
+GAY+ !
+o1c_F$
+T\lh/L
+HRA%hhP
+u5TRaL@x
+/83 Y?
+ "SbXc.
+BXNF\Z
+j@<,w!
+1>_a4 
+Db*c;,
+bvx$bvx2
++x+,k\
+qPv-(@
+pGH@@(W
+-8~@Z;4
+3`ndEr
+z}^N`|M
+b=!`IEn
+e!fhz0v
+BI 1@
+[_*lM.
+LB(R^xD
+;Rnn{i
+B^s hF
+-%UcdS
+j=eZRY"
+k&A!~BB
+bmib+HV
+k||10%
+Uhp<7^Z3
+W/c+%k%
+@eX$5[
+i-:3)
+u!;<`=
+I9"lBF
+w+:h3f
+td#GMs
+bvx$bvx2
+9kz|qq
+0/hPPL
+4'6=W80
+43Fc8{Y
+MSM\Bg
+R:!UyeCJ$d
+WCZ>6B
+&]\7XQR
+6Fhgy65K
+z:6Apc
+~vK$!2Qt
+M9@n+3
+e8H;7`
+~gHVI0
+M,n8I#gXn
+Z#1!v2
+m/:@'v
+gP:hY,
+8gCXaj.
+Q_ulX=
+ZDHyG5
+p;!Z;x
+p%0`!4`
+JAx/Lm
++0zf(3a
+Ft7GXq1t
+)pt"~O
+!H=K;@o
+bvx$bvx2
+N|d|!1
+A5jw}8
+Tf}';8a
+~ec|,6
+nRl8#Z
+iM3R3nh
+xX^qpi,
+,.Bsf]z{
+|9q@dG
+naI1zW\
+`72Zm*4h
+8 Eatld
+=@H<^.
+0#VqdN
+d@p,pr
+ni\r!wX
+u`(0D`_
+ MaL;H
+bvx$bvx2
+m\DJp0
+LT|TvF
+c'D/&(w|HZ
+p^iBd~
+JNH@#Wj
+o,Q,3.
+TIbUCGg!
+k-cjT^Zmt
+!V#icO
+gCM%-$
+&@N1pAB"
+h_ 0Z0;9
+bvx$bvx2
+]iwhZw
+<6kbD|
+)T3]~(3
+Y~/cG0
+<`0cL&3
+5`<$jL
+u=98%m
+z,s'QD
+e&:bsA
+z5pRJB
+*BC$$66B'b
+J}e2!
+bEI@c
+eN4.T.sr
+ XC;N
+~bvx$bvx2
+y1z|w0
+A;c\?@<
+M4cuTu
+{W<w0mz
+tKNeyX
+krn'vQ
+QX,GQV
+T.V0I`
+U3_uQoZ
+#6ArFY!Sd
+JdLnMJ
+UAG_[*
+?J+58n
+jo<]/,=
+"9.$n}
+#ztY48
+>=Y_Z|
+z"y2X&7Vr
+txHVtc
+)$"5@B
+L<1a*(
+bvx$bvx2
+M'N\,U.F
+Fm?K\+
+Xy#*l@
+fCb|RB6
+M0;zY
+VuFg7-!
+TQi,d#
+LVJ#%~Ii
+b|EOIXjZt
+#(<KxQ:&
+j]+LcQ
+-y 4%c&XZ
+tz'fd
++J053\
+NlJ%.b
+(OCBq%"
+g@j#<2F
+#C|D5Cw
+8N =Q04
+bvx$bvx2
+:FTmTuT5
+MPfy8t
+N;n'6p@
+3qVhZ8
+/RsMaW7
+*-_bW%
+gCSxKl
+aeZ*Yy
+~\7Ux}
+WG'`=yHS
+PL{K='gu
+iPlqJ1
+p L;;e0
+.{(boB
+Gvx3$K
+~&05]9
+hiP,F*
+1E6+nR
+dh$IV 
+xpu J:
+bvx$bvx2
+/`KjdV&t
+WZr_=2lMD
+L-q}|%
+<d\}~-
+!t}[MQ
+e;;ngg
+]eMH+M
+31=K4Z
+N0RR0[c
+\@&D1c\b
+Ha$S\B
+'@`w!KW
+cL=bvx$bvx2
+pld_Z6
+9:L$bi
+WeCDp/-
+c[h&&C
+#jlh[V
+2A2x\v
+G0!D~Y`{C+
+?&@70`^9h{
+63~NTs
+t,p;:D
+bvx$bvx2
+Wkwfd$
+'"R^:Y
+sc>N#o
+2ppczF
+iZ@qHh
+t\s*)kn
+BArl!q#
+eE@ChP~D
+vW;{h>
+2*z2S_
+0\UY_|8
+oL~\%2
+{y94E7
+#ReO5Gb
+b&G,^?7
+EI|r M
+pfD_q*
+.BS)I\
+Eey8n2k
+Q$[:V#H
+bvx$bvx2
+FsVoejT
+dye]\&>%
+1(Z4Wnb
+U|SRk6V
+gx0ZVTP"
+T1a'KR
+]GQ?A@
+3>'U!Sg
+r-)gy2
+@QU=qr
+A^%=e
+eY6[WE 
+I9`~0q
+H^IQ@ob
+.]uKo$
+q,}F[p7$
+SQ)`"f
+IYk6.]q
+x/-sAD
+PNC31.
+d20h@V1<
+jQ0dBe
+#qzG?G
+bvx$bvx2
+Ma6M$k
+y6$xxy
+1jy7?=
+<.&+"f
+=5,5}U^4
+fmzJ6F
+N_4ZX$
+"YerME
+CT~1-"9
+FIJY[[
+Y["vBKLh
+q{h*4"
+n,MnW{n
+{&f9&*
+.;f/l}Q
+}dP[ZJ
+VB!gpw
+3b4T/A
+Ed%$y
+&>cRr5d
+'y#a-h
+[0slCq4C
+bvx$bvx2
+;s>a)v
+b.6+):
+<H'G3J
+$G,>:|
+Z$I{p
+rV~s>9#,m
+V;l<D[1
+Wbzq!!&
+Fr~<qGD
+Yu{]y7)
+8\(oqQ
++oNQ'g
+^0jQn!-
+&OW%{4
+ Haa$e
+<:C),(ed
+'akLcQ-D
+L>\bP%
+`)J<&&18
+T<w9`W
+S.PcnF
+5Vva;?
+H[cl@
+bvx$bvx2
+ppExA2L
+a&J\1
+%<\$&L
+ieA2U"
+x4P^4|
+yuhnqW5b-
+{<=vO3
+|--7#*
+}k(9,:
+upv0wg
+Wt|I3;
+AG-$G$E?
+<-^x*G
+ON ({1
+LZV"M
+'-|C0p
+ay#d&O
+3rfdxX
+bvx$bvx2
+~tTD,g
+b?;rfF
+8UK^56
+nQq@Tr
+VB]i$XB
+Y>v97l
+F`46S
+v\a)BJ
+1 ?,.QNC
+lUqo,D
+f|'@4(
+8v5Wr%
+1he8!\j#
+pCST-yl
+Z"<"]m
+$;[!@T
+X=`+_d 
+uq2,9N
+. JUz08
+7S`:]%2
+D]ip-0XD
+aaLJ`Y
+h1asbC;
+&%P.`%?
+$OMg(a
+ BdBKt
+3a9 1.
+bvx$bvx2
+LRQQ.9
+9 .?jHJo/
+wdU`Z_
+`""4@Dax
+;;-&5N
+E7wJiaKhK
+|XJFou
+z74w=m
+iQ?O4
+~G{xJ`
+ulMYl9
+>o<4E*
+Vw1E.
+.#)q,#
+1-2fjJ
+ONda&%
+%L4bvx$bvx2
+pspxv4
+a({e2Bdf@`
+txB4C.C
+%thiWJZRJ
+e!]XH7+
+E[TKfEXy
+v*,o*L/
+fsZ=(P
+$Np@qx
+Y8C8:k"
+YPhO-X
+=5eOKY
+fjDk&?
+b95mq+Z[
+:{5K;4
+](uE9j$Z
+7C;7lg
+|H~Wz?
+@{/{9]
+f&1X*|
+TiQJ&6
+bvx$bvx2
+{9dLE\
+`wd6Of
+4S[9.-V
+x6Qb]O2
+-;YN:,
+B"B}fIJ
+it^oG|
+$\oC){
+]EVQU45
+!FB!!HF
+#2EB'R9
+z"U'PU
+0aU.&J
+no@{NL
+<TM)oe%*
+fR&BJcfry
+'JMT"^
+hhiiiy4B
+bvx$bvx2
+{~=h=!
+kdkK6V
+E-hn&qa
+Y&%t{Z:@
+8Sn|k[m
+Z~K/Du
+:1]dX|
+q(qmNEE
+~05YqX
+bvx$bvx2
+bvx$bvx2
+bvx$bvx2
+bvx$bvx2
+bvx$bvx2
+rqO7vxv
+Lribv)
+xQZB"m
+<j1@s3
+vE|Q*7=u
+?bvx$bvx2
+X}x<5U
+ CtfJy$
+PpXAeQu
+Osh1Bv
+qwifv2
+EpG8%=
+Q)`&<y
+bvx$bvx2
+#Ip8$$9
+@`ex9OM<(
+#SrR)U
+*$o^#v
+I:+$<M.!{
+_&B !
+bvx$bvx2
+_!^9JA
+V1hB=k
+HG?n_U
+'MJ!;r4L
+}h@b4V
+l {).I4
+X19k'
+JbXtW]Hq
+1~tu^E
+4wv2{
+CWLC/d
+JVipIA5
+}$1!A&2
+bvx$bvx2
+%+;V6b
+y#xm^l
+VGC6,
+gbvx$bvx2@'
+qp|prr
+TxAeo0
+?Nk~+I
+D7q/;M
+"
+D7q/;M
+Apple iPhone Certification Authority
+Apple Code Signing Certification Authority
+Apple Accessories Certification Authority - 
+Apple Accessory Host Attestation Authority - 
+Apple Accessories Provisioning Authority - 
+Apple Accessories Provisioning Host - 
+qH,lH#
+w.M|o/
+DFMFVF_F
+%FMC[
+pGpGpGpGpGpGpGpGpGpG
+|H ")F
+G{H,0)F2F
+!C1`\I
+%jJ F)F
+CJN0h @0`eJ(F)F
+tb4b2M(k
+@hcXHpaXH
+ KI1P(k
+J 4Z9Mh
+C0FJ0,}d
+ Fpe!F
+F!F*F#F
+1F10)&
+!!lT)F!1"
+TJ!qZi
+1FJ1%J
+F1F"F3F
+ M(h L!m
+F)F$M(@
+L  N1T
+(|I!pT0m
+4GM,5GH 0
+pD@4q0{@
+U 8M)\I
+@)B!F,
+ (X1F49
+ (X1F09
+ (X1F,9
+ (X1F(9
+ (Z1F$9
+4F<#`
+!hA`ay
+``9M(F1F
+#F83ZUB
+(F00!F
+&@$1F"F
+!pP F:8
+\BP%UCK^
+pc\Ux-
+0``z0r
+IX1 "(F
+GhH@"!F
+L F$0!F(1
+)F2F+F
+`PhhAP`
+Kh&Xi}I
+STa|!wb
+:HAx@"
+ST@!La\
+ FP0!FT1
+ FX0\4!F2F
+N1FB1 
+CDPBX*B
+)`!zcz
+@d$TCd4
+LCB" F)F+F
+V 1F*F
+hYx^paC@
+(kAh(k
+RTKSTACK
+ ApplePMUFirmware-608.100.39~3718.releas
+gfCeacseacse
+memboot
+nvme_firmware0
+spi_nand0
+iBootData
+Trustcache
+RTBuddy
+Exclave
+iBootData
+Trustcache
+RTBuddy
+RestoreANS
+Exclave
+fsboot
+upgrade
+recover
+recover-once
+checkerboard
+repair
+device-recovery
+upgrade
+recover
+recover-once
+auto-boot
+boot-args
+debug-uarts
+pwr-path
+apt-carveout-size-mb
+auto-boot
+auto-boot-once
+audio-features
+backlight-level
+backlight-nits
+boot-command
+com.apple.System.boot-nonce
+one-time-boot-command
+ramrod-kickstart-aces
+stress-rack
+alpm-24h-mode
+alpm-number-system
+alpm-next-dst
+alpm-dst-offset
+alpm-language-direction
+StartupMute
+SystemAudioVolumeExtension
+SystemAudioVolumeSaved
+debug-uarts
+device-material
+dev-unset-debug-enabled
+display-rotation
+display-vsh-comp
+idle-off
+is-tethered
+darkboot
+ota-breadcrumbs
+force-upgrade-fail
+boot-breadcrumbs
+recovery-breadcrumbs
+security-mode-change-enable
+com.apple.System.tz0-size
+utc-offset
+com.apple.System.rtc-offset
+pwr-path
+upgrade-retry
+preserve-debuggability
+upgrade-fallback-boot-command
+panicmedic-panic-count
+panicmedic-timestamps
+panicmedic-engaged
+allow-embedded-pm
+panicmedic-telemetry
+recovery-boot-mode
+reboot
+bgcolor
+setpicture
+firmware
+devicetree
+getenv
+saveenv
+setenv
+setenvnp
+clearenvp
+ramdisk
+rsepfirmware
+ans/iop-ans-nub
+fsboot
+recover
+recover-once
+recover-system
+recover-fallback
+device-recovery
+upgrade
+post-upgrade
+fsboot-safe
+field-diags
+field-diags-paired
+phleet
+checkerboard
+repair
+rtkitos
+restore_rtkitos
+diags_rtkitos
+invalid
+fsboot
+device-recovery
+Device Recovery
+recover
+Network Recovery
+iBoot Recovery
+nand_syscfg
+nvme_syscfg0
+GFX_ASC0
+GFX_ASC1
+SIO_DMA
+arm-io/i2c0
+arm-io/i2c1
+arm-io/i2c2
+arm-io/i2c3
+arm-io/i2c4
+DispTarget908
+DispTarget93
+DispTarget94
+DispTarget47
+DispTarget48
+DispTargetX3200
+DispTarget93
+DispTarget94
+DispTarget47
+DispTarget48
+DispTargetX3200
+dart-dcp
+dart-dcp
+dart-dcp
+dart-disp0
+dart-disp0
+dart-disp0
+dart-disp0
+dart-dispgrt
+dart-aop
+dart-aop
+dart-aop
+dart-aop
+dart-aop
+dart-aop
+dart-aop
+dart-aop
+dart-aop
+dart-mtp
+dart-sep
+nub_out_isoc
+nub_out_llt
+nub_out_llt
+nub_exclave
+smc_out
+smc_in
+sbr_apb_pio
+sbr_lft
+mtp_in_apf
+asio_exclave_pio
+aop_fabric
+aop_sram
+sne_iso
+disptop_inbound
+disptop_rt_smmu_tz
+disptop_grt_smmu_tz
+disptop_llt_dcp_dart_tz
+disptop_bulk_dcp_dart_tz
+disptop_rt_dart_tz
+disptop_llt
+disptop_cpubulk
+disptop_grt
+disptop_dmabulk
+disptop_rt
+disptop_ipa
+main_pio_jic
+dispexttop_inbound
+dispexttop_ipa
+aop_cpu
+aop2_cpu
+pmc_in_apf
+pms_piodma
+nub_out_isoc
+nub_out_llt
+nub_out_llt
+nub_exclave
+smc_out
+smc_in
+sbr_apb_pio
+sbr_lft
+mtp_in_apf
+asio_exclave_pio
+aop_fabric
+aop_sram
+sne_iso
+disptop_inbound
+disptop_rt_smmu_tz
+disptop_grt_smmu_tz
+disptop_llt_dcp_dart_tz
+disptop_bulk_dcp_dart_tz
+disptop_rt_dart_tz
+disptop_llt
+disptop_cpubulk
+disptop_grt
+disptop_dmabulk
+disptop_rt
+disptop_ipa
+main_pio_jic
+dispexttop_inbound
+dispexttop_ipa
+aop_cpu
+aop2_cpu
+pmc_in_apf
+pms_piodma
+apcie0
+apcie1
+apcie2
+dispgrt
+jpeg0-h17p
+jpeg1-h17p
+scaler
+apcie0
+apcie1
+dispgrt
+jpeg-h17a
+scaler
+dart-ane
+ANE.img4
+aop/iop-aop-nub
+dart-aop
+AOP.img4
+AVE.img4
+AVE.img4
+gfx-asc/iop-gfx-nub
+gfx-asc
+GFX.img4
+gfx1-asc/iop-gfx1-nub
+gfx1-asc
+Ap,GFX1Firmware.img4
+dart-isp
+ISP.img4
+isp/iop-isp-nub
+dart-isp
+ISP.img4
+mtp/iop-mtp-nub
+dart-mtp
+MtpFirmware.img4
+pmp/iop-pmp-nub
+PMP.img4
+sio/iop-sio-nub
+dart-sio
+SIO.img4
+arm-io/apcie
+arm-io/apcie/pci-bridge0
+arm-io/apcie/pci-bridge1
+arm-io/apcie/pci-bridge2
+arm-io/apcie0-piodma
+arm-io/apcie1-piodma
+arm-io/apcie2-piodma
+apcie-axi2af-tunables
+apcie-cio3pllcore-tunables
+apcie-pcieclkgen-tunables
+apcie-phy-tunables
+apcie-phy-ip-pll-tunables
+apcie-phy-ip-auspma-tunables
+apcie-config-tunables
+pcie-rc-tunables
+pcie-rc-gen3-shadow-tunables
+pcie-rc-gen4-shadow-tunables
+apcie-config-tunables
+pcie-rc-tunables
+pcie-rc-gen3-shadow-tunables
+pcie-rc-gen4-shadow-tunables
+apcie-config-tunables
+pcie-rc-tunables
+pcie-rc-gen3-shadow-tunables
+pcie-rc-gen4-shadow-tunables
+apcie-apiodma-tunables
+apcie-apiodma-tunables
+apcie-apiodma-tunables
+arm-io/apcie
+arm-io/apcie/pci-bridge0
+arm-io/apcie/pci-bridge1
+arm-io/apcie0-piodma
+arm-io/apcie1-piodma
+apcie-axi2af-tunables
+apcie-cio3pllcore-tunables
+apcie-pcieclkgen-tunables
+apcie-phy-tunables
+apcie-phy-ip-pll-tunables
+apcie-phy-ip-auspma-tunables
+arm-io/usb-drd
+arm-io/atc-phy0
+tunable_DRD_USB31_DBG_DEFAULT
+tunable_DRD_USB31_GBL_DEFAULT
+tunable_DRD_USB31_GBL_HOST
+tunable_LINK_REGS_DEFAULT
+tunable_DRD_USB31_CFG_HOST
+tunable_BULK_FABRIC_DEFAULT
+tunable_PIPE_HANDLER_DEFAULT
+tunable_AUSBC_DEBUG_DEFAULT
+tunable_ATC0AXI2AF
+tunable_ATC0AXI2AF_LOCK_LOCK
+tunable_ATC0AXI2AF_WR_DIS
+tunable_ATC_FABRIC
+tunable_ATC_COMMON_CFG
+tunable_USB2PHY_HOST
+tunable_USB2PHY_DEV
+tunable_USB2PHY_REG_DFLT
+tunable_AUX_TOP
+tunable_AUSCMN_SHM
+tunable_AUSCMN_DIG
+tunable_ACIOPHY_PLL_TOP
+tunable_AUSPLL_CORE
+tunable_CLKMON_CFG
+tunable_CIO3PLL_CORE
+tunable_CIO3PLL_TOP
+tunable_ACIOPHY_LANE_USBC0
+tunable_ACIOPHY_LANE_USBC1
+tunable_CIO_SHIM
+tunable_ACIOPHY_TOP
+tunable_LN0_RX_TOP_USB_DFLT
+tunable_LN0_RX_EQ_USB_EQA
+tunable_LN0_TX_TOP_USB_DFLT
+tunable_LN0_TX_SHM_USB_DFLT
+tunable_LN0_RX_SHM_USB_DFLT
+tunable_LN1_RX_TOP_USB_DFLT
+tunable_LN1_RX_EQ_USB_EQA
+tunable_LN1_TX_TOP_USB_DFLT
+tunable_LN1_TX_SHM_USB_DFLT
+tunable_LN1_RX_SHM_USB_DFLT
+PACC0.cpm_MTR1.MTR0
+PACC0.cpm_MTR1.MTR1
+EACC.cpm_MTR1.MTR0
+EACC.cpm_MTR1.MTR1
+SOC_SubSystem3.Graphics.AGX_DFNDR_MGPU_SYSTEM.AGX_MTR_TOP_MGPU
+SOC_SubSystem1_0.SouthBridge.PMS.PMS_DEVC_TOP.MTR_TOP_SOC
+SOC_SubSystem2.SNE.MTR_TOP_CMN
+SOC_SubSystem3.Graphics.AGX_DFNDR_MGPU_SYSTEM.AGX_MTR_TOP_MGPU_TUPAI
+amcp_bc
+amcc_plane0_debug
+amcc_plane1_debug
+amcc_plane2_debug
+RECONFIG_ENGINE_PMGR_CE_IBOOT1
+RECONFIG_ENGINE_GP_CE0_IBOOT1
+RECONFIG_ENGINE_MAX
+RECONFIG_ENGINE_PMGR_CE_IBOOT2
+RECONFIG_ENGINE_GP_CE0_IBOOT2
+RECONFIG_ENGINE_MAX
+RECONFIG_ENGINE_ANE_CE
+RECONFIG_ENGINE_MAX
+PMGR_A2M_IBOOT1A
+PMGR_A2M_IBOOT1B
+PMGR_M2D_IBOOT1A
+PMGR_M2D_IBOOT1B
+PMGR_D2C_IBOOT1A
+PMGR_D2C_IBOOT1B
+PMGR_C2S_IBOOT1A
+PMGR_C2S_IBOOT1B
+PMGR_S2C_IBOOT1A
+PMGR_S2C_IBOOT1B
+PMGR_C2D_IBOOT1A
+PMGR_C2D_IBOOT1B
+PMGR_D2M_IBOOT1A
+PMGR_D2M_IBOOT1B
+PMGR_M2A_IBOOT1A
+PMGR_M2A_IBOOT1B
+GP_CE0_DCS_IBOOT1_POWER_UP
+GP_CE0_DCS_IBOOT1_POWER_DOWN
+GP_CE0_MISC0_IBOOT1_SEQ
+GP_CE0_IBOOT1_DUMMY_SEQ
+GP_CE0_DRAM_D2C_PRE_MCU_ENTRY
+GP_CE0_DRAM_C2D_POST_MCU_DDR
+GP_CE0_DRAM_C2D_POST_MCU_LOCKED
+GP_CE0_DRAM_C2D_POST_MCU_MDLL_CALIB
+GP_CE0_DRAM_C2D_POST_MCU_PRE_DRAM
+GP_CE0_DRAM_C2D_POST_MCU_DRAM
+GP_CE0_DRAM_C2D_POST_MCU_BEFORE_RESTORATION
+GP_CE0_DRAM_C2D_POST_MCU_AFTER_RESTORATION
+GP_CE0_DRAM_D2A_POST_MCU_M3_LOAD
+GP_CE0_DRAM_D2A_POST_MCU_POST_AWAKE
+GP_CE0_DRAM_D2A_POST_MCU_AFTER_VDDIO12
+GP_CE0_DRAM_A2D_PRE_MCU_ENTRY
+GP_CE0_DRAM_C2D_POST_MCU_RESTORATION
+MAX_SEQ
+PMGR_A2M_IBOOT2A
+PMGR_A2M_IBOOT2B
+PMGR_M2D_IBOOT2A
+PMGR_M2D_IBOOT2B
+PMGR_D2C_IBOOT2A
+PMGR_D2C_IBOOT2B
+PMGR_C2S_IBOOT2A
+PMGR_C2S_IBOOT2B
+PMGR_S2C_IBOOT2A
+PMGR_S2C_IBOOT2B
+PMGR_C2D_IBOOT2A
+PMGR_C2D_IBOOT2B
+PMGR_D2M_IBOOT2A
+PMGR_D2M_IBOOT2B
+PMGR_M2A_IBOOT2A
+PMGR_M2A_IBOOT2B
+GP_CE0_ECLUSTER_IBOOT2_POWER_UP
+GP_CE0_ECLUSTER_IBOOT2_POWER_DOWN
+GP_CE0_PCLUSTER_IBOOT2_POWER_UP
+GP_CE0_PCLUSTER_IBOOT2_POWER_DOWN
+GP_CE0_AVE_IBOOT2_POWER_DOWN
+GP_CE0_AVE_IBOOT2_POWER_UP
+GP_CE0_DISP_IBOOT2_POWER_UP
+GP_CE0_DISP_IBOOT2_POWER_DOWN
+GP_CE0_MISC1_IBOOT2_SEQ
+GP_CE0_IBOOT2_DUMMY_SEQ
+MAX_SEQ
+GP_CE0_AVE_IBOOT1_DUMMY_POWER_UP
+MAX_SEQ
+GP_CE0_MISC2_IBOOT1_SEQ
+MAX_SEQ
+ANE_CE_SYS_RETENTION
+ANE_CE_SYS_TUNABLES
+ANE_CE_TDBASE_RETENTION
+ANE_CE_TDBASE_TUNABLES
+MAX_SEQ
+GP_CE0_DCS_IBOOT1_POWER_UP
+GP_CE0_DCS_IBOOT1_POWER_DOWN
+GP_CE0_IBOOT1_DUMMY_SEQ
+GP_CE0_DRAM_D2C_PRE_MCU_ENTRY
+GP_CE0_DRAM_C2D_POST_MCU_DDR
+GP_CE0_DRAM_C2D_POST_MCU_LOCKED
+GP_CE0_DRAM_C2D_POST_MCU_MDLL_CALIB
+GP_CE0_DRAM_C2D_POST_MCU_PRE_DRAM
+GP_CE0_DRAM_C2D_POST_MCU_DRAM
+GP_CE0_DRAM_C2D_POST_MCU_BEFORE_RESTORATION
+GP_CE0_DRAM_C2D_POST_MCU_AFTER_RESTORATION
+GP_CE0_DRAM_D2A_POST_MCU_M3_LOAD
+GP_CE0_DRAM_D2A_POST_MCU_POST_AWAKE
+GP_CE0_DRAM_D2A_POST_MCU_AFTER_VDDIO12
+GP_CE0_DRAM_A2D_PRE_MCU_ENTRY
+GP_CE0_DRAM_C2D_POST_MCU_RESTORATION
+MAX_SEQ
+NUB SRAM iBoot1 Region
+NUB SRAM iBoot2 Region
+ANE CE DRAM Region
+NUB SRAM Scratch Region 0
+IB1_A2M_1A_B
+IB1_A2M_1A_E
+IB2_A2M_2A_B
+IB2_A2M_2A_E
+IB1_A2M_1B_B
+IB1_A2M_1B_E
+IB2_A2M_2B_B
+IB2_A2M_2B_E
+IB1_M2D_1A_B
+IB1_M2D_1A_E
+IB2_M2D_2A_B
+IB2_M2D_2A_E
+IB1_M2D_1B_B
+IB1_M2D_1B_E
+IB2_M2D_2B_B
+IB2_M2D_2B_E
+IB1_D2C_1A_B
+IB1_D2C_1A_E
+IB2_D2C_2A_B
+IB2_D2C_2A_E
+IB1_D2C_1B_B
+IB1_D2C_1B_E
+IB2_D2C_2B_B
+IB2_D2C_2B_E
+IB1_C2S_1A_B
+IB1_C2S_1A_E
+IB2_C2S_2A_B
+IB2_C2S_2A_E
+IB1_C2S_1B_B
+IB1_C2S_1B_E
+IB2_C2S_2B_B
+IB2_C2S_2B_E
+IB1_S2C_1A_B
+IB1_S2C_1A_E
+IB2_S2C_2A_B
+IB2_S2C_2A_E
+IB1_S2C_1B_B
+IB1_S2C_1B_E
+IB2_S2C_2B_B
+IB2_S2C_2B_E
+IB1_C2D_1A_B
+IB1_C2D_1A_E
+IB2_C2D_2A_B
+IB2_C2D_2A_E
+IB1_C2D_1B_B
+IB1_C2D_1B_E
+IB2_C2D_2B_B
+IB2_C2D_2B_E
+IB1_C2D_DCS_B
+IB1_C2D_DCS_E
+IB1_D2M_1A_B
+IB1_D2M_1A_E
+IB2_D2M_2A_B
+IB2_D2M_2A_E
+IB1_D2M_1B_B
+IB1_D2M_1B_E
+IB2_D2M_2B_B
+IB2_D2M_2B_E
+IB1_M2A_1A_B
+IB1_M2A_1A_E
+IB2_M2A_2A_B
+IB2_M2A_2A_E
+IB1_M2A_1B_B
+IB1_M2A_1B_E
+IB2_M2A_2B_B
+IB2_M2A_2B_E
+IB2_M2A_PROD_B
+IB2_M2A_PROD_E
+IB1_M2A_DCS_B
+IB1_M2A_DCS_E
+MISC0_IBOOT1_SEQ_B
+MISC0_IBOOT1_SEQ_E
+MISC1_IBOOT2_SEQ_B
+MISC1_IBOOT2_SEQ_E
+MISC2_IBOOT2_SEQ_B
+MISC2_IBOOT2_SEQ_E
+DRAM_A2D_PRE_MCU_ENTRY_B
+DRAM_A2D_PRE_MCU_ENTRY_E
+DRAM_C2D_POST_MCU_DDR_B
+DRAM_C2D_POST_MCU_DDR_E
+DRAM_C2D_POST_MCU_LOCKED_B
+DRAM_C2D_POST_MCU_LOCKED_E
+DRAM_C2D_POST_MCU_MDLL_CALIB_B
+DRAM_C2D_POST_MCU_MDLL_CALIB_E
+DRAM_C2D_POST_MCU_PRE_DRAM_B
+DRAM_C2D_POST_MCU_PRE_DRAM_E
+DRAM_C2D_POST_MCU_DRAM_B
+DRAM_C2D_POST_MCU_DRAM_E
+DRAM_C2D_POST_MCU_BEFORE_RESTORATION_B
+DRAM_C2D_POST_MCU_BEFORE_RESTORATION_E
+DRAM_C2D_POST_MCU_AFTER_RESTORATION_B
+DRAM_C2D_POST_MCU_AFTER_RESTORATION_E
+DRAM_C2D_POST_MCU_RESTORATION
+DRAM_C2D_POST_MCU_RESTORATION_E
+DRAM_D2A_POST_MCU_POST_AWAKE_B
+DRAM_D2A_POST_MCU_POST_AWAKE_E
+DRAM_D2A_POST_MCU_M3_LOAD_B
+DRAM_D2A_POST_MCU_M3_LOAD_E
+DRAM_D2A_POST_MCU_AFTER_VDDIO12_B
+DRAM_D2A_POST_MCU_AFTER_VDDIO12_E
+EACC_POWER_DOWN_B
+EACC_POWER_DOWN_E
+PACC_POWER_DOWN_B
+PACC_POWER_DOWN_E
+EACC_POWER_UP_B
+EACC_POWER_UP_E
+PACC_POWER_UP_B
+PACC_POWER_UP_E
+MARK_PANIC_FLOW_B
+MARK_PANIC_FLOW_E
+R_WDOG EN
+R_WDOG DIS
+IB1_A2M_1A_BEGIN
+IB1_A2M_1A_END
+IB2_A2M_2A_BEGIN
+IB2_A2M_2A_END
+IB1_A2M_1B_BEGIN
+IB1_A2M_1B_END
+IB2_A2M_2B_BEGIN
+IB2_A2M_2B_END
+IB1_M2D_1A_BEGIN
+IB1_M2D_1A_END
+IB2_M2D_2A_BEGIN
+IB2_M2D_2A_END
+IB1_M2D_1B_BEGIN
+IB1_M2D_1B_END
+IB2_M2D_2B_BEGIN
+IB2_M2D_2B_END
+IB1_D2C_1A_BEGIN
+IB1_D2C_1A_END
+IB2_D2C_2A_BEGIN
+IB2_D2C_2A_END
+IB1_D2C_1B_BEGIN
+IB1_D2C_1B_END
+IB2_D2C_2B_BEGIN
+IB2_D2C_2B_END
+IB1_C2S_1A_BEGIN
+IB1_C2S_1A_END
+IB2_C2S_2A_BEGIN
+IB2_C2S_2A_END
+IB1_C2S_1B_BEGIN
+IB1_C2S_1B_END
+IB2_C2S_2B_BEGIN
+IB2_C2S_2B_END
+IB1_S2C_1A_BEGIN
+IB1_S2C_1A_END
+IB2_S2C_2A_BEGIN
+IB2_S2C_2A_END
+IB1_S2C_1B_BEGIN
+IB1_S2C_1B_END
+IB2_S2C_2B_BEGIN
+IB2_S2C_2B_END
+IB1_C2D_1A_BEGIN
+IB1_C2D_1A_END
+IB2_C2D_2A_BEGIN
+IB2_C2D_2A_END
+IB1_C2D_1B_BEGIN
+IB1_C2D_1B_END
+IB2_C2D_2B_BEGIN
+IB2_C2D_2B_END
+IB1_C2D_DCS_BEGIN
+IB1_C2D_DCS_END
+IB1_D2M_1A_BEGIN
+IB1_D2M_1A_END
+IB2_D2M_2A_BEGIN
+IB2_D2M_2A_END
+IB1_D2M_1B_BEGIN
+IB1_D2M_1B_END
+IB2_D2M_2B_BEGIN
+IB2_D2M_2B_END
+IB1_M2A_1A_BEGIN
+IB1_M2A_1A_END
+IB2_M2A_2A_BEGIN
+IB2_M2A_2A_END
+IB1_M2A_1B_BEGIN
+IB1_M2A_1B_END
+IB2_M2A_2B_BEGIN
+IB2_M2A_2B_END
+IB2_M2A_PROD_BEGIN
+IB2_M2A_PROD_END
+IB1_M2A_DCS_BEGIN
+IB1_M2A_DCS_END
+DRAM_A2D_PRE_MCU_ENTRY_BEGIN
+DRAM_A2D_PRE_MCU_ENTRY_END
+DRAM_C2D_POST_MCU_DDR_BEGIN
+DRAM_C2D_POST_MCU_DDR_END
+DRAM_C2D_POST_MCU_LOCKED_BEGIN
+DRAM_C2D_POST_MCU_LOCKED_END
+DRAM_C2D_POST_MCU_MDLL_CALIB_BEGIN
+DRAM_C2D_POST_MCU_MDLL_CALIB_END
+DRAM_C2D_POST_MCU_PRE_DRAM_BEGIN
+DRAM_C2D_POST_MCU_PRE_DRAM_END
+DRAM_C2D_POST_MCU_DRAM_BEGIN
+DRAM_C2D_POST_MCU_DRAM_END
+DRAM_C2D_POST_MCU_BEFORE_RESTORATION_BEGIN
+DRAM_C2D_POST_MCU_BEFORE_RESTORATION_END
+DRAM_C2D_POST_MCU_AFTER_RESTORATION_BEGIN
+DRAM_C2D_POST_MCU_AFTER_RESTORATION_END
+DRAM_C2D_POST_MCU_RESTORATION_BEGIN
+DRAM_C2D_POST_MCU_RESTORATION_END
+DRAM_D2A_POST_MCU_POST_AWAKE_BEGIN
+DRAM_D2A_POST_MCU_POST_AWAKE_END
+DRAM_D2A_POST_MCU_M3_LOAD_BEGIN
+DRAM_D2A_POST_MCU_M3_LOAD_END
+DRAM_D2A_POST_MCU_AFTER_VDDIO12_BEGIN
+DRAM_D2A_POST_MCU_AFTER_VDDIO12_END
+EACC_POWER_DOWN_BEGIN
+EACC_POWER_DOWN_END
+PACC_POWER_DOWN_BEGIN
+PACC_POWER_DOWN_END
+EACC_POWER_UP_BEGIN
+EACC_POWER_UP_END
+PACC_POWER_UP_BEGIN
+PACC_POWER_UP_END
+MARK_PANIC_FLOW_B
+MARK_PANIC_FLOW_E
+NUB_SPMI0
+NUB_SPMI1
+NUB_SPMI_A0
+AOP_SPMI0
+AOP_SPMI1
+BakuPriv
+BakuNonPriv
+Nub-SPMI0-HE-nRCS
+Stonehenge
+Shamisen
+Chromite
+Ace3-F
+Ace3-E
+Ace3-D
+Ace3-C
+UWB-HEB
+WiFi/BT-HEB
+Baseband-HEB
+Fury-HEB
+Stockholm-HEB
+HEnRCS0-HEB
+UWB-IDC
+WiFi/BT-IDC
+Baseband-IDC
+HEnRCS1-IDC
+t8140c4020fpga
+t8140c4030fpga
+raw-panel-serial-number
+coverglass-serial-number
+panel-id-config
+dcp/iop-dcp-nub
+DISP_INT
+DispTarget59
+lCPDprimary-calibration-matrix
+lCTDdisplay-temp-compensation
+lCBDdisplay-backlight-compensation
+NIBDdisplay-eeprom-compensation
+CDbPprox-behind-display-calibraion
+aop-pio-filters
+pio-src-filt-global
+pio-dst-filt-global
+pio-dst-filt-fr-global
+accel-nominal-extr-cal
+accel-range-extr-cal
+accel-range-intr-cal
+accel-offset-cal
+accel-interrupt-calibration
+aop-target
+aop-target
+board-id
+coalesced-variant-id
+spu-nap
+light-em-up
+light-em-up
+aop-retention
+aop-i2c-conf
+potassium-low-priority
+k2-low-priority
+bosch-high-odr
+aop-accel-alternate
+als-alternate
+allow-raw-i2c
+aop-isp-v2
+aop-isp-v2protocol
+has-baseband
+alternate-prox-gpio
+k2-pkg-id
+k2-int-opendrain
+hamm-p2-risetime-fix
+limit-i2c-bus-frequency
+pressure-use-polling
+enable-doppler
+pmu-arc-reset
+pmu-arc-reset
+pmu-btmspk-reset
+pmu-btmspk-reset
+pressure-ext-trigger
+aop-audio-debug
+rose-removal-for-doe
+rose-removal-for-doe
+disable-juliet-unplug-detect
+disable-juliet-unplug-detect
+d79-rev1-clp-workaround
+d79-rev1-clp-workaround
+watch-doe-adc
+watch-doe-thermopile
+watch-coex-adc
+watch-moscovium
+watch-sage-vsh
+moscovium-logging
+sulu-historical
+aop-memory-alignment
+disable-aicl
+disable-gicl
+enable-1k6-imu
+pdm-clk-for-display
+pdm-clk-for-display
+aop-hardening
+rose-otp-workaround
+d9x-alt-gpio-cfg
+d9x-alt-gpio-cfg
+d4y-alt-compass-cfg
+d4y-alt-compass-cfg
+octopus_no_fang_SC
+rail-energy-in-pocket
+audio-amp-register-len
+audio-amp-register-len
+v57-dev-gpio-cfg
+v57-dev-gpio-cfg
+d23-dev-gpio-cfg
+d23-dev-gpio-cfg
+disable-mahi
+sram-t-agents
+fabric-slices
+sram-ut-agents
+sptm-locks-gapf
+aop-gapf-filters
+sram-t-agents-count
+sram-ut-agents-count
+fabric-slice-fmt-ver
+aop-scm-xbar
+scm-to-gpio-muxsel
+gpio-to-scm-muxsel
+smc/iop-smc-nub
+battery-health
+fm-account-masked
+fm-activation-locked
+fm-spkeys
+fm-spstatus
+ownership-warning
+ctrr-a
+ctrr-b
+ctrr-c
+tz2-sram
+tz2-sram-ctrl
+ctrr-d
+panic-region0
+panic-region1
+panic-region2
+tz3-sram
+lower-limit
+upper-limit
+enable
+write-disable
+dsid-force-enable
+broadcast
+cache-status
+master-lock
+BootPreference
+tz0-size-override
+tz1-size-override
+ar0-size-override
+ar1-size-override
+TrustCache
+BootKC
+DeviceTree
+ExclaveOSIntegrityCatalog
+ExclaveOSTrustCache
+interrupt
+Unknown
+Samsung
+Qimonda
+Elpida
+Winbond
+Reserved
+Spansion
+Numonyx
+Micron
+Apple USB Serial Interface
+management
+crashlog
+syslog
+kdebug
+ioreporting
+remotefs
+forwarded-crashlog
+core-analytics
+tracekit
+ACIPC-perf
+timesync
+entropy
+Alignment fault
+Instruction cache maintenance fault
+Translation table walk synchronous external abort (1st level)
+Translation table walk synchronous external abort (2nd level)
+Translation table walk synchronous parity error (1st level)
+Translation table walk synchronous parity error (2nd level)
+Translation fault (section)
+Translation fault (page)
+Access Flag fault (section)
+Access Flag fault (page)
+Domain fault (section)
+Domain fault (page)
+Permission fault (section)
+Permission fault (page)
+Debug event
+Synchronous external abort
+TLB conflict abort
+Implementation defined (Lockdown)
+Implementation defined (Coprocessor abort)
+Memory access synchronous parity error
+Asynchronous external abort
+Memory access asynchronous parity error
+Translation fault level
+Access flag fault level
+Permission fault level
+Synchronous external abort on translation table walk level
+Synchronous parity error on memory access on translation table walk level
+Domain fault level
+Synchronous external abort
+Synchronous parity error on memory access
+Asynchronous external abort
+Asynchronous parity error on memory access
+Alignment fault
+Debug event
+TLB conflict abort
+Implementation defined (Lockdown)
+Implementation defined (Coprocessor abort)
+Unknown reason

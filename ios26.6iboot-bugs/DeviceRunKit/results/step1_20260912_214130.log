@@ -1,0 +1,52 @@
+[step1] put device in RECOVERY mode (vol+, vol-, hold side btn until recovery screen), keep USB attached
+[step1] waiting for recovery-mode device (90s)...
+CPID: 0x8140
+CPRV: 0x10
+BDID: 0x04
+ECID: 0x00055cca0a78801c
+CPFM: 0x03
+SCEP: 0x01
+IBFL: 0x3d
+SRTG: N/A
+SRNM: MWCMHF26WM
+IMEI: N/A
+NONC: 0ce3c2944e2977d90c1ba46ac10776de8d52c7b3a1ced49382f73ac04f777605
+SNON: 1b5f579cbb5b48a03d535e08d6e289077b585cb1
+MODE: Recovery
+PRODUCT: iPhone17,5
+MODEL: v59ap
+NAME: iPhone 16e
+[step1] device query:
+[step1] current mode: Recovery Mode
+[step1] getenv build-version -> 
+[step1] getenv build-style -> 
+[step1] getenv secure-mode -> 
+[step1] getenv security-mode -> 
+[step1] getenv production-status -> 
+[step1] getenv certificate-production-status -> 
+[step1] getenv effective-production-status-ap -> 
+[step1] getenv effective-security-mode-ap -> 
+[step1] getenv effective-security-mode-sep -> 
+[step1] getenv certificate-epoch -> 
+[step1] getenv boot-nonce -> 
+[step1] getenv apnonce -> 
+[step1] getenv chipid -> 
+[step1] getenv boardid -> 
+[step1] getenv unique-chip-id -> 
+[step1] getenv auto-boot -> 
+[step1] getenv boot-command -> 
+[step1] getenv device-recovery -> 
+[step1] getenv delay-recovery-image -> 
+[step1] getenv debug-uarts -> 
+[step1] getenv unlocknvram -> 
+[step1] getenv boot-breadcrumbs -> 
+[step1] getenv recovery-reason -> 
+[step1] getenv nvram-bank-size -> 
+[step1] getenv nvram-bank-count -> 
+[step1] getenv nvram-current-bank -> 
+[step1] getenv nvram-proxy-data -> 
+[step1] getenv panic-log -> 
+[step1] peek attempts (dev-surface probe; expect rejection on retail):
+[step1] done. If EVERY command returned nothing / the device never enumerated a recovery serial ->
+[step1]   the shell does not run on retail A18 (documented outcome; Reports 1-3 stay staging-class).
+[step1] log: results/step1_20260912_214130.log

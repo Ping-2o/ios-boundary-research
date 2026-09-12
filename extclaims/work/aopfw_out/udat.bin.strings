@@ -1,0 +1,282 @@
+InertialOdometry,fencesMaskIsSet,%u,fencesMaskWasSet,%u,fencesMaskWasExited,%u,fencesMaskWasCleared,%u,dtSrcUnav,%.3f,dtSrcKM,%.3f,dtSrcPDR,%.3f,dtSrcPDRSS,%.3f,dtSrcStatic,%.3f
+InertialOdometry,dX,%.3f,dY,%.3f,pthLenXY,%.3f,dtPlcUnk,%.3f,dtPlcBody,%.3f,dtPlcView,%.3f,dtPlcArmSwi,%.3f,dtPlcLegSwi,%.3f
+[PedestrianFence] enablePDR,%u,hasPDRClient,%u,hasActiveFenceSession,%u,enableBackground,%u
+SPU_service_find(%u, %u) failed.
+SPU_service_find_by_name() failed.
+Unsupported sample rate
+initialize north,%u,q.x,%f,q.y,%f,q.z,%f,q.w,%f
+visual localization,measurement,%f,%f,%f,%f
+[Kappa] invalid enable mode
+[Kappa] not enabled
+[Kappa] sending kArmClient for %d
+[Kappa] enable for mode %d enabledMode %d
+[Kappa] disable for mode %d enabledMode %d type %d
+[Kappa] disable for mode %d enabledMode %d
+[Igneous] Sending numMotionTrigger to AP,%u
+[Kappa] sending kDisarmClient for %d
+[Kappa] imu confidence %llu %f %f %f
+[Kappa] enableMode %d (%d %d %d) (%d %d %d)
+[Kappa] refusing to set marty/bicycle mode
+[Kappa] reset marty state %d %d (before)
+[Kappa] reset marty state %d %d (after)
+[Kappa] (cmd.u) override %d %d %d %d/%d %d %d
+[Kappa] safed config with coupled/uncoupled thresholds %f/%f
+[Kappa] safed force trigger %d, %d
+[Kappa] safed sim trigger %d, %d
+[Kappa] received alert
+[Kappa] invalid safed command %u
+[Igneous] Sending trigger to ADD
+[Igneous] Not armed. Do not send trigger to ADD
+[Kappa] config kappa %u with thresholds %f/%f, marty with thresholds %f/%f
+[Kappa] (karm) size %d override %d %d %d %d/%d %d %d
+[Kappa] refusing to set marty/bicycle mode
+[Kappa] reset marty state %d %d (before)
+[Kappa] reset marty state %d %d (after)
+[Kappa] force trigger %u, %u, %u, delay %u
+[Kappa] got a trigger with path %d %d %d %d
+[Kappa] simulate %d %d %llu %d %d %llu %d
+[Igneous] got a trigger with path %d %d
+[Igneous] simulate %d %d %llu %d
+[Igneous] Overflow prevented: %u + %u would exceed uint16_t max
+[Igneous] Satisfied motion trigger conditions, %f, %f, %d
+[Igneous] Firing a motion trigger while on charger, %u, %u
+[Igneous] Firing a motion trigger while off charger, %u, %u
+[Igneous] successful motion trigger at timestamp %llu
+[Igneous] Updated motion trigger config, %f, %f, %u, %u, %u, %u
+Assertion failed: idxPre > bufferZone, file /Library/Caches/com.apple.xbs/6309AA04-D542-4C05-B454-E405D208F1D2/TemporaryDirectory.KsNyXa/Sources/SPUMotion/Shared/Motion/LiftToWake/CMLiftToWakeDetector.cpp, line 712:Time since pre-detection is too short.
+[Gesture] pre-detect aborted. Invalid view pose. startPose, %hhu, endPose, %hhu, endSwivel, %.1f
+[Gesture] pre-dectect aborted. Insufficient rotation. startPose, %hhu, endPose %hhu
+[Gesture] pre-dectect aborted. Likely too much dynamics. nonUnitAcc, %.1f, startPose, %hhu, endPose %hhu
+[Gesture] notify %hhu, mode %hhu, start %hhu, end %hhu
+PKF, active client, on
+PKF, stairSpeedInProgress %d, fLastGyroState %d, no active client or stair speed controller, leech
+PKF, turning gyro on for passive clients, no active clients, timestamp, %llu
+PKF, turning gyro off, no active clients, timestamp, %llu
+received MSLP,%f,uncertainty,%f,resetInVisitReference,%d
+received elevation thresholds,lower,%f,upper,%f
+PKF, reset
+D[%zu] <= 0, matrix ! positive definite
+%zu: alpha <= 0, matrix ! positive definite
+%zu: alpha <= 0, matrix ! positive definite
+[CMGNSSMotionJob] GNSSMotionConfig,fEnableGNSSMotion,%d,fDecimationRate,%u
+[Safety] Marty trigger: impact magnitude %f, rotation magnitude %f
+onRemag, sending command to remag compass, result, %d
+[CMSPUDeviceImpactDetector] DeviceImpactConfig,fMinAccelThreshold,%f
+[CMSPUDeviceImpactDetector] High accel detected: %f
+[CMSPUDeviceImpactDetector] Reporting peak accel: %f
+CMGyroBiasEstimator::reset: cold start
+CMGyroBiasEstimator::reset: warm start [%f < %f]
+CMGyroBiasEstimator::reset: dbias.x,%.2e,.y,%.2e,.z,%.2e,P.x,%.2e,.y,%.2e,.z,%.2e
+CMGyroBiasEstimator: biasFitReset
+SENSOR,GyroBiasEstimator,enter relaxed mean mode
+SENSOR,GyroBiasEstimator,exit relaxed mean mode
+SENSOR,GyroBiasEstimator,zupt,axis,%d,mean,%.10f,variance,%.10f,tbias,%.10f,dbias,%.10f,meancheck,%d,varcheck,%d,allowRelaxedMean,%d,allStill,%d,accelVariance,%.10f
+SENSOR,GyroBiasEstimator,axis,%d,variance,%.10f,gain,%.10f,residual,%.10f
+disabling dynamic bias estimation!
+CMGyroBiasEstimator::feedGyro: converged!
+SENSOR,GyroBiasEstimator,dbias.x,%.2e,.y,%.2e,.z,%.2e,tbias.x,%.2e,.y,%.2e,.z,%.2e,P.x,%.2e,.y,%.2e,.z,%.2e,converged,%u,ready,%u,worstcase,%u,timestamp,%lld
+[CMSPUDM6AO] fReportInterval: %u->%u
+[CMSPUDM6AO] Processing 0x%02x
+zero magnitude raw field, ignoring.
+motionActivity,EVehicleConnect,constrained,%d,vehImuConf,%d
+motionActivity,EVehicleConnect,constrained,vehImuConfHigh
+motionActivity,EVehicleConnect,notConstrained
+motionActivity,EVehicleConnect,ignored
+motionActivity,EGPSDrivingSpeed
+motionActivity,EVehicleBTExitHighPedConf
+motionActivity,Loi_state,%d,%llu
+motionActivity,raw_classification,%d
+motionActivity,bluetooth,%d
+motionActivity,VehicularBT,preventedByLoi
+motionActivity,VehicularBT,preventedByLoi
+ski lift state, %d
+SENSOR,GyroBiasEstimatorError,dynamicBias.x,%.10f,dynamicBias.y,%.10f,dynamicBias.z,%.10f,bias.temp,%f,current.temp,%f,error.x,%.10f,error.y,%.10f,error.z,%.10f
+SENSOR,GyroBiasEstimator,gyroTemp,%.10f,error[x],%.10f,error[y],%.10f,error[z],%.10f,dynamicBias[x],%.10f,dynamicBias[y],%.10f,dynamicBias[z],%.10f,tempFitError[x],%.10f,tempFitError[y],%.10f,tempFitError[z],%.10f
+[MagicMount][Algo] entry conditions satisfied
+initialized down,%u,q.x,%f,q.y,%f,q.z,%f,q.w,%f, withAvgGrav, %d
+initializeState MaxInitialDiffUnity failed,magnitude,%f
+initializeState northAndGravity failed
+invalid initial covariance !(P > 0), using default
+invalid quiescentState kInMotion, ignoring quiescent
+[Safety] device is not listening
+[Safety] RTKitAudioFramework::Interface::kGetNodeProperty failed 0x%x
+[Safety] audio is not available
+[Safety] SRAM RMS buffer overrun; %u audio frames, %u frames remaining, Nrms %u
+[Safety] checking for audio availability
+[Safety] kCommandStartIO failed 0x%x
+[Safety] audio session %u
+[Safety] device is not listening
+[Safety] listening disabled, error 0x%x
+[Safety] audio is not available
+[Safety] turning off audio
+[Safety] kCommandStopIO failed 0x%x
+Waking AP.  reason=%d
+CMSPUService::processCommand(%d, ..., %d, ..., *%d) [%08x %08x]
+CMSPUService::processCommand() called when not ready.
+Received bad command. inBufferSize=%u
+Command buffer full.
+[Igneous] received AOP2 trigger, %llu, %u, %d, %d
+[Sideband],recvBBUartConfig,config,0x%02x,result,0x%08x
+[Sideband],sending motion state to bb, %d
+[Sideband],setBasebandGpioMotion,context,0x%x,result,0x%08x
+SENSOR,DeviceMotion,dm6,timestamp,%llu,u.x,%f,u.y,%f,u.z,%f,r.x,%f,r.y,%f,r.z,%f,q.x,%f,q.y,%f,q.z,%f,q.w,%f
+Invalid speed packet!
+Unrecognized command 0x%02x
+onActivity: %08x
+onStepCount: %08x
+Ping %d
+[Sideband],OverrideGpio,enabled,%d,value,%02x
+SetAlarm clear=%d, trigger=%d, duration=%llu
+Bad configuration.
+OnBodyDetectionParams
+[SPL] toggle %u
+Invalid trigger: %d
+togglePressureRate,ExpectedPressureInterval,%u,ErrorSetBatchInterval,%d,ReturnedBatchIntervalMicroseconds,%u,timestamp,%llu
+[Pressure] slow rate
+[Pressure] fast rate
+SPU_service_get_property(%x, %d, ...) = %d.
+n and g are too close %f
+kappa zero!
+[Safety] getReport invalid input report buffer
+[Safety] getReport for 0x%x
+[Safety] getReport invalid input report buffer
+Assertion failed: ret == kIOReturnSuccess, file /Library/Caches/com.apple.xbs/6309AA04-D542-4C05-B454-E405D208F1D2/TemporaryDirectory.KsNyXa/Sources/SPUMotion/Oscar/SPU/Safety/CMSPUSafetyService.cpp, line 561:SPU_dram_client_init failed 0x%x
+[Safety] locationd Kappa command %u
+[Safety] locationd Kappa command %d %d
+[Safety] resetting kappa armed seconds
+[Safety] resetting marty armed seconds
+[Safety] running dram timer
+Assertion failed: ret == kIOReturnSuccess, file /Library/Caches/com.apple.xbs/6309AA04-D542-4C05-B454-E405D208F1D2/TemporaryDirectory.KsNyXa/Sources/SPUMotion/Oscar/SPU/Safety/CMSPUSafetyService.cpp, line 943:SPU_dram_client_run failed 0x%x
+[Safety] stopping dram timer
+Assertion failed: ret == kIOReturnSuccess, file /Library/Caches/com.apple.xbs/6309AA04-D542-4C05-B454-E405D208F1D2/TemporaryDirectory.KsNyXa/Sources/SPUMotion/Oscar/SPU/Safety/CMSPUSafetyService.cpp, line 956:SPU_dram_client_stop failed 0x%x
+[Safety] Sending trigger probs=[%f %f %f %llu]
+[Safety] Sending historical loudness metrics=[%f %f %f %u]
+Assertion failed: ret == kIOReturnSuccess, file /Library/Caches/com.apple.xbs/6309AA04-D542-4C05-B454-E405D208F1D2/TemporaryDirectory.KsNyXa/Sources/SPUMotion/Oscar/SPU/Safety/CMSPUSafetyService.cpp, line 1365:SPU_dram_client_async_job_complete failed 0x%x
+[Safety] onDRAMWakeup %u
+[Safety] kappa armed %d/%d, marty armed local %d/%d marty armed remote %d/%d, bicycle armed %d/%d
+[Kappa] stopping streaming %llu
+[batched sensor] on dram wake %d
+Assertion failed: ret == kIOReturnSuccess, file /Library/Caches/com.apple.xbs/6309AA04-D542-4C05-B454-E405D208F1D2/TemporaryDirectory.KsNyXa/Sources/SPUMotion/Oscar/SPU/Safety/CMSPUSafetyService.cpp, line 1677:SPU_dram_client_async_job_complete failed 0x%x
+fEnableComputeWhileStatic,%d
+[FSM] %u,event,%u,transition,from,%u,to,%u
+[MagicMount][Service] Update report interval,%u->%u
+[MagicMount][Service] Processing command 0x%02x
+[MagicMount][Service] APWakesSetting,isAllowed,%d
+[MagicMount][Service] enableDisableMagicMountDetection,%u->%u
+[MagicMount][Service] onMagicMountEvent,%u->%u
+CMSPUSensorFusionOIS::setProperty(0x%d, 0x%08x)
+CMSPUSensorFusionOIS::setProperty report interval %d
+[CMSPUSensorFusionOIS] Processing command 0x%02x
+[OIS] rate,%u,cnt,%u,gyrointvl,%u,ispintvl,%u,apHIDintvl,%u,predictintval,%u
+[OIS] clients updated,ISP,%d->%d,HID,%d->%d,Debug,%d
+[OIS] Overriding OISEnable.  %u -> %u
+[OIS] start/stop,%d
+Assertion failed: sizeof(T) == data.header.size, file /Library/Caches/com.apple.xbs/6309AA04-D542-4C05-B454-E405D208F1D2/TemporaryDirectory.KsNyXa/Sources/SPUMotion/Oscar/SPU/CMSPUSensorFusionOIS.cpp, line 589:
+[CMSPUDMService-%u] FastPath client open -> %u
+[CMSPUDMService-%u] FastPath client close -> %u
+[CMSPUDMService-%u] setProperty() called when not ready.
+[CMSPUDMService] Push suspended for client.
+[CMSPUDMService-%u] processCommand() called when not ready.
+[CMSPUDMService-%u] Processing command 0x%02x
+[CMSPUDMService-%u] Unsupported command 0x%02x
+[CMSPUDMService-%u] Received configuration,alwaysOn,%d->%d,useGyroController,%d->%d,VisualLocalization,%d->%d
+[CMSPUDMService-%u] minReportInterval,%u,fastPath,%u,alwaysOnAP,%d,alwaysOnSPU,%u,SPUClient,%d,enableVisualLocalization,%u,reset,%u
+detected 60 seconds of inactivity
+[Gesture][CMBumpToWakeDetector] Bump detected %lld
+Unexpected data rate!
+Unexpected data rate!
+SENSOR,GBE,battery status %u,%u
+[GBE] coex possible %d
+SENSOR,[GBE],charge status %u,%u,%u
+[GBE] coex cloaked %d
+[GBE] runProactiveBiasEstimator(): Enable->Off (0x%x,%u,%llu)
+[GBE] runProactiveBiasEstimator(), Off->Enable (%llu)
+[GBE] onBasebandFirmwareLoadStatus(), isLoading (%u)
+[GBE] onTopSpeakerStatus(), isInUse (%u)
+[GBE] onBasebandFirmwareLoadTimeout()
+Accel Buffer sampling,%d
+Gyro Buffer sampling,%d
+Pressure Buffer sampling,%d
+[MagicMount][Algo] hasActiveClient,%u->%u
+fElevationBuffer timestamp did not move forward, timestamp, %llu
+fStepHistory timestamp did not move forward, timestamp, %llu
+Alarm Triggered,trigger,%d
+Invalid trigger: %d
+PGE, reset daily budget, total gyro time, %f, timestamp, %llu
+PGE, turn gyro on, timestamp, %llu
+PGE, turn gyro off, current session cost seconds, %f, total cost seconds, %f, timestamp, %llu
+PGE, turn gyro off from coasting, total cost seconds, %f, timestamp, %llu
+PGE, time limit exceeded, turn gyro off, total gyro time seconds, %f, timestamp, %llu
+PGE, turn gyro off, walking continuously for epochs, %u, current session cost seconds, %f, total cost seconds, %f, timestamp, %llu
+[CMSPUDMContainer] Ignoring visual localization received while inactive
+ALS service subscribe=%d failed with result: %u
+CMSPUAmbientLightSensorPhone,enableALSActiveScans,%d
+Get Nth, attempting to access invalid element
+SPU_service_register_data_callback() = %d.
+D(%zu) <= 0 non-positive definite matrix!
+Motion classification at 128 samples at 50hz, current FSM state is %u
+SimulateMotionStateYouth simEnabled=%d simValue=%02x
+Overriding ski lift detection, %d
+EnableYouthFitnessMode fEnableYouthFitnessMode=%d 
+SENSOR,GyroBiasEstimator,slope.x,%f,.y,%f,.z,%f,intercept.x,%f,.y,%f,.z,%f,hours,%u
+SENSOR,GyroBiasEstimator,temperature,%f,bias.x,%f,.y,%f,.z,%f
+Accel saturation detected, forcing OnBody.
+[Gesture] Received Control Mode,%d,Options,%d
+[Gesture] LTW prohibited
+SPU_service_get_property(%x, %d, ...) = %d.
+[Sideband], setting unsupported override %u
+[Orientation] Accelerometer gap or out of order! seq %u, deltaInterval=%llu
+[Orientation] Notify from, %hhu -> %hhu 
+[Orientation] Gyro gap or out of order! seq %u, deltaInterval=%llu
+[Orientation] Likely transient.
+[Orientation] Transient!
+SENSOR,[Orientation],Rotating! Current max gyro rate %.3f
+[Orientation] Nixed rotationAroundZ state.
+SENSOR,GyroBiasEstimator,temperature,%f,bias.x,%f,.y,%f,.z,%f,error,%f
+[Orientation] endpoint wake; resending %u
+[Orientation] endpoint off
+[Orientation] AP wants orientation %lu
+[Orientation] Sending cached orientation %u
+[Orientation] Config form factor %u, seen cover %u
+[Orientation] Keyboard state %u from AP
+[Orientation] in motion; turning gyro on
+[Orientation] stationary; turning gyro off
+[Safety] trigger:coupled norm inf %f, dV_max %f
+[Safety] trigger:uncoupled norm inf %f, dV_max %f
+[Safety] %llu max delta velocity %f, inertial accel (%f, %f, %f)
+updated mslp from ap,timestamp,%llu,mslp,%f,mslpUnc,%f,resetInVisitReference,%d
+in visit weather,timestamp,%llu,weather,%f,resetInVisitReference,%d
+absaltAOP,altitude,%f,uncertainty,%f,weather,%f,currentMslpAOP,%f,currentMslpAP,%f,currentMslpUncertainty,%f,inVisit,%d,currentPressure,%f,timestamp,%llu,decision,%d
+AOP in visit info,inVisitAltitude,%f,inVisitUnc,%f,inVisitWeather,%f,inVisitMslp,%f,InVisitInitMslp,%f,inVisitMslpUnc,%f,inVisit,%d,currentPressure,%f,timestamp,%llu
+[HgAccel] force trigger %u
+[HgAccel] fastpath read_last failed; lost history
+[HgAccel] corrupted read %lld %lld
+[HgAccel] fastpath read failed
+D(%zu) <= 0 non-positive definite matrix!
+D[%zu] <= 0, matrix ! positive definite
+%zu: alpha <= 0, matrix ! positive definite
+%zu: alpha <= 0, matrix ! positive definite
+GyroInterval, GyroFreq, %.1f, rotationDecimation, %u, numSamplesForPartialGyroStats, %u
+CMEmbeddedBiasEstimation failed to be ready in %llu (us)
+SPU_service_set_property(%x, %d, ...) = %d.
+[CMSPUDMProvider] gyroEnabled,0
+[CMSPUDMProvider] gyroMode,%d->%d,hasActiveMagnetometerClient,%d
+[CMSPUDMProvider] gyroController,gyroEnabled,1
+[CMSPUDMProvider] gyroController,gyroEnabled,0
+[TTW] Incoming activity,%u
+[TTW] Sending TTW report,grossMotion,%u,faceOrientation,%u,verticalOrientation,%u
+[TTW] Sending TTW report failed,%d
+CMSPUMagnetometerCalibrator,GMM,magnitude,%f,declination,%f,inclination,%f
+PS: Orientation changed
+PS: Orientation notification sent %f
+PS: initial tilt checkpoint met %f
+PS: No longer tilting
+PS: next tilt checkpoint met %f
+PS: Rotated back to starting orientation
+PS: Not Idle Next checkpoint %f
+PS: Not Idle Next checkpoint %f
+PS: INITIAL Checkpoint met rotating clockwise %f. Next checkpoint: %f
+PS: INITIAL Checkpoint met rotating counterclockwise %f. Next checkpoint: %f
+PS: Checkpoint met rotating clockwise. Next checkpoint: %f
+PS: Checkpoint met rotating counterclockwise. Next checkpoint: %f
+PS: Idle in ambiguous. Next checkpoint %f

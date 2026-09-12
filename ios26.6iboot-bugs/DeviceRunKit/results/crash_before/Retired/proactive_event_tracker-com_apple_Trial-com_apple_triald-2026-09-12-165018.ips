@@ -1,0 +1,132 @@
+{"bug_type":"303","timestamp":"2026-09-12 16:50:18.00 +0500","os_version":"iPhone OS 27.0 (24A435)","roots_installed":0,"incident_id":"D29226BB-A8B7-44C7-9BFF-D3A7DB8266FE"}
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "E484685C-1B42-4608-B2DB-92C43DA2F950"
+  3 {
+    1: 1789156649
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1789153237
+    2: 18000
+    3: 0
+  }
+  5: 1
+}
+2: "B214AA84-DC1F-4AB2-B43E-BA8B9F52ECE1"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-511"
+    5: "24A435"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  6 {
+    6: "TRIRetargetAllTask"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "E484685C-1B42-4608-B2DB-92C43DA2F950"
+  3 {
+    1: 1789156653
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1789153237
+    2: 18000
+    3: 0
+  }
+  5: 2
+}
+2: "9CBCD2CA-311C-4E13-AB9F-5343ADE43589"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-511"
+    5: "24A435"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "activeDeviceExperiments"
+    3: 0
+  }
+  5 {
+    1: "activeServerExperiments"
+    3: 0
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "E484685C-1B42-4608-B2DB-92C43DA2F950"
+  3 {
+    1: 1789156653
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1789153237
+    2: 18000
+    3: 0
+  }
+  5: 3
+}
+2: "7CC70BE1-1304-4E30-B494-D63FD555A62E"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-511"
+    5: "24A435"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  6 {
+    6: "TRIMaintenanceTask"
+  }
+}

@@ -1,0 +1,1487 @@
+{"bug_type":"303","timestamp":"2026-09-06 09:21:37.00 +0500","os_version":"iPhone OS 26.6 (23G71)","roots_installed":0,"incident_id":"A8EC5253-FC12-4763-8DE4-756474FA9AB3"}
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "82A993BF-A0A3-419B-A2D0-497AF805A240"
+  3 {
+    1: 1788552775
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788552243
+    2: 18000
+    3: 0
+  }
+  5: 1
+}
+2: "1CEB112C-D782-4AB2-8918-3753EFB827AF"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  6 {
+    6: "TRIRetargetAllTask"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "82A993BF-A0A3-419B-A2D0-497AF805A240"
+  3 {
+    1: 1788552786
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788552243
+    2: 18000
+    3: 0
+  }
+  5: 2
+}
+2: "134A6183-A457-499A-A2FD-7D11DE953E45"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "activeDeviceExperiments"
+    3: 0
+  }
+  5 {
+    1: "activeServerExperiments"
+    3: 0
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "82A993BF-A0A3-419B-A2D0-497AF805A240"
+  3 {
+    1: 1788552787
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788552243
+    2: 18000
+    3: 0
+  }
+  5: 3
+}
+2: "1B835BFF-05D5-4D6B-A387-0529BFBFC294"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 3
+  }
+  6 {
+    6: "TRIMaintenanceTask"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "B61F4240-732C-4743-83A9-9E3DC63E931B"
+  3 {
+    1: 1788581069
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788554286
+    2: 18000
+    3: 0
+  }
+  5: 1
+}
+2: "0DC21C75-A0FF-4E1F-86D4-92AC8F227D54"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  5 {
+    1: "allows_cellular_download"
+    3: 1
+  }
+  6 {
+    4 {
+      1: "5ffde50ce2aacd000d47a95f"
+      4: "6a9b7865ee4d4f2a01684c8c"
+    }
+    6: "TRIFetchSingleRolloutNotificationTask"
+    11: "240000557"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "B61F4240-732C-4743-83A9-9E3DC63E931B"
+  3 {
+    1: 1788581069
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788554286
+    2: 18000
+    3: 0
+  }
+  5: 2
+}
+2: "88488543-F22F-4483-8B84-E99E46E2874D"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_AL_O"
+  }
+  6 {
+    4 {
+      1: "5ffde50ce2aacd000d47a95f"
+      2: "empty-fp-set"
+      4: "6a5ebef4b6c41e6e9f3acab4"
+    }
+    11: "240000553"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "B61F4240-732C-4743-83A9-9E3DC63E931B"
+  3 {
+    1: 1788581069
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788554286
+    2: 18000
+    3: 0
+  }
+  5: 3
+}
+2: "B3CDC8CE-FCC4-4084-8873-A13EB4D07759"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_AL"
+  }
+  6 {
+    4 {
+      1: "5ffde50ce2aacd000d47a95f"
+      2: "empty-fp-set"
+      4: "6a9b7865ee4d4f2a01684c8c"
+    }
+    11: "240000557"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "B61F4240-732C-4743-83A9-9E3DC63E931B"
+  3 {
+    1: 1788581069
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788554286
+    2: 18000
+    3: 0
+  }
+  5: 4
+}
+2: "EAB00792-6439-4BE7-9A3B-A167893CCF15"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  5 {
+    1: "trigger_event"
+    4: "hotfix"
+  }
+  6 {
+    4 {
+      1: "5ffde50ce2aacd000d47a95f"
+      2: "empty"
+      4: "6a9b7865ee4d4f2a01684c8c"
+    }
+    6: "TRIRolloutTargetingTask"
+    11: "240000557"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "9BA10FAD-C251-4D11-B847-8779E044F6EC"
+  3 {
+    1: 1788598963
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788598961
+    2: 18000
+    3: 0
+  }
+  5: 1
+}
+2: "E4300E38-C92E-422E-ACC4-4CE7CB59B08E"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_FE"
+  }
+  6 {
+    4 {
+      1: "5ffde50ce2aacd000d47a95f"
+      2: "empty-fp-set"
+      4: "6a9b7865ee4d4f2a01684c8c"
+    }
+    11: "240000557"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "9BA10FAD-C251-4D11-B847-8779E044F6EC"
+  3 {
+    1: 1788598963
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788598961
+    2: 18000
+    3: 0
+  }
+  5: 2
+}
+2: "D6239287-1B50-4A3C-8C86-F054FBF48D90"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  5 {
+    1: "allows_cellular_download"
+    3: 1
+  }
+  6 {
+    4 {
+      1: "5ffde50ce2aacd000d47a95f"
+      2: "empty"
+      4: "6a9b7865ee4d4f2a01684c8c"
+    }
+    6: "TRIFetchFactorPackSetTask"
+    11: "240000557"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "9BA10FAD-C251-4D11-B847-8779E044F6EC"
+  3 {
+    1: 1788598967
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788598961
+    2: 18000
+    3: 0
+  }
+  5: 3
+}
+2: "04518CBC-4017-447E-A523-BB07C55BC58E"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  5 {
+    1: "allows_cellular_download"
+    3: 1
+  }
+  6 {
+    6: "TRISelectRolloutNotificationListTask"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "9BA10FAD-C251-4D11-B847-8779E044F6EC"
+  3 {
+    1: 1788598967
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788598961
+    2: 18000
+    3: 0
+  }
+  5: 4
+}
+2: "FDE29214-2658-409E-80F3-580956862B68"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_DE"
+  }
+  6 {
+    4 {
+      1: "5ffde50ce2aacd000d47a95f"
+      2: "empty-fp-set"
+      4: "6a5ebef4b6c41e6e9f3acab4"
+    }
+    11: "240000553"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "9BA10FAD-C251-4D11-B847-8779E044F6EC"
+  3 {
+    1: 1788598967
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788598961
+    2: 18000
+    3: 0
+  }
+  5: 5
+}
+2: "DDAAAAA6-AA1E-4D92-84F7-913C1ECCB90A"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_AC"
+  }
+  6 {
+    4 {
+      1: "5ffde50ce2aacd000d47a95f"
+      2: "empty-fp-set"
+      4: "6a9b7865ee4d4f2a01684c8c"
+    }
+    11: "240000557"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "9BA10FAD-C251-4D11-B847-8779E044F6EC"
+  3 {
+    1: 1788598967
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788598961
+    2: 18000
+    3: 0
+  }
+  5: 6
+}
+2: "F0A9F0AE-F710-45C8-AE7A-C630D940E77A"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  6 {
+    4 {
+      1: "5ffde50ce2aacd000d47a95f"
+      2: "empty"
+      4: "6a9b7865ee4d4f2a01684c8c"
+    }
+    6: "TRIActivateTargetedRolloutDeploymentTask"
+    11: "240000557"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "36020630-5E06-488E-AA6D-389BD13236E0"
+  3 {
+    1: 1788599014
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788598967
+    2: 18000
+    3: 0
+  }
+  5: 7
+}
+2: "53DE4E74-8274-43B1-9A94-295C91B95230"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  6 {
+    6: "TRISetupAssistantFetchTask"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "36020630-5E06-488E-AA6D-389BD13236E0"
+  3 {
+    1: 1788599015
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788598967
+    2: 18000
+    3: 0
+  }
+  5: 8
+}
+2: "894E014E-C6DF-4846-918F-048CBD78C74E"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  6 {
+    4 {
+      1: "648cada15dbc71671bb3aa1b"
+      2: "ea0ca16e-8dd9-43cf-b655-2c4c61196501"
+      4: "65aaec0c0263a721d8d07ebd"
+      5: 1
+    }
+    6: "TRIFetchFactorPackSetTask"
+    11: "240000116"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "DA77C567-6BEF-4208-9289-735BB56D1B1F"
+  3 {
+    1: 1788627973
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788599016
+    2: 18000
+    3: 0
+  }
+  5: 9
+}
+2: "1161C48F-7DD1-46D9-B21E-8913B46E6A08"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  5 {
+    1: "allows_cellular_download"
+    3: 1
+  }
+  6 {
+    4 {
+      1: "6081ed9716bb6d61d81d5014"
+      4: "6a9c3c91ee4d4f2a01684c97"
+    }
+    6: "TRIFetchSingleRolloutNotificationTask"
+    11: "240004160"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "DA77C567-6BEF-4208-9289-735BB56D1B1F"
+  3 {
+    1: 1788627973
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788599016
+    2: 18000
+    3: 0
+  }
+  5: 10
+}
+2: "834A40B6-DB09-4518-B8C1-01CF3F8CEC4A"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  5 {
+    1: "allows_cellular_download"
+    3: 1
+  }
+  6 {
+    4 {
+      1: "601074e4af9bef000c169ea8"
+      4: "6a9c3d86ee4d4f2a01684c99"
+    }
+    6: "TRIFetchSingleRolloutNotificationTask"
+    11: "240005071"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "DA77C567-6BEF-4208-9289-735BB56D1B1F"
+  3 {
+    1: 1788627973
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788599016
+    2: 18000
+    3: 0
+  }
+  5: 11
+}
+2: "4F689299-42E0-4428-A151-52828D8AE715"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_AL_O"
+  }
+  6 {
+    4 {
+      1: "601074e4af9bef000c169ea8"
+      2: "331e1ed0-018c-4871-8d50-4e4ad4b08843"
+      4: "6a946925d09f73285bdf07ad"
+    }
+    11: "240005067"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "DA77C567-6BEF-4208-9289-735BB56D1B1F"
+  3 {
+    1: 1788627973
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788599016
+    2: 18000
+    3: 0
+  }
+  5: 12
+}
+2: "8E734A40-99BD-4168-B50D-DAF74E853B3E"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_AL"
+  }
+  6 {
+    4 {
+      1: "601074e4af9bef000c169ea8"
+      2: "a3738670-3173-4f43-84d8-cee3b37052b0"
+      4: "6a9c3d86ee4d4f2a01684c99"
+    }
+    11: "240005071"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "DA77C567-6BEF-4208-9289-735BB56D1B1F"
+  3 {
+    1: 1788627973
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788599016
+    2: 18000
+    3: 0
+  }
+  5: 13
+}
+2: "7F8E9444-2A5A-4817-A921-C49B3B7FFE1B"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  5 {
+    1: "trigger_event"
+    4: "hotfix"
+  }
+  6 {
+    4 {
+      1: "601074e4af9bef000c169ea8"
+      2: "a3738670-3173-4f43-84d8-cee3b37052b0"
+      4: "6a9c3d86ee4d4f2a01684c99"
+      5: 0
+    }
+    6: "TRIRolloutTargetingTask"
+    11: "240005071"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "DA77C567-6BEF-4208-9289-735BB56D1B1F"
+  3 {
+    1: 1788627973
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788599016
+    2: 18000
+    3: 0
+  }
+  5: 14
+}
+2: "F19EE11A-97C2-4D0E-8852-BBC9479BA3AB"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_FE"
+  }
+  6 {
+    4 {
+      1: "601074e4af9bef000c169ea8"
+      2: "a3738670-3173-4f43-84d8-cee3b37052b0"
+      4: "6a9c3d86ee4d4f2a01684c99"
+    }
+    11: "240005071"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "DA77C567-6BEF-4208-9289-735BB56D1B1F"
+  3 {
+    1: 1788627973
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788599016
+    2: 18000
+    3: 0
+  }
+  5: 15
+}
+2: "15274268-C17B-436C-A45F-C5E08FF65FF9"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  5 {
+    1: "allows_cellular_download"
+    3: 1
+  }
+  6 {
+    4 {
+      1: "601074e4af9bef000c169ea8"
+      2: "a3738670-3173-4f43-84d8-cee3b37052b0"
+      4: "6a9c3d86ee4d4f2a01684c99"
+      5: 0
+    }
+    6: "TRIFetchFactorPackSetTask"
+    11: "240005071"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "DA77C567-6BEF-4208-9289-735BB56D1B1F"
+  3 {
+    1: 1788627973
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788599016
+    2: 18000
+    3: 0
+  }
+  5: 16
+}
+2: "2379CEA5-F5C7-4351-B4FB-362352E556EB"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_DE"
+  }
+  6 {
+    4 {
+      1: "601074e4af9bef000c169ea8"
+      2: "331e1ed0-018c-4871-8d50-4e4ad4b08843"
+      4: "6a946925d09f73285bdf07ad"
+    }
+    11: "240005067"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "DA77C567-6BEF-4208-9289-735BB56D1B1F"
+  3 {
+    1: 1788627973
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788599016
+    2: 18000
+    3: 0
+  }
+  5: 17
+}
+2: "A1C0982A-D271-4965-9E36-C4CB86EBA096"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_AC"
+  }
+  6 {
+    4 {
+      1: "601074e4af9bef000c169ea8"
+      2: "a3738670-3173-4f43-84d8-cee3b37052b0"
+      4: "6a9c3d86ee4d4f2a01684c99"
+    }
+    11: "240005071"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "DA77C567-6BEF-4208-9289-735BB56D1B1F"
+  3 {
+    1: 1788627973
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788599016
+    2: 18000
+    3: 0
+  }
+  5: 18
+}
+2: "19BDC980-B9CA-46B2-ABDA-00EC4F094810"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  6 {
+    4 {
+      1: "601074e4af9bef000c169ea8"
+      2: "a3738670-3173-4f43-84d8-cee3b37052b0"
+      4: "6a9c3d86ee4d4f2a01684c99"
+      5: 0
+    }
+    6: "TRIActivateTargetedRolloutDeploymentTask"
+    11: "240005071"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "3A6BB970-DD9E-419E-AC92-2CB07DE0672B"
+  3 {
+    1: 1788637816
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788637816
+    2: 18000
+    3: 0
+  }
+  5: 1
+}
+2: "88BC3593-86D7-483D-9EAD-D99E71B2E81F"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_AL_O"
+  }
+  6 {
+    4 {
+      1: "6081ed9716bb6d61d81d5014"
+      2: "be950e46-32b8-4898-85c1-f25f62304b44"
+      4: "6a94683264e2fe4a2b40605a"
+    }
+    11: "240004156"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "3A6BB970-DD9E-419E-AC92-2CB07DE0672B"
+  3 {
+    1: 1788637816
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788637816
+    2: 18000
+    3: 0
+  }
+  5: 2
+}
+2: "E9AD843A-9BD3-460D-B497-9BD29DB78711"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    14: "h17"
+  }
+  5 {
+    1: "roll_st_AL"
+  }
+  6 {
+    4 {
+      1: "6081ed9716bb6d61d81d5014"
+      2: "fe7cf009-f059-48cc-bc47-8b3f4daf57b4"
+      4: "6a9c3c91ee4d4f2a01684c97"
+    }
+    11: "240004160"
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "3A6BB970-DD9E-419E-AC92-2CB07DE0672B"
+  3 {
+    1: 1788637816
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788637816
+    2: 18000
+    3: 0
+  }
+  5: 3
+}
+2: "0C46C769-E9E0-4076-BB91-75C3E3E925D0"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 2
+  }
+  5 {
+    1: "trigger_event"
+    4: "hotfix"
+  }
+  6 {
+    4 {
+      1: "6081ed9716bb6d61d81d5014"
+      2: "fe7cf009-f059-48cc-bc47-8b3f4daf57b4"
+      4: "6a9c3c91ee4d4f2a01684c97"
+      5: 0
+    }
+    6: "TRIRolloutTargetingTask"
+    11: "240004160"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}
+
+Message Group: com.apple.Trial-com.apple.triald
+Message Name: TRILogEvent
+Message Type: 984eb588
+Message Body:
+1 {
+  1: 1
+  2: "6992FD3D-A42F-48DC-A73A-2C1E64C1C9FB"
+  3 {
+    1: 1788639216
+    2: 18000
+    3: 0
+  }
+  4 {
+    1: 1788637816
+    2: 18000
+    3: 0
+  }
+  5: 4
+}
+2: "AB9FB43F-9FF9-4268-8668-60140F23029D"
+10 {
+  1 {
+    1: "6F252C5B-83B8-D666-06D2-617B900D2EE5"
+  }
+  3 {
+    1: "iPhone"
+    4: "TrialXP-474.2.18.2"
+    5: "23G71"
+    9: "en-GB"
+    10: 5
+    11: "kz"
+    12: "com.apple.Telia_kz"
+    13: 1
+    14: "h17"
+  }
+  5 {
+    1: "task_status"
+    3: 1
+  }
+  5 {
+    1: "allows_cellular_download"
+    3: 1
+  }
+  5 {
+    1: "fetchfactorpacksettask_error"
+    4: "UnableToFetchFactorPackSet"
+  }
+  5 {
+    1: "cloudkit_error"
+    3: 4
+  }
+  6 {
+    4 {
+      1: "6081ed9716bb6d61d81d5014"
+      2: "fe7cf009-f059-48cc-bc47-8b3f4daf57b4"
+      4: "6a9c3c91ee4d4f2a01684c97"
+      5: 0
+    }
+    6: "TRIFetchFactorPackSetTask"
+    11: "240004160"
+    15 {
+      1: 2
+      2: 1
+    }
+  }
+}

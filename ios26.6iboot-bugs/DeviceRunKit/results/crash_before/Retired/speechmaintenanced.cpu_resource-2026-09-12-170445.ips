@@ -1,0 +1,299 @@
+{"duration_ms":"97350","share_with_app_devs":0,"roots_installed":0,"bug_type":"202","os_version":"iPhone OS 27.0 (24A435)","slice_uuid":"BDC12BDA-C317-3704-978B-502885927728","is_first_party":1,"incident_id":"A0964AE2-0B18-4990-9EBB-BC08FD976441","timestamp":"2026-09-12 17:04:45.00 +0500","app_name":"speechmaintenanced","name":"speechmaintenanced"}
+Date/Time:        2026-09-12 17:03:05.708 +0500
+End time:         2026-09-12 17:04:43.059 +0500
+OS Version:       iPhone OS 27.0 (Build 24A435)
+Architecture:     arm64e
+Report Version:   73
+Incident Identifier: A0964AE2-0B18-4990-9EBB-BC08FD976441
+
+Data Source:      Microstackshots
+Shared Cache:     2C85E624-793D-3BB0-A0B3-4FE2A851C541 slid base address 0x193498000
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+
+Command:          speechmaintenanced
+Path:             /System/Library/PrivateFrameworks/CoreEmbeddedSpeechRecognition.framework/speechmaintenanced
+Resource Coalition: "com.apple.speechmaintenanced"(275)
+On Behalf Of:     7 samples UNKNOWN [89] (7 samples originated by UNKNOWN [89])
+Architecture:     arm64e
+Parent:           UNKNOWN [1]
+PID:              4886
+
+Event:            cpu usage
+Action taken:     none
+CPU:              90 seconds cpu time over 97 seconds (92% cpu average), exceeding limit of 50% cpu over 180 seconds
+CPU limit:        90s
+Limit duration:   180s
+CPU used:         90s
+CPU duration:     97s
+Duration:         97.35s
+Duration Sampled: 77.29s (event starts 1.64s before samples, event ends 18.42s after samples)
+Steps:            11 (10 gigacycles/step)
+
+Hardware model:   iPhone17,5
+Active cpus:      6
+Memory size:      7.54 GB
+HW page size:     16384
+VM page size:     16384
+Shared cache residency: 11.58% (792.52 MB / 6842 MB)
+
+Time Since Boot:  155489s
+Time Awake Since Boot: 69777s
+Time Since Wake:  897s
+
+Total CPU Time:   56.793s
+Advisory levels:  Battery -> 3, User -> 3, ThermalPressure -> 10, Combined -> 1
+Free disk space:  167.15 GB/237.64 GB, low space threshold 150 MB
+Vnodes Available: 62.65% (17542/28000, 14000 allocated, 14000 soft limit)
+Model:            com.apple.fm.language.instruct_3b.tokenizer
+  Loaded:         ??? - N/A, requested by UNKNOWN
+
+Preferred User Language: en-GB, kk-GB
+Country Code:     GB
+Keyboards:        en_GB QWERTY, com.google.keyboard.KeyboardExtension
+OS Cryptex File Extents: 1
+
+Heaviest stack for the target process:
+  7  ??? (libswift_Concurrency.dylib + 30860) [0x19aae888c]
+  7  ??? (speechmaintenanced + 227200) [0x100f37780]
+  7  ??? (speechmaintenanced + 244564) [0x100f3bb54]
+  7  ??? (speechmaintenanced + 227200) [0x100f37780]
+  7  ??? (speechmaintenanced + 219880) [0x100f35ae8]
+  7  ??? (speechmaintenanced + 223152) [0x100f367b0]
+  7  ??? (speechmaintenanced + 118708) [0x100f1cfb4]
+  7  ??? (speechmaintenanced + 138092) [0x100f21b6c]
+  7  ??? (speechmaintenanced + 76752) [0x100f12bd0]
+  7  ??? (speechmaintenanced + 61792) [0x100f0f160]
+  7  ??? (EmbeddedAcousticRecognition + 636400) [0x1ead0f5f0]
+  7  ??? (EmbeddedAcousticRecognition + 636880) [0x1ead0f7d0]
+  7  ??? (EmbeddedAcousticRecognition + 640032) [0x1ead10420]
+  7  ??? (EmbeddedAcousticRecognition + 640540) [0x1ead1061c]
+  7  ??? (EmbeddedAcousticRecognition + 642228) [0x1ead10cb4]
+  7  ??? (EmbeddedAcousticRecognition + 330064) [0x1eacc4950]
+  7  ??? (EmbeddedAcousticRecognition + 632452) [0x1ead0e684]
+  7  ??? (EmbeddedAcousticRecognition + 331568) [0x1eacc4f30]
+  7  ??? (EmbeddedAcousticRecognition + 441836) [0x1eacdfdec]
+  7  ??? (libBNNS.dylib + 260200) [0x25da6e868]
+  7  ??? (libBNNS.dylib + 247816) [0x25da6b808]
+  7  ??? (libBNNS.dylib + 261300) [0x25da6ecb4]
+  4  ??? (libBNNS.dylib + 220056) [0x25da64b98]
+  4  ??? (libBNNS.dylib + 1216848) [0x25db58150]
+  4  ??? (libBNNS.dylib + 1214256) [0x25db57730]
+  3  ??? (libBNNS.dylib + 10561800) [0x25e441908]
+  3  ??? (libBNNS.dylib + 10562620) [0x25e441c3c]
+  3  ??? (libBNNS.dylib + 10564888) [0x25e442518]
+  1  ??? (libBNNS.dylib + 10597380) [0x25e44a404]
+
+
+Powerstats for:   speechmaintenanced [4886]
+UUID:             BDC12BDA-C317-3704-978B-502885927728
+Path:             /System/Library/PrivateFrameworks/CoreEmbeddedSpeechRecognition.framework/speechmaintenanced
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Resource Coalition: 7 samples "com.apple.speechmaintenanced"(275)
+On Behalf Of:     7 samples UNKNOWN [89] (7 samples originated by UNKNOWN [89])
+Architecture:     arm64e
+Parent:           UNKNOWN [1]
+UID:              501
+Sudden Term:      Tracked (allows idle exit)
+Footprint:        59.22 MB
+Pageins:          396 pages
+Start time:       2026-09-12 17:03:27.158 +0500
+End time:         2026-09-12 17:04:24.636 +0500
+Num samples:      7 (64%)
+Energy:           861.92 uWh
+Num threads:      1
+Primary state:    7 samples Non-Frontmost App, Non-Suppressed, User mode, Effective Thread QoS Background, Requested Thread QoS Background, Override Thread QoS Unspecified, e-core
+User Activity:    7 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 7 samples on AC
+  7  ??? (libswift_Concurrency.dylib + 30860) [0x19aae888c]
+    7  ??? (speechmaintenanced + 227200) [0x100f37780]
+      7  ??? (speechmaintenanced + 244564) [0x100f3bb54]
+        7  ??? (speechmaintenanced + 227200) [0x100f37780]
+          7  ??? (speechmaintenanced + 219880) [0x100f35ae8]
+            7  ??? (speechmaintenanced + 223152) [0x100f367b0]
+              7  ??? (speechmaintenanced + 118708) [0x100f1cfb4]
+                7  ??? (speechmaintenanced + 138092) [0x100f21b6c]
+                  7  ??? (speechmaintenanced + 76752) [0x100f12bd0]
+                    7  ??? (speechmaintenanced + 61792) [0x100f0f160]
+                      7  ??? (EmbeddedAcousticRecognition + 636400) [0x1ead0f5f0]
+                        7  ??? (EmbeddedAcousticRecognition + 636880) [0x1ead0f7d0]
+                          7  ??? (EmbeddedAcousticRecognition + 640032) [0x1ead10420]
+                            7  ??? (EmbeddedAcousticRecognition + 640540) [0x1ead1061c]
+                              7  ??? (EmbeddedAcousticRecognition + 642228) [0x1ead10cb4]
+                                7  ??? (EmbeddedAcousticRecognition + 330064) [0x1eacc4950]
+                                  7  ??? (EmbeddedAcousticRecognition + 632452) [0x1ead0e684]
+                                    7  ??? (EmbeddedAcousticRecognition + 331568) [0x1eacc4f30]
+                                      7  ??? (EmbeddedAcousticRecognition + 441836) [0x1eacdfdec]
+                                        7  ??? (libBNNS.dylib + 260200) [0x25da6e868]
+                                          7  ??? (libBNNS.dylib + 247816) [0x25da6b808]
+                                            7  ??? (libBNNS.dylib + 261300) [0x25da6ecb4]
+                                              4  ??? (libBNNS.dylib + 220056) [0x25da64b98]
+                                                4  ??? (libBNNS.dylib + 1216848) [0x25db58150]
+                                                  4  ??? (libBNNS.dylib + 1214256) [0x25db57730]
+                                                    3  ??? (libBNNS.dylib + 10561800) [0x25e441908]
+                                                      3  ??? (libBNNS.dylib + 10562620) [0x25e441c3c]
+                                                        3  ??? (libBNNS.dylib + 10564888) [0x25e442518]
+                                                          1  ??? (libBNNS.dylib + 10597380) [0x25e44a404]
+                                                            1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+                                                          1  ??? (libBNNS.dylib + 10597300) [0x25e44a3b4]
+                                                            1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+                                                          1  ??? (libBNNS.dylib + 10597036) [0x25e44a2ac]
+                                                            1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+                                                    1  ??? (libBNNS.dylib + 10561152) [0x25e441680]
+                                                      1  ??? (libBNNS.dylib + 9607188) [0x25e358814]
+                                                        1  ??? (libBNNS.dylib + 3684356) [0x25ddb2804]
+                                                          1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+                                              2  ??? (libBNNS.dylib + 326180) [0x25da7ea24]
+                                                1  ??? (libBNNS.dylib + 1889640) [0x25dbfc568]
+                                                  1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+                                                1  ??? (libBNNS.dylib + 1889304) [0x25dbfc418]
+                                                  1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+                                              1  ??? (libBNNS.dylib + 1358228) [0x25db7a994]
+                                                1  ??? (libBNNS.dylib + 1350760) [0x25db78c68]
+                                                  1  ??? (libBNNS.dylib + 7050096) [0x25e0e8370]
+                                                    1  ??? (libBNNS.dylib + 7050800) [0x25e0e8630]
+                                                      1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+
+  Binary Images:
+           0x100f00000 -                ???  speechmaintenanced          <BDC12BDA-C317-3704-978B-502885927728>  /System/Library/PrivateFrameworks/CoreEmbeddedSpeechRecognition.framework/speechmaintenanced
+           0x19aae1000 -        0x19ab6d3b7  libswift_Concurrency.dylib  <1672554C-5C48-3600-AEF8-97F330B62C02>  /usr/lib/swift/libswift_Concurrency.dylib
+           0x1eac74000 -        0x1eb9e3b27  EmbeddedAcousticRecognition <88A50CCE-F583-3F14-A05D-193E5B7D82B5>  /System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/EmbeddedAcousticRecognition
+           0x25da2f000 -        0x25eca897f  libBNNS.dylib               <26A5BA74-07B3-3022-BCA5-3F5BD4D55931>  /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBNNS.dylib
+
+
+Powerstats for:   ospredictiond
+UUID:             5FA724EC-F34C-3460-B4BE-F7B2DB2B18E4
+Path:             /usr/libexec/ospredictiond
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Resource Coalition: 2 samples "com.apple.ospredictiond"(413)
+On Behalf Of:     2 samples UNKNOWN [53] (2 samples originated by UNKNOWN [53])
+Architecture:     arm64e
+Start time:       2026-09-12 17:03:51.390 +0500
+End time:         2026-09-12 17:03:51.768 +0500
+Num samples:      2 (18%)
+Energy:           32.48 uWh
+Primary state:    2 samples Non-Frontmost App, Non-Suppressed, User mode, Effective Thread QoS Default, Requested Thread QoS Default, Override Thread QoS Unspecified, e-core
+User Activity:    2 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 2 samples on AC
+  2  ??? (libsystem_pthread.dylib + 2320) [0x199406910]
+    2  ??? (libsystem_pthread.dylib + 4664) [0x199407238]
+      2  ??? (libdispatch.dylib + 87728) [0x1c79cf6b0]
+        2  ??? (libdispatch.dylib + 89228) [0x1c79cfc8c]
+          2  ??? (libdispatch.dylib + 46192) [0x1c79c5470]
+            2  ??? (libdispatch.dylib + 42768) [0x1c79c4710]
+              2  ??? (libdispatch.dylib + 130340) [0x1c79d9d24]
+                2  ??? (libdispatch.dylib + 42768) [0x1c79c4710]
+                  2  ??? (libdispatch.dylib + 126088) [0x1c79d8c88]
+                    2  ??? (libdispatch.dylib + 114684) [0x1c79d5ffc]
+                      2  ??? (libxpc.dylib + 118588) [0x199481f3c]
+                        2  ??? (libxpc.dylib + 109204) [0x19947fa94]
+                          2  ??? (Foundation + 210600) [0x1999dd6a8]
+                            2  ??? (Foundation + 210876) [0x1999dd7bc]
+                              2  ??? (Foundation + 212844) [0x1999ddf6c]
+                                2  ??? (Foundation + 235128) [0x1999e3678]
+                                  2  ??? (CoreFoundation + 616608) [0x19955d8a0]
+                                    2  ??? (CoreFoundation + 615764) [0x19955d554]
+                                      2  ??? (ospredictiond + 35460) [0x102e94a84]
+                                        2  ??? (ospredictiond + 122440) [0x102ea9e48]
+                                          2  ??? (ospredictiond + 121940) [0x102ea9c54]
+                                            2  ??? (ospredictiond + 123876) [0x102eaa3e4]
+                                              2  ??? (ospredictiond + 161352) [0x102eb3648]
+                                                2  ??? (ospredictiond + 162288) [0x102eb39f0]
+                                                  2  ??? (libdispatch.dylib + 74032) [0x1c79cc130]
+                                                    2  ??? (libdispatch.dylib + 114612) [0x1c79d5fb4]
+                                                      1  ??? (ospredictiond + 163460) [0x102eb3e84]
+                                                        1  ??? (ospredictiond + 14544) [0x102e8f8d0]
+                                                          1  ??? (ospredictiond + 9280) [0x102e8e440]
+                                                            1  ??? (ospredictiond + 9816) [0x102e8e658]
+                                                              1  ??? (ospredictiond + 10128) [0x102e8e790]
+                                                                1  ??? (Foundation + 9172) [0x1999ac3d4]
+                                                                  1  ??? (Foundation + 9764) [0x1999ac624]
+                                                                    1  ??? (Foundation + 10228) [0x1999ac7f4]
+                                                                      1  ??? (libobjc.A.dylib + 8812) [0x1992d226c]
+                                                                        1  <on behalf of UNKNOWN [53] (originated by UNKNOWN [53])>
+                                                      1  ??? (ospredictiond + 162628) [0x102eb3b44]
+                                                        1  ??? (ospredictiond + 14544) [0x102e8f8d0]
+                                                          1  ??? (ospredictiond + 9248) [0x102e8e420]
+                                                            1  ??? (ospredictiond + 8840) [0x102e8e288]
+                                                              1  ??? (Foundation + 9172) [0x1999ac3d4]
+                                                                1  ??? (Foundation + 9764) [0x1999ac624]
+                                                                  1  ??? (Foundation + 1066172) [0x199aae4bc]
+                                                                    1  ??? (Foundation + 1363936) [0x199af6fe0]
+                                                                      1  ??? (Foundation + 291360) [0x1999f1220]
+                                                                        1  ??? (Foundation + 296320) [0x1999f2580]
+                                                                          1  ??? (Foundation + 4944388) [0x199e61204]
+                                                                            1  ??? (CoreFoundation + 234628) [0x199500484]
+                                                                              1  ??? (CoreFoundation + 5344) [0x1994c84e0]
+                                                                                1  <on behalf of UNKNOWN [53] (originated by UNKNOWN [53])>
+
+  Binary Images:
+           0x102e8c000 -                ???  ospredictiond           <5FA724EC-F34C-3460-B4BE-F7B2DB2B18E4>  /usr/libexec/ospredictiond
+           0x1992d0000 -        0x19931da57  libobjc.A.dylib         <E8CED84C-011D-3351-9180-4127735B298E>  /usr/lib/libobjc.A.dylib
+           0x199406000 -        0x199412247  libsystem_pthread.dylib <694C772A-A9F8-3AC0-9417-7C304043A771>  /usr/lib/system/libsystem_pthread.dylib
+           0x199465000 -        0x1994c64af  libxpc.dylib            <2F319DF2-DF97-31F1-920A-AC20D14E1737>  /usr/lib/system/libxpc.dylib
+           0x1994c7000 -        0x1999a9777  CoreFoundation          <9426FC9A-B36C-3096-B836-D17D6744A75B>  /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+           0x1999aa000 -        0x19aae0153  Foundation              <C041F1D0-5EF1-30A3-BF96-830976173B56>  /System/Library/Frameworks/Foundation.framework/Foundation
+           0x1c79ba000 -        0x1c7a00d17  libdispatch.dylib       <8CDF4610-F6A5-39CB-94BF-687FE349A4BE>  /usr/lib/system/libdispatch.dylib
+
+
+Powerstats for:   backboardd
+UUID:             BFD04CD7-A5F5-314C-9470-3494B9177E03
+Path:             /usr/libexec/backboardd
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Resource Coalition: 1 sample "com.apple.backboardd"(85)
+Architecture:     arm64e
+Start time:       2026-09-12 17:03:20.427 +0500
+End time:         2026-09-12 17:03:20.427 +0500
+Num samples:      1 (9%)
+Primary state:    1 samples Non-Frontmost App, Non-Suppressed, User mode, Effective Thread QoS Unspecified, Requested Thread QoS Unspecified, Override Thread QoS Unspecified, e-core
+User Activity:    1 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 1 samples on AC
+  1  ??? (libsystem_pthread.dylib + 2320) [0x199406910]
+    1  ??? (libsystem_pthread.dylib + 4664) [0x199407238]
+      1  ??? (libdispatch.dylib + 87508) [0x1c79cf5d4]
+        1  ??? (libdispatch.dylib + 152344) [0x1c79df318]
+          1  ??? (libdispatch.dylib + 54656) [0x1c79c7580]
+
+  Binary Images:
+           0x1046f4000 -                ???  backboardd              <BFD04CD7-A5F5-314C-9470-3494B9177E03>  /usr/libexec/backboardd
+           0x199406000 -        0x199412247  libsystem_pthread.dylib <694C772A-A9F8-3AC0-9417-7C304043A771>  /usr/lib/system/libsystem_pthread.dylib
+           0x1c79ba000 -        0x1c7a00d17  libdispatch.dylib       <8CDF4610-F6A5-39CB-94BF-687FE349A4BE>  /usr/lib/system/libdispatch.dylib
+
+
+Powerstats for:   com.apple.DriverKit-AppleBCMWLAN
+UUID:             031A58AF-2572-3603-8087-204B0E04D308
+Path:             /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN
+Identifier:       com.apple.DriverKit-AppleBCMWLAN
+Version:          1.0 (1)
+Shared Cache:     2C85E624-793D-3BB0-A0B3-4FE2A851C541 slid base address 0x193498000
+Resource Coalition: 1 sample "com.apple.DriverKit-AppleBCMWLAN"(171)
+On Behalf Of:     1 sample UNKNOWN [58] (1 sample originated by UNKNOWN [58])
+Architecture:     arm64e
+Start time:       2026-09-12 17:03:07.349 +0500
+End time:         2026-09-12 17:03:07.349 +0500
+Num samples:      1 (9%)
+Primary state:    1 samples Non-Frontmost App, Non-Suppressed, User mode, Effective Thread QoS Unspecified, Requested Thread QoS Unspecified, Override Thread QoS Unspecified, e-core
+User Activity:    1 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 1 samples on AC
+  1  ??? (libsystem_pthread.dylib + 41028) [0x194af5044]
+    1  ??? (libsystem_pthread.dylib + 12220) [0x194aedfbc]
+      1  ??? (libdispatch.dylib + 91400) [0x194971508]
+        1  ??? (libdispatch.dylib + 93200) [0x194971c10]
+          1  ??? (libdispatch.dylib + 55536) [0x1949688f0]
+            1  ??? (libdispatch.dylib + 50532) [0x194967564]
+              1  ??? (libdispatch.dylib + 47232) [0x194966880]
+                1  ??? (libdispatch.dylib + 128024) [0x19497a418]
+                  1  ??? (libdispatch.dylib + 47232) [0x194966880]
+                    1  ??? (libdispatch.dylib + 124020) [0x194979474]
+                      1  ??? (DriverKit + 30308) [0x193a80664]
+                        1  ??? (DriverKit + 61636) [0x193a880c4]
+                          1  ??? (DriverKit + 62316) [0x193a8836c]
+                            1  ??? (DriverKit + 19536) [0x193a7dc50]
+                              1  ??? (DriverKit + 20384) [0x193a7dfa0]
+                                1  ??? (libdispatch.dylib + 41288) [0x194965148]
+                                  1  <on behalf of UNKNOWN [58] (originated by UNKNOWN [58])>
+
+  Binary Images:
+           0x1022c8000 -                ???  com.apple.DriverKit-AppleBCMWLAN 1.0 (1) <031A58AF-2572-3603-8087-204B0E04D308>  /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN
+           0x193a79000 -        0x193abbe83  DriverKit                                <3DE8CBA1-0848-3D49-AD3E-C54B228CC4E8>  /System/DriverKit/System/Library/Frameworks/DriverKit.framework/DriverKit
+           0x19495b000 -        0x1949a1227  libdispatch.dylib                        <3760826D-9A09-3254-A8EA-BB9C880792FB>  /System/DriverKit/usr/lib/system/libdispatch.dylib
+           0x194aeb000 -        0x194af6bff  libsystem_pthread.dylib                  <C179645F-2F91-3A27-BAE9-39F20BA93C9A>  /System/DriverKit/usr/lib/system/libsystem_pthread.dylib

@@ -1,0 +1,320 @@
+{"duration_ms":"97920","share_with_app_devs":0,"roots_installed":0,"bug_type":"202","os_version":"iPhone OS 27.0 (24A435)","slice_uuid":"BDC12BDA-C317-3704-978B-502885927728","is_first_party":1,"incident_id":"21296674-EB2B-4696-AF6D-FD49FBB6B360","timestamp":"2026-09-12 01:02:06.00 +0500","app_name":"speechmaintenanced","name":"speechmaintenanced"}
+Date/Time:        2026-09-12 01:00:26.038 +0500
+End time:         2026-09-12 01:02:03.958 +0500
+OS Version:       iPhone OS 27.0 (Build 24A435)
+Architecture:     arm64e
+Report Version:   73
+Incident Identifier: 21296674-EB2B-4696-AF6D-FD49FBB6B360
+
+Data Source:      Microstackshots
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Shared Cache:     2C85E624-793D-3BB0-A0B3-4FE2A851C541 slid base address 0x193498000
+
+Command:          speechmaintenanced
+Path:             /System/Library/PrivateFrameworks/CoreEmbeddedSpeechRecognition.framework/speechmaintenanced
+Resource Coalition: "com.apple.speechmaintenanced"(275)
+On Behalf Of:     5 samples UNKNOWN [89] (5 samples originated by UNKNOWN [89])
+Architecture:     arm64e
+Parent:           UNKNOWN [1]
+PID:              174
+
+Event:            cpu usage
+Action taken:     none
+CPU:              90 seconds cpu time over 98 seconds (92% cpu average), exceeding limit of 50% cpu over 180 seconds
+CPU limit:        90s
+Limit duration:   180s
+CPU used:         90s
+CPU duration:     98s
+Duration:         97.92s
+Duration Sampled: 71.63s (event starts 11.14s before samples, event ends 15.15s after samples)
+Steps:            9 (10 gigacycles/step)
+
+Hardware model:   iPhone17,5
+Active cpus:      6
+Memory size:      7.54 GB
+HW page size:     16384
+VM page size:     16384
+Shared cache residency: 12.36% (845.98 MB / 6842 MB)
+
+Time Since Boot:  97739s
+Time Awake Since Boot: 49463s
+Time Since Wake:  328s
+
+Total CPU Time:   61.329s
+Advisory levels:  Battery -> 3, User -> 3, ThermalPressure -> 10, Combined -> 1
+Free disk space:  167.71 GB/237.64 GB, low space threshold 150 MB
+Vnodes Available: 63.79% (17860/28000, 14000 allocated, 14000 soft limit)
+Models:           none
+
+Preferred User Language: en-GB, kk-GB
+Country Code:     GB
+Keyboards:        com.google.keyboard.KeyboardExtension, en_GB QWERTY
+OS Cryptex File Extents: 1
+
+Heaviest stack for the target process:
+  5  ??? (libswift_Concurrency.dylib + 30860) [0x19aae888c]
+  5  ??? (speechmaintenanced + 227200) [0x1044ab780]
+  5  ??? (speechmaintenanced + 244564) [0x1044afb54]
+  5  ??? (speechmaintenanced + 227200) [0x1044ab780]
+  5  ??? (speechmaintenanced + 219880) [0x1044a9ae8]
+  5  ??? (speechmaintenanced + 223152) [0x1044aa7b0]
+  5  ??? (speechmaintenanced + 118708) [0x104490fb4]
+  5  ??? (speechmaintenanced + 138092) [0x104495b6c]
+  5  ??? (speechmaintenanced + 76752) [0x104486bd0]
+  5  ??? (speechmaintenanced + 61792) [0x104483160]
+  5  ??? (EmbeddedAcousticRecognition + 636400) [0x1ead0f5f0]
+  5  ??? (EmbeddedAcousticRecognition + 636880) [0x1ead0f7d0]
+  5  ??? (EmbeddedAcousticRecognition + 640032) [0x1ead10420]
+  5  ??? (EmbeddedAcousticRecognition + 640540) [0x1ead1061c]
+  5  ??? (EmbeddedAcousticRecognition + 642228) [0x1ead10cb4]
+  5  ??? (EmbeddedAcousticRecognition + 330064) [0x1eacc4950]
+  5  ??? (EmbeddedAcousticRecognition + 632452) [0x1ead0e684]
+  5  ??? (EmbeddedAcousticRecognition + 331568) [0x1eacc4f30]
+  5  ??? (EmbeddedAcousticRecognition + 441836) [0x1eacdfdec]
+  5  ??? (libBNNS.dylib + 260200) [0x25da6e868]
+  5  ??? (libBNNS.dylib + 247816) [0x25da6b808]
+  5  ??? (libBNNS.dylib + 261300) [0x25da6ecb4]
+  3  ??? (libBNNS.dylib + 220056) [0x25da64b98]
+  3  ??? (libBNNS.dylib + 1216848) [0x25db58150]
+  3  ??? (libBNNS.dylib + 1214256) [0x25db57730]
+  3  ??? (libBNNS.dylib + 10561800) [0x25e441908]
+  3  ??? (libBNNS.dylib + 10562620) [0x25e441c3c]
+  3  ??? (libBNNS.dylib + 10564888) [0x25e442518]
+  1  ??? (libBNNS.dylib + 10597328) [0x25e44a3d0]
+
+
+Powerstats for:   speechmaintenanced [174]
+UUID:             BDC12BDA-C317-3704-978B-502885927728
+Path:             /System/Library/PrivateFrameworks/CoreEmbeddedSpeechRecognition.framework/speechmaintenanced
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Resource Coalition: 5 samples "com.apple.speechmaintenanced"(275)
+On Behalf Of:     5 samples UNKNOWN [89] (5 samples originated by UNKNOWN [89])
+Architecture:     arm64e
+Parent:           UNKNOWN [1]
+UID:              501
+Sudden Term:      Tracked (allows idle exit)
+Footprint:        58.67 MB
+Pageins:          405 pages
+Start time:       2026-09-12 01:00:37.178 +0500
+End time:         2026-09-12 01:01:34.661 +0500
+Num samples:      5 (56%)
+Energy:           846.19 uWh
+Num threads:      1
+Primary state:    5 samples Non-Frontmost App, Non-Suppressed, User mode, Effective Thread QoS Background, Requested Thread QoS Background, Override Thread QoS Unspecified, e-core
+User Activity:    5 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 5 samples on AC
+  5  ??? (libswift_Concurrency.dylib + 30860) [0x19aae888c]
+    5  ??? (speechmaintenanced + 227200) [0x1044ab780]
+      5  ??? (speechmaintenanced + 244564) [0x1044afb54]
+        5  ??? (speechmaintenanced + 227200) [0x1044ab780]
+          5  ??? (speechmaintenanced + 219880) [0x1044a9ae8]
+            5  ??? (speechmaintenanced + 223152) [0x1044aa7b0]
+              5  ??? (speechmaintenanced + 118708) [0x104490fb4]
+                5  ??? (speechmaintenanced + 138092) [0x104495b6c]
+                  5  ??? (speechmaintenanced + 76752) [0x104486bd0]
+                    5  ??? (speechmaintenanced + 61792) [0x104483160]
+                      5  ??? (EmbeddedAcousticRecognition + 636400) [0x1ead0f5f0]
+                        5  ??? (EmbeddedAcousticRecognition + 636880) [0x1ead0f7d0]
+                          5  ??? (EmbeddedAcousticRecognition + 640032) [0x1ead10420]
+                            5  ??? (EmbeddedAcousticRecognition + 640540) [0x1ead1061c]
+                              5  ??? (EmbeddedAcousticRecognition + 642228) [0x1ead10cb4]
+                                5  ??? (EmbeddedAcousticRecognition + 330064) [0x1eacc4950]
+                                  5  ??? (EmbeddedAcousticRecognition + 632452) [0x1ead0e684]
+                                    5  ??? (EmbeddedAcousticRecognition + 331568) [0x1eacc4f30]
+                                      5  ??? (EmbeddedAcousticRecognition + 441836) [0x1eacdfdec]
+                                        5  ??? (libBNNS.dylib + 260200) [0x25da6e868]
+                                          5  ??? (libBNNS.dylib + 247816) [0x25da6b808]
+                                            5  ??? (libBNNS.dylib + 261300) [0x25da6ecb4]
+                                              3  ??? (libBNNS.dylib + 220056) [0x25da64b98]
+                                                3  ??? (libBNNS.dylib + 1216848) [0x25db58150]
+                                                  3  ??? (libBNNS.dylib + 1214256) [0x25db57730]
+                                                    3  ??? (libBNNS.dylib + 10561800) [0x25e441908]
+                                                      3  ??? (libBNNS.dylib + 10562620) [0x25e441c3c]
+                                                        3  ??? (libBNNS.dylib + 10564888) [0x25e442518]
+                                                          1  ??? (libBNNS.dylib + 10597328) [0x25e44a3d0]
+                                                            1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+                                                          1  ??? (libBNNS.dylib + 10597324) [0x25e44a3cc]
+                                                            1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+                                                          1  ??? (libBNNS.dylib + 10597316) [0x25e44a3c4]
+                                                            1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+                                              1  ??? (libBNNS.dylib + 273508) [0x25da71c64]
+                                                1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+                                              1  ??? (libBNNS.dylib + 1358228) [0x25db7a994]
+                                                1  ??? (libBNNS.dylib + 1350556) [0x25db78b9c]
+                                                  1  ??? (libBNNS.dylib + 1537256) [0x25dba64e8]
+                                                    1  ??? (libBNNS.dylib + 1537880) [0x25dba6758]
+                                                      1  <on behalf of UNKNOWN [89] (originated by UNKNOWN [89])>
+
+  Binary Images:
+           0x104474000 -                ???  speechmaintenanced          <BDC12BDA-C317-3704-978B-502885927728>  /System/Library/PrivateFrameworks/CoreEmbeddedSpeechRecognition.framework/speechmaintenanced
+           0x19aae1000 -        0x19ab6d3b7  libswift_Concurrency.dylib  <1672554C-5C48-3600-AEF8-97F330B62C02>  /usr/lib/swift/libswift_Concurrency.dylib
+           0x1eac74000 -        0x1eb9e3b27  EmbeddedAcousticRecognition <88A50CCE-F583-3F14-A05D-193E5B7D82B5>  /System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/EmbeddedAcousticRecognition
+           0x25da2f000 -        0x25eca897f  libBNNS.dylib               <26A5BA74-07B3-3022-BCA5-3F5BD4D55931>  /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBNNS.dylib
+
+
+Powerstats for:   assistantd
+UUID:             C5D2DCEE-CD9E-3A8E-A5DD-D2721FDE9720
+Path:             /System/Library/PrivateFrameworks/AssistantServices.framework/assistantd
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Resource Coalition: 1 sample "com.apple.assistantd"(17)
+Architecture:     arm64e
+Start time:       2026-09-12 01:01:03.942 +0500
+End time:         2026-09-12 01:01:03.942 +0500
+Num samples:      1 (11%)
+Primary state:    1 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS Default, Override Thread QoS Unspecified, e-core
+User Activity:    1 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 1 samples on AC
+  1  ??? (libsystem_pthread.dylib + 2312) [0x199406908]
+
+  Binary Images:
+           0x100ad8000 -                ???  assistantd              <C5D2DCEE-CD9E-3A8E-A5DD-D2721FDE9720>  /System/Library/PrivateFrameworks/AssistantServices.framework/assistantd
+           0x199406000 -        0x199412247  libsystem_pthread.dylib <694C772A-A9F8-3AC0-9417-7C304043A771>  /usr/lib/system/libsystem_pthread.dylib
+
+
+Powerstats for:   com.apple.DriverKit-AppleBCMWLAN
+UUID:             031A58AF-2572-3603-8087-204B0E04D308
+Path:             /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN
+Identifier:       com.apple.DriverKit-AppleBCMWLAN
+Version:          1.0 (1)
+Shared Cache:     2C85E624-793D-3BB0-A0B3-4FE2A851C541 slid base address 0x193498000
+Resource Coalition: 1 sample "com.apple.DriverKit-AppleBCMWLAN"(171)
+Architecture:     arm64e
+Start time:       2026-09-12 01:01:16.168 +0500
+End time:         2026-09-12 01:01:16.168 +0500
+Num samples:      1 (11%)
+Primary state:    1 samples Non-Frontmost App, Non-Suppressed, User mode, Effective Thread QoS Unspecified, Requested Thread QoS Unspecified, Override Thread QoS Unspecified, e-core
+User Activity:    1 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 1 samples on AC
+  1  ??? (libsystem_pthread.dylib + 41040) [0x194af5050]
+    1  ??? (libsystem_pthread.dylib + 4180) [0x194aec054]
+      1  ??? (DriverKit + 34680) [0x193a81778]
+        1  ??? (DriverKit + 31360) [0x193a80a80]
+          1  ??? (libdispatch.dylib + 79308) [0x19496e5cc]
+            1  ??? (DriverKit + 31492) [0x193a80b04]
+              1  ??? (DriverKit + 160232) [0x193aa01e8]
+                1  ??? (DriverKit + 19860) [0x193a7dd94]
+                  1  ??? (com.apple.DriverKit-AppleBCMWLAN + 1961632) [0x1024a6ea0]
+                    1  ??? (com.apple.DriverKit-AppleBCMWLAN + 1962576) [0x1024a7250]
+                      1  ??? (DriverKit + 164088) [0x193aa10f8]
+                        1  ??? (com.apple.DriverKit-AppleBCMWLAN + 1719276) [0x10246bbec]
+                          1  ??? (IO80211DriverKit + 2088536) [0x19412ce58]
+                            1  ??? (DriverKit + 31140) [0x193a809a4]
+                              1  ??? (IO80211DriverKit + 2088612) [0x19412cea4]
+                                1  ??? (com.apple.DriverKit-AppleBCMWLAN + 1768440) [0x102477bf8]
+                                  1  ??? (com.apple.DriverKit-AppleBCMWLAN + 1768116) [0x102477ab4]
+                                    1  ??? (IO80211DriverKit + 2087272) [0x19412c968]
+                                      1  ??? (com.apple.DriverKit-AppleBCMWLAN + 866900) [0x10239ba54]
+                                        1  ??? (com.apple.DriverKit-AppleBCMWLAN + 866180) [0x10239b784]
+                                          1  ??? (com.apple.DriverKit-AppleBCMWLAN + 1663064) [0x10245e058]
+                                            1  ??? (com.apple.DriverKit-AppleBCMWLAN + 871560) [0x10239cc88]
+                                              1  ??? (com.apple.DriverKit-AppleBCMWLAN + 1939480) [0x1024a1818]
+                                                1  ??? (com.apple.DriverKit-AppleBCMWLAN + 2693976) [0x102559b58]
+                                                  1  ??? (IO80211DriverKit + 1892876) [0x1940fd20c]
+                                                    1  ??? (IO80211DriverKit + 2088536) [0x19412ce58]
+                                                      1  ??? (DriverKit + 31140) [0x193a809a4]
+                                                        1  ??? (IO80211DriverKit + 2088612) [0x19412cea4]
+                                                          1  ??? (IO80211DriverKit + 1894184) [0x1940fd728]
+                                                            1  ??? (DriverKit + 197200) [0x193aa9250]
+                                                              1  ??? (DriverKit + 271076) [0x193abb2e4]
+
+  Binary Images:
+           0x1022c8000 -                ???  com.apple.DriverKit-AppleBCMWLAN 1.0 (1) <031A58AF-2572-3603-8087-204B0E04D308>  /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN
+           0x193a79000 -        0x193abbe83  DriverKit                                <3DE8CBA1-0848-3D49-AD3E-C54B228CC4E8>  /System/DriverKit/System/Library/Frameworks/DriverKit.framework/DriverKit
+           0x193f2f000 -        0x19425783f  IO80211DriverKit                         <E9602A10-3CC2-3763-9DE0-4A825DBCFDC7>  /System/DriverKit/System/Library/PrivateFrameworks/IO80211DriverKit.framework/IO80211DriverKit
+           0x19495b000 -        0x1949a1227  libdispatch.dylib                        <3760826D-9A09-3254-A8EA-BB9C880792FB>  /System/DriverKit/usr/lib/system/libdispatch.dylib
+           0x194aeb000 -        0x194af6bff  libsystem_pthread.dylib                  <C179645F-2F91-3A27-BAE9-39F20BA93C9A>  /System/DriverKit/usr/lib/system/libsystem_pthread.dylib
+
+
+Powerstats for:   duetexpertd
+UUID:             DEB164D7-AD65-3C90-9182-03FD77AB30CB
+Path:             /usr/libexec/duetexpertd
+Shared Cache:     5263B028-2789-3D70-ABBA-176EDA22FE9B slid base address 0x198ecc000
+Resource Coalition: 1 sample "com.apple.duetexpertd"(253)
+On Behalf Of:     1 sample UNKNOWN [35] (1 sample originated by UNKNOWN [35])
+Architecture:     arm64e
+Start time:       2026-09-12 01:00:43.681 +0500
+End time:         2026-09-12 01:00:43.681 +0500
+Num samples:      1 (11%)
+Primary state:    1 samples Non-Frontmost App, Non-Suppressed, User mode, Effective Thread QoS Background, Requested Thread QoS Background, Override Thread QoS Unspecified, e-core
+User Activity:    1 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 1 samples on AC
+  1  ??? (libsystem_pthread.dylib + 2320) [0x199406910]
+    1  ??? (libsystem_pthread.dylib + 4664) [0x199407238]
+      1  ??? (libdispatch.dylib + 87728) [0x1c79cf6b0]
+        1  ??? (libdispatch.dylib + 89228) [0x1c79cfc8c]
+          1  ??? (libdispatch.dylib + 46192) [0x1c79c5470]
+            1  ??? (libdispatch.dylib + 42768) [0x1c79c4710]
+              1  ??? (libdispatch.dylib + 131980) [0x1c79da38c]
+                1  ??? (libdispatch.dylib + 114660) [0x1c79d5fe4]
+                  1  ??? (libxpc.dylib + 112076) [0x1994805cc]
+                    1  ??? (libxpc.dylib + 198872) [0x1994958d8]
+                      1  ??? (libxpc.dylib + 322228) [0x1994b3ab4]
+                        1  ??? (libxpc.dylib + 322772) [0x1994b3cd4]
+                          1  ??? (libxpc.dylib + 321164) [0x1994b368c]
+                            1  ??? (AppPredictionInternal + 3805136) [0x245a03fd0]
+                              1  ??? (AppPredictionInternal + 2367708) [0x2458a50dc]
+                                1  ??? (AppPredictionInternal + 4076284) [0x245a462fc]
+                                  1  ??? (ProactiveSuggestionClientModel + 263720) [0x21f9ce628]
+                                    1  ??? (ProactiveSupport + 34720) [0x1c68d67a0]
+                                      1  ??? (ProactiveSupport + 13152) [0x1c68d1360]
+                                        1  ??? (ProactiveSuggestionClientModel + 263860) [0x21f9ce6b4]
+                                          1  ??? (BiomeStreams + 34264) [0x19f7655d8]
+                                            1  ??? (BiomeStreams + 31864) [0x19f764c78]
+                                              1  ??? (BiomeStreams + 279216) [0x19f7a12b0]
+                                                1  ??? (ProactiveSupport + 7408) [0x1c68cfcf0]
+                                                  1  ??? (ProactiveSupport + 7248) [0x1c68cfc50]
+                                                    1  ??? (BiomeStreams + 15696) [0x19f760d50]
+                                                      1  ??? (BiomeStreams + 258196) [0x19f79c094]
+                                                        1  ??? (BiomeStorage + 28072) [0x21f960da8]
+                                                          1  ??? (BiomeStorage + 7876) [0x21f95bec4]
+                                                            1  ??? (BiomeStorage + 40284) [0x21f963d5c]
+                                                              1  ??? (ProactiveSupport + 7408) [0x1c68cfcf0]
+                                                                1  ??? (ProactiveSupport + 7248) [0x1c68cfc50]
+                                                                  1  ??? (BiomeStorage + 8280) [0x21f95c058]
+                                                                    1  ??? (BiomeStorage + 45040) [0x21f964ff0]
+                                                                      1  ??? (BiomeStorage + 51908) [0x21f966ac4]
+                                                                        1  ??? (BiomeFoundation + 8204) [0x1d3ee600c]
+                                                                          1  ??? (BiomeStorage + 41020) [0x21f96403c]
+                                                                            1  ??? (Foundation + 138896) [0x1999cbe90]
+                                                                              1  ??? (libsystem_malloc.dylib + 4624) [0x199414210]
+                                                                                1  <on behalf of UNKNOWN [35] (originated by UNKNOWN [35])>
+
+  Binary Images:
+           0x100e00000 -                ???  duetexpertd                    <DEB164D7-AD65-3C90-9182-03FD77AB30CB>  /usr/libexec/duetexpertd
+           0x199406000 -        0x199412247  libsystem_pthread.dylib        <694C772A-A9F8-3AC0-9417-7C304043A771>  /usr/lib/system/libsystem_pthread.dylib
+           0x199413000 -        0x1994648ff  libsystem_malloc.dylib         <77F8A820-161C-35A7-A427-6F9840958C1F>  /usr/lib/system/libsystem_malloc.dylib
+           0x199465000 -        0x1994c64af  libxpc.dylib                   <2F319DF2-DF97-31F1-920A-AC20D14E1737>  /usr/lib/system/libxpc.dylib
+           0x1999aa000 -        0x19aae0153  Foundation                     <C041F1D0-5EF1-30A3-BF96-830976173B56>  /System/Library/Frameworks/Foundation.framework/Foundation
+           0x19f75d000 -        0x19fc97167  BiomeStreams                   <397147EF-C795-3838-8AA7-9F16FC3BD728>  /System/Library/PrivateFrameworks/BiomeStreams.framework/BiomeStreams
+           0x1c68ce000 -        0x1c6942477  ProactiveSupport               <CC94E199-8EB4-3A1C-86C9-9F5AE2CC4E04>  /System/Library/PrivateFrameworks/ProactiveSupport.framework/ProactiveSupport
+           0x1c79ba000 -        0x1c7a00d17  libdispatch.dylib              <8CDF4610-F6A5-39CB-94BF-687FE349A4BE>  /usr/lib/system/libdispatch.dylib
+           0x1d3ee4000 -        0x1d3f271fb  BiomeFoundation                <9C128EB4-1CE0-3465-9FBB-A725A4659319>  /System/Library/PrivateFrameworks/BiomeFoundation.framework/BiomeFoundation
+           0x21f95a000 -        0x21f98d4f7  BiomeStorage                   <55FDCE65-A7AA-3C31-8A23-21EE3B409858>  /System/Library/PrivateFrameworks/BiomeStorage.framework/BiomeStorage
+           0x21f98e000 -        0x21fa1157f  ProactiveSuggestionClientModel <CF3C2389-119F-356E-B416-1EF07CD285BE>  /System/Library/PrivateFrameworks/ProactiveSuggestionClientModel.framework/ProactiveSuggestionClientModel
+           0x245663000 -        0x245beecab  AppPredictionInternal          <2CB08A55-CA06-3E8A-BF3A-643AEE82A03D>  /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
+
+Powerstats for:   kernel_task
+UUID:             E575AB61-4149-373F-8E0E-A7AD26E41C12
+Version:          Darwin Kernel Version 27.0.0: Thu Aug 13 21:39:16 PDT 2026; root:xnu-13432.2.10~2/RELEASE_ARM64_T8140
+Resource Coalition: 1 sample 1
+Architecture:     arm64
+Start time:       2026-09-12 01:01:48.808 +0500
+End time:         2026-09-12 01:01:48.808 +0500
+Num samples:      1 (11%)
+Primary state:    1 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Unspecified, Requested Thread QoS Unspecified, Override Thread QoS Unspecified, e-core
+User Activity:    1 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 1 samples on AC
+ *1  ??? (<E575AB61-4149-373F-8E0E-A7AD26E41C12> + 8167164) [0xfffffff00b329efc]
+   *1  ??? (<E575AB61-4149-373F-8E0E-A7AD26E41C12> + 8164892) [0xfffffff00b32961c]
+     *1  ??? (<E575AB61-4149-373F-8E0E-A7AD26E41C12> + 8178220) [0xfffffff00b32ca2c]
+       *1  ??? (AppleT8140CLPC + 323916) [0xfffffff0097f360c]
+         *1  ??? (AppleT8140CLPC + 302216) [0xfffffff0097ee148]
+           *1  ??? (AppleT8140CLPC + 312820) [0xfffffff0097f0ab4]
+             *1  ??? (AppleT8140CLPC + 17760) [0xfffffff0097a8a20]
+               *1  ??? (AppleT8140CLPC + 20760) [0xfffffff0097a95d8]
+                 *1  ??? (AppleT8140CLPC + 27448) [0xfffffff0097aaff8]
+
+  Binary Images:
+   *0xfffffff0097a44c0 - 0xfffffff009806ed3  com.apple.driver.AppleT8140CLPC (1) <DE216647-BCDD-3C45-804C-ECE895FF2A15>__TEXT_EXEC  /System/Library/Extensions/AppleT8140CLPC.kext/AppleT8140CLPC
+   *0xfffffff00ab60000 - 0xfffffff00b43bfff  ??? (27.0.0)                        <E575AB61-4149-373F-8E0E-A7AD26E41C12>__TEXT_EXEC

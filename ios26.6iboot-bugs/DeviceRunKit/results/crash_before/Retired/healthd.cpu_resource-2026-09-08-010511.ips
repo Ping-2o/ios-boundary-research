@@ -1,0 +1,349 @@
+{"duration_ms":"112329","share_with_app_devs":0,"roots_installed":0,"bug_type":"202","os_version":"iPhone OS 26.6 (23G71)","slice_uuid":"D38C8AE1-08D4-30AF-9CA6-8A7FD74C201D","is_first_party":0,"incident_id":"E218F0F1-7844-4B07-A3C3-F9AD40BAE698","timestamp":"2026-09-08 01:05:11.00 +0500","app_name":"healthd","name":"healthd"}
+Date/Time:        2026-09-08 01:03:16.504 +0500
+End time:         2026-09-08 01:05:08.833 +0500
+OS Version:       iPhone OS 26.6 (Build 23G71)
+Architecture:     arm64e
+Report Version:   72
+Incident Identifier: E218F0F1-7844-4B07-A3C3-F9AD40BAE698
+
+Data Source:      Microstackshots
+Shared Cache:     E95ECD6A-DCA1-357F-9AC7-11619D1B37CE slid base address 0x189c4c000, slide 0x9c4c000
+
+Command:          healthd
+Path:             /System/Library/Frameworks/HealthKit.framework/healthd
+Resource Coalition: "com.apple.healthd"(29)
+Architecture:     arm64e
+Parent:           UNKNOWN [1]
+PID:              8031
+
+Event:            cpu usage
+Action taken:     none
+CPU:              90 seconds cpu time over 112 seconds (80% cpu average), exceeding limit of 50% cpu over 180 seconds
+CPU limit:        90s
+Limit duration:   180s
+CPU used:         90s
+CPU duration:     112s
+Duration:         112.33s
+Duration Sampled: 75.30s (event starts 26.98s before samples, event ends 10.04s after samples)
+Steps:            12 (10 gigacycles/step)
+
+Hardware model:   iPhone17,5
+Active cpus:      6
+Memory size:      7.54 GB
+HW page size:     16384
+VM page size:     16384
+Shared cache residency: 11.73% (701.34 MB / 5981 MB)
+
+Time Since Boot:  212582s
+Time Awake Since Boot: 88576s
+Time Since Wake:  737s
+
+Total CPU Time:   69.129s
+Advisory levels:  Battery -> 3, User -> 3, ThermalPressure -> 0, Combined -> 3
+Free disk space:  175.24 GB/237.64 GB, low space threshold 150 MB
+Vnodes Available: 66.20% (18536/28000, 14000 allocated, 14000 soft limit)
+Model:            com.apple.fm.language.instruct_300m.base
+  Loaded:         100s - N/A, requested by token-generation-inference
+Model:            com.apple.fm.language.instruct_300m.tokenizer
+  Loaded:         100s - N/A, requested by token-generation-inference
+Model:            com.apple.fm.language.instruct_300m.factual_consistency_classifier
+  Loaded:         100s - N/A, requested by token-generation-inference
+Model:            com.apple.fm.language.instruct_3b.tokenizer
+  Loaded:         94s - N/A, requested by token-generation-inference
+Model:            com.apple.fm.language.instruct_3b.summarization?language=en
+  Executing:      94s - 95s, requested by [188] use case summarization.summarizeMailMessage
+  Executing:      95s - 95s, requested by [188] use case summarization.summarizeMailMessage
+  Executing:      96s - 96s, requested by [188] use case summarization.summarizeMailMessage
+  Executing:      96s - 96s, requested by [188] use case summarization.summarizeMailMessage
+  Executing:      96s - 96s, requested by [188] use case summarization.summarizeMailMessage
+  Executing:      96s - 96s, requested by [188] use case summarization.summarizeMailMessage
+  Executing:      96s - 96s, requested by [188] use case summarization.summarizeMailMessage
+  Executing:      96s - 100s, requested by [188] use case summarization.summarizeMailMessage
+Model:            com.apple.fm.language.instruct_3b.base
+  Loaded:         95s - 110s, requested by token-generation-inference
+Model:            com.apple.fm.language.instruct_3b.summarization
+  Loaded:         95s - 110s, requested by token-generation-inference
+Model:            com.apple.fm.language.instruct_3b.summarization.draft
+  Loaded:         95s - 110s, requested by token-generation-inference
+Model:            com.apple.tokeninputdenylist.template
+  Executing:      96s - 96s, requested by [188] use case summarization.summarizeMailMessage
+Model:            com.apple.gm.safety_deny.input.foundation_models_framework.api
+  Loaded:         96s - 110s, requested by generative-experiences-safety-inference-provider
+Model:            com.apple.gm.safety_embedding_deny.all
+  Loaded:         96s - 110s, requested by generative-experiences-safety-inference-provider
+Model:            com.apple.tokenoutputdenylist.template
+  Executing:      100s - 100s, requested by [188] use case summarization.summarizeMailMessage
+Model:            com.apple.gm.safety_deny.output.foundation_models_framework.api
+  Loaded:         100s - 110s, requested by generative-experiences-safety-inference-provider
+Model:            com.apple.fm.language.instruct_300m.factual_consistency_classifier?language=en
+  Executing:      100s - 100s, requested by [188] use case summarization.summarizeMailMessage
+
+Preferred User Language: en-GB, kk-GB
+Country Code:     GB
+Keyboards:        com.google.keyboard.KeyboardExtension, en_GB QWERTY
+OS Cryptex File Extents: 1
+
+Heaviest stack for the target process:
+  7  ??? (libsystem_pthread.dylib + 2240) [0x1ecaf28c0]
+  7  ??? (libsystem_pthread.dylib + 5040) [0x1ecaf33b0]
+  7  ??? (libdispatch.dylib + 83628) [0x1c7c846ac]
+  7  ??? (libdispatch.dylib + 85420) [0x1c7c84dac]
+  7  ??? (libdispatch.dylib + 43748) [0x1c7c7aae4]
+  7  ??? (libdispatch.dylib + 40472) [0x1c7c79e18]
+  7  ??? (libdispatch.dylib + 97208) [0x1c7c87bb8]
+  7  ??? (libdispatch.dylib + 102116) [0x1c7c88ee4]
+  7  ??? (libdispatch.dylib + 24904) [0x1c7c76148]
+  7  ??? (libdispatch.dylib + 111076) [0x1c7c8b1e4]
+  7  ??? (HealthKit + 2239740) [0x19c096cfc]
+  7  ??? (HealthKit + 2241336) [0x19c097338]
+  7  ??? (HealthDaemon + 2130836) [0x23829a394]
+  7  ??? (HealthDaemon + 2131708) [0x23829a6fc]
+  7  ??? (HealthDaemon + 2157800) [0x2382a0ce8]
+  7  ??? (HealthDaemon + 2133428) [0x23829adb4]
+  7  ??? (HealthDaemon + 2221480) [0x2382b05a8]
+  7  ??? (HealthDaemon + 2221736) [0x2382b06a8]
+  7  ??? (HealthDaemon + 2223036) [0x2382b0bbc]
+  7  ??? (HealthDaemon + 2218884) [0x2382afb84]
+  7  ??? (HealthDaemon + 3810828) [0x23843460c]
+  7  ??? (HealthDaemon + 2157476) [0x2382a0ba4]
+  7  ??? (HealthDaemon + 2111012) [0x238295624]
+  7  ??? (HealthDaemon + 2112992) [0x238295de0]
+  7  ??? (HealthDaemon + 2221360) [0x2382b0530]
+  7  ??? (HealthDaemon + 2219432) [0x2382afda8]
+  7  ??? (HealthKit + 2173496) [0x19c086a38]
+  7  ??? (HealthDaemon + 2219876) [0x2382aff64]
+  7  ??? (HealthDaemon + 2333604) [0x2382cbba4]
+  7  ??? (HealthDaemon + 3810348) [0x23843442c]
+  7  ??? (HealthDaemon + 2157476) [0x2382a0ba4]
+  7  ??? (HealthDaemon + 2108992) [0x238294e40]
+  7  ??? (HealthDaemon + 2175448) [0x2382a51d8]
+  7  ??? (HealthDaemon + 2173500) [0x2382a4a3c]
+  7  ??? (HealthDaemonFoundation + 12176) [0x26378ef90]
+  6  ??? (HealthDaemon + 2179224) [0x2382a6098]
+  6  ??? (HealthDaemon + 2167344) [0x2382a3230]
+  3  ??? (HealthDaemonFoundation + 140796) [0x2637ae5fc]
+  3  ??? (HealthDaemonFoundation + 19316) [0x263790b74]
+  3  ??? (libsqlite3.dylib + 33212) [0x18b54d1bc]
+  3  ??? (libsqlite3.dylib + 34396) [0x18b54d65c]
+  3  ??? (libsqlite3.dylib + 35336) [0x18b54da08]
+  3  ??? (libsqlite3.dylib + 37548) [0x18b54e2ac]
+  3  ??? (libsqlite3.dylib + 47640) [0x18b550a18]
+  3  ??? (libsqlite3.dylib + 53472) [0x18b5520e0]
+  3  ??? (libsqlite3.dylib + 788644) [0x18b6058a4]
+  2  ??? (libsqlite3.dylib + 76616) [0x18b557b48]
+  1  ??? (libsqlite3.dylib + 33580) [0x18b54d32c]
+  1  ??? (libsqlite3.dylib + 77600) [0x18b557f20]
+  1  ??? (libsqlite3.dylib + 35336) [0x18b54da08]
+  1  ??? (libsqlite3.dylib + 37548) [0x18b54e2ac]
+  1  ??? (libsqlite3.dylib + 42128) [0x18b54f490]
+  1  ??? (libsqlite3.dylib + 245968) [0x18b5810d0]
+  1  ??? (libsqlite3.dylib + 114156) [0x18b560dec]
+  1  ??? (libsqlite3.dylib + 496128) [0x18b5be200]
+
+
+Powerstats for:   healthd [8031]
+UUID:             D38C8AE1-08D4-30AF-9CA6-8A7FD74C201D
+Path:             /System/Library/Frameworks/HealthKit.framework/healthd
+Resource Coalition: 7 samples "com.apple.healthd"(29)
+Architecture:     arm64e
+Parent:           UNKNOWN [1]
+UID:              501
+Sudden Term:      Tracked (allows idle exit)
+Footprint:        17.69 MB -> 22.16 MB (+4576 KB)
+Start time:       2026-09-08 01:03:43.489 +0500
+End time:         2026-09-08 01:04:55.888 +0500
+Num samples:      7 (58%)
+Energy:           1305.79 uWh
+Num threads:      1
+Primary state:    4 samples Non-Frontmost App, Non-Suppressed, User mode, Effective Thread QoS Background, Requested Thread QoS Default, Override Thread QoS Unspecified, e-core
+User Activity:    7 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 7 samples on AC
+  7  ??? (libsystem_pthread.dylib + 2240) [0x1ecaf28c0]
+    7  ??? (libsystem_pthread.dylib + 5040) [0x1ecaf33b0]
+      7  ??? (libdispatch.dylib + 83628) [0x1c7c846ac]
+        7  ??? (libdispatch.dylib + 85420) [0x1c7c84dac]
+          7  ??? (libdispatch.dylib + 43748) [0x1c7c7aae4]
+            7  ??? (libdispatch.dylib + 40472) [0x1c7c79e18]
+              7  ??? (libdispatch.dylib + 97208) [0x1c7c87bb8]
+                7  ??? (libdispatch.dylib + 102116) [0x1c7c88ee4]
+                  7  ??? (libdispatch.dylib + 24904) [0x1c7c76148]
+                    7  ??? (libdispatch.dylib + 111076) [0x1c7c8b1e4]
+                      7  ??? (HealthKit + 2239740) [0x19c096cfc]
+                        7  ??? (HealthKit + 2241336) [0x19c097338]
+                          7  ??? (HealthDaemon + 2130836) [0x23829a394]
+                            7  ??? (HealthDaemon + 2131708) [0x23829a6fc]
+                              7  ??? (HealthDaemon + 2157800) [0x2382a0ce8]
+                                7  ??? (HealthDaemon + 2133428) [0x23829adb4]
+                                  7  ??? (HealthDaemon + 2221480) [0x2382b05a8]
+                                    7  ??? (HealthDaemon + 2221736) [0x2382b06a8]
+                                      7  ??? (HealthDaemon + 2223036) [0x2382b0bbc]
+                                        7  ??? (HealthDaemon + 2218884) [0x2382afb84]
+                                          7  ??? (HealthDaemon + 3810828) [0x23843460c]
+                                            7  ??? (HealthDaemon + 2157476) [0x2382a0ba4]
+                                              7  ??? (HealthDaemon + 2111012) [0x238295624]
+                                                7  ??? (HealthDaemon + 2112992) [0x238295de0]
+                                                  7  ??? (HealthDaemon + 2221360) [0x2382b0530]
+                                                    7  ??? (HealthDaemon + 2219432) [0x2382afda8]
+                                                      7  ??? (HealthKit + 2173496) [0x19c086a38]
+                                                        7  ??? (HealthDaemon + 2219876) [0x2382aff64]
+                                                          7  ??? (HealthDaemon + 2333604) [0x2382cbba4]
+                                                            7  ??? (HealthDaemon + 3810348) [0x23843442c]
+                                                              7  ??? (HealthDaemon + 2157476) [0x2382a0ba4]
+                                                                7  ??? (HealthDaemon + 2108992) [0x238294e40]
+                                                                  7  ??? (HealthDaemon + 2175448) [0x2382a51d8]
+                                                                    7  ??? (HealthDaemon + 2173500) [0x2382a4a3c]
+                                                                      7  ??? (HealthDaemonFoundation + 12176) [0x26378ef90]
+                                                                        6  ??? (HealthDaemon + 2179224) [0x2382a6098]
+                                                                          6  ??? (HealthDaemon + 2167344) [0x2382a3230]
+                                                                            3  ??? (HealthDaemonFoundation + 140796) [0x2637ae5fc]
+                                                                              3  ??? (HealthDaemonFoundation + 19316) [0x263790b74]
+                                                                                3  ??? (libsqlite3.dylib + 33212) [0x18b54d1bc]
+                                                                                  3  ??? (libsqlite3.dylib + 34396) [0x18b54d65c]
+                                                                                    3  ??? (libsqlite3.dylib + 35336) [0x18b54da08]
+                                                                                      3  ??? (libsqlite3.dylib + 37548) [0x18b54e2ac]
+                                                                                        3  ??? (libsqlite3.dylib + 47640) [0x18b550a18]
+                                                                                          3  ??? (libsqlite3.dylib + 53472) [0x18b5520e0]
+                                                                                            3  ??? (libsqlite3.dylib + 788644) [0x18b6058a4]
+                                                                                              2  ??? (libsqlite3.dylib + 76616) [0x18b557b48]
+                                                                                                1  ??? (libsqlite3.dylib + 33580) [0x18b54d32c]
+                                                                                                  1  ??? (libsqlite3.dylib + 77600) [0x18b557f20]
+                                                                                                    1  ??? (libsqlite3.dylib + 35336) [0x18b54da08]
+                                                                                                      1  ??? (libsqlite3.dylib + 37548) [0x18b54e2ac]
+                                                                                                        1  ??? (libsqlite3.dylib + 42128) [0x18b54f490]
+                                                                                                          1  ??? (libsqlite3.dylib + 245968) [0x18b5810d0]
+                                                                                                            1  ??? (libsqlite3.dylib + 114156) [0x18b560dec]
+                                                                                                              1  ??? (libsqlite3.dylib + 496128) [0x18b5be200]
+                                                                                                1  ??? (libsqlite3.dylib + 33212) [0x18b54d1bc]
+                                                                                                  1  ??? (libsqlite3.dylib + 34396) [0x18b54d65c]
+                                                                                                    1  ??? (libsqlite3.dylib + 35336) [0x18b54da08]
+                                                                                                      1  ??? (libsqlite3.dylib + 37548) [0x18b54e2ac]
+                                                                                                        1  ??? (libsqlite3.dylib + 45920) [0x18b550360]
+                                                                                                          1  ??? (libsqlite3.dylib + 118244) [0x18b561de4]
+                                                                                                            1  ??? (libsqlite3.dylib + 884864) [0x18b61d080]
+                                                                                                              1  ??? (libsqlite3.dylib + 188856) [0x18b5731b8]
+                                                                                                                1  ??? (libsqlite3.dylib + 645232) [0x18b5e2870]
+                                                                                                                  1  ??? (libsystem_malloc.dylib + 6800) [0x1988c0a90]
+                                                                                              1  ??? (libsqlite3.dylib + 76568) [0x18b557b18]
+                                                                                                1  ??? (libsqlite3.dylib + 114156) [0x18b560dec]
+                                                                                                  1  ??? (libsqlite3.dylib + 496448) [0x18b5be340]
+                                                                            3  ??? (HealthDaemonFoundation + 140740) [0x2637ae5c4]
+                                                                              2  ??? (libsqlite3.dylib + 4948) [0x18b546354]
+                                                                                2  ??? (libsqlite3.dylib + 14120) [0x18b548728]
+                                                                                  2  ??? (libsqlite3.dylib + 18960) [0x18b549a10]
+                                                                                    2  ??? (libsystem_kernel.dylib + 26132) [0x23c9f9614]
+                                                                                      2  <Kernel mode>
+                                                                              1  ??? (libsqlite3.dylib + 5916) [0x18b54671c]
+                                                                                1  ??? (libsqlite3.dylib + 555328) [0x18b5cc940]
+                                                                        1  ??? (HealthDaemon + 2179516) [0x2382a61bc]
+                                                                          1  ??? (HealthDaemonFoundation + 143796) [0x2637af1b4]
+                                                                            1  ??? (libsqlite3.dylib + 558268) [0x18b5cd4bc]
+                                                                              1  ??? (libsqlite3.dylib + 510332) [0x18b5c197c]
+                                                                                1  ??? (libsqlite3.dylib + 353140) [0x18b59b374]
+                                                                                  1  ??? (libsqlite3.dylib + 354640) [0x18b59b950]
+                                                                                    1  ??? (libsqlite3.dylib + 355672) [0x18b59bd58]
+                                                                                      1  ??? (libsystem_kernel.dylib + 34008) [0x23c9fb4d8]
+                                                                                        1  <Kernel mode>
+
+  Binary Images:
+           0x100118000 -                ???  healthd                 <D38C8AE1-08D4-30AF-9CA6-8A7FD74C201D>  /System/Library/Frameworks/HealthKit.framework/healthd
+           0x18b545000 -        0x18b6ee893  libsqlite3.dylib        <ADBA4BC6-1B12-3CF9-A92A-652248883FFB>  /usr/lib/libsqlite3.dylib
+           0x1988bf000 -        0x198907d0f  libsystem_malloc.dylib  <5BD03C05-4A35-3899-A1FB-B317705071F8>  /usr/lib/system/libsystem_malloc.dylib
+           0x19be74000 -        0x19c49a77f  HealthKit               <4BC78B06-D19C-382A-9F58-BC28746495D4>  /System/Library/Frameworks/HealthKit.framework/HealthKit
+           0x1c7c70000 -        0x1c7cb65ff  libdispatch.dylib       <955B1789-D542-3497-B46D-BD6BE85F91A2>  /usr/lib/system/libdispatch.dylib
+           0x1ecaf2000 -        0x1ecafe4ef  libsystem_pthread.dylib <46B95807-F752-3DC2-A1BA-6290E8D7FE38>  /usr/lib/system/libsystem_pthread.dylib
+           0x238092000 -        0x238b0525f  HealthDaemon            <EC266B06-05D3-3C3A-A15E-40BCE3D7B7CF>  /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+           0x23c9f3000 -        0x23ca2eb1f  libsystem_kernel.dylib  <A11BF433-17AB-3F01-88BC-54C467CE6287>  /usr/lib/system/libsystem_kernel.dylib
+           0x26378c000 -        0x26380ec5f  HealthDaemonFoundation  <C9CEF094-9CB5-37FC-BA85-78B09EA96BA1>  /System/Library/PrivateFrameworks/HealthDaemonFoundation.framework/HealthDaemonFoundation
+
+
+Powerstats for:   kernel_task
+UUID:             8FB8E638-220A-319B-8180-9E4FF7DAC659
+Version:          Darwin Kernel Version 25.6.0: Sat Jul 11 15:46:45 PDT 2026; root:xnu-12377.162.13~2/RELEASE_ARM64_T8140
+Resource Coalition: 3 samples 1
+Architecture:     arm64
+Start time:       2026-09-08 01:03:48.183 +0500
+End time:         2026-09-08 01:04:58.791 +0500
+Num samples:      3 (25%)
+Primary state:    3 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Unspecified, Requested Thread QoS Unspecified, Override Thread QoS Unspecified, e-core
+User Activity:    3 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 3 samples on AC
+ *1  ??? (<8FB8E638-220A-319B-8180-9E4FF7DAC659> + 7889780) [0xfffffff00adf2374]
+   *1  ??? (<8FB8E638-220A-319B-8180-9E4FF7DAC659> + 676472) [0xfffffff00a711278]
+     *1  ??? (<8FB8E638-220A-319B-8180-9E4FF7DAC659> + 1991036) [0xfffffff00a85217c]
+ *1  ??? (<8FB8E638-220A-319B-8180-9E4FF7DAC659> + 1506364) [0xfffffff00a7dbc3c]
+   *1  ??? (<8FB8E638-220A-319B-8180-9E4FF7DAC659> + 1498088) [0xfffffff00a7d9be8]
+     *1  ??? (<8FB8E638-220A-319B-8180-9E4FF7DAC659> + 1186844) [0xfffffff00a78dc1c]
+       *1  ??? (<8FB8E638-220A-319B-8180-9E4FF7DAC659> + 1177772) [0xfffffff00a78b8ac]
+ *1  ??? (<8FB8E638-220A-319B-8180-9E4FF7DAC659> + 700536) [0xfffffff00a717078]
+   *1  ??? (<8FB8E638-220A-319B-8180-9E4FF7DAC659> + 699816) [0xfffffff00a716da8]
+     *1  ??? (<8FB8E638-220A-319B-8180-9E4FF7DAC659> + 1993484) [0xfffffff00a852b0c]
+
+  Binary Images:
+   *0xfffffff00a66c000 - 0xfffffff00aefbfff  ??? (25.6.0) <8FB8E638-220A-319B-8180-9E4FF7DAC659>__TEXT_EXEC
+
+
+Powerstats for:   containermanagerd_system
+UUID:             0A2C0398-5691-3963-848E-C4D30C0DABCA
+Path:             /usr/libexec/containermanagerd_system
+Resource Coalition: 1 sample "com.apple.containermanagerd.system"(155)
+On Behalf Of:     1 sample UNKNOWN [2498] (1 sample originated by UNKNOWN [7958])
+Architecture:     arm64e
+Start time:       2026-09-08 01:04:42.983 +0500
+End time:         2026-09-08 01:04:42.983 +0500
+Num samples:      1 (8%)
+Primary state:    1 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Utility, Requested Thread QoS Utility, Override Thread QoS Unspecified, e-core
+User Activity:    1 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 1 samples on AC
+  1  ??? (libsystem_pthread.dylib + 2240) [0x1ecaf28c0]
+    1  ??? (libsystem_pthread.dylib + 5040) [0x1ecaf33b0]
+      1  ??? (libdispatch.dylib + 83628) [0x1c7c846ac]
+        1  ??? (libdispatch.dylib + 85420) [0x1c7c84dac]
+          1  ??? (libdispatch.dylib + 48712) [0x1c7c7be48]
+            1  ??? (libdispatch.dylib + 125176) [0x1c7c8e8f8]
+              1  ??? (libdispatch.dylib + 40472) [0x1c7c79e18]
+                1  ??? (libdispatch.dylib + 121764) [0x1c7c8dba4]
+                  1  ??? (libdispatch.dylib + 111148) [0x1c7c8b22c]
+                    1  ??? (libxpc.dylib + 84548) [0x1a1bdaa44]
+                      1  ??? (libxpc.dylib + 77008) [0x1a1bd8cd0]
+                        1  ??? (ContainerManagerCommon + 9440) [0x1ecc6e4e0]
+                          1  ??? (ContainerManagerCommon + 130600) [0x1ecc8be28]
+                            1  ??? (ContainerManagerCommon + 138700) [0x1ecc8ddcc]
+                              1  ??? (ContainerManagerCommon + 139932) [0x1ecc8e29c]
+                                1  ??? (ContainerManagerCommon + 141640) [0x1ecc8e948]
+                                  1  ??? (ContainerManagerCommon + 104320) [0x1ecc85780]
+                                    1  ??? (ContainerManagerCommon + 104784) [0x1ecc85950]
+                                      1  ??? (ContainerManagerCommon + 96880) [0x1ecc83a70]
+                                        1  ??? (libsystem_containermanager.dylib + 24168) [0x1ecc38e68]
+                                          1  ??? (libsystem_kernel.dylib + 26220) [0x23c9f966c]
+                                            1  <on behalf of UNKNOWN [2498] (originated by UNKNOWN [7958])>
+
+  Binary Images:
+           0x10051c000 -                ???  containermanagerd_system         <0A2C0398-5691-3963-848E-C4D30C0DABCA>  /usr/libexec/containermanagerd_system
+           0x1a1bc6000 -        0x1a1c1765f  libxpc.dylib                     <00B71270-124E-31FA-B7D2-5D747DA4BCE1>  /usr/lib/system/libxpc.dylib
+           0x1c7c70000 -        0x1c7cb65ff  libdispatch.dylib                <955B1789-D542-3497-B46D-BD6BE85F91A2>  /usr/lib/system/libdispatch.dylib
+           0x1ecaf2000 -        0x1ecafe4ef  libsystem_pthread.dylib          <46B95807-F752-3DC2-A1BA-6290E8D7FE38>  /usr/lib/system/libsystem_pthread.dylib
+           0x1ecc33000 -        0x1ecc6b817  libsystem_containermanager.dylib <3F73D705-BE49-3E0D-BAF8-3633471128E7>  /usr/lib/system/libsystem_containermanager.dylib
+           0x1ecc6c000 -        0x1ecdb277f  ContainerManagerCommon           <3396F495-9CAE-3D80-8257-5EEB4BB1BC38>  /System/Library/PrivateFrameworks/ContainerManagerCommon.framework/ContainerManagerCommon
+           0x23c9f3000 -        0x23ca2eb1f  libsystem_kernel.dylib           <A11BF433-17AB-3F01-88BC-54C467CE6287>  /usr/lib/system/libsystem_kernel.dylib
+
+
+Powerstats for:   fseventsd
+UUID:             CD28B766-0893-349F-BBF1-E8D38DF65B2A
+Path:             /usr/libexec/fseventsd
+Resource Coalition: 1 sample "com.apple.fseventsd"(143)
+Architecture:     arm64e
+Start time:       2026-09-08 01:04:44.849 +0500
+End time:         2026-09-08 01:04:44.849 +0500
+Num samples:      1 (8%)
+Primary state:    1 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Unspecified, Requested Thread QoS Unspecified, Override Thread QoS Unspecified, e-core
+User Activity:    1 samples Idle, 0 samples Active
+Power Source:     0 samples on Battery, 1 samples on AC
+  1  ??? (libsystem_pthread.dylib + 2252) [0x1ecaf28cc]
+    1  ??? (libsystem_pthread.dylib + 17464) [0x1ecaf6438]
+      1  ??? (fseventsd + 3164) [0x1005c4c5c]
+        1  ??? (libsystem_kernel.dylib + 27544) [0x23c9f9b98]
+
+  Binary Images:
+           0x1005c4000 -                ???  fseventsd               <CD28B766-0893-349F-BBF1-E8D38DF65B2A>  /usr/libexec/fseventsd
+           0x1ecaf2000 -        0x1ecafe4ef  libsystem_pthread.dylib <46B95807-F752-3DC2-A1BA-6290E8D7FE38>  /usr/lib/system/libsystem_pthread.dylib
+           0x23c9f3000 -        0x23ca2eb1f  libsystem_kernel.dylib  <A11BF433-17AB-3F01-88BC-54C467CE6287>  /usr/lib/system/libsystem_kernel.dylib

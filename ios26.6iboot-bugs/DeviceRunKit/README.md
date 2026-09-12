@@ -1,3 +1,10 @@
+> **NOTICE — AI-GENERATED SECURITY RESEARCH.** This document was written 100% by
+> autonomous AI agents (no human authoring or line-by-line review pass — expect slop).
+> It exists solely for authorized security research and coordinated disclosure to the
+> affected vendor. All claims cite checkable artifacts (offsets, receipts, commands);
+> re-verify before trusting any of them. PoC files are minimal triage reproducers,
+> not weapons. Do not use against systems you do not own or may not test.
+
 # DeviceRunKit — turning the six iBoot reports on the REAL device (iPhone17,5 / t8140)
 
 Everything in `Report*/` so far is LEVEL-B: real firmware code executed on the host.
@@ -27,7 +34,7 @@ This kit answers the two questions the static+host work CANNOT (flagged in
 | # | script | question answered | expected healthy receipt |
 |---|---|---|---|
 | 0 | `step0_pullcrash.sh` | baseline crash/panic inventory (normal mode) | folder snapshot |
-| 1 | `step1_enum.sh` | shell alive? getenv whitelist? security-mode reads? | values OR uniform silence = documented negative |
+| 1 | `step1_enum.sh` | shell whitelist VALUES (read-only; **empty ≠ dead** — see RUN 1) | state-change test = the verdict |
 | 2 | `step2_memboot_control.sh` | decode-before-verify ordering + latency vocabulary | "Kernelcache image not valid" AFTER decode |
 | 3 | `step3_poc_seq.sh [payloads...]` | THE device-side PoC: R1/R2/R3 streams via memboot krnl | reset/panic = decoder consumed attacker bytes on retail silicon |
 | 5 | `step5_nvram.sh` | Report 6 live: write `auto-boot-once`, reboot, readback | value persists = no keyed seal, device-proven |
@@ -45,20 +52,32 @@ the ordering is honest-but-post-decode; if it arrives instantly the parser rejec
 attribute and you must use the frame_* payloads in step3).
 
 
-Run order 0→1→2→(3)→5, then 9. If step1 shows total silence, stop — write the
-outcome into `../DELIVERY_PATHS_24A435.md` §4 as the device answer (shell does not
-run on retail A18; Reports 1–3/5 stay staging-position claims — that IS a result).
+## RUN 1 RESULT (09-12, iOS 27.0 24A435 unit) — **RETAIL CONSOLE IS ALIVE**
+
+`getenv`/`peek` all returned empty — and that is EXPECTED, not gating: retail recovery
+sends shell stdout to the internal debug UART (silent by default), and libirecovery's
+"Command completed successfully" is only the USB control-transfer ACK (it prints for
+garbage commands too). The decisive probe was `irecovery -c reboot`: the device left
+Recovery and booted to normal 27.0. **Commands execute on this retail, non-checkm8 A18.**
+Evidence + what is still NOT shown (send/bootx acceptance, the §4.2 whitelist window,
+locked-USB behavior): `results/RUN1_finding_console_live.md`. The unit is currently
+back in normal mode — re-enter Recovery (vol+, vol−, hold Side) to continue with
+step2 (zero-risk control) → step3.
+
+Run order 0→1→2→(3)→5, then 9.
 
 ## What each outcome changes in the reports
 
-- **step1 responds + step3 panics** → Reports 1–3 get a *physically-present* delivery
-  sentence (USB recovery, no pairing, no exploit needed) and Report 4's gate claim
-  gains the iBEC memboot arm as a live entry point. Biggest upgrade available.
-- **step1 responds, commands PERMISSION DENIED** → the `sub_82434` range-whitelist is
-  active on retail: document exactly which commands answer (that's the §4.2 answer).
-- **step1 silent** → retail iBEC never runs the command prompt outside restore/FUD
-  states: reports keep the staging-only framing (already their current wording);
-  `§4a` mode-bit question remains open pending an Apple-diag unit.
+- **step1 executes commands (RUN 1: CONFIRMED via `reboot`)** → shell reachability is
+  settled in the affirmative; the remaining gate is step2/3: if `send`+`bootx` runs the
+  memboot chain and the PoC streams fault/reset the device, Reports 1–3/5 get a
+  *USB-physically-present, no-exploit, no-pairing* delivery sentence on retail 27.0
+  silicon — a material upgrade over the staging-host framing.
+- **step2/3 accepted but behavior unchanged** → memboot window (`sub_82434`, §4.2) or the
+  container parse rejected our bytes at the boundary; document which (pair with crash pull).
+- **locked-USB variation**: repeat step1 on a passcode-locked unit (enter recovery, do NOT
+  unlock) — if `reboot` still executes, no unlock precondition exists; if not, delivery
+  requires an unlocked device in recovery (still physical-presence, one more precondition).
 - **step5 write/readback works** → Report 6 becomes device-proven persistence, no
   jailbreak, USB-physical position only.
 

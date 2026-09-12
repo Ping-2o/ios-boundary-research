@@ -1,3 +1,10 @@
+> **NOTICE — AI-GENERATED SECURITY RESEARCH.** This document was written 100% by
+> autonomous AI agents (no human authoring or line-by-line review pass — expect slop).
+> It exists solely for authorized security research and coordinated disclosure to the
+> affected vendor. All claims cite checkable artifacts (offsets, receipts, commands);
+> re-verify before trusting any of them. PoC files are minimal triage reproducers,
+> not weapons. Do not use against systems you do not own or may not test.
+
 # iBoot NVRAM persisted-state integrity: bank images are guarded only by forgeable checksums (no keyed MAC in the store path) — mBoot-18000.162.8 / 18000.162.10
 
 ## Summary

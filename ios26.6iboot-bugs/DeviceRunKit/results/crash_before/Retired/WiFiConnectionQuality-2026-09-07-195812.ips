@@ -1,0 +1,175 @@
+{"bug_type":"233","timestamp":"2026-09-07 19:58:12.00 +0500","os_version":"iPhone OS 26.6 (23G71)","roots_installed":0,"incident_id":"640FBEB6-310F-4BDD-A699-A86CD029FA77"}
+<GEOLogMsgEvent: 0xc88a82d00> {
+    "event_type" = "WIFI_CONNECTION_QUALITY_PROBE";
+    "log_msg_state" =     (
+                {
+            "device_identifier" =             {
+                "device_hw_identifier" = "iPhone17,5";
+                "device_os_version" = "26.6.23G71";
+                "is_internal_install" = 0;
+                "is_internal_tool" = 0;
+            };
+            "state_type" = "DEVICE_IDENTIFIER";
+        }
+    );
+    "wifi_connection_quality_probe_event" =     {
+        "wifi_connection_quality" =         {
+            apMode = INFRA;
+            associationLength = "TIME_BUCKET_GT_ONE_HOUR";
+            associationReason = CLIENT;
+            authTraits =             (
+                WPA
+            );
+            band = 1;
+            bytesInTotal = 45000000;
+            bytesOutTotal = 4500000;
+            captiveDetermination = "NOT_CAPTIVE";
+            cca = 6;
+            channel = 40;
+            channelWidth = 80;
+            dataStalls = 121;
+            disassociationReason = "TRIGGER_DISC";
+            failedConnections = 8589939656;
+            faultyStay = 991;
+            hotspot20 = 0;
+            isEdgeBSS = 1;
+            isKnownGood = 1;
+            location =             {
+                latLng =                 {
+                    lat = 0;
+                    lng = 0;
+                };
+            };
+            lowLQMStay = 1866;
+            nearbyBSS =             (
+                                {
+                    channel = 7;
+                    rssi = "-94";
+                    uniqueID = "dc:51:93:a6:5a:90";
+                },
+                                {
+                    channel = 1;
+                    rssi = "-92";
+                    uniqueID = "22:df:73:86:53:b4";
+                },
+                                {
+                    channel = 11;
+                    rssi = "-90";
+                    uniqueID = "20:98:d8:1a:31:7a";
+                },
+                                {
+                    channel = 8;
+                    rssi = "-92";
+                    uniqueID = "20:3a:eb:9a:e9:d0";
+                },
+                                {
+                    channel = 6;
+                    rssi = "-95";
+                    uniqueID = "e6:fa:c4:28:28:fe";
+                },
+                                {
+                    channel = 11;
+                    rssi = "-87";
+                    uniqueID = "22:df:73:86:3f:70";
+                },
+                                {
+                    channel = 6;
+                    rssi = "-96";
+                    uniqueID = "50:ff:20:aa:90:22";
+                },
+                                {
+                    channel = 6;
+                    rssi = "-95";
+                    uniqueID = "e4:fa:c4:28:28:fe";
+                },
+                                {
+                    channel = 1;
+                    rssi = "-94";
+                    uniqueID = "20:3a:eb:cb:bb:fa";
+                },
+                                {
+                    channel = 6;
+                    rssi = "-94";
+                    uniqueID = "20:98:d8:22:b5:30";
+                },
+                                {
+                    channel = 1;
+                    rssi = "-92";
+                    uniqueID = "e4:90:10:10:46:20";
+                },
+                                {
+                    channel = 1;
+                    rssi = "-69";
+                    uniqueID = "cc:b0:a8:16:48:28";
+                },
+                                {
+                    channel = 2;
+                    rssi = "-95";
+                    uniqueID = "f4:fc:49:37:7d:96";
+                },
+                                {
+                    channel = 11;
+                    rssi = "-96";
+                    uniqueID = "7a:5c:5e:40:ac:64";
+                },
+                                {
+                    channel = 11;
+                    rssi = "-84";
+                    uniqueID = "0:31:92:56:7e:68";
+                },
+                                {
+                    channel = 11;
+                    rssi = "-95";
+                    uniqueID = "44:65:7f:65:91:3c";
+                },
+                                {
+                    channel = 8;
+                    rssi = "-79";
+                    uniqueID = "e4:4e:12:5a:61:bd";
+                },
+                                {
+                    channel = 6;
+                    rssi = "-95";
+                    uniqueID = "fa:8f:ca:8c:2b:ba";
+                },
+                                {
+                    channel = 6;
+                    rssi = "-95";
+                    uniqueID = "52:ff:20:7a:90:22";
+                },
+                                {
+                    channel = 6;
+                    rssi = "-93";
+                    uniqueID = "e2:5f:30:ff:54:a1";
+                },
+                                {
+                    channel = 5;
+                    rssi = "-92";
+                    uniqueID = "74:fe:ce:cd:89:7e";
+                },
+                                {
+                    channel = 4;
+                    rssi = "-93";
+                    uniqueID = "96:9a:4a:85:c3:49";
+                }
+            );
+            networkOrigin = "UNKNOWN_ORIGINATOR_TYPE";
+            networkType = "PRIVATE_NETWORK_TYPE";
+            overAllStay = 142721;
+            packetsIn = 698214;
+            packetsOut = 578557;
+            phyMode = 0;
+            responsivenessScore = 0;
+            roundTripTimeAvg = 0;
+            roundTripTimeMin = "0.004";
+            roundTripTimeVar = 0;
+            rssi = "-87";
+            snr = 10;
+            sslConnectionCount = 25993;
+            sslErrorCount = 0;
+            successfulConnections = 20929;
+            timeOfDay = 810481876;
+            uniqueID = "cc:b0:a8:16:48:2c";
+        };
+    };
+}
