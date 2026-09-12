@@ -91,7 +91,7 @@ daemon (`videocodecd` / `mediaremoted`) may crash — that is the goal; correlat
 - **khanhduytran0** — [DirtySlide](https://github.com/khanhduytran0/DirtySlide), the original macOS LPE this repo is forked from. The Part 2 payload, the app scaffold, and the iOS port are his work.
 - **forcequitOS** — [bad_query](https://github.com/forcequitOS/bad_query), the ContainerManager class-13 sandbox escape. The escape primitive in `E. DAEMON-CACHE` row and the v126 IK row is a port of that PoC; confirmed live on iOS 27.0 beta 24A5355q and fixed in 24A435 RC.
 
-Prior campaign history (v10–v175) is in `VERSIONS.md`. Per-front evidence is in `analysis/
+Prior campaign history (v10–v175) is in `VERSIONS.md`. Per-front evidence is in analysis folder
 
 # ios-boundary-research
 iOS privileged-boundary research — VideoToolbox/AVE findings, DoS primitives, and negative results from iOS 26–27.
