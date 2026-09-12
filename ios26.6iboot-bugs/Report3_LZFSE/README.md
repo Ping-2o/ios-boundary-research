@@ -123,7 +123,8 @@ Attacker positioning and delivery context, honestly stated: these decoders are
 selected by parsed algorithm ids on iBoot's staged-container (`splt`) path whose
 input arrives during manufacturing/upgrade ("combo") staging handoff;
 standard-boot image loads verify signatures before decompression, so no remote
-trigger is demonstrated. Within the staging position, the defect discloses
+trigger is demonstrated (27.0 audit: entry set CLOSED at four paths,
+decode-before-verify tested NEGATIVE on P1 — `../DELIVERY_PATHS_24A435.md` §4e). Within the staging position, the defect discloses
 adjacent privileged boot heap into decoded content — a confusion/
 info-disclosure primitive inside the trust boundary rather than a code-execution
 path. Severity reasoning: a deterministic, attacker-positioned OOB read in

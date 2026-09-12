@@ -126,7 +126,8 @@ Attacker positioning and delivery context, honestly stated: these decoders are
 selected by parsed algorithm ids on iBoot's staged-container (`splt`) path whose
 input arrives during manufacturing/upgrade ("combo") staging handoff;
 standard-boot image loads verify signatures before decompression, so no remote
-attacker path is demonstrated. An attacker positioned to influence staged or
+attacker path is demonstrated (27.0 audit: entry set CLOSED at four paths,
+decode-before-verify tested NEGATIVE on P1 — `../DELIVERY_PATHS_24A435.md` §4e). An attacker positioned to influence staged or
 upgrade-time content gains a large linear overflow in privileged boot code:
 adjacent boot-state objects can be corrupted deterministically during staging,
 yielding persistence/trust-anchor tampering or a reliable boot DoS from a

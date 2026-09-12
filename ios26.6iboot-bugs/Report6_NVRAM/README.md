@@ -19,11 +19,17 @@ session can (a) author policy content into the real format, (b) tamper a policy 
 existing valid-looking image, (c) re-seal it with the REAL checksum functions so that every
 integrity check iBoot performs on the next cold boot PASSES. The monotonic sequence counter
 defends only against naive replay: it is a plain integer inside the (forgeable) Adler
-coverage; re-sealing any chosen sequence value is proven to pass. The protected-name list
-that would gate hostile `boot-command` writes exists but its enforcement wrapper has zero
-references in both builds (dead code). A live-device observation once showed `setenv
-boot-command` being refused, indicating some enforcement may sit outside this binary;
-that uncertainty is stated plainly rather than claimed bypassed.
+coverage; re-sealing any chosen sequence value is proven to pass. **Retraction/correction
+(09-12, per `../DELIVERY_PATHS_24A435.md` §4c):** the earlier claim that the protected-name
+enforcement wrapper "has zero references (dead code)" is a **table-dispatch tooling
+artifact**, not a finding: `setenv` command surfaces live in **iBEC**, whose handler tables
+are data-dispatched (`sh_memboot` itself has zero code callers by the same method), and on
+27.0 the name-materializer `sub_15cd34` has four callers chaining to the `boot-command`
+consumer. The live `setenv boot-command` refusal was therefore the gate working as
+designed. The durable claim of this report is unaffected and stands alone: **no keyed
+seal exists at any hop of the persisted bank path** — forge, re-seal, and cold-boot
+acceptance are proven with REAL firmware code; the targeted names should be ones the
+design list does not protect (e.g. `auto-boot-once`).
 
 ## Affected software
 

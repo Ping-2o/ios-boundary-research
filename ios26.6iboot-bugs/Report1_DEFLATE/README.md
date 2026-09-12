@@ -121,6 +121,15 @@ selected by parsed algorithm ids on iBoot's staged-container (`splt`) path whose
 input arrives during manufacturing/upgrade ("combo") staging handoff, not from
 the network or a remote attacker. Standard-boot image loads verify signatures
 before decompression, so a remote code-execution chain is not demonstrated here.
+**27.0 delivery audit (this set):** the reachable decoder-entry set is now CLOSED at
+four paths (`../DELIVERY_PATHS_24A435.md`); the standard-image path was tested for
+decode-before-verify and found honest (digest computed over stored bytes precedes the
+`bl` to the dispatcher), so the staging-class paths (`'splt'` unkeyed-CRC, its
+CRC-failure fallback arm, and the `iBootIm`/`LZFSE` record consumers) remain the only
+delivery — this *narrows and hardens* the claim, and pre-answers the storage-swap
+question. Escalation on top of this bug: `Report4_SPLT/rce_run*.log` shows a
+stored-block overflow overwriting a firmware function-pointer slot and the REAL
+`blraaz` landing PC in an attacker page, 3/3 deterministic.
 An attacker able to influence staged/upgrade-time content (malicious or
 compromised staging host, supply-chain position, or a co-resident privileged bug
 that can plant staged content) gains a large controlled-content linear overflow
