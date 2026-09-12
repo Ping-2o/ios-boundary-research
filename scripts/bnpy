@@ -1,0 +1,6 @@
+#!/bin/sh
+# bnpy -- run a python script with the Binary Ninja headless API available.
+# Binary Ninja only.
+export PYTHONPATH="/Applications/Binary Ninja.app/Contents/Resources/python${PYTHONPATH:+:$PYTHONPATH}"
+export DYLD_FALLBACK_LIBRARY_PATH="/Applications/Binary Ninja.app/Contents/MacOS"
+exec /Users/pauyedin/.workbuddy-ai/binaries/python/versions/3.13.12/bin/python3 "$@"

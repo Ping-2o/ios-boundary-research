@@ -1,7 +1,73 @@
-dist/
-*.zip
+# ============================================================================
+# DirtySlide — ignore rules
+# Keep the published repo source-only: no build artifacts, no PoC binaries,
+# no local caches, no proprietary Apple binaries, no local agent state.
+# ============================================================================
+
+# --- macOS / editor junk ---
 .DS_Store
+Icon?
+*.xcuserstate
 *.xcscmblueprint
 *.xccheckout
 *.xcarchive
 xcuserdata
+
+# --- build output & packaged apps (never publish) ---
+dist/
+build/
+DerivedData/
+*.app
+*.ipa
+*.dSYM/
+
+# --- compiled PoC binaries (sources stay tracked; binaries never do) ---
+/poc_65346_ios
+/poc_65346_mac
+
+# --- crash logs at the repo root (evidence lives under ios26.6iboot-bugs/) ---
+/DirtySlide-*.ips
+/PocRunner-*.ips
+/panic-*.ips
+
+# --- vendored third-party PoCs (nested .git repos — do not redistribute) ---
+poc_vendors/
+
+# --- iBoot campaign PoCs: crafted inputs, PoC sources, run logs, RCE demos ---
+# Everything under ios26.6iboot-bugs/ whose name contains "poc", plus the RCE
+# demo run logs. Excluded from publication; kept locally on disk.
+ios26.6iboot-bugs/**/*poc*
+ios26.6iboot-bugs/**/rce_run*.log
+
+# PoC-like files that don't carry "poc" in the name: crafted payload images,
+# PoC sources, and payload builders. (The benign control_* images stay tracked.)
+ios26.6iboot-bugs/DeviceRunKit/payloads/frame_*
+ios26.6iboot-bugs/DeviceRunKit/payloads/r*_krnl.im4p
+ios26.6iboot-bugs/DeviceRunKit/payloads/make_payloads.sh
+ios26.6iboot-bugs/DeviceRunKit/payloads/step6_wrap_complzss.sh
+ios26.6iboot-bugs/Report*/chain.c
+ios26.6iboot-bugs/Report*/qsweep.c
+ios26.6iboot-bugs/Report*/build_qsweep.sh
+
+# --- proprietary Apple binaries (copyrighted — never publish) ---
+driver+binaries/
+
+# --- local Python environment & caches ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.codegraph/
+
+# --- local agent / tooling state ---
+.workbuddy-ai/
+.irecovery
+
+# --- stray local doc dumps ---
+kernel.rtf
+videocodecd.rtf
+
+# --- archives ---
+*.zip

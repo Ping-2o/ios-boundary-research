@@ -9,17 +9,79 @@
 
 # DirtySlide
 
-Two things live in this repo:
+Two research tracks live in this repo:
 
 1. **Unprivileged → root macOS LPE** — the original project (below, unchanged).
-2. **An iOS privileged-boundary research harness** — the current work: a single-file Xcode
-   app (`UI/ViewController.m`) that sweeps AVFoundation/VideoToolbox attack surfaces for
-   parser/allocation bugs on iOS 27.0 (24A5355q), with **on-device crash evidence** in the
-   repo root (`*.ips`).
+2. **An iOS privileged-boundary research harness** — a single-file Xcode app
+   (`UI/ViewController.m`) that sweeps AVFoundation/VideoToolbox attack surfaces for
+   parser/allocation bugs on iOS 27.0 (24A5355q), with **on-device crash evidence**
+   (`*.ips`).
+
+The per-front evidence lives in **[`analysis/`](#analysis--per-front-working-evidence)**;
+the iOS 26.6 boot-chain campaign (6 reports + device run kit + raw crash evidence) lives in
+**[`ios26.6iboot-bugs/`](#ios266iboot-bugs--the-ios-266-iboot-campaign)**. See the
+[repository layout](#repository-layout) below.
 
 > **Read `AGENTS.md` first** if you are an agent or new contributor — it has the file
 > paths, build/verify loop, static-analysis toolbox, and every editing gotcha we learned.
 > Findings + verdicts: `FINDINGS.md`. Version history: `VERSIONS.md`.
+
+---
+
+## Repository layout
+
+| Path | What it is |
+|---|---|
+| `DirtySlide/`, `UI/`, `src/`, `Makefile` | the Xcode app and payload sources — the Part 1 harness and the Part 2 macOS LPE |
+| **[`analysis/`](#analysis--per-front-working-evidence)** | per-target working evidence: one markdown file per reverse-engineering front |
+| **[`ios26.6iboot-bugs/`](#ios266iboot-bugs--the-ios-266-iboot-campaign)** | the iOS 26.6 iBoot bug campaign: 6 numbered reports, the on-device run kit, and the raw crash evidence |
+| `extclaims/` | external-claim audit corpus (firmware extracts, SHA-256 receipts, work trees) |
+| `PocRunner/`, `poc_65346.c`, `poc_vendors/` | PoC sources and the PoC runner app |
+| `scripts/` | analysis tooling — Binary Ninja helpers, the string-ref locator, the `.ips` decoder |
+| `REPORT_*.md`, `FINDINGS.md`, `VERSIONS.md`, `AGENTS.md` | campaign reports, findings, version history, and the agent handbook |
+| `driver+binaries/` | local RE inputs — **proprietary Apple binaries; gitignored, never published** |
+
+> Compiled PoC binaries (`*.ipa`, `poc_65346_ios`), the local Python venv, and the
+> `.codegraph` index are all gitignored — see `.gitignore`.
+
+### `analysis/` — per-front working evidence
+
+One file per reverse-engineering front, holding the raw disassembly quotes, offsets, and
+confidence labels behind the headline reports. Grouped by target:
+
+- **AppleAVD / VideoToolbox decode** — `avd_gates.md`, `avd_flag_lead.md`, `avd_lgh_lead.md`,
+  `avd_patch_descriptors.md`, `avd_pps_workbuf.md`, `avd_tiles.md`
+- **Face ID bracket** — `fid_bracket.md`, `fid_node.md`, `fid_cve_closure.md`
+- **AppleJPEGDriver** — `jpeg_encoder_overflow.md`, `jpeg_iostruct.md`, `jpeg_userclient.md`
+- **Kernel / kext command buffers** — `kext_cmdbuf_alloc.md`, `kext_decodebuffer_patch.md`,
+  `kext_frameparam_link.md`, `kext_patch_applier.md`, `kernel_ucoredump.md`
+- **M2ScalerCSC** — `m2scaler_cmdbuf.md`, `m2scaler_math.md`
+- **Pearl (secure element)** — `pearl_magic.md`, `pearl_payload.md`
+- **SAR (sensor arbitration)** — `sar_externals.md`, `sar_write_index.md`
+- **USB host-controller** — `usb_commandring.md`, `usb_descriptors.md`
+- **VCPHEVC** — `vcphevc_file_parsers.md`, `vcphevc_profile_parser.md`, `vcphevc_recursion_verify.md`
+- **UserClient / WebKit** — `uc_jpeg_userclient.md`, `uc_webkit.md`, `uc_webcore_wellknown_parser.md`
+- **Row M (IOGPU UAF 64788)** — `row_m_iogpu_uaf_snippet.m`
+
+### `ios26.6iboot-bugs/` — the iOS 26.6 iBoot campaign
+
+The iBoot/boot-chain bug hunt, structured as six self-contained reports plus the tooling
+used to reproduce them on a real device:
+
+| Folder | Report |
+|---|---|
+| `Report1_DEFLATE/` | DEFLATE decompressor |
+| `Report2_LZVN/` | LZVN decompressor |
+| `Report3_LZFSE/` | LZFSE decompressor |
+| `Report4_SPLT/` | SPLT (splat) handling |
+| `Report5_HOMING/` | HOMING boot-stage logic |
+| `Report6_NVRAM/` | NVRAM handling |
+| `DeviceRunKit/` | on-device execution kit: payloads, control images, results, and the run scripts |
+
+Supporting documents: `DELIVERY.md`, `DELIVERY_PATHS_24A435.md`, `IBEC_IBSS_24A435.md`,
+`RECHECK_24A435_mBoot-20457.2.37.md`, and `PUBLISH.md`. This tree also carries the raw
+**on-device crash evidence** — the tracked `.ips` reports and device logs that back every
+claim in the reports (the `.zip` bundles are gitignored; rebuild them from the folders).
 
 ---
 
@@ -486,7 +548,7 @@ xcrun devicectl device process launch --device $CORE_DEVICE_ID --console --no-ac
 # (Linux/Windows: pymobiledevice3 developer dvt launch --stream $APP_BUNDLE_ID)
 ```
 
-### Current headline evidence (28 `.ips` in the repo root)
+### Current headline evidence
 
 - **FIRST DEVICE PANIC (08-10 12:54:51)** — `panic-full-2026-08-10-125451.0002.ips`: the v84
   UPS-count-21 USL-wedge cascade (OP07/OP11 wedged the kext USL FrameReceiver → daemon RPC-kills

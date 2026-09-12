@@ -34,6 +34,8 @@ int main(int argc, char *argv[], char *envp[], char *apple[]) {
     void *uiHandle = dlopen("@executable_path/Frameworks/UI.framework/UI", RTLD_GLOBAL);
     if (uiHandle) {
         // means dsc is loaded
+        /* v126: the -aiffchild / -parsechild child-run branches were removed with
+         * the SK/TI row cut (their helpers no longer exist in UI.framework). */
         int (*uiMain)(int argc, char *argv[], char *envp[], char *apple[]) = dlsym(uiHandle, "main");
         return uiMain(argc, argv, envp, apple);
     }
