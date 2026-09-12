@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 > **NOTICE — AI-GENERATED SECURITY RESEARCH.** This document was written 100% by
 > autonomous AI agents (no human authoring or line-by-line review pass — expect slop).
 > It exists solely for authorized security research and coordinated disclosure to the
@@ -773,3 +774,7 @@ xcrun devicectl device process launch --device $CORE_DEVICE_ID --console --no-ac
   v84 fires HEVC UPS {0xF}x21 (the untried 21-count) + MCTF co-arm bits + the
   20/21 boundary + x4 churn. kext MCTFStrengthLevel[N] lines with N>=7 = the
   OOB kernel-heap reads LIVE; a device reboot = PANIC = THE 64747 kernel OOB.
+=======
+# ios-boundary-research
+iOS privileged-boundary research — VideoToolbox/AVE findings, DoS primitives, and negative results from iOS 26–27.
+>>>>>>> 5c21e9e349d36dddde47c729a0d4294286dddb51
