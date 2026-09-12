@@ -9,7 +9,7 @@ iOS privileged-boundary research across system services, kernel-facing interface
 
 > **Research note**
 >
-> This repository is research-assisted by AI agents (GLM 5.3 FLASH, QWEN 3.8 FLASH NEXT, GLM 5.3, and DEEPSEEK V4.1 FLASH), with findings checked against static analysis and on-device evidence.
+> This repository is research-assisted by AI agents (GLM-5.3-Flash, Qwen3.8-Flash-Next, GLM 5.3, and DeepSeek-V4.1-Flash), with findings checked against static analysis and on-device evidence.
 >
 > AI-generated hypotheses are not treated as confirmed vulnerabilities solely on the basis of model output. Security claims should be independently reproduced and evaluated against the corresponding evidence, including reachability and demonstrated security impact.
 
