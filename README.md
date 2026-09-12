@@ -2,6 +2,11 @@
 
 iOS privileged-boundary research across system services, kernel-facing interfaces, and the iBoot boot chain — with reproducible harnesses, on-device validation, security findings, and negative results.
 
+> [!NOTE]
+> ### Open Research
+> Several findings in this campaign remain unresolved. Contributions that establish a real attacker-controlled delivery path, eliminate a false positive, or demonstrate concrete security impact are welcome.
+
+
 > **Research note**
 >
 > This repository is research-assisted by AI agents (GLM 5.3 FLASH, QWEN 3.8 FLASH NEXT, GLM 5.3, and DEEPSEEK V4.1 FLASH), with findings checked against static analysis and on-device evidence.
