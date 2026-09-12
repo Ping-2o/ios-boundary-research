@@ -33,6 +33,8 @@ DerivedData/
 # --- vendored third-party PoCs (nested .git repos — do not redistribute) ---
 poc_vendors/
 
+ios26.6iboot-bugs/Report6_NVRAM/iboot_dec.bin
+
 # --- iBoot campaign PoCs: crafted inputs, PoC sources, run logs, RCE demos ---
 # Everything under ios26.6iboot-bugs/ whose name contains "poc", plus the RCE
 # demo run logs. Excluded from publication; kept locally on disk.
