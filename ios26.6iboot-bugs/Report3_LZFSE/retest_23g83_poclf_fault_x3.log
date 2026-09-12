@@ -1,0 +1,48 @@
+=== poclf fault replay run 1 (162.10) ===
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x107084000 (size 3699824, tail 1 MB @0x10740c000)
+== POCLF: on-disk stream replay: /private/tmp/ds_iboot/Report3_LZFSE/poc_lzfse_fault.bin (1612 bytes) ==
+  file bytes (96 bytes):
+  0000: 62 76 78 31 20 00 00 00 20 00 00 00 10 00 00 00
+  0010: 04 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00
+  0020: 11 00 12 00 13 00 14 00 f9 ff ff ff 05 00 07 00
+  0030: 0d 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00
+  0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0050: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    bt[0] lr_off=1e9d9c
+    bt[1] lr_off=fffffffffb233bf0
+  poclf-from-file direct  sn=1612 produced=-1 faulted=1 sig=10 pc_off=1ea208 addr-vs-dstbegin=-262092
+    bt[0] lr_off=1e9d9c
+    bt[1] lr_off=fffffffffb233bb4
+  poclf-from-file id=0x8A1 sn=1612 produced=-1 faulted=1 sig=10 pc_off=1ea208 addr-vs-dstbegin=-262092
+=== poclf fault replay run 2 (162.10) ===
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x109028000 (size 3699824, tail 1 MB @0x1093b0000)
+== POCLF: on-disk stream replay: /private/tmp/ds_iboot/Report3_LZFSE/poc_lzfse_fault.bin (1612 bytes) ==
+  file bytes (96 bytes):
+  0000: 62 76 78 31 20 00 00 00 20 00 00 00 10 00 00 00
+  0010: 04 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00
+  0020: 11 00 12 00 13 00 14 00 f9 ff ff ff 05 00 07 00
+  0030: 0d 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00
+  0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0050: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    bt[0] lr_off=1e9d9c
+    bt[1] lr_off=fffffffffb23fbf0
+  poclf-from-file direct  sn=1612 produced=-1 faulted=1 sig=10 pc_off=1ea208 addr-vs-dstbegin=-262092
+    bt[0] lr_off=1e9d9c
+    bt[1] lr_off=fffffffffb23fbb4
+  poclf-from-file id=0x8A1 sn=1612 produced=-1 faulted=1 sig=10 pc_off=1ea208 addr-vs-dstbegin=-262092
+=== poclf fault replay run 3 (162.10) ===
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x1072bc000 (size 3699824, tail 1 MB @0x107644000)
+== POCLF: on-disk stream replay: /private/tmp/ds_iboot/Report3_LZFSE/poc_lzfse_fault.bin (1612 bytes) ==
+  file bytes (96 bytes):
+  0000: 62 76 78 31 20 00 00 00 20 00 00 00 10 00 00 00
+  0010: 04 00 00 00 00 00 00 00 20 00 00 00 00 00 00 00
+  0020: 11 00 12 00 13 00 14 00 f9 ff ff ff 05 00 07 00
+  0030: 0d 00 00 00 00 00 00 00 00 00 40 00 00 00 00 00
+  0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0050: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    bt[0] lr_off=1e9d9c
+    bt[1] lr_off=fffffffffb2a3bf0
+  poclf-from-file direct  sn=1612 produced=-1 faulted=1 sig=10 pc_off=1ea208 addr-vs-dstbegin=-262092
+    bt[0] lr_off=1e9d9c
+    bt[1] lr_off=fffffffffb2a3bb4
+  poclf-from-file id=0x8A1 sn=1612 produced=-1 faulted=1 sig=10 pc_off=1ea208 addr-vs-dstbegin=-262092

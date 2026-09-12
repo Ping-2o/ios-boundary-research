@@ -1,0 +1,26 @@
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x1054e8000 (size 3699824, tail 1 MB @0x105870000)
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e8e40
+    bt[2] lr_off=fffffffffb4cd3d8
+  b0w dcap=64 faulted=1 sig=10 pc_off=16b5a4 addr-vs-dst=-84492288 dirty-span=[0..65600) capSpanOOB=65536 hiApronDirty=1
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e8e40
+    bt[2] lr_off=fffffffffb4cd3d8
+  b0w dcap=256 faulted=1 sig=10 pc_off=16b5a4 addr-vs-dst=-84492288 dirty-span=[0..65792) capSpanOOB=65536 hiApronDirty=1
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e8e40
+    bt[2] lr_off=fffffffffb4cd3d8
+  b0w dcap=1024 faulted=1 sig=10 pc_off=16b5a4 addr-vs-dst=-84492288 dirty-span=[0..66560) capSpanOOB=65536 hiApronDirty=1
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e8e40
+    bt[2] lr_off=fffffffffb4cd3d8
+  b0w dcap=4096 faulted=1 sig=10 pc_off=16b5a4 addr-vs-dst=-84492288 dirty-span=[0..69632) capSpanOOB=65536 hiApronDirty=1
+  [poc-v0] dumped 18 container bytes -> /tmp/ds_iboot/poc_v0.bin
+  [poc-v0] container (id=0x100 decode input) (18 bytes):
+  0000: 62 76 34 31 40 00 00 00 02 00 00 00 0f 41 62 76
+  0010: 34 24
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e5ffc
+    bt[2] lr_off=fffffffffb4cd6f4
+  poc-v0 id=0x100 sn=18 faulted=1 sig=11 pc_off=16b5a4 addr-vs-dst=+1771880448 dirty-span=[0..69632) OOBpast4K=65536 hiApronDirty=1
+  poc-v1 id=0x505 sn=23 faulted=0

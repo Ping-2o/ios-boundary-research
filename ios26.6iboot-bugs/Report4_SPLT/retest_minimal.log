@@ -1,0 +1,60 @@
+=== determinism run 1/3 - 162.8 (DS_FW unset) ===
+[minpoc] fw=/tmp/ds_iboot/iboot_dec.bin (162.8) gate=0x14b4b8 disp=0x1eb3c8
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f4321 ascii='POC!' CANARY-hits=0
+[minpoc] fw=/tmp/ds_iboot/iboot_dec.bin (162.8) gate=0x14b4b8 disp=0x1eb3c8
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_tampered_same_crc.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f5821 ascii='POX!' CANARY-hits=0
+sha256 4f381001a80f201259ed3d177d31cd951787a21bcb11c52bacef6e8a9563fd76  /private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin
+=== determinism run 2/3 - 162.8 (DS_FW unset) ===
+[minpoc] fw=/tmp/ds_iboot/iboot_dec.bin (162.8) gate=0x14b4b8 disp=0x1eb3c8
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f4321 ascii='POC!' CANARY-hits=0
+[minpoc] fw=/tmp/ds_iboot/iboot_dec.bin (162.8) gate=0x14b4b8 disp=0x1eb3c8
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_tampered_same_crc.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f5821 ascii='POX!' CANARY-hits=0
+sha256 4f381001a80f201259ed3d177d31cd951787a21bcb11c52bacef6e8a9563fd76  /private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin
+=== determinism run 3/3 - 162.8 (DS_FW unset) ===
+[minpoc] fw=/tmp/ds_iboot/iboot_dec.bin (162.8) gate=0x14b4b8 disp=0x1eb3c8
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f4321 ascii='POC!' CANARY-hits=0
+[minpoc] fw=/tmp/ds_iboot/iboot_dec.bin (162.8) gate=0x14b4b8 disp=0x1eb3c8
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_tampered_same_crc.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f5821 ascii='POX!' CANARY-hits=0
+sha256 4f381001a80f201259ed3d177d31cd951787a21bcb11c52bacef6e8a9563fd76  /private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin
+=== determinism run 1/3 - 162.10 (DS_FW=/tmp/ds_iboot/23g83/iboot_dec_23g83.bin) ===
+[minpoc] fw=/tmp/ds_iboot/23g83/iboot_dec_23g83.bin (162.10) gate=0x14b678 disp=0x1eb448
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f4321 ascii='POC!' CANARY-hits=0
+[minpoc] fw=/tmp/ds_iboot/23g83/iboot_dec_23g83.bin (162.10) gate=0x14b678 disp=0x1eb448
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_tampered_same_crc.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f5821 ascii='POX!' CANARY-hits=0
+sha256 4f381001a80f201259ed3d177d31cd951787a21bcb11c52bacef6e8a9563fd76  /private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin
+=== determinism run 2/3 - 162.10 (DS_FW=/tmp/ds_iboot/23g83/iboot_dec_23g83.bin) ===
+[minpoc] fw=/tmp/ds_iboot/23g83/iboot_dec_23g83.bin (162.10) gate=0x14b678 disp=0x1eb448
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f4321 ascii='POC!' CANARY-hits=0
+[minpoc] fw=/tmp/ds_iboot/23g83/iboot_dec_23g83.bin (162.10) gate=0x14b678 disp=0x1eb448
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_tampered_same_crc.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f5821 ascii='POX!' CANARY-hits=0
+sha256 4f381001a80f201259ed3d177d31cd951787a21bcb11c52bacef6e8a9563fd76  /private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin
+=== determinism run 3/3 - 162.10 (DS_FW=/tmp/ds_iboot/23g83/iboot_dec_23g83.bin) ===
+[minpoc] fw=/tmp/ds_iboot/23g83/iboot_dec_23g83.bin (162.10) gate=0x14b678 disp=0x1eb448
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f4321 ascii='POC!' CANARY-hits=0
+[minpoc] fw=/tmp/ds_iboot/23g83/iboot_dec_23g83.bin (162.10) gate=0x14b678 disp=0x1eb448
+[minpoc] poc=/private/tmp/ds_iboot/Report4_SPLT/poc_min_tampered_same_crc.bin len=37 magic=746c7073 stored_crc=b2281136 flag=1 cnt=1 declen0=9
+[minpoc] gate(blob=37): ret=1 -> ACCEPT
+[minpoc] disp(algo=0x205): ret=4 produced-first16=504f5821 ascii='POX!' CANARY-hits=0
+sha256 4f381001a80f201259ed3d177d31cd951787a21bcb11c52bacef6e8a9563fd76  /private/tmp/ds_iboot/Report4_SPLT/poc_min_gate.bin

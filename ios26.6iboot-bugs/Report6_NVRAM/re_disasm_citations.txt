@@ -1,0 +1,71 @@
+== re_disasm_citations.txt — Ghidra disassembly citations (both builds) ==
+== All lines quoted from ghidra tools (disassemble_function / decompile_function
+   / get_xrefs_to) against programs "/iboot_dec.bin" (162.8) and
+   "/iboot_dec_23g83.bin" (162.10). Read-only session. ==
+
+--- 1. serializer header + seq-counter + adler store (old FUN_0016FB78 / new FUN_0016FD38, +0x1C0) ---
+; old 0016fb78                       |  new 0016fd38
+strb w8,[x0]        ; w8=0x5a tag    | same pattern at +0x1C0
+strh w8,[x0,#0x2]   ; w8=2           |
+ldr w8,[x19,#0x14]                   ; monotonic sequence counter read from store+0x14
+add w8,w8,#0x1 ; str w8,[x19,#0x14]  ; increment (store)
+str w8,[x20,#0x14]                   ; copy into image header +0x14
+bl 0x1709e8 / bl 0x170ba8            ; per-record sum (4 sites incl. header + filler)
+bl 0x158fec / bl 0x1591a4            ; final: adler(img+0x14, size-0x14)
+stur w8,[x20,#0x10]                  ; result stored at header+0x10
+
+--- 2. commit entry: mutex magic + rotate (old FUN_0016FA4C @0x16fa4c / new FUN_0016FC0C @0x16fc0c, +0x1C0) ---
+bl 0x17cb08(0x3c4e5653,0)    ; lock/mutex magic 'SVN<' 0x3C4E5653
+bl 0x16fb78                  ; serialize
+bl 0x1c3154                  ; storage write -> svc 0x62 @0x1c3174 and svc 0xC5 sites inside
+udiv/msub pattern            ; current_bank = (current_bank+1) % count  ([store+0x18]/[store+4])
+bl 0x17cb08(0x3e4e5653,0)    ; unlock magic 0x3E4E5653
+
+--- 3. storage supervisor-call boundary (identical addresses both builds) ---
+FUN_001C2948 (bank READ):  0x1c2978: svc 0x62
+FUN_001C3154 (bank WRITE): 0x1c3174: svc 0x62 ; svc 0xC5 at 0x1c31c0/0x1c325c/0x1c32c4/0x1c3330 (+ retry loop)
+
+--- 4. load-side verifier integrity checks (old FUN_0016FFA0 / new FUN_00170160, +0x1C0) ---
+; NEW build exact instruction receipts:
+0x170200: bl 0x001705f8          ; per-bank pre-read/header check (svc-backed NOR read inside)
+0x170208-14: ldur w8,[x29,#-0x5c]; ldr w9,[x19,#0x14]; cmp w8,w9; b.cc 0x1704d4
+             ^^^ SEQ GATE: candidate bank skipped unless its header seq >= running best (store+0x14)
+0x170270: bl 0x001c2948          ; full bank read through svc 0x62
+0x1702ac: bl 0x001591a4          ; REAL Adler over [img+0x14,size-0x14]
+0x1702bc-c4: ldr w8,[x28,#0x10]; cmp w0,w8; b.ne 0x17045c   ; mismatch -> log err 0x263
+0x170308: bl 0x00170ba8          ; record fold per record
+0x170318-20: ldrb w8,[x21,#1]; cmp w8,w0,UXTB; b.ne 0x1704b8 ; mismatch -> log err 0x26c
+0x170328: cmp w8,#0x7f           ; filler terminates walk
+0x170444: ldrh w8,[x21,#2]; add x20,x20,x8,LSL#4 ; stride = len16<<4
+0x170490: str w8,[x19,#0x14]     ; accepted bank's seq becomes the running best
+0x1705a4-b4: udiv/msub -> [x19+0x18] = (best_idx+1)%count ; next-write bank rotation
+; OLD build equivalents at 0x16ffa0 body (adler@~0x170138 vs [uVar11+0x10];
+; rec fold cmp @~0x17015c region; same err codes 0x263/0x26c).
+
+--- 5. per-record checksum semantics (real fn bodies) ---
+FUN_001709E8 (new FUN_00170BA8):
+  seed = rec[0] (tag); sums exactly 14 bytes rec[2..rec+F]; folds >0xFFFF down by
+  (hi&0xff)+(lo&0xff); returns low byte. => shallow window ONLY ([entry+2, entry+F)).
+FUN_00158FEC (new FUN_001591A4): classic Adler-32 mod 0xFFF1 (a=1,b=0), packed a|b<<16,
+  vectorized inner FUN_00159440/FUN_00159600. Image-wide coverage [0x14, size).
+
+--- 6. protected-name dead gate (BOTH builds) ---
+OLD: table of PAC-signed pointer pairs @0x2038C0; sole reader FUN_00003A28 (@0x00003a68 ADRP);
+     get_xrefs_to(FUN_00003a28) -> single caller FUN_0015E05C;
+     get_xrefs_to(FUN_0015e05c) -> count=0  (DEAD).
+NEW: table @0x203950 (fun_00003a28 identical body, adrp#0x203000+#0x950);
+     sole caller FUN_0015E21C; get_xrefs_to(FUN_0015e21c) -> count=0  (DEAD).
+
+--- 7. DT-prop consumption / bank selection ---
+OLD FUN_001725C4 consumes nvram-bank-size (0x2a350c), nvram-bank-count (0x2a351c),
+  nvram-current-bank (0x2a352d), nvram-proxy-data (0x2a3540), nvram-raw (0x2a3585),
+  nvram-nor (0x2a358f) then calls selector FUN_00173700.
+NEW FUN_00172798 (+0x1D4) with strings shifted +0x80 ("nvram-bank-size"@0x2a358c etc.).
+
+--- 8. harness runtime receipts that reproduce the above live (see retest_*.log) ---
+[S1] FAULTED sig=SIGSYS pc_off=0x36f74 / 0x36f9c (early supervisor gate inside heap wrappers
+     FUN_1DC428->1DC3D4 (162.8) / FUN_1DC494->1DC440 (162.10))      -- old/new respectively
+iBoot assert chain under prefilled arena: FUN_001DE608/FUN_001DE674 -> halt `b .` @fw+0x43c
+     (live backtrace under lldb during development: frames 0x43c <- 0x1de43c <- 0x1de40c <-
+      0x1de63c <- 0x16ef74 <- 0x16e9c8 <- 0x16eb04 <- 0x16ebf4  = prefilled-arena branch of
+      the real serializer).

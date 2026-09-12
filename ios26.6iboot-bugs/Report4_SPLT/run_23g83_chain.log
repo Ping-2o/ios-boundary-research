@@ -1,0 +1,39 @@
+### 23G83 162.10
+=== chain gate ===
+[probe] full-file touch: faulted=0 sig=0 addr=0
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x105580000 size=3699824 rebase=0
+== REAL FUN_0014B4B8 'splt' gate matrix ==
+[build_stream] slen=1612
+[container] len=1640 magic=746c7073 crc=d2664c67 flag=1 cnt=1 declen0=1612
+container head 0x20 (32 bytes):
+  0000: 73 70 6c 74 67 4c 66 d2 11 11 11 11 22 22 22 22
+  0010: 01 00 00 00 01 00 00 00 4c 06 00 00 62 76 78 31
+G-pos  valid            : ret=1 faulted=0 -> ACCEPT(real gate)
+G-mag  magic='xspl'     : ret=0 faulted=0 -> CLEAN-FALSE
+G-crc  bad CRC          : faulted=1 sig=12 pc_off=225180 -> ABORT-PATH-FIRED
+G-size blob=cnt*4+0x18  : faulted=1 sig=14 -> ABORT-PATH-FIRED
+G-flag flag=0           : faulted=1 sig=14 -> ABORT-PATH-FIRED
+G-rng  hdr outside range: faulted=1 sig=14 -> ABORT-PATH-FIRED
+=== chain chain ===
+[probe] full-file touch: faulted=0 sig=0 addr=0
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x104db8000 size=3699824 rebase=0
+== PIPELINE: real gate -> loader-faithful chunk loop -> real dispatcher ==
+[benign control D=23  algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=124 faulted=0 produced=124 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=0 out[47..54]='AAAAAAAA'
+  staging-model: produced_total=124 tablewalk_next=+28 (bound hdr+1640)
+  out[0..47]: 414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141
+  model: warm32=1 full=1 (produced==124 want==124)
+[leak D=56            algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=124 faulted=0 produced=124 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=1 LEAK-first@49 out[47..54]='K-CANARY'
+  staging-model: produced_total=124 tablewalk_next=+28 (bound hdr+1640)
+  out[0..47]: 41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414b
+[leak D=56            algo=0x891] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=0 faulted=0 produced=0 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=0 out[47..54]='AAAAAAAA'
+  staging-model: produced_total=0 tablewalk_next=+28 (bound hdr+1640)
+[fault D=262139       algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=-9999 faulted=1 sig=10 FAULT-pc=off+1ea208 addr=1001c0034 delta_vs_dstbegin=-262092
+  staging-model: produced_total=0 tablewalk_next=+28 (bound hdr+1640)
+[wild-cursor cnt=2 declen1=0x01000000] gate ret=1 faulted=0
+  [dbg] cursor=0x1000ac560 w27=1644 bytes: 62 76 78 31 20 00 00 00 magic=31787662
+  iter1 (chunk@declen0): ret=124 faulted=0
+  iter2 (cursor+=declen[1]=0x01000000 -> 0x2000ac550): ret=0 faulted=0

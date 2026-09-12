@@ -1,0 +1,75 @@
+=== determinism run 1/3 - DS_FW=23g83 (162.10 / 23G83) ===
+[probe] full-file touch: faulted=0 sig=0 addr=0
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x105548000 size=3699824 rebase=0
+== PIPELINE: real gate -> loader-faithful chunk loop -> real dispatcher ==
+[benign control D=23  algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=124 faulted=0 produced=124 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=0 out[47..54]='AAAAAAAA'
+  staging-model: produced_total=124 tablewalk_next=+28 (bound hdr+1640)
+  out[0..47]: 414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141
+  model: warm32=1 full=1 (produced==124 want==124)
+[leak D=56            algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=124 faulted=0 produced=124 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=1 LEAK-first@49 out[47..54]='K-CANARY'
+  staging-model: produced_total=124 tablewalk_next=+28 (bound hdr+1640)
+  out[0..47]: 41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414b
+[leak D=56            algo=0x891] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=0 faulted=0 produced=0 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=0 out[47..54]='AAAAAAAA'
+  staging-model: produced_total=0 tablewalk_next=+28 (bound hdr+1640)
+[fault D=262139       algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=-9999 faulted=1 sig=10 FAULT-pc=off+1ea208 addr=106920034 delta_vs_dstbegin=-262092
+  staging-model: produced_total=0 tablewalk_next=+28 (bound hdr+1640)
+[wild-cursor cnt=2 declen1=0x01000000] gate ret=1 faulted=0
+  [dbg] cursor=0x100a68560 w27=1644 bytes: 62 76 78 31 20 00 00 00 magic=31787662
+  iter1 (chunk@declen0): ret=124 faulted=0
+  iter2 (cursor+=declen[1]=0x01000000 -> 0x200a68550): ret=0 faulted=0
+sha256 run1 a001d46282a501684f60949c80a03868196533811202dab8df9740f88a7ed9d1  /tmp/ds_iboot/poc_cell1.bin
+sha256 run1 2de83fb6ebca540bb7fac4f516073b1bf202fb8a44bdc1f1df489862abc63356  /tmp/ds_iboot/poc_cell3.bin
+=== determinism run 2/3 - DS_FW=23g83 (162.10 / 23G83) ===
+[probe] full-file touch: faulted=0 sig=0 addr=0
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x1055fc000 size=3699824 rebase=0
+== PIPELINE: real gate -> loader-faithful chunk loop -> real dispatcher ==
+[benign control D=23  algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=124 faulted=0 produced=124 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=0 out[47..54]='AAAAAAAA'
+  staging-model: produced_total=124 tablewalk_next=+28 (bound hdr+1640)
+  out[0..47]: 414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141
+  model: warm32=1 full=1 (produced==124 want==124)
+[leak D=56            algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=124 faulted=0 produced=124 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=1 LEAK-first@49 out[47..54]='K-CANARY'
+  staging-model: produced_total=124 tablewalk_next=+28 (bound hdr+1640)
+  out[0..47]: 41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414b
+[leak D=56            algo=0x891] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=0 faulted=0 produced=0 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=0 out[47..54]='AAAAAAAA'
+  staging-model: produced_total=0 tablewalk_next=+28 (bound hdr+1640)
+[fault D=262139       algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=-9999 faulted=1 sig=10 FAULT-pc=off+1ea208 addr=100b20034 delta_vs_dstbegin=-262092
+  staging-model: produced_total=0 tablewalk_next=+28 (bound hdr+1640)
+[wild-cursor cnt=2 declen1=0x01000000] gate ret=1 faulted=0
+  [dbg] cursor=0x100a0c560 w27=1644 bytes: 62 76 78 31 20 00 00 00 magic=31787662
+  iter1 (chunk@declen0): ret=124 faulted=0
+  iter2 (cursor+=declen[1]=0x01000000 -> 0x200a0c550): ret=0 faulted=0
+sha256 run2 a001d46282a501684f60949c80a03868196533811202dab8df9740f88a7ed9d1  /tmp/ds_iboot/poc_cell1.bin
+sha256 run2 2de83fb6ebca540bb7fac4f516073b1bf202fb8a44bdc1f1df489862abc63356  /tmp/ds_iboot/poc_cell3.bin
+=== determinism run 3/3 - DS_FW=23g83 (162.10 / 23G83) ===
+[probe] full-file touch: faulted=0 sig=0 addr=0
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x109304000 size=3699824 rebase=0
+== PIPELINE: real gate -> loader-faithful chunk loop -> real dispatcher ==
+[benign control D=23  algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=124 faulted=0 produced=124 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=0 out[47..54]='AAAAAAAA'
+  staging-model: produced_total=124 tablewalk_next=+28 (bound hdr+1640)
+  out[0..47]: 414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141
+  model: warm32=1 full=1 (produced==124 want==124)
+[leak D=56            algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=124 faulted=0 produced=124 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=1 LEAK-first@49 out[47..54]='K-CANARY'
+  staging-model: produced_total=124 tablewalk_next=+28 (bound hdr+1640)
+  out[0..47]: 41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414b
+[leak D=56            algo=0x891] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=0 faulted=0 produced=0 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=0 out[47..54]='AAAAAAAA'
+  staging-model: produced_total=0 tablewalk_next=+28 (bound hdr+1640)
+[fault D=262139       algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=-9999 faulted=1 sig=10 FAULT-pc=off+1ea208 addr=104648034 delta_vs_dstbegin=-262092
+  staging-model: produced_total=0 tablewalk_next=+28 (bound hdr+1640)
+[wild-cursor cnt=2 declen1=0x01000000] gate ret=1 faulted=0
+  [dbg] cursor=0x104534560 w27=1644 bytes: 62 76 78 31 20 00 00 00 magic=31787662
+  iter1 (chunk@declen0): ret=124 faulted=0
+  iter2 (cursor+=declen[1]=0x01000000 -> 0x204534550): ret=0 faulted=0
+sha256 run3 a001d46282a501684f60949c80a03868196533811202dab8df9740f88a7ed9d1  /tmp/ds_iboot/poc_cell1.bin
+sha256 run3 2de83fb6ebca540bb7fac4f516073b1bf202fb8a44bdc1f1df489862abc63356  /tmp/ds_iboot/poc_cell3.bin

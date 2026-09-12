@@ -1,0 +1,36 @@
+=== pocv0 run 1 (162.10) ===
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x107b0c000 (size 3699824, tail 1 MB @0x107e94000)
+== POCV0: on-disk bv41{0F 41} container through dispatcher id=0x100 ==
+  [pocv0] loaded 18 bytes from /private/tmp/ds_iboot/Report2_LZVN/poc_v0.bin
+  [pocv0] file bytes (decode input) (18 bytes):
+  0000: 62 76 34 31 40 00 00 00 02 00 00 00 0f 41 62 76
+  0010: 34 24
+  [pocv0] field check: magic=bv41 end=bv4$ out=64 paylen=2 payload=0f 41 -> MATCH
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e5ffc
+    bt[2] lr_off=fffffffffb37a920
+  pocv0-from-file id=0x100 sn=18 faulted=1 sig=11 pc_off=16b5a4 addr-vs-dst=+1777958912 dirty-span=[0..69632) OOBpast4K=65536 hiApronDirty=1
+=== pocv0 run 2 (162.10) ===
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x109468000 (size 3699824, tail 1 MB @0x1097f0000)
+== POCV0: on-disk bv41{0F 41} container through dispatcher id=0x100 ==
+  [pocv0] loaded 18 bytes from /private/tmp/ds_iboot/Report2_LZVN/poc_v0.bin
+  [pocv0] file bytes (decode input) (18 bytes):
+  0000: 62 76 34 31 40 00 00 00 02 00 00 00 0f 41 62 76
+  0010: 34 24
+  [pocv0] field check: magic=bv41 end=bv4$ out=64 paylen=2 payload=0f 41 -> MATCH
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e5ffc
+    bt[2] lr_off=fffffffffb256920
+  pocv0-from-file id=0x100 sn=18 faulted=1 sig=11 pc_off=16b5a4 addr-vs-dst=+1727168512 dirty-span=[0..69632) OOBpast4K=65536 hiApronDirty=1
+=== pocv0 run 3 (162.10) ===
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x106e44000 (size 3699824, tail 1 MB @0x1071cc000)
+== POCV0: on-disk bv41{0F 41} container through dispatcher id=0x100 ==
+  [pocv0] loaded 18 bytes from /private/tmp/ds_iboot/Report2_LZVN/poc_v0.bin
+  [pocv0] file bytes (decode input) (18 bytes):
+  0000: 62 76 34 31 40 00 00 00 02 00 00 00 0f 41 62 76
+  0010: 34 24
+  [pocv0] field check: magic=bv41 end=bv4$ out=64 paylen=2 payload=0f 41 -> MATCH
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e5ffc
+    bt[2] lr_off=fffffffffb29a920
+  pocv0-from-file id=0x100 sn=18 faulted=1 sig=11 pc_off=16b5a4 addr-vs-dst=+1806598144 dirty-span=[0..69632) OOBpast4K=65536 hiApronDirty=1

@@ -1,0 +1,48 @@
+### BASELINE 162.8
+[fw] /tmp/ds_iboot/iboot_dec.bin mapped at 0x105088000 (size 3699832, tail 1 MB @0x105410000)
+== V1: hand-built bvx- uncompressed block through FUN_001E908C ==
+  direct(bvx-) ret=0 faulted=0 produced=64 -> V1 PASS
+== V2/V3: Apple LZFSE round-trip via FUN_001E908C + dispatcher id=0x891 ==
+  direct ret=70000 faulted=0 -> V2 PASS
+  disp891 ret=70000 faulted=0 -> V3 PASS
+  smoke id=0x801 ret=5000 faulted=0 MATCH
+  smoke id=0x802 ret=5000 faulted=0 MATCH
+=== leak ===
+[fw] /tmp/ds_iboot/iboot_dec.bin mapped at 0x105c5c000 (size 3699832, tail 1 MB @0x105fe4000)
+== Direct copier (FUN_001EA100): silent read below dst_begin ==
+  D= 47: ret=124 faulted=0
+  D= 48: ret=124 faulted=0 FOREIGN-A5-BYTES=2 first@47
+  D= 49: ret=124 faulted=0 FOREIGN-A5-BYTES=4 first@47
+  D= 50: ret=124 faulted=0 FOREIGN-A5-BYTES=6 first@47
+  D= 52: ret=124 faulted=0 FOREIGN-A5-BYTES=7 first@47
+  D= 56: ret=124 faulted=0 FOREIGN-A5-BYTES=8 first@47
+=== q1 ===
+[fw] /tmp/ds_iboot/iboot_dec.bin mapped at 0x109ba4000 (size 3699832, tail 1 MB @0x109f2c000)
+== Q1/A: benign synthetic blocks (synthesizer validity) ==
+  id=0x891 T=8 D=4/5: ret=64 faulted=0 model=1 foreign=0 
+  id=0x801        : ret=64 faulted=0 model=1 
+  id=0x802        : ret=64 faulted=0 model=1 
+  direct          : ret=64 faulted=0 model=1 
+  id=0x891 2-block edge D=23: ret=124 faulted=0 model=1 foreign=0 
+  direct    2-block edge D=23: ret=124 faulted=0 foreign=0 
+== Q1/B: hostile-D sweep via 2 blocks (block1 pads to P=32; L2=15 => guard edge D=47) ==
+  0x891 D=    30: ret=124 faulted=0 model=1 foreign=0 
+  0x891 D=    44: ret=124 faulted=0 model=1 foreign=0 
+  0x891 D=    45: ret=124 faulted=0 model=1 foreign=0 
+  0x891 D=    46: ret=124 faulted=0 model=1 foreign=0 
+  0x891 D=    47: ret=124 faulted=0 model=1 foreign=0 
+  0x891 D=    48: ret=0 faulted=0 model=0 foreign=0 
+  0x891 D=    49: ret=0 faulted=0 model=0 foreign=0 
+  0x891 D=    50: ret=0 faulted=0 model=0 foreign=0 
+  0x891 D=    63: ret=0 faulted=0 model=0 foreign=0 
+  0x891 D=   100: ret=0 faulted=0 model=0 foreign=0 
+  0x891 D=  1000: ret=0 faulted=0 model=0 foreign=0 
+  0x891 D= 16383: ret=0 faulted=0 model=0 foreign=0 
+  0x891 D=262139: ret=0 faulted=0 model=0 foreign=0 
+== Q1/C: other staging ids on the edge/past-guard cases ==
+  id=0x801 D=47: ret=124 faulted=0 foreign=0 
+  id=0x801 D=48: ret=0 faulted=0 foreign=0 
+  id=0x802 D=47: ret=124 faulted=0 foreign=0 
+  id=0x802 D=48: ret=0 faulted=0 foreign=0 
+  id=0 D=47: ret=124 faulted=0 foreign=0 
+  id=0 D=48: ret=124 faulted=0 foreign=0 

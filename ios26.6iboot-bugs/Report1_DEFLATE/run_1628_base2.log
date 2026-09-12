@@ -1,0 +1,78 @@
+### BASELINE 162.8
+[fw] /tmp/ds_iboot/iboot_dec.bin mapped at 0x1096b4000 (size 3699832, tail 1 MB @0x109a3c000)
+== Q2: inline chunked decoder ==
+  benign multi-piece d>=32       ret=4159 faulted=0 MODEL-MATCH(4159)
+  hostile dist=produced+1        ret=0 faulted=0 REJECTED
+  hostile dist=16383             ret=0 faulted=0 REJECTED
+  edge dist==produced M=32       ret=62 faulted=0 MODEL-MATCH(62)
+  overrun budget8 need32         ret=32 faulted=0 MISMATCH ret=32 want=0 diff@-1
+  src truncated mid-lits         ret=0 faulted=0 REJECTED
+  raw piece truncated            ret=0 faulted=0 REJECTED
+  total>dstcap                   ret=0 faulted=0 REJECTED
+  fuzz summary: faults=0 rejects=4995 accepts=5
+=== b0w ===
+[fw] /tmp/ds_iboot/iboot_dec.bin mapped at 0x1056a8000 (size 3699832, tail 1 MB @0x105a30000)
+    esr=92000007(READ) x0=105c40000 x1=100c14000 x2=fffffffffffe2959 x3=fffffffffffe2959 x4=105c5d6a7 x5=50496a7 fp=101
+    bt[0] lr_off=201020
+    bt[1] lr_off=1e8dc0
+    bt[2] lr_off=fffffffffb535384
+  b0w dcap=64 faulted=1 sig=10 addr-vs-dst=-84066304 dirty-span=[0..65600) capSpanOOB=65536 hiApronDirty=1
+    esr=92000007(READ) x0=105c40000 x1=100c14000 x2=fffffffffffe2959 x3=fffffffffffe2959 x4=105c5d6a7 x5=50496a7 fp=101
+    bt[0] lr_off=201020
+    bt[1] lr_off=1e8dc0
+    bt[2] lr_off=fffffffffb535384
+  b0w dcap=256 faulted=1 sig=10 addr-vs-dst=-84066304 dirty-span=[0..65792) capSpanOOB=65536 hiApronDirty=1
+    esr=92000007(READ) x0=105c40000 x1=100c14000 x2=fffffffffffe2959 x3=fffffffffffe2959 x4=105c5d6a7 x5=50496a7 fp=101
+    bt[0] lr_off=201020
+    bt[1] lr_off=1e8dc0
+    bt[2] lr_off=fffffffffb535384
+  b0w dcap=1024 faulted=1 sig=10 addr-vs-dst=-84066304 dirty-span=[0..66560) capSpanOOB=65536 hiApronDirty=1
+    esr=92000007(READ) x0=105c40000 x1=100c14000 x2=fffffffffffe2959 x3=fffffffffffe2959 x4=105c5d6a7 x5=50496a7 fp=101
+    bt[0] lr_off=201020
+    bt[1] lr_off=1e8dc0
+    bt[2] lr_off=fffffffffb535384
+  b0w dcap=4096 faulted=1 sig=10 addr-vs-dst=-84066304 dirty-span=[0..69632) capSpanOOB=65536 hiApronDirty=1
+    esr=92000007(READ) x0=105c40000 x1=16f224000 x2=fffffffffffe20dd x3=fffffffffffe20dd x4=105c5df23 x5=ffffffff96a39f23 fp=100
+    bt[0] lr_off=201020
+    bt[1] lr_off=1e5f7c
+    bt[2] lr_off=fffffffffb53567c
+  poc-v0 id=0x100 sn=18 faulted=1 sig=11 dirty-span=[0..69632) OOBpast4K=65536
+  poc-v1 id=0x505 sn=23 faulted=0
+=== chain gate ===
+[probe] full-file touch: faulted=0 sig=0 addr=0
+[fw] /tmp/ds_iboot/iboot_dec.bin mapped at 0x105a8c000 size=3699832 rebase=0
+== REAL FUN_0014B4B8 'splt' gate matrix ==
+[build_stream] slen=1612
+[container] len=1640 magic=746c7073 crc=d2664c67 flag=1 cnt=1 declen0=1612
+container head 0x20 (32 bytes):
+  0000: 73 70 6c 74 67 4c 66 d2 11 11 11 11 22 22 22 22
+  0010: 01 00 00 00 01 00 00 00 4c 06 00 00 62 76 78 31
+G-pos  valid            : ret=1 faulted=0 -> ACCEPT(real gate)
+G-mag  magic='xspl'     : ret=0 faulted=0 -> CLEAN-FALSE
+G-crc  bad CRC          : faulted=1 sig=12 pc_off=225140 -> ABORT-PATH-FIRED
+G-size blob=cnt*4+0x18  : faulted=1 sig=14 -> ABORT-PATH-FIRED
+G-flag flag=0           : faulted=1 sig=14 -> ABORT-PATH-FIRED
+G-rng  hdr outside range: faulted=1 sig=14 -> ABORT-PATH-FIRED
+=== chain chain ===
+[probe] full-file touch: faulted=0 sig=0 addr=0
+[fw] /tmp/ds_iboot/iboot_dec.bin mapped at 0x10984c000 size=3699832 rebase=0
+== PIPELINE: real gate -> loader-faithful chunk loop -> real dispatcher ==
+[benign control D=23  algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=124 faulted=0 produced=124 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=0 out[47..54]='AAAAAAAA'
+  staging-model: produced_total=124 tablewalk_next=+28 (bound hdr+1640)
+  out[0..47]: 414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141
+  model: warm32=1 full=1 (produced==124 want==124)
+[leak D=56            algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=124 faulted=0 produced=124 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=1 LEAK-first@49 out[47..54]='K-CANARY'
+  staging-model: produced_total=124 tablewalk_next=+28 (bound hdr+1640)
+  out[0..47]: 41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414b
+[leak D=56            algo=0x891] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=0 faulted=0 produced=0 foreign_lo=0 foreign_hi=0 A5-in-output=0 CANARY-hits=0 out[47..54]='AAAAAAAA'
+  staging-model: produced_total=0 tablewalk_next=+28 (bound hdr+1640)
+[fault D=262139       algo=0x8a1] container=1640B gate: ret=1 faulted=0 PASS
+  chunk loop iter1: ret=-9999 faulted=1 sig=10 FAULT-pc=off+1ea188 addr=104d10034 delta_vs_dstbegin=-262092 [inside match copier FUN_001EA100]
+  staging-model: produced_total=0 tablewalk_next=+28 (bound hdr+1640)
+[wild-cursor cnt=2 declen1=0x01000000] gate ret=1 faulted=0
+  [dbg] cursor=0x104bfc560 w27=1644 bytes: 62 76 78 31 20 00 00 00 magic=31787662
+  iter1 (chunk@declen0): ret=124 faulted=0
+  iter2 (cursor+=declen[1]=0x01000000 -> 0x204bfc550): ret=0 faulted=0

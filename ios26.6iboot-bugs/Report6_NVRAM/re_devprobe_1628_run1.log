@@ -1,0 +1,6 @@
+[probe] mapped 0x107838000 sz=3702784 adler=158fec recsum=1709e8
+[probe] about to recsum
+[probe] recsum -> 3e
+[probe] about to adler
+[probe] adler -> 88b32c32
+[probe] det: recsum=3e adler=88b32c32 stable=1/1

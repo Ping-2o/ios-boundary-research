@@ -1,0 +1,112 @@
+== MATRIX fw=/tmp/ds_iboot/iboot_dec.bin (mBoot-18000.162.8) enc_mode=0 run=1 ==
+[fw] mapped 0x109064000 sz=3699832 svc@fw+36f60 probe@fw+19912c pass2entry@fw+199954 panicsite@fw+199bc0 wbase=104478000
+[geo] apron=0x104448000 win=0x104478000 hi=0x1044b8000 hole=0x1044c4000 wbase=104478000
+[geo] test-write@apron=195 w=0
+[geo] apron done
+[geo] win done
+
+--- CELL 0 P1-positive-delta (run=1) ---
+[child] pid=39450 (parent=39439) cell=P1-positive-delta
+[cell P1-positive-delta] build: KEY=1044a8000 PB=1044a9230 DELTA=4656 rec_off=0 rec_len(V)=200
+    decoded-content(src)   @0x1044c8000: 48 4d 47 01 48 4d 47 00 48 4d 47 03 48 4d 47 02 48 4d 47 05 48 4d 47 04 48 4d 47 07 48 4d 47 06
+[shim] hit pc_off=36f64 x0=4e x19=104479230 -> x0=104479000
+[cell P1-positive-delta] REAL probe(DST=104479230) -> w0=0x1 (shim_calls=1 enc_mode=0)
+[cell P1-positive-delta] E=40000 LEN=0x200 E-DELTA(signed 4656)=3edd0 LEN>u(rhs)=0 (negative-delta wrap bypasses = 0)
+[cell P1-positive-delta] pre-destquad sp=16ba72490
+[cell P1-positive-delta] REAL dest quad builder -> {104479230,104479230,104479430} (vacuous self-fence [DST,DST+LEN)); SRC=1044c8000 arena fence [1044c8000..1044d8000)
+[cell P1-positive-delta] REAL FUN_167d64 returned 0x104479230 after copying LEN=0x200 to DST=104479230
+[parent] P1-positive-delta: DST=104479230 (in-window (+0x1230))
+[parent]   marker-bytes-present=1 zero-byte-count=1/512
+    dst-head               @0x104479230: 48 4d 47 01 48 4d 47 00 48 4d 47 03 48 4d 47 02
+    dst-tail               @0x104479420: 48 4d 47 7d 48 4d 47 7c 48 4d 47 7f 48 4d 47 7e
+[parent]   fence-intact: below=1 above=1
+[geo] apron=0x104448000 win=0x104478000 hi=0x1044b8000 hole=0x1044c4000 wbase=104478000
+[geo] test-write@apron=195 w=0
+[geo] apron done
+[geo] win done
+
+--- CELL 1 N1-negative-delta (run=1) ---
+[child] pid=39452 (parent=39439) cell=N1-negative-delta
+[cell N1-negative-delta] build: KEY=1044a8000 PB=104488000 DELTA=-131072 rec_off=10 rec_len(V)=200
+    decoded-content(src)   @0x1044c8010: 48 4d 47 00 48 4d 47 01 48 4d 47 02 48 4d 47 03 48 4d 47 04 48 4d 47 05 48 4d 47 06 48 4d 47 07
+[shim] hit pc_off=36f64 x0=4e x19=104458000 -> x0=104458000
+[cell N1-negative-delta] REAL probe(DST=104458000) -> w0=0x1 (shim_calls=1 enc_mode=0)
+[cell N1-negative-delta] E=40000 LEN=0x200 E-DELTA(signed -131072)=60000 LEN>u(rhs)=0 (negative-delta wrap bypasses = 1)
+[cell N1-negative-delta] pre-destquad sp=16ba72490
+[cell N1-negative-delta] REAL dest quad builder -> {104458000,104458000,104458200} (vacuous self-fence [DST,DST+LEN)); SRC=1044c8010 arena fence [1044c8000..1044d8000)
+[cell N1-negative-delta] REAL FUN_167d64 returned 0x104458000 after copying LEN=0x200 to DST=104458000
+[parent] N1-negative-delta: DST=104458000 (BELOW window (-0x20000, low apron))
+[parent]   marker-bytes-present=1 zero-byte-count=1/512
+    dst-head               @0x104458000: 48 4d 47 00 48 4d 47 01 48 4d 47 02 48 4d 47 03
+    dst-tail               @0x1044581f0: 48 4d 47 7c 48 4d 47 7d 48 4d 47 7e 48 4d 47 7f
+[parent]   fence-intact: below=1 above=1
+[parent] VERDICT N1: NEGATIVE-DELTA WRITE LANDED (decoded-content bytes below home window)
+[geo] apron=0x104448000 win=0x104478000 hi=0x1044b8000 hole=0x1044c4000 wbase=104478000
+[geo] test-write@apron=195 w=0
+[geo] apron done
+[geo] win done
+
+--- CELL 2 N2-negative-fault (run=1) ---
+[child] pid=39453 (parent=39439) cell=N2-negative-fault
+[cell N2-negative-fault] build: KEY=1044a8000 PB=1044a0000 DELTA=-32768 rec_off=20 rec_len(V)=200
+    decoded-content(src)   @0x1044c8020: 48 4d 47 03 48 4d 47 02 48 4d 47 01 48 4d 47 00 48 4d 47 07 48 4d 47 06 48 4d 47 05 48 4d 47 04
+[shim] hit pc_off=36f64 x0=4e x19=1044c4000 -> x0=2000000000
+[cell N2-negative-fault] REAL probe(DST=1044c4000) -> w0=0x1 (shim_calls=1 enc_mode=0)
+[cell N2-negative-fault] E=40000 LEN=0x200 E-DELTA(signed -32768)=48000 LEN>u(rhs)=0 (negative-delta wrap bypasses = 1)
+[cell N2-negative-fault] pre-destquad sp=16ba72490
+[cell N2-negative-fault] REAL dest quad builder -> {1044c4000,1044c4000,1044c4200} (vacuous self-fence [DST,DST+LEN)); SRC=1044c8020 arena fence [1044c8000..1044d8000)
+[cell N2-negative-fault] FAULT inside REAL copier FUN_167d64: sig=10 pc_off=167e14 (REAL-copier-family) FAULT_ADDR=1044c4000  in-dest-quad? 1
+[parent] VERDICT N2: fault-routed=1 (child sig evidence above; no hidden clamp exercised)
+[geo] apron=0x104448000 win=0x104478000 hi=0x1044b8000 hole=0x1044c4000 wbase=104478000
+[geo] test-write@apron=195 w=0
+[geo] apron done
+[geo] win done
+
+--- CELL 3 T2-guard-wrap-panic (run=1) ---
+[child] pid=39454 (parent=39439) cell=T2-guard-wrap-panic
+[cell T2-guard-wrap-panic] build: KEY=1044a8000 PB=1044e7f80 DELTA=262016 rec_off=30 rec_len(V)=200
+    decoded-content(src)   @0x1044c8030: 48 4d 47 02 48 4d 47 03 48 4d 47 00 48 4d 47 01 48 4d 47 06 48 4d 47 07 48 4d 47 04 48 4d 47 05
+[shim] hit pc_off=36f64 x0=4e x19=1044b7f80 -> x0=1044b7000
+[cell T2-guard-wrap-panic] REAL probe(DST=1044b7f80) -> w0=0x1 (shim_calls=1 enc_mode=0)
+[cell T2-guard-wrap-panic] E=40000 LEN=0x200 E-DELTA(signed 262016)=80 LEN>u(rhs)=1 (negative-delta wrap bypasses = 0)
+[cell T2-guard-wrap-panic] entering REAL panic block @fw+199bc0 (expect w1=0x86 receipt)
+[cell T2-guard-wrap-panic] FAULT inside/after REAL panic block: sig=12 pc_off=36f74 (probe/translate-stub) addr=10909af74 x0=4e x1=0
+[parent] VERDICT T2: routed-real-panic-block=1
+[geo] apron=0x104448000 win=0x104478000 hi=0x1044b8000 hole=0x1044c4000 wbase=104478000
+[geo] test-write@apron=195 w=0
+[geo] apron done
+[geo] win done
+
+--- CELL 4 T1-misaligned-dst (run=1) ---
+[child] pid=39455 (parent=39439) cell=T1-misaligned-dst
+[cell T1-misaligned-dst] build: KEY=1044a8000 PB=1044a9232 DELTA=4658 rec_off=40 rec_len(V)=200
+    decoded-content(src)   @0x1044c8040: 48 4d 47 05 48 4d 47 04 48 4d 47 07 48 4d 47 06 48 4d 47 01 48 4d 47 00 48 4d 47 03 48 4d 47 02
+[shim] hit pc_off=36f64 x0=4e x19=104479232 -> x0=104479000
+[cell T1-misaligned-dst] REAL probe(DST=104479232) -> w0=0x1 (shim_calls=1 enc_mode=0)
+[cell T1-misaligned-dst] E=40000 LEN=0x200 E-DELTA(signed 4658)=3edce LEN>u(rhs)=0 (negative-delta wrap bypasses = 0)
+[cell T1-misaligned-dst] pre-destquad sp=16ba72490
+[cell T1-misaligned-dst] REAL dest quad builder -> {104479232,104479232,104479432} (vacuous self-fence [DST,DST+LEN)); SRC=1044c8040 arena fence [1044c8000..1044d8000)
+[cell T1-misaligned-dst] FAULT inside REAL copier FUN_167d64: sig=12 pc_off=36f74 (probe/translate-stub) FAULT_ADDR=10909af74  in-dest-quad? 0
+[parent] T1-misaligned-dst: DST=104479232 (in-window misaligned dst)
+[parent]   marker-bytes-present=0 zero-byte-count=0/512
+    dst-head               @0x104479232: ee ee ee ee ee ee ee ee ee ee ee ee ee ee ee ee
+    dst-tail               @0x104479422: ee ee ee ee ee ee ee ee ee ee ee ee ee ee ee ee
+[parent] VERDICT T1: dst-still-prefilled=1 (real copier aborted pre-write: alignment check live)
+[geo] apron=0x104448000 win=0x104478000 hi=0x1044b8000 hole=0x1044c4000 wbase=104478000
+[geo] test-write@apron=195 w=0
+[geo] apron done
+[geo] win done
+
+--- CELL 5 Z1-probe-invalid (run=1) ---
+[child] pid=39456 (parent=39439) cell=Z1-probe-invalid
+[cell Z1-probe-invalid] build: KEY=1044a8000 PB=1044ca000 DELTA=139264 rec_off=50 rec_len(V)=200
+    decoded-content(src)   @0x1044c8050: 48 4d 47 04 48 4d 47 05 48 4d 47 06 48 4d 47 07 48 4d 47 00 48 4d 47 01 48 4d 47 02 48 4d 47 03
+[shim] hit pc_off=36f64 x0=4e x19=10449a000 -> x0=1000000000
+[cell Z1-probe-invalid] REAL probe(DST=10449a000) -> w0=0x1 (shim_calls=1 enc_mode=0)
+[cell Z1-probe-invalid] E=40000 LEN=0x200 E-DELTA(signed 139264)=1e000 LEN>u(rhs)=0 (negative-delta wrap bypasses = 0)
+[cell Z1-probe-invalid] pre-destquad sp=16ba72490
+[cell Z1-probe-invalid] REAL dest quad builder -> {10449a000,10449a000,10449a200} (vacuous self-fence [DST,DST+LEN)); SRC=1044c8050 arena fence [1044c8000..1044d8000)
+[cell Z1-probe-invalid] REAL FUN_167d64 returned 0x10449a000 after copying LEN=0x200 to DST=10449a000
+[parent] VERDICT Z1: (trace decides route) dst-area-untouched-bytes=0/512
+
+== MATRIX done ==

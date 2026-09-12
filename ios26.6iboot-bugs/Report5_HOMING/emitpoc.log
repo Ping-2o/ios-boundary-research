@@ -1,0 +1,8 @@
+== EMIT POC ARTIFACTS (fw=mBoot-18000.162.8) ==
+[emit] /private/tmp/ds_iboot/Report5_HOMING/poc_fields.txt
+[emit] /private/tmp/ds_iboot/Report5_HOMING/poc_P1-positive-delta.bin (104 B record-struct + 512 B content)
+[emit] /private/tmp/ds_iboot/Report5_HOMING/poc_N1-negative-delta.bin (104 B record-struct + 512 B content)
+[emit] /private/tmp/ds_iboot/Report5_HOMING/poc_N2-negative-fault.bin (104 B record-struct + 512 B content)
+[emit] /private/tmp/ds_iboot/Report5_HOMING/poc_T2-guard-wrap-panic.bin (104 B record-struct + 512 B content)
+[emit] /private/tmp/ds_iboot/Report5_HOMING/poc_T1-misaligned-dst.bin (104 B record-struct + 512 B content)
+[emit] /private/tmp/ds_iboot/Report5_HOMING/poc_Z1-probe-invalid.bin (104 B record-struct + 512 B content)

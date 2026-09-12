@@ -1,0 +1,72 @@
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x106bbc000 (size 3699824, tail 1 MB @0x106f44000)
+    esr=92000007(READ) x0=107154000 x1=102074000 x2=fffffffffffe2d89 x3=fffffffffffe2d89 x4=107171277 x5=50fd277 fp=101
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e8e40
+    bt[2] lr_off=fffffffffb4813b4
+  b0w dcap=64 faulted=1 sig=10 pc_off=16b5a4 addr-vs-dst=-84803584 dirty-span=[0..65600) capSpanOOB=65536 hiApronDirty=1
+    esr=92000007(READ) x0=107154000 x1=102074000 x2=fffffffffffe2d89 x3=fffffffffffe2d89 x4=107171277 x5=50fd277 fp=101
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e8e40
+    bt[2] lr_off=fffffffffb4813b4
+  b0w dcap=256 faulted=1 sig=10 pc_off=16b5a4 addr-vs-dst=-84803584 dirty-span=[0..65792) capSpanOOB=65536 hiApronDirty=1
+    esr=92000007(READ) x0=107154000 x1=102074000 x2=fffffffffffe2d89 x3=fffffffffffe2d89 x4=107171277 x5=50fd277 fp=101
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e8e40
+    bt[2] lr_off=fffffffffb4813b4
+  b0w dcap=1024 faulted=1 sig=10 pc_off=16b5a4 addr-vs-dst=-84803584 dirty-span=[0..66560) capSpanOOB=65536 hiApronDirty=1
+    esr=92000007(READ) x0=107154000 x1=102074000 x2=fffffffffffe2d89 x3=fffffffffffe2d89 x4=107171277 x5=50fd277 fp=101
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e8e40
+    bt[2] lr_off=fffffffffb4813b4
+  b0w dcap=4096 faulted=1 sig=10 pc_off=16b5a4 addr-vs-dst=-84803584 dirty-span=[0..69632) capSpanOOB=65536 hiApronDirty=1
+  [poc-v0] dumped 18 container bytes -> /tmp/ds_iboot/poc_v0.bin
+  [poc-v0] container (id=0x100 decode input) (18 bytes):
+  0000: 62 76 34 31 40 00 00 00 02 00 00 00 0f 41 62 76
+  0010: 34 24
+    esr=92000007(READ) x0=107154000 x1=16ddc4000 x2=fffffffffffe209d x3=fffffffffffe209d x4=107171f63 x5=ffffffff993adf63 fp=100
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e5ffc
+    bt[2] lr_off=fffffffffb4816c8
+  poc-v0 id=0x100 sn=18 faulted=1 sig=11 pc_off=16b5a4 addr-vs-dst=+1724317696 dirty-span=[0..69632) OOBpast4K=65536 hiApronDirty=1
+  poc-v1 id=0x505 sn=23 faulted=0
+
+== pocv0-from-file x3 (determinism; host-side ASLR values vary, firmware receipts identical) ==
+--- pocv0 run 1 ---
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x1090a0000 (size 3699824, tail 1 MB @0x109428000)
+== POCV0: on-disk bv41{0F 41} container through dispatcher id=0x100 ==
+  [pocv0] loaded 18 bytes from /tmp/ds_iboot/poc_v0.bin
+  [pocv0] file bytes (decode input) (18 bytes):
+  0000: 62 76 34 31 40 00 00 00 02 00 00 00 0f 41 62 76
+  0010: 34 24
+  [pocv0] field check: magic=bv41 end=bv4$ out=64 paylen=2 payload=0f 41 -> MATCH
+    esr=92000007(READ) x0=1043d0000 x1=16bb90000 x2=fffffffffffe209d x3=fffffffffffe209d x4=1043edf63 x5=ffffffff9885df63 fp=100
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e5ffc
+    bt[2] lr_off=fffffffffb1d2904
+  pocv0-from-file id=0x100 sn=18 faulted=1 sig=11 pc_off=16b5a4 addr-vs-dst=+1736179712 dirty-span=[0..69632) OOBpast4K=65536 hiApronDirty=1
+--- pocv0 run 2 ---
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x1078b4000 (size 3699824, tail 1 MB @0x107c3c000)
+== POCV0: on-disk bv41{0F 41} container through dispatcher id=0x100 ==
+  [pocv0] loaded 18 bytes from /tmp/ds_iboot/poc_v0.bin
+  [pocv0] file bytes (decode input) (18 bytes):
+  0000: 62 76 34 31 40 00 00 00 02 00 00 00 0f 41 62 76
+  0010: 34 24
+  [pocv0] field check: magic=bv41 end=bv4$ out=64 paylen=2 payload=0f 41 -> MATCH
+    esr=92000007(READ) x0=102c6c000 x1=16d2f4000 x2=fffffffffffe209d x3=fffffffffffe209d x4=102c89f63 x5=ffffffff95995f63 fp=100
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e5ffc
+    bt[2] lr_off=fffffffffb25a904
+  pocv0-from-file id=0x100 sn=18 faulted=1 sig=11 pc_off=16b5a4 addr-vs-dst=+1785233408 dirty-span=[0..69632) OOBpast4K=65536 hiApronDirty=1
+--- pocv0 run 3 ---
+[fw] /tmp/ds_iboot/23g83/iboot_dec_23g83.bin mapped at 0x105ab4000 (size 3699824, tail 1 MB @0x105e3c000)
+== POCV0: on-disk bv41{0F 41} container through dispatcher id=0x100 ==
+  [pocv0] loaded 18 bytes from /tmp/ds_iboot/poc_v0.bin
+  [pocv0] file bytes (decode input) (18 bytes):
+  0000: 62 76 34 31 40 00 00 00 02 00 00 00 0f 41 62 76
+  0010: 34 24
+  [pocv0] field check: magic=bv41 end=bv4$ out=64 paylen=2 payload=0f 41 -> MATCH
+    esr=92000007(READ) x0=100d34000 x1=16f22c000 x2=fffffffffffe209d x3=fffffffffffe209d x4=100d51f63 x5=ffffffff91b25f63 fp=100
+    bt[0] lr_off=2010a0
+    bt[1] lr_off=1e5ffc
+    bt[2] lr_off=fffffffffb122904
+  pocv0-from-file id=0x100 sn=18 faulted=1 sig=11 pc_off=16b5a4 addr-vs-dst=+1850703872 dirty-span=[0..69632) OOBpast4K=65536 hiApronDirty=1

@@ -1,0 +1,12 @@
+[poc] /private/tmp/ds_iboot/Report1_DEFLATE/poc_205_stored.bin 37 bytes: 01 ff ff ff ff 5a 5a 5a 5a 5a 5a 5a
+[fw] /tmp/ds_iboot/iboot_dec.bin disp@1eb3c8
+    [fault] sig=10 WRITE addr_off_fw=fffffffffb2d4000 pc_off=16b3e8 lr_off=1e7d34 armed=1
+id=0x205 dcap=16  FAULTED sig=10 pc_off=16b3e8 addr_vs_dst=+81920 | intact-prefix=[0..0) corrupt=[0..16384) cap=16 OOBbytes=16368 hiApronDirty=1
+id=0x505 dcap=16  RETURNED ret=0 | intact-prefix=[0..16384) corrupt=[0..0) cap=16 OOBbytes=0 hiApronDirty=0
+    [fault] sig=10 WRITE addr_off_fw=fffffffffb2d4000 pc_off=16b3e8 lr_off=1e7d34 armed=1
+id=0x205 dcap=15  FAULTED sig=10 pc_off=16b3e8 addr_vs_dst=+81920 | intact-prefix=[0..0) corrupt=[0..16384) cap=15 OOBbytes=16369 hiApronDirty=1
+id=0x505 dcap=15  RETURNED ret=0 | intact-prefix=[0..16384) corrupt=[0..0) cap=15 OOBbytes=0 hiApronDirty=0
+id=0x205 dcap=32  RETURNED ret=32 | intact-prefix=[0..16384) corrupt=[0..32) cap=32 OOBbytes=0 hiApronDirty=0
+id=0x505 dcap=32  RETURNED ret=0 | intact-prefix=[0..16384) corrupt=[0..0) cap=32 OOBbytes=0 hiApronDirty=0
+id=0x205 dcap=64  RETURNED ret=32 | intact-prefix=[0..16384) corrupt=[0..32) cap=64 OOBbytes=0 hiApronDirty=0
+id=0x505 dcap=64  RETURNED ret=0 | intact-prefix=[0..16384) corrupt=[0..0) cap=64 OOBbytes=0 hiApronDirty=0

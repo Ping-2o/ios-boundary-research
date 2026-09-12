@@ -1,0 +1,81 @@
+== NVRAM PERSISTED-STATE INTEGRITY PoC (Report6_NVRAM) ==
+[nvram] fw=/tmp/ds_iboot/iboot_dec.bin build=mBoot-18000.162.8
+[nvram] REAL-code offsets: ser=0x16fb78 commit=0x16fa4c adler=0x158fec recsum=0x1709e8 verifier=0x16ffa0 dtload=0x1725c4 hdrchk=0x170438
+[nvram] svc boundary: storage_read=0x1c2948 (svc 0x62) storage_write=0x1c3154 (svc 0x62/0xc5) | protected-name table=0x2038c0 consumer=0x3a28 caller=0x15e05c dead-gate
+
+== S1 serialize via REAL ser=0x16fb78 (store{size=0x1000 common=0xc00 sys=0x300 seq=42}) ==
+[S1] strategy A: let the REAL serializer lazily allocate its arena (arena_obj=[0]*8)
+[S1] FAULTED sig=SIGSYS pc_off=0x36f74 addr=0x104efaf74 (strategy A)
+[S1] post-call arena obj: buf=0 end=0
+[S1] dependency-split receipt: the REAL serializer's lazy-allocate path
+[S1]   enters its own heap wrappers FUN_1DC428 -> FUN_1DC3D4 and stops at the early
+[S1]   supervisor gate (faulted at fw+0x36f74, the svc stub tail; SIGSYS above) ; its
+[S1]   prefilled-arena re-entry path reaches a REAL iBoot assert chain
+[S1]   FUN_1DE608/FUN_1DE608 ending in the firmware halt-loop `b .` at fw+0x43c
+[S1]   (captured live under a debugger during development). Serialization therefore
+[S1]   cannot execute in-process outside boot context -- README Level-B split.
+[S1] real serializer unavailable in-process (see fault above) -> AUTHORSHIP=format-exact construction; integrity still REAL-code-only
+[S1] record folds via REAL recsum=0x1709e8: hdr=0x5c common=0x32 sys=0xa0 filler=0x8d
+[S1] adler via REAL adler=0x158fec over [0x14,size) = 8fe60d6c stored@+0x10
+[S1] wrote ./poc_nvram_forged.bin
+[layout] header: tag=5a sum=5c ver=0002 adler=8fe60d6c seq=42
+[layout] rec[0] @0020 tag=0x71('/common')  len16=192 (3072bytes) sum=0x32 name~'boot-command=persistpoc;'
+[layout] rec[1] @0c20 tag=0x70('/system')  len16=48  (768bytes) sum=0xa0 name~''
+[layout] rec[2] @0f20 tag=0x7F(filler)      len16=14   sum=0x8d
+
+== V1 validate FORGED image with REAL load-path checks ==
+[V1] ADLER-check : real FUN_158FEC(img+0x14, size-0x14) = 8fe60d6c ; stored@hdr+0x10 = 8fe60d6c -> PASS
+[V1] REC-check  : rec@0x20 tag=0x71 len16=192 stored_sum=0x32 real_FUN_1709E8=0x32 -> OK
+[V1] REC-check  : rec@0xc20 tag=0x70 len16=48 stored_sum=0xa0 real_FUN_1709E8=0xa0 -> OK
+[V1] REC-check  : filler 0x7F @0xf20 reached, all prior sums verified
+
+== T1 tamper ONE policy byte in '/common' payload then RESEAL via REAL fns ==
+[T1] flipped byte @0x40: 73 -> 8c (payload region of record tag 0x71)
+[T1] RESEAL: recsum(FUN_1709E8)=(0x32) adler(FUN_158FEC)=19c40d85 patched rec[1]/hdr+0x10
+[T1] determinism(x64 recompute): recsum STABLE adler STABLE
+[T1] wrote ./poc_nvram_tampered_resealed.bin
+
+== V2 validate TAMPERED+RESEALED image with REAL load-path checks ==
+[V2] ADLER-check : real FUN_158FEC(img+0x14, size-0x14) = 19c40d85 ; stored@hdr+0x10 = 19c40d85 -> PASS
+[V2] REC-check  : rec@0x20 tag=0x71 len16=192 stored_sum=0x32 real_FUN_1709E8=0x32 -> OK
+[V2] REC-check  : rec@0xc20 tag=0x70 len16=48 stored_sum=0xa0 real_FUN_1709E8=0xa0 -> OK
+[V2] REC-check  : filler 0x7F @0xf20 reached, all prior sums verified
+
+== X1 negative controls (checks are not vacuous) ==
+[X1-noreseal] ADLER-check : real FUN_158FEC(img+0x14, size-0x14) = 19c40d85 ; stored@hdr+0x10 = 8fe60d6c -> FAIL
+[X1] unsealed-flip verdict = FAIL(expected)  (expected FAIL: no-keyed-MAC claim would be false otherwise)
+[X1] name-window flip @0x24 (00->40): real fold=0x72 stored=0x32 -> FOLD-CAUGHT ; adler 87220dac vs stored 8fe60d6c -> ADLER-CAUGHT
+[X1] deep-flip @0x41 (no reseal): shallow fold 0x32==stored 0x32 -> fold-blind(as designed) (window [rec+2,rec+F]); adler cb260d3f != stored 8fe60d6c -> ADLER-CATCHES(deep-guard, unkeyed)
+
+== Q1 sequence-counter study (rollback defense = plain integer compare) ==
+[Q1-seq] ADLER-check : real FUN_158FEC(img+0x14, size-0x14) = 8fe60d6c ; stored@hdr+0x10 = 8fe60d6c -> PASS
+[Q1-seq] REC-check  : rec@0x20 tag=0x71 len16=192 stored_sum=0x32 real_FUN_1709E8=0x32 -> OK
+[Q1-seq] REC-check  : rec@0xc20 tag=0x70 len16=48 stored_sum=0xa0 real_FUN_1709E8=0xa0 -> OK
+[Q1-seq] REC-check  : filler 0x7F @0xf20 reached, all prior sums verified
+[Q1] seq=42 (delta +0 vs original): integrity-layer VERDICT PASS
+[Q1-seq] ADLER-check : real FUN_158FEC(img+0x14, size-0x14) = 7ffa0d6b ; stored@hdr+0x10 = 7ffa0d6b -> PASS
+[Q1-seq] REC-check  : rec@0x20 tag=0x71 len16=192 stored_sum=0x32 real_FUN_1709E8=0x32 -> OK
+[Q1-seq] REC-check  : rec@0xc20 tag=0x70 len16=48 stored_sum=0xa0 real_FUN_1709E8=0xa0 -> OK
+[Q1-seq] REC-check  : filler 0x7F @0xf20 reached, all prior sums verified
+[Q1] seq=41 (delta -1 vs original): integrity-layer VERDICT PASS
+[Q1] wrote ./poc_nvram_seq_minus1_resealed.bin (lower-seq replay image, sealed with REAL fns)
+[Q1-seq] ADLER-check : real FUN_158FEC(img+0x14, size-0x14) = 9fd20d6d ; stored@hdr+0x10 = 9fd20d6d -> PASS
+[Q1-seq] REC-check  : rec@0x20 tag=0x71 len16=192 stored_sum=0x32 real_FUN_1709E8=0x32 -> OK
+[Q1-seq] REC-check  : rec@0xc20 tag=0x70 len16=48 stored_sum=0xa0 real_FUN_1709E8=0xa0 -> OK
+[Q1-seq] REC-check  : filler 0x7F @0xf20 reached, all prior sums verified
+[Q1] seq=43 (delta +1 vs original): integrity-layer VERDICT PASS
+[Q1-seq] ADLER-check : real FUN_158FEC(img+0x14, size-0x14) = 71a3107e ; stored@hdr+0x10 = 71a3107e -> PASS
+[Q1-seq] REC-check  : rec@0x20 tag=0x71 len16=192 stored_sum=0x32 real_FUN_1709E8=0x32 -> OK
+[Q1-seq] REC-check  : rec@0xc20 tag=0x70 len16=48 stored_sum=0xa0 real_FUN_1709E8=0xa0 -> OK
+[Q1-seq] REC-check  : filler 0x7F @0xf20 reached, all prior sums verified
+[Q1] seq=1073741823 (delta +1073741781 vs original): integrity-layer VERDICT PASS
+[Q1] NOTE: the seq-vs-best comparison lives in the bank SELECTOR inside the
+[Q1] verifier (new b.cc @0x170214 using store+0x14; old @~0x1700f8) — never
+[Q1] executed here because per-bank reads are svc 0x62 (storage_read=0x1c2948).
+[Q1] What IS proven live: seq bytes sit inside adler coverage [0x14,size)
+[Q1] and are rescaled by the REAL adler fn like any other byte -> an
+[Q1] attacker who can write storage can mint ANY seq value.
+
+[nvram] determinism: this decisive set (S1/V1/T1/V2/X1/Q1) runs once per invocation;
+[nvram] the report ships >=3 independent invocations per build as retest_*_run{1,2,3}.log
+[nvram] done.

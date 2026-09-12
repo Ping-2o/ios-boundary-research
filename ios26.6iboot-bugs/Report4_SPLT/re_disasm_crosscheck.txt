@@ -1,0 +1,226 @@
+==============================================================================
+A. GATE FUN_0014B4B8 (162.8) / FUN_0014B678 (162.10)
+-- gate 162.8  @0x14b4b8
+   0x14b4b8: pacibsp  
+   0x14b4bc: stp      x22, x21, [sp, #-0x30]!
+   0x14b4c0: stp      x20, x19, [sp, #0x10]
+   0x14b4c4: stp      x29, x30, [sp, #0x20]
+   0x14b4c8: add      x29, sp, #0x20
+   0x14b4cc: cbz      x0, #0x14b564
+   0x14b4d0: cbz      w4, #0x14b564
+   0x14b4d4: mov      x19, x0
+   0x14b4d8: cmp      x0, x1
+   0x14b4dc: ccmp     x0, x2, #2, hs
+   0x14b4e0: b.hs     #0x14b57c
+   0x14b4e4: ldr      w20, [x19]
+   0x14b4e8: mov      w21, #0x7073
+   0x14b4ec: movk     w21, #0x746c, lsl #16
+   0x14b4f0: cmp      w20, w21
+   0x14b4f4: b.ne     #0x14b540
+   0x14b4f8: ldr      w8, [x19, #0x10]
+   0x14b4fc: cbz      w8, #0x14b558
+   0x14b500: ldr      w8, [x19, #0x14]
+   0x14b504: cbz      w8, #0x14b558
+   0x14b508: lsl      x8, x8, #2
+   0x14b50c: add      x9, x8, #0x18
+   0x14b510: cmp      x9, w4, uxtw
+   0x14b514: b.hs     #0x14b558
+   0x14b518: add      x4, x8, #0x10
+   0x14b51c: add      x0, x19, #8
+   0x14b520: adrp     x3, #0x201000
+   0x14b524: add      x3, x3, #0xba8
+   0x14b528: add      x2, x0, x4
+   0x14b52c: mov      x1, x0
+   0x14b530: bl       #0x1592f4
+   0x14b534: ldr      w8, [x19, #4]
+   0x14b538: cmp      w0, w8
+   0x14b53c: b.ne     #0x14b570
+   0x14b540: cmp      w20, w21
+   0x14b544: cset     w0, eq
+   0x14b548: ldp      x29, x30, [sp, #0x20]
+   0x14b54c: ldp      x20, x19, [sp, #0x10]
+   0x14b550: ldp      x22, x21, [sp], #0x30
+   0x14b554: retab    
+   0x14b558: bl       #0x14c9d4
+   0x14b55c: mov      w1, #0x14d
+   0x14b560: bl       #0x7e6b8
+   0x14b564: bl       #0x14c9d4
+   0x14b568: mov      w1, #0x145
+   0x14b56c: bl       #0x7e6b8
+-- gate 162.10 @0x14b678
+   0x14b678: pacibsp  
+   0x14b67c: stp      x22, x21, [sp, #-0x30]!
+   0x14b680: stp      x20, x19, [sp, #0x10]
+   0x14b684: stp      x29, x30, [sp, #0x20]
+   0x14b688: add      x29, sp, #0x20
+   0x14b68c: cbz      x0, #0x14b720
+   0x14b690: cbz      w4, #0x14b720
+   0x14b694: mov      x19, x0
+   0x14b698: cmp      x0, x1
+   0x14b69c: ccmp     x0, x2, #2, hs
+   0x14b6a0: b.hs     #0x14b738
+   0x14b6a4: ldr      w20, [x19]
+   0x14b6a8: mov      w21, #0x7073
+   0x14b6ac: movk     w21, #0x746c, lsl #16
+   0x14b6b0: cmp      w20, w21
+   0x14b6b4: b.ne     #0x14b6fc
+   0x14b6b8: ldr      w8, [x19, #0x10]
+   0x14b6bc: cbz      w8, #0x14b714
+   0x14b6c0: ldr      w8, [x19, #0x14]
+   0x14b6c4: cbz      w8, #0x14b714
+   0x14b6c8: lsl      x8, x8, #2
+   0x14b6cc: add      x9, x8, #0x18
+   0x14b6d0: cmp      x9, w4, uxtw
+   0x14b6d4: b.hs     #0x14b714
+   0x14b6d8: add      x4, x8, #0x10
+   0x14b6dc: add      x0, x19, #8
+   0x14b6e0: bl       #0x14cc54
+   0x14b6e4: add      x2, x0, x4
+   0x14b6e8: mov      x1, x0
+   0x14b6ec: bl       #0x1594ac
+   0x14b6f0: ldr      w8, [x19, #4]
+   0x14b6f4: cmp      w0, w8
+   0x14b6f8: b.ne     #0x14b72c
+   0x14b6fc: cmp      w20, w21
+   0x14b700: cset     w0, eq
+   0x14b704: ldp      x29, x30, [sp, #0x20]
+   0x14b708: ldp      x20, x19, [sp, #0x10]
+   0x14b70c: ldp      x22, x21, [sp], #0x30
+   0x14b710: retab    
+   0x14b714: bl       #0x14cb94
+   0x14b718: mov      w1, #0x14d
+   0x14b71c: bl       #0x7e7b4
+   0x14b720: bl       #0x14cb94
+   0x14b724: mov      w1, #0x145
+   0x14b728: bl       #0x7e7b4
+   0x14b72c: bl       #0x14cb94
+==============================================================================
+B. LOADER FUN_0014B580 (162.8) / FUN_0014B73C (162.10): ctx+0x48 window,
+   ctx+0x54 algo id -> dispatcher call
+-- loader 162.8 @0x14b580
+   0x14b5c4: bl       #0x17cb08
+   0x14b61c: ldr      w27, [x25, #0x48]
+   0x14b620: ldr      w20, [x25, #0x54]
+   0x14b634: bl       #0x17cb08
+   0x14b658: bl       #0x14b4b8
+   0x14b67c: bl       #0x1dc428
+   0x14b688: bl       #0x1dc3d4
+   0x14b6a8: bl       #0x1a07bc
+   0x14b6c8: bl       #0x1eb330
+   0x14b6d4: bl       #0x1dc428
+   0x14b6e0: bl       #0x1dc3d4
+   0x14b748: bl       #0x1eb3c8
+-- loader 162.10@0x14b73c
+   0x14b780: bl       #0x17ccdc
+   0x14b7d8: ldr      w27, [x25, #0x48]
+   0x14b7dc: ldr      w20, [x25, #0x54]
+   0x14b7f0: bl       #0x17ccdc
+   0x14b814: bl       #0x14b678
+   0x14b838: bl       #0x1dc494
+   0x14b844: bl       #0x1dc440
+   0x14b864: bl       #0x1a0990
+   0x14b884: bl       #0x1eb3b0
+   0x14b890: bl       #0x1dc494
+   0x14b89c: bl       #0x1dc440
+   0x14b904: bl       #0x1eb448
+==============================================================================
+C. DISPATCHER CALL SITES inside loader windows
+   162.8 : bl dispatcher@0x1eb3c8 at ['0x14b748']
+   162.10: bl dispatcher@0x1eb448 at ['0x14b904']
+==============================================================================
+D. FALLBACK ARM FUN_001CA6AC (162.8) / FUN_001CA718 (162.10)
+   162.8 : fallback@0x1ca6ac bl dst-fmt@0x199cd0 at ['0x1ca788'] ; bl dispatcher@0x1eb3c8 at []
+   162.10: fallback@0x1ca718 bl dst-fmt@0x199ea4 at ['0x1ca7f4'] ; bl dispatcher@0x1eb448 at []
+==============================================================================
+E. NEW-BUILD SOLE STRUCTURAL CHANGE: call to empty no-op FUN_0014CC54
+   FUN_0014CC54 first word @0x14cc54: 0xb00005a3 (adrp)
+   162.8 : bl FUN_0014CC54 within gate body: []
+   162.10: bl FUN_0014CC54 within gate body: ['0x14b6e0']
+==============================================================================
+F. INSTRUCTION-DIFF old-gate vs new-gate (aligned linear compare)
+   --- 
+   +++ 
+   @@ -5,4 +5,4 @@
+    add x29, sp, #0x20
+   -cbz x0, #0x14b564
+   -cbz w4, #0x14b564
+   +cbz x0, #0x14b720
+   +cbz w4, #0x14b720
+    mov x19, x0
+   @@ -10,3 +10,3 @@
+    ccmp x0, x2, #2, hs
+   -b.hs #0x14b57c
+   +b.hs #0x14b738
+    ldr w20, [x19]
+   @@ -15,7 +15,7 @@
+    cmp w20, w21
+   -b.ne #0x14b540
+   +b.ne #0x14b6fc
+    ldr w8, [x19, #0x10]
+   -cbz w8, #0x14b558
+   +cbz w8, #0x14b714
+    ldr w8, [x19, #0x14]
+   -cbz w8, #0x14b558
+   +cbz w8, #0x14b714
+    lsl x8, x8, #2
+   @@ -23,13 +23,12 @@
+    cmp x9, w4, uxtw
+   -b.hs #0x14b558
+   +b.hs #0x14b714
+    add x4, x8, #0x10
+    add x0, x19, #8
+   -adrp x3, #0x201000
+   -add x3, x3, #0xba8
+   +bl #0x14cc54
+    add x2, x0, x4
+    mov x1, x0
+   -bl #0x1592f4
+   +bl #0x1594ac
+    ldr w8, [x19, #4]
+    cmp w0, w8
+   -b.ne #0x14b570
+   +b.ne #0x14b72c
+    cmp w20, w21
+   @@ -40,12 +39,12 @@
+    retab 
+   -bl #0x14c9d4
+   +bl #0x14cb94
+    mov w1, #0x14d
+   -bl #0x7e6b8
+   -bl #0x14c9d4
+   +bl #0x7e7b4
+   +bl #0x14cb94
+    mov w1, #0x145
+   -bl #0x7e6b8
+   -bl #0x14c9d4
+   +bl #0x7e7b4
+   +bl #0x14cb94
+    mov w1, #0x153
+   -bl #0x7e6b8
+   -bl #0x1de608
+   +bl #0x7e7b4
+   +bl #0x1de674
+    pacibsp 
+   @@ -60 +59,2 @@
+    mov x22, x3
+   +mov x23, x2
+==============================================================================
+G. THE INSERTED CALL TARGET: FUN_0014CC54 (162.10)
+   0x14cc54: adrp     x3, #0x201000
+   0x14cc58: add      x3, x3, #0xc28
+   0x14cc5c: ret
+   -> 3-insn stub; materializes x3 context pointer (global @0x201C28) only.
+   162.8 gate computed the SAME x3 inline: 'adrp x3,#0x201000; add x3,#0xba8'
+   (@0x14B520-24) before bl 0x1592f4. Validation semantics unchanged.
+==============================================================================
+H. FALLBACK ARM REACHES THE SAME DISPATCHER (desc id at +0x24)
+-- 162.8  dst-formatter @0x199cd0 (called by fallback arm)
+   0x199d58: ldr      w8, [x23, #0x24]   <- descriptor id field
+   0x199de0: ldr      w0, [x23, #0x24]   <- descriptor id field
+   0x199e1c: bl       0x1eb3c8          <- SAME dispatcher as main path
+-- 162.10 dst-formatter @0x199ea4 (called by fallback arm)
+   0x199f2c: ldr      w8, [x23, #0x24]   <- descriptor id field
+   0x199fb4: ldr      w0, [x23, #0x24]   <- descriptor id field
+   0x199ff0: bl       0x1eb448          <- SAME dispatcher as main path
+   callers: 162.8  FUN_001CA6AC bl 0x199cd0 @0x1ca788
+            162.10 FUN_001CA718 bl 0x199ea4 @0x1ca7f4

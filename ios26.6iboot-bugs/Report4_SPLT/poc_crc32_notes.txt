@@ -1,0 +1,57 @@
+CRC32 computation inputs/outputs - iBoot 'splt' staged-container integrity gate
+===============================================================================
+Algorithm (mirror of firmware FUN_001592F4 wrapper / FUN_00159428 init @0x159434 /
+FUN_0015925C per-byte step, table built in .bss @0x3efc14): reflected CRC-32,
+poly 0xEDB88320, state init 0xFFFFFFFF, final invert == standard zlib crc32().
+
+COVERAGE SPAN (pinned from FUN_0014B4B8 disasm @0x14B4E4..0x14B538):
+  hashed span   = [hdr+0x08, hdr+0x18+cnt*4)   (length = cnt*4+0x10)
+  NOT covered   = magic [+0x00,+0x04), the stored-CRC field itself [+0x04,+0x08),
+                  and ALL chunk-payload bytes from hdr+0x18+cnt*4 to end of blob.
+
+file: poc_cell3.bin  (1640 bytes)
+  header: magic='splt' stored_crc=1a6fc58b (LE bytes 8bc56f1a)
+          field_a(+0x08)=aabbccdd field_b(+0x0c)=deadbeef flag(+0x10)=1 cnt(+0x14)=1
+          declared-length table(+0x18): ['0x64c']
+  hashed span [0x08,0x1c) len=20B: ddccbbaaefbeadde01000000010000004c060000
+  payload (1612B, NOT hashed, first 48 hex): 62767831200000002000000010000000040000000000000020000000000000001100120013001400f9ffffff05000700...
+  zlib.crc32(span) = 1a6fc58b -> MATCHES stored (forged container valid)
+
+file: poc_cell1.bin  (1640 bytes)
+  header: magic='splt' stored_crc=1a6fc58b (LE bytes 8bc56f1a)
+          field_a(+0x08)=aabbccdd field_b(+0x0c)=deadbeef flag(+0x10)=1 cnt(+0x14)=1
+          declared-length table(+0x18): ['0x64c']
+  hashed span [0x08,0x1c) len=20B: ddccbbaaefbeadde01000000010000004c060000
+  payload (1612B, NOT hashed, first 48 hex): 62767831200000002000000010000000040000000000000020000000000000001100120013001400f9ffffff05000700...
+  zlib.crc32(span) = 1a6fc58b -> MATCHES stored (forged container valid)
+
+file: poc_min_gate.bin  (37 bytes)
+  header: magic='splt' stored_crc=b2281136 (LE bytes 361128b2)
+          field_a(+0x08)=aabbccdd field_b(+0x0c)=deadbeef flag(+0x10)=1 cnt(+0x14)=1
+          declared-length table(+0x18): ['0x9']
+  hashed span [0x08,0x1c) len=20B: ddccbbaaefbeadde010000000100000009000000
+  payload (9B, NOT hashed, first 48 hex): 010400fbff504f4321
+  zlib.crc32(span) = b2281136 -> MATCHES stored (forged container valid)
+
+file: poc_min_tampered_same_crc.bin  (37 bytes)
+  header: magic='splt' stored_crc=b2281136 (LE bytes 361128b2)
+          field_a(+0x08)=aabbccdd field_b(+0x0c)=deadbeef flag(+0x10)=1 cnt(+0x14)=1
+          declared-length table(+0x18): ['0x9']
+  hashed span [0x08,0x1c) len=20B: ddccbbaaefbeadde010000000100000009000000
+  payload (9B, NOT hashed, first 48 hex): 010400fbff504f5821
+  zlib.crc32(span) = b2281136 -> MATCHES stored (forged container valid)
+
+Independent recomputation one-liner:
+  python3 -c "import zlib;b=open('poc_cell3.bin','rb').read();print('%08x'%zlib.crc32(b[8:0x1c]))"
+  -> 1a6fc58b   (poc_min_gate.bin / tampered variant: use span b[8:0x1c] -> b2281136)
+
+Payload-tamper proof (gate blindness):
+  poc_min_tampered_same_crc.bin == poc_min_gate.bin with byte 0x23 'C'(0x43)->'X'(0x58)
+  inside the chunk payload; stored CRC field untouched (b2281136 both files).
+  Real gate result on BOTH builds: ACCEPT (ret=1) - see retest_minimal.log;
+  dispatcher id 0x205 output changes 'POC!'->'POX!' = modified content ships through
+  integrity undetected.
+
+Negative controls (fresh retest_<build>_gate.log): corrupting ONLY covered words is
+  detected - G-crc (bad stored CRC) fires the firmware abort path (sig12 pc_off
+  225140 old / 225180 new); G-size/G-flag/G-rng also abort; wrong magic -> clean false.

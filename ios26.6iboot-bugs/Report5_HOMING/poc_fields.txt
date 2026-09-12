@@ -1,0 +1,21 @@
+Report5_HOMING poc field annotations
+====================================
+File format: 96-byte struct pocrec followed by rec_len content bytes.
+Provenance of each field against iBoot FUN_00199150 pass-2 consumers:
+
+  key       prior-record base anchor: read by 'ldr x9,[x25,#0x30]!'
+            from HOME_OBJ+0x30 (old @0x199954 / new @0x199B28).
+  pb        this record's base word as stored by pass-1 into the
+            descriptor slot consumed at *(desc+0x50); feeds
+            'sub x9,x8,x9' DELTA computation (@0x199958/@0x199B2C).
+  delta     attacker-chosen signed difference PB - KEY.
+  wbase/wend home-window extent gauge members at OBJ+0x18/OBJ+0x20;
+            E = FUN_0019A770(obj+0x18,obj+0x18,obj+0x30)=wend-wbase.
+  ctx68_*   pass-1 range object at async-ctx+0x68; V = member[1]-member[0]
+            via REAL FUN_0019A40C/FUN_0019A770; LEN=align4(V+3)&~3.
+  rec_off   offset of this record's data in the decoded arena;
+            SRC = span.base + rec.off8 (old @0x199944 'add x10,x27,x23').
+  dst       DST = WBASE + DELTA (old @0x199964 'add x27,x8,x9').
+
+For negative-delta cells delta<0 wraps guard RHS E-delta underflowing
+to ~2^64 so the ONLY guard cmp LEN,x8 ; b.hi panic(0x86) passes.
